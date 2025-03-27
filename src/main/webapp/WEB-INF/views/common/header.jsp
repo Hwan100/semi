@@ -73,7 +73,13 @@
             font-size: 20px;
             color: #003252;
             font-weight: 400;
+            display: flex;
+            align-items: center;
         }
+        .menu-item img:last-child {
+            margin-left: auto;
+        }
+
 
         .submenu-container {
             padding: 0 10px;
@@ -110,12 +116,14 @@
             <div class="menu-item">
                 <img src="resources/icons/home.png" alt="대시보드 아이콘">
                 <div class="menu-title"><a href="header.jsp">대시보드</a></div>
+
             </div>
 
             <!-- 마이페이지 메뉴 -->
             <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
                 <img src="resources/icons/user_box.png" alt="마이페이지 아이콘">
                 <div class="menu-title">마이페이지</div>
+                <img src="resources/icons/expand_left.png" alt="토글 아이콘" style="width: 24px; height: 24px;">
             </div>
 
             <!-- 마이페이지 서브메뉴 -->
@@ -133,6 +141,7 @@
             <div class="menu-item" onclick="toggleSubmenu('attendance-submenu')">
                 <img src="resources/icons/calendar.png" alt="출석관리 아이콘">
                 <div class="menu-title">출석 관리</div>
+                <img src="resources/icons/expand_left.png" alt="토글 아이콘" style="width: 24px; height: 24px;">
             </div>
             <div id="attendance-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">
@@ -150,6 +159,7 @@
             <div class="menu-item" onclick="toggleSubmenu('resume-submenu')">
                 <img src="resources/icons/file.png" alt="자소서 아이콘">
                 <div class="menu-title">자소서 및 이력서</div>
+                <img src="resources/icons/expand_left.png" alt="토글 아이콘" style="width: 24px; height: 24px;">
             </div>
             <div id="resume-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">
@@ -164,6 +174,7 @@
             <div class="menu-item" onclick="toggleSubmenu('community-submenu')">
                 <img src="resources/icons/group.png" alt="커뮤니티 아이콘">
                 <div class="menu-title">커뮤니티</div>
+                <img src="resources/icons/expand_left.png" alt="토글 아이콘" style="width: 24px; height: 24px;">
             </div>
             <div id="community-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">

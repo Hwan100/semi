@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #layout{
+            position: relative;
+            width: 1920px;
+            height: 1368px;
+            background: #E0F7FF;
+        }
+
+        #enrollCard{
+            position: absolute;
+            width: 1108px;
+            height: 1265px;
+            left: 406px;
+            top: 63px;
+
+            background: #FFFFFF;
+            box-shadow: 2.21425px 2.21254px 2.95006px rgba(0, 0, 0, 0.25);
+            border-radius: 18.4379px;
+        }
+        #logo img{
+            margin-top: 15px;
+            margin-left: 12px;
+        }
+        #enroll{
+            position: absolute;
+            top: 55px;
+            font-size: 40px;
+            margin-left: 464px;
+        }
+        #contents{
+
+            width: 760px;
+            height: 989px;
+            margin-top: 41px;
+            margin-left: 158px;
+            margin-right: 190px;
+
+        }
+        #Line{
+            width: 759px;
+            height: 87px;
+        }
+        #topLine{
+            display: flex;
+        }
+        #firstInfo{
+            font-size: 20px;
+            margin-right: 24px;
+        }
+        #secondInfo{
+            font-size: 14px;
+            color: red;
+        }
+        #Input input{
+            width:758px;
+            height: 52px;
+            border-radius: 10px;
+        }
+        #Input input::placeholder{
+            font-size: 20px;
+            padding-left: 27px;
+        }
+        9 6
+        122 40
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="enrollCard">
+            <div id="logo"><img src="../../../resources/icons/logo.png"></div>
+            <div id="enroll">회원가입</div>
+            <div id="contents">
+                <div id="Line">
+                    <div id="topLine">
+                        <div id="firstInfo">아이디</div>
+                        <div id="secondInfo">사용할 수 없는 아이디입니다.</div>
+                    </div>
+                    <div id="Input">
+                        <input placeholder="아이디 입력(6~20자)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -9,8 +9,9 @@
 <html>
 <head>
     <title>11</title>
+
 </head>
 <body>
-<jsp:include page="board/boardListView.jsp" />
+<jsp:include page="common/header.jsp" />
 </body>
 </html>

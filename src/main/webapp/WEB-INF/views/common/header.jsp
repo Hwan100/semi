@@ -8,7 +8,7 @@
     <title>Document</title>
     <%--    <link rel="stylesheet" href="globals.css"/>--%>
     <%--    <link rel="stylesheet" href="styleguide.css"/>--%>
-    <link rel="stylesheet" href="style.css"/>
+
 
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
@@ -112,9 +112,91 @@
             font-size: 16px;
             font-weight: 400;
         }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 270px;
+            right: 0;
+            height: 130px;
+            background-color: #E0F7FF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            color: #74788D;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .breadcrumb-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-image: url('');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 0;
+            color: black;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .welcome-msg {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        .breadcrumb-text{
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
+
+<header class="header">
+    <div class="breadcrumb">
+        <span class="breadcrumb-icon"></span>
+        <div>
+        <p class="breadcrumb-text">커뮤니티</p>
+        <p class="page-title">공지사항</p>
+        </div>
+    </div>
+
+    <div class="user-info">
+        <img class="profile-img" src="https://placehold.co/70x70" alt="프로필">
+        <div class="welcome-msg">
+            <span>환영합니다.</span>
+            <strong>KH학생</strong>님
+        </div>
+        <div class="dropdown-arrow"></div>
+    </div>
+</header>
+<hr>
 <div class="sidebar-container">
     <div class="sidebar">
         <img class="sidebar-logo" src="resources/icons/logo.png" alt="로고">
@@ -200,6 +282,19 @@
         submenu.classList.toggle('open');
     }
 </script>
+<script>
+    // 페이지마다 다른 제목을 설정할 수 있게 해주는 JavaScript
+    window.onload = function() {
+        let pageHeader = document.getElementById('header').querySelector('h1');
 
+        if (window.location.pathname === '/home') {
+            pageHeader.textContent = '홈 페이지';
+        } else if (window.location.pathname === '/about') {
+            pageHeader.textContent = '소개 페이지';
+        } else {
+            pageHeader.textContent = '기본 제목';
+        }
+    }
+</script>
 </body>
 </html>

@@ -9,10 +9,8 @@
 <html>
 <head>
     <title>11</title>
-    <link rel='stylesheet' href='./index.css'>
-
 </head>
 <body>
-<h1>test</h1>
+<jsp:include page="common/header.jsp" />
 </body>
 </html>

@@ -109,14 +109,17 @@
         <div class="menu-group">
             <div class="menu-item">
                 <img src="resources/icons/home.png" alt="대시보드 아이콘">
-                <div class="menu-title">대시보드</div>
+                <div class="menu-title"><a href="header.jsp">대시보드</a></div>
             </div>
 
-            <div class="menu-item">
+            <!-- 마이페이지 메뉴 -->
+            <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
                 <img src="resources/icons/user_box.png" alt="마이페이지 아이콘">
                 <div class="menu-title">마이페이지</div>
             </div>
-            <div class="submenu-container">
+
+            <!-- 마이페이지 서브메뉴 -->
+            <div id="mypage-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item active">
                     <div class="submenu-text">개인정보 수정</div>
                 </div>
@@ -125,11 +128,13 @@
                 </div>
             </div>
 
-            <div class="menu-item">
+
+
+            <div class="menu-item" onclick="toggleSubmenu('attendance-submenu')">
                 <img src="resources/icons/calendar.png" alt="출석관리 아이콘">
                 <div class="menu-title">출석 관리</div>
             </div>
-            <div class="submenu-container">
+            <div id="attendance-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">
                     <div class="submenu-text">출석률 조회</div>
                 </div>
@@ -141,11 +146,12 @@
                 </div>
             </div>
 
-            <div class="menu-item">
+
+            <div class="menu-item" onclick="toggleSubmenu('resume-submenu')">
                 <img src="resources/icons/file.png" alt="자소서 아이콘">
                 <div class="menu-title">자소서 및 이력서</div>
             </div>
-            <div class="submenu-container">
+            <div id="resume-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">
                     <div class="submenu-text">자소서 및 이력서 관리</div>
                 </div>
@@ -154,11 +160,12 @@
                 </div>
             </div>
 
-            <div class="menu-item">
+
+            <div class="menu-item" onclick="toggleSubmenu('community-submenu')">
                 <img src="resources/icons/group.png" alt="커뮤니티 아이콘">
                 <div class="menu-title">커뮤니티</div>
             </div>
-            <div class="submenu-container">
+            <div id="community-submenu" class="submenu-container" style="display: none;">
                 <div class="submenu-item">
                     <div class="submenu-text">공지사항</div>
                 </div>
@@ -167,8 +174,21 @@
                 </div>
             </div>
 
+
         </div>
     </div>
 </div>
+
+<script>
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        if (submenu.style.display === "none" || submenu.style.display === "") {
+            submenu.style.display = "flex";
+        } else {
+            submenu.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>

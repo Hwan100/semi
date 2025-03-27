@@ -12,12 +12,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
+
 <jsp:include page="common/header.jsp" />
-<jsp:include page="board/boardListView.jsp" />
-=======
-<%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="board/noticeBoardListView.jsp" />
->>>>>>> 46916e265b3a5b8daf1095d779d5f7f67dcc3a4b
 </body>
 </html>

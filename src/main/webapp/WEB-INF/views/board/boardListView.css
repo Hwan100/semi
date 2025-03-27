@@ -1,0 +1,8592 @@
+/* 학생 마이페이지 수료증 발급 */
+
+position: relative;
+width: 1920px;
+height: 1080px;
+
+background: #E0F7FF;
+
+
+/* Menu Header(Student) */
+
+position: absolute;
+width: 1650px;
+height: 160px;
+left: 270px;
+top: 0px;
+
+
+
+/* Header Group */
+
+position: absolute;
+width: 1566px;
+height: 80px;
+left: 45px;
+top: 38px;
+
+
+
+/* User Profile */
+
+position: absolute;
+width: 280px;
+height: 80px;
+left: 1331px;
+top: 38px;
+
+
+
+/* Rectangle 4705 */
+
+position: absolute;
+width: 280px;
+height: 80px;
+left: 1331px;
+top: 38px;
+
+background: #FFFFFF;
+border-radius: 50px;
+
+
+/* chevron-down */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: 1567px;
+top: 73px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25%;
+right: 25%;
+top: 37.5%;
+bottom: 37.5%;
+
+border: 2px solid #000000;
+
+
+/* 환영합니다. */
+
+position: absolute;
+width: 131px;
+height: 19px;
+left: 1421px;
+top: 48px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #828282;
+
+
+
+/* KH학생 님 */
+
+position: absolute;
+width: 120px;
+height: 30px;
+left: 1421px;
+top: 69px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* User Profile */
+
+position: absolute;
+width: 70px;
+height: 70px;
+left: 1336px;
+top: 43px;
+
+
+
+/* Rectangle 4706 */
+
+position: absolute;
+width: 70px;
+height: 70px;
+left: 1336px;
+top: 43px;
+
+background: url(.jpg), #FFFFFF;
+border-radius: 50px;
+
+
+/* Title */
+
+position: absolute;
+width: 800px;
+height: 55px;
+left: 45px;
+top: 50px;
+
+
+
+/* 소항목 이름 */
+
+position: absolute;
+width: 800px;
+height: 29px;
+left: 45px;
+top: 76px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* 대항목 이름 */
+
+position: absolute;
+width: 700px;
+height: 20px;
+left: 70px;
+top: 50px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #74788D;
+
+
+
+/* home */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 45px;
+top: 50px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.33%;
+
+border: 2px solid #74788D;
+
+
+/* Vector */
+
+position: absolute;
+left: 37.5%;
+right: 37.5%;
+top: 50%;
+bottom: 8.33%;
+
+border: 2px solid #74788D;
+
+
+/* 구분선 */
+
+position: absolute;
+width: 1560px;
+height: 3px;
+left: 45px;
+top: 154px;
+
+background: #FFFFFF;
+border-radius: 500px;
+
+
+/* Student Menu(open) */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 270px;
+height: 1080px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+border-right: 0.3px solid rgba(0, 0, 0, 0.5);
+
+
+/* Frame 41 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 28px;
+
+position: absolute;
+width: 270px;
+height: 1080px;
+left: 0px;
+top: 0px;
+
+
+
+/* Logo */
+
+width: 270px;
+height: 100px;
+
+background: url(image.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* 메뉴 선택 버튼 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 11px;
+
+width: 270px;
+height: 814px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Home Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 250px;
+height: 60px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* home
+
+Title: Home
+Tags: home, house, residence, dwelling, property, dashboard
+*/
+
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.67%;
+right: 16.67%;
+top: 12.5%;
+bottom: 12.5%;
+
+border: 2px solid #003252;
+
+
+/* Vector */
+
+position: absolute;
+left: 39.58%;
+right: 39.58%;
+top: 56.25%;
+bottom: 12.5%;
+
+border: 2px solid #003252;
+
+
+/* 대시보드 */
+
+width: 74px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 마이페이지 리스트 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 10px;
+
+width: 250px;
+height: 160px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* My Page Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 0px;
+gap: 11px;
+
+width: 230px;
+height: 60px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086088 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 11px;
+
+width: 195px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* User_box */
+
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Ellipse 45 */
+
+position: absolute;
+left: 25%;
+right: 25%;
+top: 70.83%;
+bottom: -12.5%;
+
+border: 2px solid #003252;
+
+
+/* Ellipse 46 */
+
+position: absolute;
+left: 37.5%;
+right: 37.5%;
+top: 29.17%;
+bottom: 45.83%;
+
+border: 2px solid #003252;
+
+
+/* Rectangle 26 */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+border: 2px solid #003252;
+border-radius: 4px;
+
+
+/* 마이페이지 */
+
+width: 92px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Expand_down */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector 9 */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 75%;
+right: 0%;
+top: 62.5%;
+bottom: -12.5%;
+
+/* Line_icon */
+border: 2px solid #33363F;
+transform: matrix(0, -1, -1, 0, 0, 0);
+
+
+/* 마이페이지 하위 항목 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 5px 11px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086088 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 208px;
+height: 19.62px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 개인정보 수정 */
+
+width: 93px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+/* Main font color */
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 마이페이지 하위 항목 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 11px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086088 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 208px;
+height: 19.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 수료증 발급 */
+
+width: 79px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+/* White */
+color: #FFFFFF;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 출석관리 리스트 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 10px;
+
+width: 250px;
+height: 210px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* 출석 관리 Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 0px;
+gap: 11px;
+
+width: 230px;
+height: 60px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086089 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 11px;
+
+width: 195px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* calendar
+
+Title: Calendar
+Tags: calendar, date, time, schedule, event
+*/
+
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 68.75%;
+right: 31.25%;
+top: 12.5%;
+bottom: 79.17%;
+
+border: 2px solid #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 31.25%;
+right: 68.75%;
+top: 12.5%;
+bottom: 79.17%;
+
+border: 2px solid #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 13.54%;
+right: 13.54%;
+top: 33.33%;
+bottom: 66.67%;
+
+border: 2px solid #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 16.67%;
+bottom: 12.5%;
+
+border: 2px solid #000000;
+
+
+/* 출석 관리 */
+
+width: 80px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+/* Main font color */
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Expand_down */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector 9 */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 75%;
+right: 0%;
+top: 62.5%;
+bottom: -12.5%;
+
+/* Line_icon */
+border: 2px solid #33363F;
+transform: matrix(0, -1, -1, 0, 0, 0);
+
+
+/* 출석 관리 Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086089 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 출석률 조회 */
+
+width: 79px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 출석 관리 Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086089 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.42px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 휴가 관리 */
+
+width: 64px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 출석 관리 Frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086089 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.42px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 급여 조회 */
+
+width: 64px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 자소서 및 이력서 리스트 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 10px;
+
+width: 250px;
+height: 160px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* 자소서 및 이력서 frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 0px;
+gap: 11px;
+
+width: 230px;
+height: 60px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086090 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 11px;
+
+width: 195px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* File */
+
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+border: 2px solid #003252;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+left: 60%;
+right: 12.5%;
+top: 12.5%;
+bottom: 65%;
+
+border: 2px solid #003252;
+
+
+/* 자소서 및 이력서 */
+
+width: 141px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Expand_down */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector 9 */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 75%;
+right: 0%;
+top: 62.5%;
+bottom: -12.5%;
+
+/* Line_icon */
+border: 2px solid #33363F;
+transform: matrix(0, -1, -1, 0, 0, 0);
+
+
+/* Frame 26086076 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086090 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.97px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 자소서 및 이력서 관리 */
+
+width: 146px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 26086077 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086090 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.97px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 자소서 및 이력서 작성 */
+
+width: 146px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 커뮤니티 리스트 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 10px;
+
+width: 250px;
+height: 160px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* 커뮤니티 frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 0px;
+gap: 11px;
+
+width: 230px;
+height: 60px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086091 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 11px;
+
+width: 195px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* album
+
+Title: Album
+Tags: album, collection, photos, pictures, images, gallery
+*/
+
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 54.17%;
+right: 29.17%;
+top: 14.58%;
+bottom: 58.33%;
+
+border: 2px solid #003252;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+border: 2px solid #003252;
+
+
+/* 커뮤니티 */
+
+width: 74px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Expand_down */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector 9 */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 75%;
+right: 0%;
+top: 62.5%;
+bottom: -12.5%;
+
+/* Line_icon */
+border: 2px solid #33363F;
+transform: matrix(0, -1, -1, 0, 0, 0);
+
+
+/* 커뮤니티 frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086091 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.39px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 공지사항 */
+
+width: 59px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 커뮤니티 frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 11px;
+
+width: 230px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086091 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 40px;
+gap: 11px;
+
+width: 210px;
+height: 19.62px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* 우리반 게시판 */
+
+width: 93px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #003252;
+
+transform: rotate(0.38deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Rectangle 4741 */
+
+position: absolute;
+width: 1200px;
+height: 700px;
+left: 489px;
+top: 270px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+
+/* 표양식 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 1060px;
+height: 524px;
+left: 557px;
+top: 371px;
+
+
+
+/* 수료증발급표 컴포넌트 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 50px;
+left: 0px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 37.5px;
+left: 5.22px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 50px;
+left: 54.5px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 37.5px;
+left: 61px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 414px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 37.5px;
+left: 419px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 513.5px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 37.5px;
+left: 521px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 613px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 37.5px;
+left: 623px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 712.5px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 37.5px;
+left: 722.5px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 812px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 37.5px;
+left: 822px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 50px;
+left: 911.5px;
+top: 0px;
+
+/* Secondary Color */
+background: rgba(11, 155, 227, 0.4);
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 37.5px;
+left: 919px;
+top: 6.25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 25px;
+left: 932px;
+top: 12.5px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+
+
+/* Frame 26086110 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 1060px;
+height: 474.5px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 26086108 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086108 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086109 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086110 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086111 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086112 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086113 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086114 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086115 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 8;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086116 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 9;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086117 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 10;
+align-self: stretch;
+flex-grow: 0;
+margin: -0.5px 0px;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Frame 26086118 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 1060px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 11;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 123 */
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 55px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 번호 */
+
+position: absolute;
+width: 44px;
+height: 30px;
+left: 5.22px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 124 */
+
+width: 360px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 360px;
+height: 40px;
+left: 54.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 능력단위명 */
+
+position: absolute;
+width: 346px;
+height: 30px;
+left: 61px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 125 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 414px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 평가일 */
+
+position: absolute;
+width: 90px;
+height: 30px;
+left: 419px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 126 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 513.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 본평가점수 */
+
+position: absolute;
+width: 86px;
+height: 30px;
+left: 521px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 127 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 613px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 최종점수 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 623px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 128 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 712.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 성취수준 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 722.5px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 129 */
+
+width: 100px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px -0.5px;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 100px;
+height: 40px;
+left: 812px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수결과 */
+
+position: absolute;
+width: 80px;
+height: 30px;
+left: 822px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Group 130 */
+
+width: 148.5px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Rectangle 4742 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 148.5px;
+height: 40px;
+left: 911.5px;
+top: 0px;
+
+/* White
+
+하얀색
+*/
+background: #FFFFFF;
+/* outline
+
+바깥선 회색
+*/
+border: 1px solid #E7E7E7;
+
+
+/* 이수증발급 */
+
+position: absolute;
+width: 134px;
+height: 30px;
+left: 919px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Main font color */
+color: #003252;
+
+
+
+/* Save */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 932px;
+top: 10px;
+
+
+
+/* Rectangle 55 */
+
+position: absolute;
+left: 29.17%;
+right: 33.33%;
+top: 62.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+border-radius: 2px;
+
+
+/* Vector 118 */
+
+position: absolute;
+left: 29.17%;
+right: 50%;
+top: 33.33%;
+bottom: 66.67%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* Rectangle 56 */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Main font color
+
+메인 컬러 글씨 색깔
+*/
+border: 1px solid #003252;
+
+
+/* 이수 현황 */
+
+position: absolute;
+width: 204px;
+height: 29px;
+left: 559px;
+top: 310px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+

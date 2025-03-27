@@ -130,6 +130,7 @@ body {
     justify-content: space-between;
     padding: 0 40px;
     box-sizing: border-box;
+    z-index: 3;
 }
 
 .breadcrumb {

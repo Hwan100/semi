@@ -28,13 +28,17 @@
         }
 
         .sidebar-container {
+            position: fixed; /* 기존 absolute → fixed */
+            top: 0;
+            left: 0;
+            height: 100vh;
             width: 270px;
-            height: 1080px;
             background: white;
-            overflow: hidden;
+            overflow-y: auto;
             border-right: 0.3px solid rgba(0, 0, 0, 0.5);
-            position: relative;
+            z-index: 1000;
         }
+
 
         .sidebar {
             width: 100%;

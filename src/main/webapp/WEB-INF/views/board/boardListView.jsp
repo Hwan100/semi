@@ -5,96 +5,155 @@
 <head>
   <meta charset="UTF-8">
   <title>공지사항</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
+  <style>
+    .body-wrapper {
+      margin-left: 270px;
+      padding-top: 160px;
+      background: #E0F7FF;
+      min-height: 100vh;
+      overflow-y: auto;
+      padding-right: 20px;
+    }
+
+    .board-container {
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      padding: 40px 50px;
+    }
+
+    .board-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .board-header {
+      display: flex;
+      background: rgba(11, 155, 227, 0.4);
+      border: 1px solid #E7E7E7;
+      font-weight: 600;
+      color: #003252;
+      text-align: center;
+    }
+
+    .board-header div {
+      padding: 12px 0;
+    }
+
+    .board-row {
+      display: flex;
+      border-bottom: 1px solid #E7E7E7;
+      font-size: 14px;
+      color: #003252;
+    }
+
+    .board-row div {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .board-title-cell {
+      flex: 1;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .board-title-cell a {
+      color: #003252;
+      text-decoration: none;
+    }
+
+    .board-pagination {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .board-pagination a {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 4px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .board-pagination a.active {
+      background: #0B9BE3;
+      color: white;
+    }
+  </style>
 </head>
 <body>
+<jsp:include page="../common/header.jsp"/>
 
-<div class="layout">
-  <jsp:include page="../common/header.jsp" />
-  <header class="header">
-    <div class="breadcrumb">
-      <span class="breadcrumb-icon"></span>
-      <span class="breadcrumb-text">커뮤니티</span>
+<div class="body-wrapper">
+  <div class="board-container">
+
+    <div class="board-title">공지사항</div>
+
+    <!-- 테이블 헤더 -->
+    <div class="board-header">
+      <div style="flex: 0 0 100px;">글번호</div>
+      <div style="flex: 0 0 130px;">지점</div>
+      <div style="flex: 1;">제목</div>
+      <div style="flex: 0 0 150px;">작성자</div>
+      <div style="flex: 0 0 100px;">조회수</div>
+      <div style="flex: 0 0 100px;">작성일</div>
     </div>
-    <h1 class="page-title">공지사항</h1>
-    <div class="user-info">
-      <img class="profile-img" src="https://placehold.co/70x70" alt="프로필">
-      <div class="welcome-msg">
-        <span>환영합니다.</span>
-        <strong>KH학생</strong>님
+
+    <!-- 게시글 리스트 -->
+    <c:forEach var="b" items="${list}">
+      <div class="board-row">
+        <div style="flex: 0 0 100px;">${b.boardNo}</div>
+        <div style="flex: 0 0 130px;">${b.branch}</div>
+        <div class="board-title-cell">
+          <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
+        </div>
+        <div style="flex: 0 0 150px;">${b.boardWriter}</div>
+        <div style="flex: 0 0 100px;">${b.count}</div>
+        <div style="flex: 0 0 100px;">${b.createDate}</div>
       </div>
-      <div class="dropdown-arrow"></div>
+    </c:forEach>
+
+    <!-- 페이지네이션 -->
+    <!-- 게시글 리스트 -->
+    <!-- ✅ 예시 게시글 (임시 데이터) -->
+    <div class="board-row">
+      <div style="flex: 0 0 100px;">999</div>
+      <div style="flex: 0 0 130px;">강남지점</div>
+      <div class="board-title-cell">
+        <a href="#">[예시] 시스템 점검 안내</a>
+      </div>
+      <div style="flex: 0 0 150px;">관리자</div>
+      <div style="flex: 0 0 100px;">123</div>
+      <div style="flex: 0 0 100px;">2025-03-27</div>
     </div>
-  </header>
+
+    <!-- ✅ 실제 게시글 반복 -->
+    <c:forEach var="b" items="${list}">
+      <div class="board-row">
+        <div style="flex: 0 0 100px;">${b.boardNo}</div>
+        <div style="flex: 0 0 130px;">${b.branch}</div>
+        <div class="board-title-cell">
+          <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
+        </div>
+        <div style="flex: 0 0 150px;">${b.boardWriter}</div>
+        <div style="flex: 0 0 100px;">${b.count}</div>
+        <div style="flex: 0 0 100px;">${b.createDate}</div>
+      </div>
+    </c:forEach>
 
 
-  <main class="main-content">
-    <h2>공지사항</h2>
-    <table class="notice-table">
-      <thead>
-      <tr>
-        <th>글번호</th>
-        <th>지점</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>조회수</th>
-        <th>작성일</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>10</td>
-        <td>서울 강남</td>
-        <td>[안내] 2025년 봄 학기 개강 일정</td>
-        <td>관리자</td>
-        <td>152</td>
-        <td>2025-03-01</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>부산 서면</td>
-        <td>[필독] 교육비 납부 마감 안내</td>
-        <td>관리자</td>
-        <td>98</td>
-        <td>2025-02-27</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>대전 유성</td>
-        <td>2월 우수 수강생 발표</td>
-        <td>운영팀</td>
-        <td>74</td>
-        <td>2025-02-20</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>광주 첨단</td>
-        <td>기초반 시간표 변경 안내</td>
-        <td>담당자</td>
-        <td>63</td>
-        <td>2025-02-15</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>서울 강남</td>
-        <td>[공지] 설 연휴 휴강 일정</td>
-        <td>운영팀</td>
-        <td>112</td>
-        <td>2025-02-01</td>
-      </tr>
-      </tbody>
-
-    </table>
-
-    <div class="pagination">
-      <a href="#" class="arrow prev">&lt;</a>
-      <a href="#" class="page active">1</a>
-      <a href="#" class="page">2</a>
-      <a href="#" class="page">3</a>
-      <a href="#" class="arrow next">&gt;</a>
-    </div>
-  </main>
+  </div>
 </div>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -285,3 +286,5 @@
 </div>
 </body>
 </html>
+=======
+>>>>>>> 4e8cc80 (.)

@@ -1,0 +1,142 @@
+/* layout 기본 구조 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.layout {
+    display: flex;
+
+    height: 100vh;
+    background-color: #E0F7FF;
+}
+
+
+
+/* 헤더 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 270px;
+    right: 0;
+    height: 160px;
+    background-color: #E0F7FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    color: #74788D;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.breadcrumb-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-image: url('../icons/breadcrumb-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: black;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+}
+
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.welcome-msg {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.dropdown-arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url('../icons/expand_left.png'); /* 네가 넣었던 아이콘 */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    margin-left: 270px;
+    margin-top: 160px;
+    padding: 40px;
+    width: calc(100% - 270px);
+    box-sizing: border-box;
+    background-color: #E0F7FF;
+    position: relative;
+    z-index: 1; /* 추가 */
+}
+
+
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.notice-table thead {
+    background-color: rgba(11, 155, 227, 0.4);
+}
+
+.notice-table th, .notice-table td {
+    padding: 12px 16px;
+    text-align: center;
+    border: 1px solid #E7E7E7;
+    font-size: 14px;
+    color: #003252;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pagination .page,
+.pagination .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+.pagination .page.active {
+    background-color: rgba(11, 155, 227, 0.4);
+    color: white;
+}

@@ -98,7 +98,13 @@
 <div class="body-wrapper">
   <div class="board-container">
 
-    <div class="board-title">우리반 게시판</div>
+    <!-- 제목 + 설명: 바로 옆 배치 -->
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <div class="board-title" style="margin-right: 15px;">우리반 게시판</div>
+      <div style="color: #74788D; font-size: 14px; font-family: Inter; font-weight: 400;">
+        AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )
+      </div>
+    </div>
 
     <!-- 테이블 헤더 -->
     <div class="board-header">

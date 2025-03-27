@@ -13,6 +13,6 @@
 </head>
 <body>
 <%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="board/noticeBoardListView.jsp" />
+<jsp:include page="board/myclassBoardDetailView.jsp" />
 </body>
 </html>

@@ -12,7 +12,9 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+<%--    <jsp:include page="common/header.jsp" />    --%>
+<jsp:include page="board/myclassBoardDetailView.jsp" />
 
-<jsp:include page="common/header.jsp" />
 </body>
 </html>

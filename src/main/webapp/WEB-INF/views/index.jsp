@@ -13,5 +13,6 @@
 </head>
 <body>
 <jsp:include page="common/header.jsp" />
+<jsp:include page="board/boardListView.jsp" />
 </body>
 </html>

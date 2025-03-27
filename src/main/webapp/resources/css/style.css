@@ -37,6 +37,7 @@ body, html {
     font-weight: 700;
 }
 
+
 .breadcrumb-icon {
     width: 20px;
     height: 20px;
@@ -60,7 +61,7 @@ body, html {
     margin-left: 270px;
     margin-top: 160px;
     padding: 40px;
-    width: calc(100% - 270px);
+    width: calc(100% - 1000px);
     box-sizing: border-box;
     background-color: #E0F7FF;
     position: relative;

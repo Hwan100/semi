@@ -1,0 +1,67 @@
+body {
+    background-color: #E0F7FF;
+}
+
+.content-container {
+    display: grid;
+    /*grid-template-columns: 2fr 1fr; !* 좌: 내용 위주, 우: 요약/버튼 *!*/
+    gap: 20px;
+    grid-template-areas:
+    "intro          intro          announcement         announcement        checkin"
+    "intro          intro          announcement         announcement        checkin"
+    "attendance     attendance     announcement         announcement        checkin"
+    "attendance     attendance     announcement         announcement        checkin"
+    "attendance     attendance     board                board               checkin"
+    "schedule       schedule       board                board               resume"
+    "schedule       schedule       board                board               resume"
+    "schedule       schedule       board                board               resume";
+    margin-left: 320px;
+    padding-top: 210px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+.intro-section      {
+    grid-area: intro;
+}
+.attendance-section { grid-area: attendance; }
+.schedule-section { grid-area: schedule; }
+.announcement-section {
+    grid-area: announcement;
+}
+.board-section { grid-area: board; }
+.checkin-section {
+    grid-area: checkin;
+}
+.resume-section { grid-area: resume; }
+
+.intro-section,
+.attendance-section,
+.schedule-section,
+.announcement-section,
+.board-section,
+.checkin-section,
+.resume-section {
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.content-box {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "intro"
+      "notice"
+      "calendar"
+      "checkin"
+      "board";
+    }
+}

@@ -18,12 +18,12 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header" onload=title()>
     <div class="breadcrumb">
         <span class="breadcrumb-icon"></span>
         <div>
-        <p class="breadcrumb-text">커뮤니티</p>
-        <p class="page-title">공지사항</p>
+            <p class="breadcrumb-text"></p>
+            <p class="page-title">대시보드</p>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
         <div class="menu-group">
             <div class="menu-item" onclick="toggleSubmenu('dashboard-submenu')">
                 <img src="/icons/home.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="header.jsp">대시보드</a></div>
+                <div class="menu-title"><a href="/">대시보드</a></div>
             </div>
             <div id="dashboard-submenu" class="submenu-container"></div>
 
@@ -55,10 +55,10 @@
             </div>
             <div id="mypage-submenu" class="submenu-container">
                 <div class="submenu-item active">
-                    <div class="submenu-text">개인정보 수정</div>
+                    <div class="submenu-text"><a href="/?title1=마이페이지&title2=개인정보 수정">개인정보 수정</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text">수료증 발급</div>
+                    <div class="submenu-text"><a href="/?title1=마이페이지&title2=수료증 발급">수료증 발급</a></div>
                 </div>
             </div>
 
@@ -69,13 +69,13 @@
             </div>
             <div id="attendance-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text">출석률 조회</div>
+                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=출석률 조회">출석률 조회</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text">휴가 관리</div>
+                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=휴가 관리">휴가 관리</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text">급여 조회</div>
+                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=급여 조회">급여 조회</a></div>
                 </div>
             </div>
 
@@ -86,10 +86,10 @@
             </div>
             <div id="resume-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text">자소서 및 이력서 관리</div>
+                    <div class="submenu-text"><a href="class.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text">자소서 및 이력서 작성</div>
+                    <div class="submenu-text"><a href="class.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서 작성</a></div>
                 </div>
             </div>
 
@@ -100,10 +100,10 @@
             </div>
             <div id="community-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="board.bo">공지사항</a></div>
+                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text">우리반 게시판</div>
+                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=우리반 게시판">우리반 게시판</a></div>
                 </div>
             </div>
         </div>
@@ -122,19 +122,24 @@
         submenu.classList.toggle('open');
     }
 </script>
-<script>
-    // 페이지마다 다른 제목을 설정할 수 있게 해주는 JavaScript
-    window.onload = function() {
-        let pageHeader = document.getElementById('header').querySelector('h1');
 
-        if (window.location.pathname === '/home') {
-            pageHeader.textContent = '홈 페이지';
-        } else if (window.location.pathname === '/about') {
-            pageHeader.textContent = '소개 페이지';
-        } else {
-            pageHeader.textContent = '기본 제목';
+<script>
+    // 페이지가 로드되면 URL에서 값을 파싱해서 p 태그에 넣음
+    window.onload = function() {
+        // URL에서 쿼리 파라미터 파싱
+        const urlParams = new URLSearchParams(window.location.search);
+        const title1 = urlParams.get('title1');
+        const title2 = urlParams.get('title2');
+
+        console.log(title1 || title2);
+        if (title2) {
+            document.getElementsByClassName('breadcrumb-text')[0].innerHTML = title1;
+            document.getElementsByClassName('page-title')[0].innerHTML = title2;
         }
-    }
+    };
 </script>
+
+
+
 </body>
 </html>

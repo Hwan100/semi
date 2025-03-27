@@ -15,9 +15,6 @@
 <<<<<<< HEAD
 <%--    <jsp:include page="common/header.jsp" />    --%>
 <jsp:include page="board/myclassBoardDetailView.jsp" />
-=======
 
-<jsp:include page="common/header.jsp" />
->>>>>>> 291e12e05aaabc8261e409c266c4b78041b85ac8
 </body>
 </html>

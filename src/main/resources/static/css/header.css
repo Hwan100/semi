@@ -30,8 +30,10 @@ a {color: #333; text-decoration: none; line-height: 1;}
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    background-color: #E0F7FF;
 }
 
+/* 사이드바 */
 .sidebar-container {
     position: fixed; /* 기존 absolute → fixed */
     top: 0;
@@ -40,8 +42,8 @@ body {
     width: 270px;
     background: white;
     overflow-y: auto;
-    border-right: 0.3px solid rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    border-right: 0.3px solid #E7E7E7;
+    z-index: 1;
 }
 
 
@@ -101,7 +103,7 @@ body {
     max-height: 500px;
 }
 
-.submenu-item {
+.submenu-item{
     height: 50px;
     padding: 10px 40px;
     display: flex;
@@ -109,9 +111,18 @@ body {
     border-radius: 10px;
 }
 
-.submenu-item:hover{
+#home{
+    height: 50px;
+
+    border-radius: 10px;
+}
+
+.submenu-item:hover, #home:hover{
     background-color: rgba(11, 155, 227, 0.4);
-    /*color: white;*/
+}
+
+#home:hover a{
+    color: white;
 }
 
 .submenu-item:hover a{
@@ -123,13 +134,15 @@ body {
     font-weight: 400;
 }
 
+/* 헤더 */
+
 .header {
     position: fixed;
     top: 0;
     left: 270px;
     right: 0;
     height: 130px;
-    background-color: #E0F7FF;
+    /*background-color: #E0F7FF;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -150,7 +163,6 @@ body {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    /*background-image: url('');*/
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -184,4 +196,15 @@ body {
 
 .breadcrumb-text{
     margin-bottom: 0;
+}
+
+hr {
+    position: absolute;
+    top: 130px;
+    left: 40px;
+    height: 5px;
+    width: calc(100% - 80px);
+    background-color: white;
+    border: none;
+    border-radius: 10px;
 }

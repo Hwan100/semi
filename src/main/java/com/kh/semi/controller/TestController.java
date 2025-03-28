@@ -7,4 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TestController {
     @GetMapping("class.bo")
     public String enrollForm() {return "board/myclassBoardListView";}
+
+    @GetMapping("detail.bo")
+    public String detailForm() {return "board/myclassBoardDetailView";}
 }

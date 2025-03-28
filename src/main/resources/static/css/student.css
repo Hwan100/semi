@@ -1,0 +1,388 @@
+body {
+    background-color: #E0F7FF;
+}
+
+.content-container {
+    display: grid;
+    /*grid-template-columns: 2fr 1fr; !* 좌: 내용 위주, 우: 요약/버튼 *!*/
+    gap: 20px;
+    grid-template-areas:
+    "intro          intro          announcement         announcement        checkin"
+    "intro          intro          announcement         announcement        checkin"
+    "attendance     attendance     announcement         announcement        checkin"
+    "attendance     attendance     announcement         announcement        checkin"
+    "attendance     attendance     board                board               checkin"
+    "schedule       schedule       board                board               resume"
+    "schedule       schedule       board                board               resume"
+    "schedule       schedule       board                board               resume";
+    margin-left: 320px;
+    padding-top: 150px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+}
+
+.intro-section      {
+    grid-area: intro;
+    min-width: 480px;
+    min-height: 140px;
+}
+.attendance-section {
+    grid-area: attendance;
+    min-width: 480px;
+    min-height: 260px;
+}
+.schedule-section {
+    grid-area: schedule;
+    min-width: 480px;
+    min-height: 260px;
+}
+.announcement-section {
+    grid-area: announcement;
+    min-width: 600px;
+    min-height: 300px;
+}
+.board-section {
+    grid-area: board;
+    min-width: 600px;
+    min-height: 300px;
+}
+.checkin-section {
+    grid-area: checkin;
+    min-width: 400px;
+    min-height: 500px;
+}
+.resume-section {
+    grid-area: resume;
+    min-width: 400px;
+    min-height: 200px;
+}
+
+.intro-section,
+.schedule-section,
+.announcement-section,
+.board-section,
+.checkin-section,
+.resume-section {
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.attendance-section {
+    position: relative;
+    display: grid;
+    /*grid-template-columns: 2fr 1fr; !* 좌: 내용 위주, 우: 요약/버튼 *!*/
+    gap: 10px;
+    grid-template-areas:
+    "attendance     late            cal"
+    "absence        vacation        cal";
+}
+
+.attendance-count { grid-area: attendance; }
+.late-count { grid-area: late; }
+.absence-count { grid-area: absence; }
+.vacation-count { grid-area: vacation; }
+.calculator { grid-area: cal; }
+
+.attendance-count,
+.late-count,
+.absence-count,
+.vacation-count,
+.calculator {
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+    min-width: 140px;
+    min-height: 100px;
+}
+
+.calculator {
+    background-color: #0B9BE3;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.circle-chart {
+    margin-bottom: 10px;
+}
+
+.circular-chart {
+    width: 160px;
+    height: 160px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 2;
+}
+
+.circle {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease;
+}
+
+.percentage {
+    fill: white;
+    font-size: 8px;
+    text-anchor: middle;
+}
+
+.label {
+    font-size: 13px;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+.summary {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.summary .percent {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.content-box {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.schedule-box h3 {
+    margin-bottom: 20px;
+}
+
+.schedule-box ul li {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.schedule-box ul li div {
+    background-color: black;
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* 캘린더 */
+.calendar {
+    width: 300px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 0px 10px;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px 5px;
+    font-size: 11px;
+}
+
+.day-label {
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+}
+
+.day {
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #111;
+}
+
+.day.empty {
+    color: #bbb;
+    background-color: #f8f8f8;
+}
+
+.sa {
+    color: #1e88e5; /* 파란 토요일 */
+}
+
+.su {
+    color: #e53935; /* 빨간 일요일 */
+}
+
+/* 공지사항 */
+.announcement-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1px solid #0B9BE3;
+    margin-bottom: 10px;
+}
+
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.notice-table thead th {
+    text-align: center;
+    padding: 5px 6px;
+    border-bottom: 1px solid #d8e2ea;
+    color: #555;
+    font-weight: 600;
+}
+
+.notice-table tbody td {
+    text-align: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    color: #333;
+}
+
+.notice-table tbody td:nth-child(2) {
+    text-align: left;
+}
+
+.notice-table tbody tr:hover {
+    background-color: #f7fafe;
+}
+
+/* 입실 퇴실 */
+.checkin-section {
+    /*background-color: white;*/
+    /*border-radius: 16px;*/
+    /*padding: 24px;*/
+    /*max-width: 360px;*/
+    margin: auto;
+    /*box-shadow: 0 4px 10px rgba(0,0,0,0.06);*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkin-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.checkin-date {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.checkin-time-total {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.checkin-progress .bar {
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.checkin-progress .fill {
+    height: 100%;
+    background-color: #0B9BE3;
+    border-radius: 10px;
+}
+
+.checkin-times {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    margin: 30px 0;
+}
+
+.checkin-times div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkin-times .label {
+    color: #444;
+    font-weight: 500;
+}
+
+.checkin-times .time {
+    font-weight: bold;
+    color: #0B5481;
+}
+
+.checkin-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #0B9BE3;
+    background-color: white;
+    color: #0B9BE3;
+    flex: 1;
+    transition: 0.2s;
+}
+
+.btn.active {
+    background-color: #0B9BE3;
+    color: white;
+}
+
+.btn.full {
+    width: 100%;
+    border: 1px solid #ddd;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "intro"
+      "notice"
+      "calendar"
+      "checkin"
+      "board";
+    }
+}

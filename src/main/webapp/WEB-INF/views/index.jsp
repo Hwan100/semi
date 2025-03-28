@@ -8,13 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>11</title>
+    <title>대시보드</title>
 
 </head>
 <body>
-<<<<<<< HEAD
 <%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="board/myclassBoardDetailView.jsp" />
-
+<jsp:include page="common/header.jsp" />
+<jsp:include page="student/main.jsp" />
 </body>
 </html>

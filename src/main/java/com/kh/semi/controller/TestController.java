@@ -16,4 +16,7 @@ public class TestController {
 
     @GetMapping("resume.bo")
     public String resumeManage() {return "board/resumeListView";}
+
+    @GetMapping("resumeForm.bo")
+    public String resumeForm() {return "board/resumeFormView";}
 }

@@ -19,4 +19,10 @@ public class TestController {
 
     @GetMapping("resumeForm.bo")
     public String resumeForm() {return "board/resumeFormView";}
+
+    @GetMapping("myPage.st")
+    public String myPage() {return "MyPage/StudentMyPageView";}
+
+    @GetMapping("attendance.st")
+    public String attendanceManage() {return "StudentPage/StudnetAttendancePageView";}
 }

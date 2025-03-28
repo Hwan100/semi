@@ -8,6 +8,7 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
+<div class="body-wrapper">
 <div class="payroll-container">
   <div class="title">급여 내역</div>
   <div class="table-header">
@@ -34,5 +35,5 @@
     <div class="col-remark">-</div>
   </div>
 </div>
-
+</div>
 </html>

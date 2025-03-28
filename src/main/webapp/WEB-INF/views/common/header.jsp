@@ -20,8 +20,8 @@
 
 <header class="header" onload=title()>
     <div class="breadcrumb">
+        <span class="breadcrumb-icon"></span>
         <div>
-<%--                    <p class="breadcrumb-icon" style="width: 20px; height: 20px; background-image: url('/icons/home.png');"></p>--%>
             <p class="breadcrumb-text"></p>
             <p class="page-title">대시보드</p>
         </div>
@@ -180,6 +180,7 @@
         }
     };
 </script>
+
 
 
 </body>

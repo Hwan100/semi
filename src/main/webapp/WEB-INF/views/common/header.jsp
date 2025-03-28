@@ -86,7 +86,7 @@
             </div>
             <div id="resume-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a></div>
+                    <div class="submenu-text"><a href="resumeManage.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a></div>
                 </div>
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="class.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서 작성</a></div>

@@ -7,6 +7,9 @@
     <meta charset="utf-8"/>
     <title>Document</title>
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/variables.css">
+
 
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>

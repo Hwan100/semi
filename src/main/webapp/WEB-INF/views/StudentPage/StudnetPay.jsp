@@ -8,40 +8,34 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
+<div class="payroll-container">
+  <div class="title">급여 내역</div>
+  <div class="table-header">
+    <div class="col-no">No</div>
+    <div class="col-date">지급일자</div>
+    <div class="col-bank">은행명</div>
+    <div class="col-account">계좌번호</div>
+    <div class="col-attend-total">출석일</div>
+    <div class="col-attend-actual">실제 출석일</div>
+    <div class="col-attend-rate">출석률</div>
+    <div class="col-amount">지급액</div>
+    <div class="col-remark">비고</div>
+  </div>
 
-<div class="container">
-  <h2>급여 내역</h2>
-  <table>
-    <thead>
-    <tr>
-      <th>No</th>
-      <th>지급일자</th>
-      <th>은행명</th>
-      <th>계좌번호</th>
-      <th>출석일</th>
-      <th>실제 출석일</th>
-      <th>출석률</th>
-      <th>지급액</th>
-      <th>비고</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for pay in pays %}
-    <tr>
-      <td>{{ pay.no }}</td>
-      <td>{{ pay.date }}</td>
-      <td>{{ pay.bank }}</td>
-      <td>{{ pay.account }}</td>
-      <td>{{ pay.total_days }}</td>
-      <td>{{ pay.present_days }}</td>
-      <td>{{ pay.attendance_rate }}</td>
-      <td>{{ pay.amount }}</td>
-      <td>{{ pay.note }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+  <%-- 임시 데이터 반복 --%>
+  <% for (int i = 0; i < 6; i++) { %>
+  <div class="table-row">
+    <div class="col-no">1</div>
+    <div class="col-date">2025.01.17</div>
+    <div class="col-bank">우리</div>
+    <div class="col-account">1002-000-000000</div>
+    <div class="col-attend-total">20</div>
+    <div class="col-attend-actual">17</div>
+    <div class="col-attend-rate">85%</div>
+    <div class="col-amount">280,000원</div>
+    <div class="col-remark">-</div>
+  </div>
+  <% } %>
 </div>
 
-</body>
 </html>

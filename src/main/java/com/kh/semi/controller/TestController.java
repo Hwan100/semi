@@ -16,4 +16,10 @@ public class TestController {
 
     @GetMapping("resume.bo")
     public String resumeManage() {return "board/resumeListView";}
+
+    @GetMapping("myPage.st")
+    public String myPage() {return "MyPage/StudentMyPageView";}
+
+    @GetMapping("attendance.st")
+    public String attendanceManage() {return "StudentPage/StudnetAttendancePageView";}
 }

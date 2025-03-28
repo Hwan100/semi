@@ -60,7 +60,7 @@
 
             <div id="mypage-submenu" class="submenu-container">
                 <div class="submenu-item active">
-                    <div class="submenu-text"><a href="/?title1=마이페이지&title2=개인정보 수정">개인정보 수정</a></div>
+                    <div class="submenu-text"><a href="myPage.st">개인정보 수정</a></div>
                 </div>
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="/?title1=마이페이지&title2=수료증 발급">수료증 발급</a></div>
@@ -75,7 +75,7 @@
 
             <div id="attendance-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=출석률 조회">출석률 조회</a></div>
+                    <div class="submenu-text"><a href="attendance.st">출석률 조회</a></div>
                 </div>
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=휴가 관리">휴가 관리</a></div>

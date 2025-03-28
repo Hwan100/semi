@@ -17,7 +17,7 @@
 
     <div class="button-area">
       <button onclick="history.back()">이전화면</button>
-      <button onclick="location.href='myclassList.bo'">목록</button>
+<%--      <button onclick="location.href='myclassList.bo'">목록</button>--%>
     </div>
 
     <div class="info-bar">

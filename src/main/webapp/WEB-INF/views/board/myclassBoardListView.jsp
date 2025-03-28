@@ -137,7 +137,7 @@
       <div style="flex: 0 0 100px;">999</div>
       <div style="flex: 0 0 130px;">강남지점</div>
       <div class="board-title-cell">
-        <a href="#">[예시] 시스템 점검 안내</a>
+        <a href="detail.bo?bno=${b.boardNo}">[예시] 시스템 점검 안내</a>
       </div>
       <div style="flex: 0 0 150px;">관리자</div>
       <div style="flex: 0 0 100px;">123</div>

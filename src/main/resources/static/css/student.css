@@ -15,11 +15,14 @@ body {
     "schedule       schedule       board                board               resume"
     "schedule       schedule       board                board               resume"
     "schedule       schedule       board                board               resume";
-    margin-left: 320px;
-    padding-top: 150px;
-    padding-right: 50px;
-    padding-bottom: 20px;
-    min-height: 100vh;
+    margin-left: 270px;
+    margin-top: 125px;
+    /*padding-top: 150px;*/
+    /*padding-right: 50px;*/
+    /*padding-bottom: 20px;*/
+    width: calc(100% - 270px);
+    height: calc(100% - 125px);
+    padding: 20px 40px 40px 40px;
 }
 
 .intro-section      {

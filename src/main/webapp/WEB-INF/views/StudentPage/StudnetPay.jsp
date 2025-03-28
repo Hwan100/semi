@@ -22,7 +22,7 @@
     <div class="col-amount">지급액</div>
     <div class="col-remark">비고</div>
   </div>
-
+<%--진행중--%>
   <div class="table-row">
     <div class="col-no">1</div>
     <div class="col-date">2025.01.17</div>

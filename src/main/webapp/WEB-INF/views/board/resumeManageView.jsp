@@ -10,6 +10,13 @@
         body{
             font-family: 'Inter', sans-serif;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 16px;
+        }
+
         .body-wrapper {
             margin-left: 270px;
             padding-top: 160px;
@@ -80,7 +87,6 @@
             height: 480px;
             margin: auto;
             background: white;
-            border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
             padding: 30px 50px;
             margin-bottom: 20px;
@@ -96,7 +102,7 @@
         .title-bar{
             width: 600px;
             height: 50px;
-            border: solid 1px;
+            border: 1px solid #E7E7E7;
             text-align: center;
             font-weight: 500;
         }
@@ -104,7 +110,7 @@
         .other-bar{
             width: 175px;
             height: 50px;
-            border: solid 1px;
+            border: 1px solid #E7E7E7;
             text-align: center;
             font-weight: 500;
         }
@@ -120,6 +126,23 @@
             margin-top: 35px;
             padding-left: 600px;
         }
+
+        #first-child{
+            border-top-left-radius: 12px;
+        }
+
+        #last-child{
+            border-top-right-radius: 12px;
+        }
+
+        td {
+            padding: 14px 0;
+            text-align: center;
+            font-weight: 500;
+            border-bottom: 1px solid #e0e0e0; /* 연한 회색 구분선 */
+        }
+
+
     </style>
 </head>
 <body>
@@ -161,11 +184,11 @@
         <table>
             <thead>
                 <tr>
-                    <th class="title-bar" style="font-weight: 900">제목</th>
+                    <th class="title-bar" id="first-child" style="font-weight: 900">제목</th>
                     <th class="other-bar" style="font-weight: 900">수정일</th>
                     <th class="other-bar" style="font-weight: 900">구분</th>
                     <th class="other-bar" style="font-weight: 900">미리보기</th>
-                    <th class="other-bar" style="font-weight: 900">다운로드</th>
+                    <th class="other-bar" id="last-child" style="font-weight: 900">다운로드</th>
                 </tr>
             </thead>
             <tbody>

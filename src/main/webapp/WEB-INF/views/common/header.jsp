@@ -20,7 +20,7 @@
 
 <header class="header" onload=title()>
     <div class="breadcrumb">
-        <span class="breadcrumb-icon"></span>
+<%--        <span class="breadcrumb-icon"></span>--%>
         <div>
             <p class="breadcrumb-text"></p>
             <p class="page-title">대시보드</p>

@@ -102,6 +102,8 @@
             width: 600px;
             height: 50px;
             border: 1px solid #E7E7E7;
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
             text-align: center;
             font-weight: 500;
         }
@@ -183,7 +185,7 @@
         <table>
             <thead>
                 <tr>
-                    <th class="title-bar" id="first-child" style="font-weight: 900">제목</th>
+                    <th class="title-bar" id="first-child" style="font-weight: 900" >제목</th>
                     <th class="other-bar" style="font-weight: 900">수정일</th>
                     <th class="other-bar" style="font-weight: 900">구분</th>
                     <th class="other-bar" style="font-weight: 900">미리보기</th>

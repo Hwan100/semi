@@ -31,14 +31,33 @@
         }
 
         #btn1{
-            margin-left: 895px;
+            margin-left: 875px;
         }
 
         #btn2{
             margin-left: 30px;
         }
 
+        .contents{
+            width: 1210px;
+            height: 700px;
+            border: solid 1px;
+            margin-left: 175px;
+        }
 
+        .contents-top-line{
+            width: 464px;
+            height: 110px;
+            border: solid 1px;
+            margin-left: 44px;
+            margin-top: 28px;
+        }
+
+        .contents-title-line{
+            width:464px;
+            height: 40px;
+            border: solid 1px;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +67,11 @@
             <div class="header-bar-title">자기소개서 및 이력서 작성</div>
             <button class="btn-blank-small" id="btn1">이전화면</button>
             <button class="btn-blank-small" id="btn2">등록</button>
+        </div>
+        <div class="contents">
+            <div class="contents-top-line">
+                <div class="contents-title-line">하이요</div>
+            </div>
         </div>
     </div>
 </body>

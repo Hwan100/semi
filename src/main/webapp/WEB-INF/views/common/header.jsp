@@ -109,10 +109,10 @@
 
             <div id="community-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
+                    <div class="submenu-text"><a href="notice.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=우리반 게시판">우리반 게시판</a></div>
+                    <div class="submenu-text"><a href="myClass.bo?title1=커뮤니티&title2=우리반 게시판">우리반 게시판</a></div>
                 </div>
             </div>
 

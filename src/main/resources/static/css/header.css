@@ -18,8 +18,8 @@ caption {overflow: hidden;width: 0;height: 0;font-size: 0; line-height: 0;}
 th, td { vertical-align: middle;/* white-space: nowrap */}
 
 a {color: #333; text-decoration: none; line-height: 1;}
-a:hover, a:focus, a:active {text-decoration: underline;}
-a:visited {color: #333;}
+/*a:hover, a:focus, a:active {text-decoration: underline;}*/
+/*a:visited {color: #333;}*/
 /**, html {box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }*/
 /**, *:before, *:after {box-sizing: border-box;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;}*/
 
@@ -86,6 +86,7 @@ body {
     flex: 1;
 }
 
+
 .submenu-container {
     max-height: 0;
     overflow: hidden;
@@ -108,8 +109,12 @@ body {
     border-radius: 10px;
 }
 
-.submenu-item:hover {
+.submenu-item:hover{
     background-color: rgba(11, 155, 227, 0.4);
+    /*color: white;*/
+}
+
+.submenu-item:hover a{
     color: white;
 }
 
@@ -130,6 +135,7 @@ body {
     justify-content: space-between;
     padding: 0 40px;
     box-sizing: border-box;
+    z-index: 3;
 }
 
 .breadcrumb {

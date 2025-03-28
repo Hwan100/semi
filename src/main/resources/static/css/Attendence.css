@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #e3f7ff;
+}
+
+.container {
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+}
+
+.left {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.summary-boxes {
+    display: flex;
+    gap: 10px;
+}
+
+.box {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.box-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.box-value {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.graph-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.graph-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bar-container {
+    position: relative;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 85%;
+    background-color: #00aaff;
+    border-radius: 5px;
+}
+
+.bar-marker {
+    position: absolute;
+    left: 70%;
+    top: -10px;
+    height: 30px;
+    border-left: 2px dashed #999;
+}
+
+.marker-label {
+    position: absolute;
+    top: 25px;
+    left: 70%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #666;
+}
+
+.table-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f7f7f7;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.calendar-cell {
+    padding: 18px 0;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.출석 { background-color: #00aaff; }
+.지각 { background-color: #ffa500; }
+.조퇴 { background-color: #8a2be2; }
+.결석 { background-color: #ff4d4d; }
+.휴가 { background-color: #b0e0e6; }
+.공강 { background-color: #999; color: white; }
+.빈칸 { background-color: #f1f1f1; color: #aaa; }
+
+.day-header {
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}

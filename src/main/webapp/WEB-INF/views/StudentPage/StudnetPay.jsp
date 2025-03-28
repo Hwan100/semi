@@ -8,6 +8,7 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
+<div class="body-wrapper">
 <div class="payroll-container">
   <div class="title">급여 내역</div>
   <div class="table-header">
@@ -21,9 +22,7 @@
     <div class="col-amount">지급액</div>
     <div class="col-remark">비고</div>
   </div>
-
-  <%-- 임시 데이터 반복 --%>
-  <% for (int i = 0; i < 6; i++) { %>
+<%--진행중--%>
   <div class="table-row">
     <div class="col-no">1</div>
     <div class="col-date">2025.01.17</div>
@@ -35,7 +34,6 @@
     <div class="col-amount">280,000원</div>
     <div class="col-remark">-</div>
   </div>
-  <% } %>
 </div>
-
+</div>
 </html>

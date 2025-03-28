@@ -36,7 +36,6 @@
         <div class="dropdown-arrow"></div>
     </div>
 </header>
-<hr>
 <div class="sidebar-container">
     <div class="sidebar">
         <img class="sidebar-logo" src="/icons/logo.png" alt="로고">

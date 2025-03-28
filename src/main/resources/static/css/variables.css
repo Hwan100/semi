@@ -5,6 +5,8 @@
     --color-primary: #0B9BE3;
     --color-primary-light: #E0F7FF;
     --color-primary-dark: #0077B6;
+    --color-btn-dark: #003251;
+
 
     /* 🟢 Attendance Status Colors */
     --color-attend: #6BC236;
@@ -27,6 +29,7 @@
     --font-size-base: 1rem;     /* 16px */
     --font-size-lg: 1.125rem;   /* 18px */
     --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-xxl: 1.5rem;    /* 24px */
     --font-weight-normal: 400;
     --font-weight-bold: 700;
 

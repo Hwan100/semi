@@ -1,16 +1,218 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user1
-  Date: 25. 3. 27.
-  Time: 오후 5:38
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+        .body-wrapper {
+            margin-left: 270px;
+            padding-top: 160px;
+            background: #E0F7FF;
+            min-height: 100vh;
+            overflow-y: auto;
+            padding-right: 20px;
+        }
+
+        .board-container {
+            width: 1400px;
+            height: 300px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            padding: 40px 50px;
+            margin-bottom: 20px;
+        }
+
+        .board-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #currentResumeList{
+            display: flex;
+            width: 1300px;
+            height: 150px;
+        }
+
+        .select {
+            width: 200px;
+            height: 150px;
+            background-image: url("/icons/fileIcon.png");
+            margin-right: 75px;
+        }
+
+        .select:hover {
+            background-image: url("/icons/fileIconHover.png");
+            background-blend-mode: multiply;
+        }
+
+        .resume-title{
+            padding-top: 40px;
+            padding-left: 10px;
+            font-size: 16px;
+            font-weight: 900;
+            color: #003252;
+        }
+
+        .lastModify{
+            font-size: 12px;
+            padding-top: 34px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+        }
+
+        .lastModifyDate{
+            font-size: 12px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .list-container{
+            width: 1400px;
+            height: 480px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            padding: 30px 50px;
+            margin-bottom: 20px;
+        }
+
+        .list-title{
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 26px;
+
+        }
+
+        .title-bar{
+            width: 600px;
+            height: 50px;
+            border: solid 1px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .other-bar{
+            width: 175px;
+            height: 50px;
+            border: solid 1px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        thead{
+            background-color: #9DD7F4;
+        }
+        th{
+            font-size: 20px ;
+        }
+
+        .page-bar{
+            margin-top: 35px;
+            padding-left: 600px;
+        }
+    </style>
 </head>
 <body>
-    <jsp:include page="../common/header.jsp"/>
+<jsp:include page="../common/header.jsp"/>
+
+<div class="body-wrapper">
+    <div class="board-container">
+        <div class="board-title">최근 열람한 문서</div>
+        <div id="currentResumeList">
+            <div class="select">
+                <div class="resume-title">KH사직서</div>
+                <div class="lastModify">마지막 수정일</div>
+                <div class="lastModifyDate">2025.03.28</div>
+            </div>
+            <div class="select">
+                <div class="resume-title">유서</div>
+                <div class="lastModify">마지막 수정일</div>
+                <div class="lastModifyDate">2025.03.27</div>
+            </div>
+            <div class="select">
+                <div class="resume-title">일기장</div>
+                <div class="lastModify">마지막 수정일</div>
+                <div class="lastModifyDate">2025.03.24</div>
+            </div>
+            <div class="select">
+                <div class="resume-title">이력서</div>
+                <div class="lastModify">마지막 수정일</div>
+                <div class="lastModifyDate">2025.03.24</div>
+            </div>
+            <div class="select">
+                <div class="resume-title">자소서1</div>
+                <div class="lastModify">마지막 수정일</div>
+                <div class="lastModifyDate">2025.03.20</div>
+            </div>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="list-title">등록된 자소서 이력서</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="title-bar" style="font-weight: 900">제목</th>
+                    <th class="other-bar" style="font-weight: 900">수정일</th>
+                    <th class="other-bar" style="font-weight: 900">구분</th>
+                    <th class="other-bar" style="font-weight: 900">미리보기</th>
+                    <th class="other-bar" style="font-weight: 900">다운로드</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">LG이력서</td>
+                    <td class="other-bar">2025.03.25</td>
+                    <td class="other-bar">이력서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">삼성 이력서</td>
+                    <td class="other-bar">2025.03.21</td>
+                    <td class="other-bar">이력서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">LG자소서</td>
+                    <td class="other-bar">2025.03.21</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page-bar">
+            <img src="/icons/leftPageMove.png" style="margin-right: 15px">
+            <img src="/icons/Page1.png" style="margin-right: 15px">
+            <img src="/icons/rightPageMove.png">
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

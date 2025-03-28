@@ -84,7 +84,6 @@
 
         .list-container{
             width: 1400px;
-            height: 480px;
             margin: auto;
             background: white;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -227,6 +226,70 @@
                     <td class="other-bar"><img>미리보기</td>
                     <td class="other-bar"><img>다운로드</td>
                 </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr><tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">sk자소서</td>
+                    <td class="other-bar">2025.03.20</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="other-bar"><img>미리보기</td>
+                    <td class="other-bar"><img>다운로드</td>
+                </tr>
+
+
             </tbody>
         </table>
         <div class="page-bar">

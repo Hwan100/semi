@@ -1,68 +1,98 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user1
-  Date: 25. 3. 31.
-  Time: 오후 12:30
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>자소서 상세보기</title>
     <style>
         .wrap {
+            margin-left: 310px;
+            margin-top: 165px;
             width: 1560px;
-            overflow: hidden;
-            height: 820px;
-            margin-left: 315px;
-            margin-top: 130px;
-            background-color: white;
+            height: 915px;
+            background-color: #FFFFFF;
+            padding-top: 36px;
         }
 
-      .header-line{
-          margin-left: 68px;
-          margin-top: 30px;
-          width: 1420px;
-          height: 120px;
-          border: solid 1px;
-          text-align: center;
-          font-size: 24px;
-      }
+        .header-line {
+            width: 1420px;
+            height: 130px;
+            margin-left: 70px;
+            margin-top: 30px;
+            border: 1px solid #000;
+            position: relative;
+            box-sizing: border-box;
+        }
 
-      .division-title{
-          font-size: 24px;
-      }
+        .header-title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .button-group {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-blank-small {
+            width: 80px;
+            height: 36px;
+            border: 1px solid #003251;
+            border-radius: 6px;
+            background: white;
+            color: #003251;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .info-group {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #F1F1F1;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-  <jsp:include page="../common/header.jsp"/>
-  <div class="wrap">
+<jsp:include page="../common/header.jsp"/>
+
+<div class="wrap">
     <div class="header-line">
-        <div class="division-title"></div>
+        <!-- 제목 -->
+        <div class="header-title">삼성 자소서</div>
+
+        <!-- 버튼 -->
+        <div class="button-group">
+            <button class="btn-blank-small">이전화면</button>
+            <button class="btn-blank-small">수정</button>
+            <button class="btn-blank-small">삭제</button>
+        </div>
+
+        <!-- 하단 info-group -->
+        <div class="info-group">
+            <div>자소서 or 이력서</div>
+            <div>2025.03.20</div>
+        </div>
     </div>
-  </div>
+</div>
 
-    <script>
-        window.onload = function () {
-            // URL에서 쿼리 파라미터 파싱
-            const urlParams = new URLSearchParams(window.location.search);
-            const division = urlParams.get('division');
-
-            console.log(division);
-            if (division) {
-                document.getElementsByClassName('division-title')[0].innerHTML = division+'';
-            }
-            // URL에서 쿼리 파라미터 파싱
-            const urlParams2 = new URLSearchParams(window.location.search);
-            const title1 = urlParams.get('title1');
-            const title2 = urlParams.get('title2');
-
-            console.log(title1 || title2);
-            if (title2) {
-                document.getElementsByClassName('breadcrumb-text')[0].innerHTML = title1;
-                document.getElementsByClassName('page-title')[0].innerHTML = title2;
-            }
-        };
-    </script>
 </body>
 </html>

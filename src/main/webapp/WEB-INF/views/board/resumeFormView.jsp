@@ -9,7 +9,7 @@
             box-sizing: border-box;
         }
         .wrap{
-            margin-left: 316px;
+            margin-left: 310px;
             margin-top: 165px ;
             width: 1560px;
             height: 915px;
@@ -34,7 +34,7 @@
         }
 
         #btn1{
-            margin-left: 875px;
+            margin-left: 910px;
         }
 
         #btn2{
@@ -99,7 +99,12 @@
             cursor: pointer;
         }
 
-        input::placeholder, textarea::placeholder{
+        input::placeholder{
+            padding-top: 5px;
+            line-height: 40px;
+        }
+
+        textarea::placeholder{
             padding-left: 10px;
             padding-top: 5px;
             line-height: 40px;
@@ -127,13 +132,12 @@
     <div class="header-bar">
         <div class="header-bar-title">자기소개서 및 이력서 작성</div>
         <button class="btn-blank-small" id="btn1">이전화면</button>
-        <button class="btn-blank-small" id="btn2">등록</button>
     </div>
     <div class="contents">
         <div class="contents-top-line">
             <div class="contents-title-line">
                 제목
-                <input id="titleInput" placeholder="제목을 입력해주세요.">
+                <input id="titleInput" placeholder="제목을 입력해주세요." style="padding-left: 10px">
             </div>
             <div class="file-line">
                 파일 첨부
@@ -152,7 +156,7 @@
         </div>
         <div class="contents-body">
             <div style="font-size: 20px">내용</div>
-            <textarea class="contentsInput" placeholder="내용을 입력하세요."></textarea>
+            <textarea class="contentsInput" placeholder="내용을 입력하세요." ></textarea>
         </div>
         <button class="btn-blank-small" id="savebtn">저장하기</button>
     </div>

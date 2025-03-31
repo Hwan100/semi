@@ -1,63 +1,49 @@
 body {
     margin: 0;
+    padding: 0;
+    background-color: #dff5fd;
     font-family: 'Inter', sans-serif;
-    background-color: #e0f7ff;
 }
-.body-wrapper {
-    margin-left: 270px;
-    padding-top: 160px;
-    background: #E0F7FF;
-    min-height: 100vh;
-    overflow-y: auto;
-    padding-right: 20px;
-}
-.payroll-container {
-    position: absolute;
-    width: 1400px;
-    height: auto;
-    left: 370px;
-    top: 220px;
-    background: #ffffff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+
+.container {
+    max-width: 1100px; /* 전체 크기 줄이기 */
+    margin: 40px auto; /* 중앙 정렬 */
     padding: 20px;
 }
 
-.title {
+.page-title {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.table {
+.table-wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    width: 120%;
+    margin: 10% auto 0;
+    height: 70%;
+}
+
+.pay-table {
     width: 100%;
     border-collapse: collapse;
-}
-
-.table header {
-    background: rgba(11, 155, 227, 0.4);
-}
-
-.table th,
-.table td {
-    border: 1px solid #e7e7e7;
     text-align: center;
+}
+
+.pay-table thead th {
+    background-color: rgba(11, 155, 227, 0.4);
+    border: 1px solid #e0e0e0;
     padding: 10px;
     font-weight: 700;
-    font-size: 16px;
-    color: #000000;
+    font-size: 14px;
 }
 
-.table th:first-child {
-    border-radius: 10px 0 0 0;
+.pay-table tbody td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    font-size: 14px;
 }
-
-.table th:last-child {
-    border-radius: 0 10px 0 0;
-}
-
-.table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-/*진행중*/
-

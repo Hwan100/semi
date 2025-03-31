@@ -59,6 +59,11 @@
         .select:hover {
             background-image: url("/icons/fileIconHover.png");
             background-blend-mode: multiply;
+            color: white;
+        }
+
+        .select:hover .resume-title {
+            color: white;
         }
 
         .resume-title{

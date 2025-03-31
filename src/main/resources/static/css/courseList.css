@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #E0F7FF;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.course-card {
+    width: 800px;
+    min-height: 120px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;         /* ✅ 핵심 */
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.label {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.left-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.label {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.progress-percent {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+/* 🔵 커스텀 진행도 바 */
+.custom-progress {
+    width: 600px;   /* 길이 늘림 */
+    height: 9px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.custom-progress::-webkit-progress-value {
+    background-color: #0099e5;
+    border-radius: 10px 0 0 10px;
+}
+
+.custom-progress::-moz-progress-bar {
+    background-color: #0099e5;
+    border-radius: 10px 0 0 10px;
+}
+
+.date {
+    font-size: 12px;
+    color: #555;
+}
+
+.right-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+
+.manage-btn {
+    width: 80px;
+    height: 36px;
+    background-color: #0B9BE3;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+
+    margin-top: auto; /* ✅ 아래로 밀기 핵심!! */
+}

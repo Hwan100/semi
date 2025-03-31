@@ -1,0 +1,236 @@
+/* 기본 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    background: #E0F7FF;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-container {
+    margin-top: 80px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* 전체 박스 */
+.form-box {
+    display: flex;
+    width: 1400px;
+    height: 720px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    position: relative;
+    gap: 30px;
+}
+
+/* 좌우 구성 */
+.left-form {
+    width: 640px;
+}
+
+.right-section {
+    width: 660px;
+}
+
+/* 공통 form 그룹 */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.input-full,
+.input-half {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #E7E7E7;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.half {
+    width: 50%;
+}
+
+/* 날짜 */
+.date-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-input {
+    width: 263px;
+    height: 40px;
+    padding: 0 10px;
+    border: 2px solid #E7E7E7;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.date-dash {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+}
+
+.btn-all-day {
+    height: 40px;
+    padding: 0 20px;
+    border: 2px solid #0B9BE3;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #0B9BE3;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 요일, 일정 입력 영역 공통 */
+.input-box {
+    background: #E7E7E7;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.week-input-box{
+    border: 2px solid #E7E7E7;
+    padding: 7px;
+    border-radius: 10px;
+    height: 330px;
+}
+.week-box .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-box {
+    font-size: 16px;
+    font-weight: 700;
+    color: #74788D;
+}
+
+.btn-outline-small {
+    margin-top: 5px;
+    height: 25px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #0B9BE3;
+    background: white;
+    border: 2px solid #0B9BE3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 캘린더 박스 */
+.calendar-box {
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 40px;
+}
+
+.calendar-month {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003252;
+    line-height: 1;
+}
+
+.calendar-arrow {
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 30px;
+    row-gap: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #003252;
+}
+.schedule-input-box{
+    border: 2px solid #E7E7E7;
+    border-radius: 10px;
+    padding: 7px;
+    height: 110px;
+}
+
+/* 강의 일정 */
+.schedule-box .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-box .input-box {
+    margin-top: 5px;
+}
+
+/* 버튼 아래 정렬 */
+.button-row {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: #0B9BE3;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background-color: white;
+    border: 2px solid #0B9BE3;
+    color: #0B9BE3;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}

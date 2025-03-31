@@ -80,10 +80,6 @@
             margin-top: 30px;
         }
 
-        .fileInput{
-            margin-left: 30px;
-        }
-
         .contents-body{
             width: 1120px;
             height: 530px;
@@ -101,6 +97,9 @@
             font-size: 16px;
         }
 
+        button{
+            cursor: pointer;
+        }
 
     </style>
 </head>

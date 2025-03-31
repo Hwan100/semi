@@ -106,6 +106,7 @@
             border-top-left-radius: 12px;
             text-align: center;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .other-bar{
@@ -167,6 +168,7 @@
             border: 1px solid #E7E7E7;
             text-align: center;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .download{
@@ -175,6 +177,7 @@
             border: 1px solid #E7E7E7;
             text-align: center;
             font-weight: 500;
+            cursor: pointer;
         }
     </style>
 </head>

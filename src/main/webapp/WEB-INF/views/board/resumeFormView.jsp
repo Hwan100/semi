@@ -44,9 +44,9 @@
         }
 
         .contents{
-            margin-top: 40px;
+            margin-top: 20px;
             width: 1210px;
-            height: 740px;
+            height: 770px;
             border: solid 1px;
             margin-left: 175px;
         }
@@ -93,7 +93,7 @@
             resize: none;
             border: solid 1px;
             width: 1120px;
-            height: 490px;
+            height: 480px;
             font-size: 16px;
         }
 
@@ -111,6 +111,8 @@
             margin-left: 15px;
             margin-right: 30px;
         }
+
+
     </style>
 </head>
 <body>
@@ -142,6 +144,7 @@
                 <div style="font-size: 20px">내용</div>
                 <textarea class="contentsInput" placeholder="내용을 입력하세요."></textarea>
             </div>
+            <button class="btn-blank-small" style="margin-left: 565px">수정하기</button>
         </div>
         <div style="display: none">
             <input type="file" id="file" name="file" onchange="loadfile(this)">

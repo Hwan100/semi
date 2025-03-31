@@ -230,7 +230,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="title-bar" onclick="">삼성 자소서</td>
+                    <td class="title-bar" onclick="location.href='resumeDetail.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
+                        삼성 자소서
+                    </td>
+
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
                     <td class="preview"><img src="/icons/Search.png">미리보기</td>

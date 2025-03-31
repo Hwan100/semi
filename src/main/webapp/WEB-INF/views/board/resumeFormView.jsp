@@ -75,7 +75,7 @@
 
         .file-line{
             font-size: 20px;
-            width: 390px;
+            width: 450px;
             height: 40px;
             margin-top: 30px;
         }
@@ -106,6 +106,11 @@
             padding-top: 5px;       /* (일부 브라우저는 무시됨) */
             line-height: 40px;      /* 세로 정렬에 도움 */
         }
+
+        #filebtn{
+            margin-left: 15px;
+            margin-right: 30px;
+        }
     </style>
 </head>
 <body>
@@ -120,11 +125,17 @@
             <div class="contents-top-line">
                 <div class="contents-title-line">
                     제목
-                    <span><input id="titleInput" placeholder="제목을 입력해주세요."></span>
+                    <input id="titleInput" placeholder="제목을 입력해주세요.">
                 </div>
                 <div class="file-line">
                     파일 첨부
-                    <button  onclick="choosefile('#file')" class="btn-blank-small" style="margin-left: 15px">파일선택</button>
+                    <button  onclick="choosefile('#file')" class="btn-blank-small" id="filebtn">파일선택</button>
+                    <label>
+                        <input type="radio" name="division" value="자소서"> 자소서
+                    </label>
+                    <label style="margin-left: 15px;">
+                        <input type="radio" name="division" value="female"> 이력서
+                    </label>
                 </div>
             </div>
             <div class="contents-body">

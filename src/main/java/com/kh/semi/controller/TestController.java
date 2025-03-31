@@ -20,6 +20,9 @@ public class TestController {
     @GetMapping("resumeForm.bo")
     public String resumeForm() {return "board/resumeFormView";}
 
+    @GetMapping("resumeDetail.bo")
+    public String resumeDetail() {return "board/resumeDetailView";}
+
     @GetMapping("myPage.st")
     public String myPage() {return "MyPage/StudentMyPageView";}
 

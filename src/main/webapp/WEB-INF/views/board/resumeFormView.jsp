@@ -101,6 +101,11 @@
             cursor: pointer;
         }
 
+        input::placeholder, textarea::placeholder{
+            padding-left: 10px;     /* 왼쪽 여백 */
+            padding-top: 5px;       /* (일부 브라우저는 무시됨) */
+            line-height: 40px;      /* 세로 정렬에 도움 */
+        }
     </style>
 </head>
 <body>

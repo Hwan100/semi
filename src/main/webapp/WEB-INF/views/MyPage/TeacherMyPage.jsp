@@ -1,15 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="ko">
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>개인정보 수정</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/MyPage.css">
+    <title>TeacherMyPage</title>
 </head>
 <body>
-
 <jsp:include page="../common/header.jsp" />
 
 <div class="background-box">
@@ -26,7 +22,7 @@
             <div class="top-grid">
                 <div class="form-group">
                     <label for="userRole">회원 구분</label>
-                    <input type="text" class="userRole" id="userRole" name="userRole" value="${loginUser.userRole}" readonly>
+                    <input type="text" id="userRole" name="userRole" class="userRole" value="${loginUser.userRole}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>
@@ -70,6 +66,5 @@
         <button type="submit" class="submit-btn">수정 완료</button>
     </form>
 </div>
-
 </body>
 </html>

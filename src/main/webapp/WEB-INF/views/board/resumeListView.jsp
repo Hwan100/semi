@@ -134,10 +134,6 @@
             padding-left: 600px;
         }
 
-        #first-child{
-            border-top-left-radius: 12px;
-        }
-
         #last-child{
             border-top-right-radius: 12px;
         }
@@ -153,7 +149,6 @@
             width: 600px;
             height: 50px;
             border: 1px solid #E7E7E7;
-            border-top-right-radius: 12px;
             border-top-left-radius: 12px;
             text-align: center;
             font-weight: 500;
@@ -184,6 +179,7 @@
             font-weight: 500;
             cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -234,7 +230,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="title-bar">삼성 자소서</td>
+                    <td class="title-bar" onclick="">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
                     <td class="preview"><img src="/icons/Search.png">미리보기</td>

@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: #E0F7FF;
+    overflow: hidden;
+}
+
+/* 박스 공통 */
+.box {
+    position: absolute;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.box1 {
+    width: 1400px;
+    height: 240px;
+    left: 395px;
+    top: 210px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.box2 {
+    width: 1400px;
+    height: 500px;
+    left: 395px;
+    top: 470px;
+}
+
+.text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+}
+
+.title1 {
+    left: 435px;
+    top: 240px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.title2 {
+    left: 435px;
+    top: 500px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    word-wrap: break-word;
+}
+
+
+.desc {
+    left: 435px;
+    top: 277px;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 통계 박스 */
+.stat-box {
+    width: 210px;
+    height: 80px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row; /* 아이콘과 텍스트 나란히 */
+    align-items: center;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+
+.box-blue { left: 435px; top: 336px; background: #0B9BE3; }
+.box-purple { left: 655px; top: 336px; background: #7E57C2; }
+.box-lightblue { left: 875px; top: 336px; background: rgba(11, 155, 227, 0.4); }
+.box-red1 { left: 1095px; top: 335px; background: #FF5645; }
+.box-red2 { left: 1315px; top: 335px; background: #E53935; }
+.box-orange { left: 1535px; top: 335px; background: #F57C00; }
+
+/* 라벨 텍스트 */
+.stat-label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.label1 { left: 515px; top: 356px; }
+.label2 { left: 1175px; top: 355px; }
+.label3 { left: 1395px; top: 352px; }
+.label4 { left: 1615px; top: 352px; }
+.label5 { left: 735px; top: 356px; }
+.label6 { left: 955px; top: 356px; }
+
+/* 수치 */
+.stat-value {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.value1 { left: 515px; top: 384px; color: white; font-size: 20px; }
+.value2 { left: 1175px; top: 383px; color: white; font-size: 20px; }
+.value3 { left: 1395px; top: 383px; color: white; font-size: 20px; }
+.value4 { left: 1615px; top: 383px; color: white; font-size: 20px; }
+.value5 { left: 735px; top: 384px; color: white; font-size: 20px; }
+.value6 { left: 955px; top: 387px; color: white; font-size: 20px; }
+
+/* 신청 버튼 */
+.btn-apply {
+    width: 118px;
+    height: 39px;
+    background: #0B9BE3;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 235px;
+    left: 1643px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/* 표 */
+.table-container {
+    position: absolute;
+    top: 554px;
+    left: 440px;
+    width: 1310px;
+    border-radius: 10px; /* 원하는 radius 설정 */
+    overflow: hidden;    /* 필수: radius를 보이게 하기 위해서 자르기 */
+}
+
+.vacation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+}
+
+.vacation-table thead tr {
+    background: rgba(11, 155, 227, 0.4);
+}
+
+.vacation-table th,
+.vacation-table td {
+    height: 40px;
+    border: 1px solid #E7E7E7;
+    text-align: center;
+}
+
+
+
+
+
+.status-req {
+    background: #003252;
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: 60px;
+    height: 15px;
+    display: inline-block; /* 중요 */
+    text-align: center; /* 글자 가운데 정렬 */
+    line-height: 15px; /* 높이와 같게 설정 시 수직 가운데 정렬 효과 */
+    font-size: 12px;
+}
+
+.status-approve { background: #07AF20;
+                color: #FFFFFF;
+                border-radius: 5px;
+                width: 60px;
+                height: 15px;
+                display: inline-block; /* 중요 */
+                text-align: center; /* 글자 가운데 정렬 */
+                line-height: 15px; /* 높이와 같게 설정 시 수직 가운데 정렬 효과 */
+                font-size: 12px;
+}
+.status-reject { background: #E53935;
+                    color: #FFFFFF;
+                    border-radius: 5px;
+                    width: 60px;
+                    height: 15px;
+                    display: inline-block; /* 중요 */
+                    text-align: center; /* 글자 가운데 정렬 */
+                    line-height: 15px; /* 높이와 같게 설정 시 수직 가운데 정렬 효과 */
+                    font-size: 12px;
+}
+
+
+.status-label.vacation {
+    background: #0B9BE3; /* 휴가용 파란색 */
+}
+
+.status-label.sick {
+    background: #7E57C2; /* 병가용 보라색 */
+}
+
+
+
+
+
+.icon1 { left: 455px; top: 356px; } /* 총 휴가일 수 */
+.icon2 { left: 455px; top: 356px; } /* 총 병가일 수 */
+.icon3 { left: 735px; top: 356px; } /* 휴가 사용일 수 */
+.icon4 { left: 955px; top: 356px; } /* 휴가 잔여일 수 */
+.icon5 { left: 1395px; top: 352px; } /* 사용 병가일 수 */
+.icon6 { left: 1615px; top: 352px; } /* 잔여 병가일 수 */
+
+.stat-box {
+    width: 210px;
+    height: 80px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    position: relative; /* absolute 제거 */
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.stat-label, .stat-value {
+    color: white;
+    font-weight: 700;
+    position: relative; /* absolute 제거 */
+}
+
+.stat-label {
+    font-size: 14px;
+}
+
+.stat-value {
+    font-size: 16px;
+}
+
+/* 불필요한 absolute 클래스 (label1, value1 등) 삭제 가능 */
+
+
+
+

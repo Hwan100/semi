@@ -143,7 +143,39 @@
             border-bottom: 1px solid #e0e0e0; /* 연한 회색 구분선 */
         }
 
+        .top-title-bar{
+            width: 600px;
+            height: 50px;
+            border: 1px solid #E7E7E7;
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
 
+        .top-other-bar{
+            width: 175px;
+            height: 50px;
+            border: 1px solid #E7E7E7;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .preview{
+            width: 175px;
+            height: 50px;
+            border: 1px solid #E7E7E7;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .download{
+            width: 175px;
+            height: 50px;
+            border: 1px solid #E7E7E7;
+            text-align: center;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -185,11 +217,11 @@
         <table>
             <thead>
                 <tr>
-                    <th class="title-bar" id="first-child" style="font-weight: 900" >제목</th>
-                    <th class="other-bar" style="font-weight: 900">수정일</th>
-                    <th class="other-bar" style="font-weight: 900">구분</th>
-                    <th class="other-bar" style="font-weight: 900">미리보기</th>
-                    <th class="other-bar" id="last-child" style="font-weight: 900">다운로드</th>
+                    <th class="top-title-bar" id="first-child" style="font-weight: 900" >제목</th>
+                    <th class="top-other-bar" style="font-weight: 900">수정일</th>
+                    <th class="top-other-bar" style="font-weight: 900">구분</th>
+                    <th class="top-other-bar" style="font-weight: 900">미리보기</th>
+                    <th class="top-other-bar" id="last-child" style="font-weight: 900">다운로드</th>
                 </tr>
             </thead>
             <tbody>
@@ -197,101 +229,72 @@
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">LG이력서</td>
-                    <td class="other-bar">2025.03.25</td>
-                    <td class="other-bar">이력서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 이력서</td>
-                    <td class="other-bar">2025.03.21</td>
-                    <td class="other-bar">이력서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">LG자소서</td>
-                    <td class="other-bar">2025.03.21</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
+                    <td class="title-bar">삼성 자소서</td>
+                    <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
-                </tr><tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
-                <tr>
-                    <td class="title-bar">sk자소서</td>
-                    <td class="other-bar">2025.03.20</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="other-bar"><img>미리보기</td>
-                    <td class="other-bar"><img>다운로드</td>
-                </tr>
-
-
             </tbody>
         </table>
         <div class="page-bar">

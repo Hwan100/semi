@@ -165,9 +165,7 @@
         const submenu = document.getElementById(id);
         submenu.classList.toggle('open');
     }
-</script>
 
-<script>
     // 페이지가 로드되면 URL에서 값을 파싱해서 p 태그에 넣음
     window.onload = function () {
         // URL에서 쿼리 파라미터 파싱

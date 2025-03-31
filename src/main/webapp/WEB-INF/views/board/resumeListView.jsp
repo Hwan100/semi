@@ -230,7 +230,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="title-bar" onclick="location.href='resumeDetail.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
+                    <td class="title-bar" onclick="location.href='resumeDetail.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리&division=자소서'">
                         삼성 자소서
                     </td>
 

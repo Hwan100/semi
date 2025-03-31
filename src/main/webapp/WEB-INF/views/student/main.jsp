@@ -22,29 +22,29 @@
                 <p>AWS 클라우드 기반 Devops 개발자 양성 과정</p>
                 <p>[강남 S] 2024. 12. 16 ~ 2025. 07. 18 ｜ 09:00 ~ 18:00 <br>
                     최지원 강사님 | 오환석 취업담임</p>
-                <div>
-                    <button>내 정보 수정</button>
-                    <button>수강정보</button>
+                <div class="intro-btn-box">
+                    <button class="btn-small">내 정보 수정</button>
+                    <button class="btn-blank-small">수강정보</button>
                 </div>
             </div>
         </section>
         <%-- 출석 요약 --%>
         <section class="attendance-section">
             <div class="attendance-count">
-                <p>출석</p>
-                <p><span>12</span>일</p>
+                <p class="count-title">출석</p>
+                <p><span class="primary-bold">12</span>일</p>
             </div>
             <div class="late-count">
-                <p>지각 및 조퇴</p>
-                <p><span>12</span>회</p>
+                <p class="count-title">지각 및 조퇴</p>
+                <p><span class="primary-bold">12</span>회</p>
             </div>
             <div class="absence-count">
-                <p>결석</p>
-                <p><span>12</span>일</p>
+                <p class="count-title">결석</p>
+                <p><span class="primary-bold">12</span>일</p>
             </div>
             <div class="vacation-count">
-                <p>휴가</p>
-                <p><span>12</span>일</p>
+                <p class="count-title">휴가</p>
+                <p><span class="primary-bold">12</span>일</p>
             </div>
             <div class="calculator">
                 <div class="circle-chart">
@@ -146,7 +146,7 @@
         <section class="announcement-section">
             <div class="announcement-box">
                 <p>공지사항</p>
-                <button>바로가기</button>
+                <button class="btn-blank-small">바로가기</button>
             </div>
             <table class="notice-table">
                 <thead>
@@ -207,7 +207,7 @@
         <section class="board-section">
             <div class="announcement-box">
                 <p>우리반 게시판</p>
-                <button>바로가기</button>
+                <button class="btn-blank-small">바로가기</button>
             </div>
             <table class="notice-table">
                 <thead>
@@ -290,9 +290,28 @@
         <section class="resume-section">
             <div class="announcement-box">
                 <p>자료실</p>
-                <button>바로가기</button>
+                <button class="btn-blank-small">바로가기</button>
             </div>
-
+            <table class="data-table">
+                <tbody>
+                <tr>
+                    <td>수업 자료 파일</td>
+                    <td>2024.03.27</td>
+                </tr>
+                <tr>
+                    <td>수업 자료 파일</td>
+                    <td>2024.03.27</td>
+                </tr>
+                <tr>
+                    <td>수업 자료 파일</td>
+                    <td>2024.03.27</td>
+                </tr>
+                <tr>
+                    <td>수업 자료 파일</td>
+                    <td>2024.03.27</td>
+                </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 </body>

@@ -129,10 +129,10 @@
             <%--관리자용--%>
             <div id="myclass-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=공지사항">진행중인 과정</a></div>
+                    <div class="submenu-text"><a href="course.li?title1=강의 관리&title2=진행중인 과정">진행중인 과정</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=커뮤니티&title2=우리반 게시판">종료된 과정</a></div>
+                    <div class="submenu-text"><a href="completedCourse.li?title1=강의 관리&title2=종료된 과정">종료된 과정</a></div>
                 </div>
             </div>
 

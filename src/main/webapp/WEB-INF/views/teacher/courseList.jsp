@@ -15,7 +15,8 @@
                         <div class="title">AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )</div>
                         <div class="progress-percent">75%</div>
                     </div>
-                    <progress class="custom-progress" max="100" value="75">75%</progress>
+                    <progress class="custom-progress" max="100" value="75"></progress>
+
                     <div class="date">2024.12.17 ~ 2025.07.18  |  09:00 ~ 18:00</div>
                 </div>
                 <div class="right-info">

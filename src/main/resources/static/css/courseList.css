@@ -64,11 +64,11 @@ body {
     font-weight: 600;
     color: #000;
     white-space: nowrap;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 
 .custom-progress {
-    width: 400px;
+    width: 460px;
     height: 9px;
     appearance: none;
     -webkit-appearance: none;

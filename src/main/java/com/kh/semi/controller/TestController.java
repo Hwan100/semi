@@ -28,4 +28,10 @@ public class TestController {
 
     @GetMapping("attendance.st")
     public String attendanceManage() {return "StudentPage/StudnetAttendancePageView";}
+
+    @GetMapping("course.li")
+    public String course() {return "teacher/courseList";}
+
+    @GetMapping("completedCourse.li")
+    public String completedCourse() {return "teacher/completedCourseList";}
 }

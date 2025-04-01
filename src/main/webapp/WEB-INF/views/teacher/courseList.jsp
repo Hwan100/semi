@@ -7,8 +7,6 @@
 <body>
 <jsp:include page="../common/header.jsp" />
 
-<div class="outer-wrapper">
-    <div class="scale-wrapper">
         <div class="container">
             <% for (int i = 0; i < 6; i++) { %>
             <div class="course-card">
@@ -27,8 +25,6 @@
             </div>
             <% } %>
         </div>
-    </div>
-</div>
 
 </body>
 

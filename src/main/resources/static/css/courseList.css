@@ -3,8 +3,6 @@ body {
     font-family: 'Inter', sans-serif;
     background: #E0F7FF;
     height: 100vh;
-    display: flex;
-    justify-content: left;
 }
 
 .container {
@@ -17,10 +15,10 @@ body {
     margin-right: 40px;
     margin-top: 160px;
     border-radius: 30px;
-    gap: 20px;
 }
 
 .course-card {
+    margin-top: 10px;
     width: 600px;
     min-height: 120px;
     background: white;

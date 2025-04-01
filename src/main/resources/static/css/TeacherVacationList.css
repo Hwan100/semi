@@ -1,0 +1,117 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #E0F7FF;
+    margin: 0;
+}
+.menu-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 135px;
+    left: 310px;
+    height: 20px;
+}
+
+.tab {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab.active {
+    color: #000000;
+    font-size: 22px;
+    line-height: 27px;
+    height: 27px;
+}
+
+.tab.inactive {
+    color: #CFCFCF;
+}
+
+.container {
+    margin-left: 310px;
+    margin-right: 40px;
+    margin-top: 180px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 20px;
+    min-height: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Vacation-table{
+    border: 1px solid #ccc;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.Vacation-table thead{
+    background: #9DD7F4;
+}
+
+.Vacation-table th,
+.Vacation-table td{
+    border: 1px solid #ccc;
+    padding: 12px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-td{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-success{
+    background: #07AF20;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: 40%;
+    border: 0;
+}
+
+.btn-fail{
+    background: #F4641C;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+    width: 40%;
+}
+
+.btn-success-date{
+    background: #07AF20;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+    width: 80%;
+}
+
+.btn-fail-date{
+    background: #F4641C;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+    width: 80%;
+}

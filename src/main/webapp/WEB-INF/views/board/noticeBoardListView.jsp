@@ -18,7 +18,7 @@
 
     .board-container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 40px;
       background: white;
       border-radius: 20px;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);

@@ -18,7 +18,8 @@
         }
 
         .body-wrapper {
-            margin-left: 270px;
+            margin-left: 310px;
+            margin-right: 40px;
             padding-top: 160px;
             background: #E0F7FF;
             min-height: 100vh;

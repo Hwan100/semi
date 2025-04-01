@@ -6,8 +6,8 @@ body {
 
 /* 사이드바 270px + 여백 46px = 316px */
 .container {
-    width: calc(100% - 316px - 40px); /* 사이드바(316px) + 오른쪽 여백(40px) */
-    margin-left: 316px;
+    width: calc(100% - 310px - 40px); /* 사이드바(310px) + 오른쪽 여백(40px) */
+    margin-left: 310px;
     margin-top: 130px;
     padding: 30px 40px;
     background: #FFFFFF;
@@ -39,9 +39,7 @@ body {
     gap: 10px;
 }
 
-
-
-.button-area button {
+.button-area button{
     width: 80px;
     height: 40px;
     border: 2px solid #003251;

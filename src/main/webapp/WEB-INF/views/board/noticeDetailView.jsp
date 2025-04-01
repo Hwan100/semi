@@ -16,6 +16,7 @@
     <div class="board-title">공지사항 제목</div>
 
     <div class="button-area">
+      <button onclick="">수정</button>
       <button onclick="history.back()">이전화면</button>
 <%--      <button onclick="location.href='myclassList.bo'">목록</button>--%>
     </div>

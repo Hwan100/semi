@@ -4,8 +4,7 @@ body {
     background: #E0F7FF;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
 }
 
 .container {
@@ -13,11 +12,12 @@ body {
     min-height: 160px;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-bottom: 20px;
     margin-left: 310px;
     margin-right: 40px;
-    margin-top: 180px;
+    margin-top: 160px;
     border-radius: 30px;
+    gap: 20px;
 }
 
 .course-card {

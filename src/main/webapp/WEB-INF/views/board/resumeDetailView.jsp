@@ -11,7 +11,7 @@
             margin-top: 160px;
             margin-right: 40px;
             /*width: 1560px;*/
-            height: 915px;
+            /*height: 915px;*/
             background-color: #FFFFFF;
             padding-top: 36px;
         }
@@ -66,8 +66,8 @@
 
         .contents-line{
             /*width: 1420px;*/
-            height: 685px;
             border: solid 1px;
+            height: 685px;
             margin-top: 30px;
             margin-left: 70px;
             margin-right: 70px;
@@ -131,6 +131,63 @@
             transform: translateX(-50%);
             gap: 10px;
         }
+
+        .feedback-line{
+            text-align: center;
+            border: solid 1px;
+            height: 550px;
+            margin-top: 30px;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
+        .feedback-header-line{
+            margin-top: 35px;
+            margin-right: 50px;
+            margin-left: 50px;
+            height: 50px;
+        }
+
+        .feedback-body-line{
+            display: flex;
+            margin-top: 30px;
+            margin-left: 50px;
+            margin-right: 50px;
+
+        }
+        .feedback-list{
+            width: 100%;
+        }
+
+        .top-bar{
+            height: 50px;
+            font-weight: 500;
+            font-size: 20px;
+            font-weight: 900;
+            background-color: #9DD7F4;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bar{
+            cursor: pointer;
+            height: 50px;
+            font-weight: 500;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .paging-bar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        img{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -171,7 +228,68 @@
                 </div>
             </div>
         </div>
-
+        <div class="feedback-line">
+            <div class="feedback-header-line">
+                <div style="font-size: 24px; font-weight: bold;">강사님 피드백</div>
+            </div>
+            <div class="feedback-body-line">
+                <table class="feedback-list">
+                    <thead>
+                        <tr>
+                            <th class="top-bar" style="width: 13.5%; border-top-left-radius: 12px;">글번호</th>
+                            <th class="top-bar" style="width: 46%">제목</th>
+                            <th class="top-bar" style="width: 13.5%">작성일</th>
+                            <th class="top-bar" style="width: 13.5%">구분</th>
+                            <th class="top-bar" style="width: 13.5%; border-top-right-radius: 12px;">작성자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bar">17</td>
+                            <td class="bar">삼성 자소서 피드백</td>
+                            <td class="bar">2025.04.01</td>
+                            <td class="bar">자소서</td>
+                            <td class="bar">최지투</td>
+                        </tr>
+                        <tr>
+                            <td class="bar">17</td>
+                            <td class="bar">삼성 자소서 피드백</td>
+                            <td class="bar">2025.04.01</td>
+                            <td class="bar">자소서</td>
+                            <td class="bar">최지투</td>
+                        </tr>
+                        <tr>
+                            <td class="bar">17</td>
+                            <td class="bar">삼성 자소서 피드백</td>
+                            <td class="bar">2025.04.01</td>
+                            <td class="bar">자소서</td>
+                            <td class="bar">최지투</td>
+                        </tr>
+                        <tr>
+                            <td class="bar">17</td>
+                            <td class="bar">삼성 자소서 피드백</td>
+                            <td class="bar">2025.04.01</td>
+                            <td class="bar">자소서</td>
+                            <td class="bar">최지투</td>
+                        </tr>
+                        <tr>
+                            <td class="bar">17</td>
+                            <td class="bar">삼성 자소서 피드백</td>
+                            <td class="bar">2025.04.01</td>
+                            <td class="bar">자소서</td>
+                            <td class="bar">최지투</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging-bar">
+                <img src="/icons/leftPageMove.png">
+                <img src="/icons/page1.png">
+                <img src="/icons/page2.png">
+                <img src="/icons/page3.png">
+                <img src="/icons/rightPageMove.png">
+            </div>
+        </div>
     </div>
 
 </div>

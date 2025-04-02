@@ -1,11 +1,11 @@
-/* AdminClassScheduleSet.css */
-
+/* 전체 배경 및 폰트 */
 body {
     font-family: 'Inter', sans-serif;
     background: #E0F7FF;
     margin: 0;
 }
 
+/* 상단 탭 메뉴 */
 .menu-tabs {
     display: flex;
     gap: 20px;
@@ -33,38 +33,30 @@ body {
     color: #CFCFCF;
 }
 
-.container1 {
+/* 캘린더 + 일정 전체 wrapper */
+.main-wrapper {
+    display: flex;
     margin-left: 310px;
     margin-top: 185px;
-    padding: 40px;
+    gap: 30px;
+}
+
+/* 캘린더 박스 */
+.container1 {
     background: #fff;
     border-radius: 20px;
+    padding: 40px;
     min-height: 700px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: calc(100% - 350px);
-    max-width: 1100px;
-}
-
-
-.calendar-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
     width: 65%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .calendar-header {
     font-size: 20px;
     font-weight: bold;
     color: #003252;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .calendar-grid {
@@ -72,8 +64,6 @@ body {
     flex-direction: column;
     gap: 8px;
     width: 100%;
-    max-width: 700px;
-    background: #fff;
 }
 
 .calendar-line {
@@ -98,43 +88,40 @@ body {
 .day-box.sunday {
     color: #EF4444;
 }
-
 .day-box.saturday {
     color: #17A1FA;
 }
-
 .day-box.dimmed {
     color: #999;
 }
-
 .day-box.today {
     background-color: #333;
     color: #fff;
 }
-
 .day-box.purple {
     background: rgba(185, 197, 255, 0.35);
     box-shadow: 0 1.75px 1.75px rgba(0, 0, 0, 0.25);
 }
 
-.schedule-box {
+/* 일정 박스 */
+.container2 {
     width: 30%;
     background-color: #F9FAFB;
     border-radius: 12px;
-    padding: 20px;
+    padding: 30px;
+    height: fit-content;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-left: 60px; /* 핵심 여백 */
+    min-height: 700px;
 }
 
-
 .schedule-title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #003252;
 }
 
 .schedule-content {
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
 }

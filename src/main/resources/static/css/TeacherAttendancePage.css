@@ -1,0 +1,168 @@
+/* 전체 영역 */
+.attendance-container {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: #E0F7FF;
+    overflow: hidden;
+}
+
+/* 탭 메뉴 */
+.menu-tabs {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 135px;
+    left: 310px;
+}
+
+.tab {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    color: #CFCFCF;
+}
+
+.tab.active {
+    color: #000000;
+    font-size: 22px;
+}
+
+.tab.inactive {
+    color: #CFCFCF;
+}
+
+/* 테이블 영역 */
+.menu-tabs {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 135px;
+    left: 315px;
+}
+
+.attendance-table-box {
+    position: absolute;
+    top: 195px; /* ✅ 간격을 40px로 조정 */
+    left: 315px;
+    width: 1084px;
+    height: 800px;
+    background: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* 테이블 */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #003252;
+}
+
+/* 헤더 */
+.attendance-table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+    padding-right: 17px;
+}
+
+
+.scrollable-tbody {
+    display: block;
+    height: 700px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+
+/* tbody 행들 */
+.scrollable-tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+/* 공통 셀 */
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    text-align: center;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+
+/* 헤더 배경 */
+.attendance-table th {
+    background-color: rgba(11, 155, 227, 0.40);
+    font-weight: 600;
+}
+
+/* ✅ 각 열 너비 지정 */
+.attendance-table th:nth-child(1),
+.attendance-table td:nth-child(1) {
+    width: 60px; /* 번호 */
+}
+.attendance-table th:nth-child(2),
+.attendance-table td:nth-child(2) {
+    width: 80px; /* 이름 */
+}
+.attendance-table th:nth-child(3),
+.attendance-table td:nth-child(3) {
+    width: 130px; /* 전화번호 */
+}
+.attendance-table th:nth-child(4),
+.attendance-table td:nth-child(4) {
+    width: 180px; /* 입실 시간 */
+}
+.attendance-table th:nth-child(5),
+.attendance-table td:nth-child(5) {
+    width: 180px; /* 퇴실 시간 */
+}
+.attendance-table th:nth-child(6),
+.attendance-table td:nth-child(6) {
+    width: 372.5px; /* 비고 */
+}
+.attendance-table th:nth-child(7){
+    width: 70px; /* 상태 */
+}
+.attendance-table td:nth-child(7) {
+    width: 62px; /* 상태 */
+}
+
+/* 상태 색상 */
+.status.absent  { color: #E53935; }
+.status.present { color: #07AF20; }
+.status.late    { color: #F57C00; }
+.status.early   { color: #7E57C2; }
+.status.leave   { color: #777777; }
+
+/* ✅ 스크롤바 커스터마이징 (WebKit) */
+.scrollable-tbody::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-tbody::-webkit-scrollbar-track {
+    background: #F0F0F0;
+    border-radius: 4px;
+}
+
+.scrollable-tbody::-webkit-scrollbar-thumb {
+    background-color: #C1C1C1;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.scrollable-tbody::-webkit-scrollbar-thumb:hover {
+    background-color: #999999;
+}

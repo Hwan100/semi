@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>자소서 피드백 상세</title>
-  <link rel="stylesheet" href="/css/myclassDetail.css">
+  <link rel="stylesheet" href="/css/resumefeedbackDetailView.css">
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>

@@ -49,4 +49,7 @@ public class TestController {
 
     @GetMapping("adminSiteSetting.fo")
     public String adminSiteSetting() {return "admin/adminSiteSetting";}
+
+    @GetMapping("attendance.li")
+    public String attendanceList() {return "teacher/teacherAttendancePage";}
 }

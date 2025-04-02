@@ -39,6 +39,7 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
 /* 사이드바 */
 .sidebar-container {
     position: fixed; /* 기존 absolute → fixed */

@@ -234,3 +234,78 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
+
+.modal-overlay {
+    color: #003252;
+    font-weight: bold;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-wrap{
+    font-weight: bold;
+    width: 600px;
+    height: 660px;
+    background-color: white;
+}
+
+.modal-title{
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.week{
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.selectDay{
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.day-btn{
+    margin-right: 8px;
+}
+
+.day-btn.selected {
+    background-color: #d3d3d3; /* 회색 */
+    color: #000; /* 선택 시 글씨 색도 조정 가능 */
+}
+
+.selectClassTime{
+    width: 350px;
+    height: 70px;
+}
+
+select{
+    color: #003252;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 40px;
+    border: solid 1px;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+span{
+    color: #74788D;
+    font-size: 16px;
+}
+
+.save-btn-line{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+

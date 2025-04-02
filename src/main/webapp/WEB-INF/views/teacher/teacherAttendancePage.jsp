@@ -20,7 +20,7 @@
 
     <div class="attendance-table-box">
         <table class="attendance-table">
-            <thead >
+            <thead>
             <tr>
                 <th>번호</th>
                 <th>이름</th>

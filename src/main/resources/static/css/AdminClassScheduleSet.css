@@ -1,0 +1,127 @@
+/* 전체 배경 및 폰트 */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #E0F7FF;
+    margin: 0;
+}
+
+/* 상단 탭 메뉴 */
+.menu-tabs {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 145px;
+    left: 310px;
+    height: 20px;
+}
+
+.tab {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tab.active {
+    color: #000000;
+    font-size: 22px;
+}
+
+.tab.inactive {
+    color: #CFCFCF;
+}
+
+/* 캘린더 + 일정 전체 wrapper */
+.main-wrapper {
+    display: flex;
+    margin-left: 310px;
+    margin-top: 185px;
+    gap: 30px;
+}
+
+/* 캘린더 박스 */
+.container1 {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    min-height: 700px;
+    width: 65%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003252;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.calendar-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.day-box {
+    width: calc(100% / 7);
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    color: #003252;
+    background-color: #fff;
+}
+
+.day-box.sunday {
+    color: #EF4444;
+}
+.day-box.saturday {
+    color: #17A1FA;
+}
+.day-box.dimmed {
+    color: #999;
+}
+.day-box.today {
+    background-color: #333;
+    color: #fff;
+}
+.day-box.purple {
+    background: rgba(185, 197, 255, 0.35);
+    box-shadow: 0 1.75px 1.75px rgba(0, 0, 0, 0.25);
+}
+
+/* 일정 박스 */
+.container2 {
+    width: 30%;
+    background-color: #F9FAFB;
+    border-radius: 12px;
+    padding: 30px;
+    height: fit-content;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 700px;
+}
+
+.schedule-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #003252;
+}
+
+.schedule-content {
+    font-size: 12px;
+    color: #333;
+}

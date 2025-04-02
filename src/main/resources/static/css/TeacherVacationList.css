@@ -118,7 +118,7 @@ body {
 
 .modal textarea{
     width: 100%;
-    height: 80px !important;
+    height: 150px !important;
     resize: none;
     padding: 10px;
     font-size: 14px;

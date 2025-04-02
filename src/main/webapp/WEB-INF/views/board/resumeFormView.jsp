@@ -155,8 +155,8 @@
             </div>
         </div>
         <div class="contents-body">
-            <div style="font-size: 20px">내용</div>
-            <textarea class="contentsInput" placeholder="내용을 입력하세요." ></textarea>
+            <div style="font-size: 20px;">내용</div>
+            <textarea class="contentsInput" placeholder="내용을 입력하세요." style="padding: 7px;"></textarea>
         </div>
         <button class="btn-blank-small" id="savebtn">저장하기</button>
     </div>

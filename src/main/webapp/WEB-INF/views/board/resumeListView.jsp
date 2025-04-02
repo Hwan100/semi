@@ -34,7 +34,7 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-            padding: 40px 50px;
+            padding: 30px 30px;
             margin-bottom: 20px;
         }
 
@@ -93,7 +93,7 @@
             margin: auto;
             background: white;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-            padding: 30px 50px;
+            padding: 30px 30px;
             margin-bottom: 20px;
         }
 
@@ -181,6 +181,9 @@
             cursor: pointer;
         }
 
+        img{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>

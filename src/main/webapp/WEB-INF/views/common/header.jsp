@@ -22,7 +22,7 @@
 <body>
 
 <header class="header" onload=title()>
-    <div class="breadcrumb">
+    <div class="header-breadcrumb">
 <%--        <span class="breadcrumb-icon"></span>--%>
         <div>
             <p class="breadcrumb-text"></p>

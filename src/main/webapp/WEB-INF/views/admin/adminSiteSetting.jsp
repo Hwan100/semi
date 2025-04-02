@@ -6,12 +6,15 @@
     <title>Title</title>
     <style>
         .wrap {
+            width: 50%;
             color: #74788D;
             margin-left: 310px;
             margin-top: 160px;
             margin-right: 40px;
             background-color: #FFFFFF;
             padding-top: 36px;
+            border-radius: 20px;
+            padding-bottom: 50px;
         }
 
         .header-line {
@@ -57,6 +60,20 @@
             margin-left: 70px;
             margin-right: 70px;
         }
+
+        .guide-line{
+            margin-left: 285px;
+            margin-top: 10px;
+            color: #74788D;
+            font-size: 16px;
+        }
+
+        .button-line{
+            display: flex;
+            justify-content: center;
+            margin-top: 85px;
+
+        }
     </style>
 </head>
 <body>
@@ -77,12 +94,19 @@
             </div>
         </div>
         <div class="siteName-line">
-            <span style="margin-right: 100px">학원 웹사이트 명</span>
+            <span style="margin-right: 63px">학원 웹사이트 명</span>
             <input type="text" style="border: solid 1px #74788D">
         </div>
         <div class="fileLimit-line">
-            <span style="margin-right: 100px">업로드 불가 파일</span>
+            <span style="margin-right: 63px">업로드 불가 파일</span>
             <input type="text" style="border: solid 1px #74788D">
+        </div>
+        <div class="guide-line">
+            ※ 업로드를 제한할 파일 확장자를 ,(쉼표)로 구분해서 등록해주세요.
+        </div>
+        <div class="button-line">
+            <button class="btn-blank" style="margin-right: 40px">저장</button>
+            <button class="btn-blank">취소</button>
         </div>
     </div>
 </body>

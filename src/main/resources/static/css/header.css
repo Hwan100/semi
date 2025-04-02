@@ -151,7 +151,7 @@ body {
     z-index: 3;
 }
 
-.breadcrumb {
+.header-breadcrumb {
     display: flex;
     align-items: center;
     color: #74788D;

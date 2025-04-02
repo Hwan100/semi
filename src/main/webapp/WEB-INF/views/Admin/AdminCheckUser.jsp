@@ -59,6 +59,52 @@
         </table>
     </div>
 </div>
+<!-- 모달 배경 -->
+<div id="modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>일괄변경</h3>
+            <span class="modal-close" onclick="closeModal()">×</span>
+        </div>
+        <div class="modal-body">
+                <select style="width: 110px; margin-right: 15px">
+                    <option>구분</option>
+                    <option>과정</option>
+                    <option>상태</option>
+                </select>
+                <select style="width: 360px">
+                    <option>AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )</option>
+                    <option>(디지털컨버전스) React & Spring 활용 자바(Java) 개발자</option>
+                </select>
+
+        </div>
+        <div class="modal-footer">
+            <button onclick="saveModal()" class="btn-blank-small">저장</button>
+            <button onclick="closeModal()" class="btn-blank-small">취소</button>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal() {
+        document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    function saveModal() {
+        // 저장 처리 로직 (예: AJAX 요청 등)
+        alert("변경사항이 저장되었습니다.");
+        closeModal();
+    }
+
+    // 일괄변경 버튼에 이벤트 연결
+    document.addEventListener("DOMContentLoaded", function() {
+        const bulkChangeBtn = document.querySelector(".btn-check:nth-child(2)");
+        bulkChangeBtn.addEventListener("click", openModal);
+    });
+</script>
 
 </body>
 </html>

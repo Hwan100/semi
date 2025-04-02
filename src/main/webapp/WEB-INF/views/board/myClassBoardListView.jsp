@@ -10,16 +10,15 @@
 
 
         .board-container {
-            max-width: 1200px;
             margin: 160px 40px 0 310px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-            padding: 40px 50px;
+            padding: 30px;
         }
 
         .board-title {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
         }
 
@@ -96,6 +95,13 @@
             display: flex;
             gap: 10px;
         }
+
+        #class {
+            color: #74788D;
+            font-size: 14px;
+            font-weight: 400;
+            height: 0px;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +115,7 @@
         <div style="display: flex; align-items: center;">
             <div class="board-title" style="margin-right: 15px;">우리반 게시판</div>
 
-            <div style="color: #74788D; font-size: 14px; font-family: Inter; font-weight: 400; height: 0px">
+            <div id="class">
                 AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )
             </div>
 

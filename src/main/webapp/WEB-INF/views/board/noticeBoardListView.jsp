@@ -9,16 +9,16 @@
     <style>
 
         .board-container {
-            max-width: 1200px;
+
             margin: 160px 40px 0 310px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-            padding: 40px 50px;
+            padding: 30px;
         }
 
         .board-title {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 20px;
             position: relative;

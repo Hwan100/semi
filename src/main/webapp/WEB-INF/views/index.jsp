@@ -12,7 +12,8 @@
 
 </head>
 <body>
-<%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="Admin/adminSiteSetting.jsp" />
+    <jsp:include page="common/header.jsp" />
+<%--<jsp:include page="Admin/adminSiteSetting.jsp" />--%>
+    <jsp:include page="teacher/main.jsp" />
 </body>
 </html>

@@ -5,12 +5,11 @@ body {
 }
 
 .container {
-    margin-left: 350px;
-    margin-top: 160px;
+    margin: 160px 40px 0 310px;
     max-width: 1200px;
     display: flex;
     gap: 20px;
-    padding: 20px;
+
 }
 
 .left, .right {

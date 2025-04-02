@@ -22,7 +22,7 @@
 <body>
 
 <header class="header" onload=title()>
-    <div class="breadcrumb">
+    <div class="header-breadcrumb">
 <%--        <span class="breadcrumb-icon"></span>--%>
         <div>
             <p class="breadcrumb-text"></p>
@@ -63,10 +63,10 @@
 
             <div id="mypage-submenu" class="submenu-container">
                 <div class="submenu-item active">
-                    <div class="submenu-text"><a href="myPage.st">개인정보 수정</a></div>
+                    <div class="submenu-text"><a href="myPage.st?title1=마이페이지&title2=개인정보 수정">개인정보 수정</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="/?title1=마이페이지&title2=수료증 발급">수료증 발급</a></div>
+                    <div class="submenu-text"><a href="finish.bo?title1=마이페이지&title2=수료증 발급">수료증 발급</a></div>
                 </div>
             </div>
 
@@ -78,13 +78,13 @@
 
             <div id="attendance-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="attendance.st">출석률 조회</a></div>
+                    <div class="submenu-text"><a href="attendance.st?title1=출석 관리&title2=출석률 조회">출석률 조회</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=휴가 관리">휴가 관리</a></div>
+                    <div class="submenu-text"><a href="studentVacation.li?title1=출석 관리&title2=휴가 관리">휴가 관리</a></div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="class.bo?title1=출석 관리&title2=급여 조회">급여 조회</a></div>
+                    <div class="submenu-text"><a href="studentPay.li?title1=출석 관리&title2=급여 조회">급여 조회</a></div>
                 </div>
             </div>
 
@@ -138,14 +138,14 @@
 
             <div class="menu-item" id='home' onclick="toggleSubmenu('money-submenu')">
                 <img src="/icons/fluent_money-calculator-24-regular.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="/">급여관리</a></div>
+                <div class="menu-title"><a href="adminPay.li?title2=급여관리">급여관리</a></div>
             </div>
 
             <div id="money-submenu" class="submenu-container"></div>
 
             <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
                 <img src="/icons/setting_line.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="/">환경설정</a></div>
+                <div class="menu-title"><a href="adminSiteSetting.fo?title2=환경설정">환경설정</a></div>
             </div>
 
             <div id="setting-submenu" class="submenu-container"></div>

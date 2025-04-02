@@ -5,27 +5,16 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.container {
-    max-width: 1100px; /* 전체 크기 줄이기 */
-    margin: 40px auto; /* 중앙 정렬 */
-    padding: 20px;
-}
-
-.page-title {
-    font-size: 20px;
-    font-weight: bold;
+.title{
     margin-bottom: 20px;
 }
-
 .table-wrapper {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
     overflow-x: auto;
-    width: 120%;
-    margin: 10% auto 0;
-    height: 70%;
+    margin: 160px 40px 0 310px;
 }
 
 .pay-table {

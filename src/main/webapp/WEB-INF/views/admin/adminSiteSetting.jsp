@@ -6,7 +6,7 @@
     <title>Title</title>
     <style>
         .wrap {
-            width: 50%;
+
             color: #74788D;
             margin-left: 310px;
             margin-top: 160px;

@@ -125,3 +125,56 @@ body {
     font-size: 12px;
     color: #333;
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-wrap{
+    width: 690px;
+    height: 490px;
+    background-color: white;
+}
+
+.modal-header{
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.modal-body{
+    width: 560px;
+    height: 355px;
+    margin-left: 60px;
+}
+
+.scheduleNameInput{
+    margin-left: 60px;
+    width: 430px;
+    height: 38px;
+    border: solid 1px ;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+span{
+    font-size: 20px;
+}
+
+.detailContent{
+    padding-left: 10px;
+    font-size: 20px;
+    width: 440px;
+    height: 175px;
+    resize: none;
+    border: solid 1px;
+}

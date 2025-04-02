@@ -92,7 +92,37 @@
         </div>
         </div>
     </div>
-
 </div>
+
+<div id="modal" class="modal-overlay" style="display: none">
+    <div class="modal-wrap">
+        <div class="modal-header">
+            일정 등록
+        </div>
+        <div class="modal-body">
+            <span>일정명</span>
+            <input type="text" class="scheduleNameInput">
+            <span>일시</span>
+            <input type="text" class="scheduleNameInput" style="margin-left: 80px;">
+            <span style="margin-top: 50px">상세내용</span>
+            <textarea class="detailContent" placeholder="내용을 입력하세요." style="margin-left: 42.5px;"></textarea>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dayboxes = document.querySelectorAll(".day-box");
+        dayboxes.forEach(box => {
+            box.addEventListener("click", openModal);
+        });
+    });
+
+    function openModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = "flex";
+    }
+</script>
 </body>
 </html>

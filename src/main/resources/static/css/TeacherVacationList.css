@@ -40,11 +40,11 @@ body {
     color: #CFCFCF;
 }
 
-.container {
+.Listcontainer {
     margin-left: 310px;
     margin-right: 40px;
     margin-top: 180px;
-    padding: 10px;
+    padding: 20px;
     background: #fff;
     border-radius: 20px;
     min-height: 700px;
@@ -114,4 +114,46 @@ body {
     border: 0;
     height: 30px;
     width: 80%;
+}
+
+.modal textarea{
+    width: 100%;
+    height: 80px !important;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.modal-footer {
+    display: flex;
+    text-align: center !important;  /* 중앙 정렬 */
+    justify-content: center;
+    gap: 20px;
+}
+
+#cancel,
+.submit-btn{
+    float: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    height: 30px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.submit-btn{
+    background: green;
+    color: white;
+}
+
+#cancel{
+    background: #ff0000;
+    color: white;
 }

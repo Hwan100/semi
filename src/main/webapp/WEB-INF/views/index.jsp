@@ -12,7 +12,12 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+<%--    <jsp:include page="common/header.jsp" />    --%>
+<jsp:include page="board/resumefeedbackDetailView.jsp" />
+=======
     <jsp:include page="common/header.jsp" />
     <jsp:include page="student/main.jsp" />
+>>>>>>> a5be639cc7351e318315634b0b338c8ada06dd34
 </body>
 </html>

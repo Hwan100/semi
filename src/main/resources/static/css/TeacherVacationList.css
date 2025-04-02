@@ -9,7 +9,7 @@ body {
     align-items: center;
     gap: 20px;
     position: absolute;
-    top: 135px;
+    top: 145px;
     left: 310px;
     height: 20px;
 }
@@ -43,7 +43,7 @@ body {
 .Listcontainer {
     margin-left: 310px;
     margin-right: 40px;
-    margin-top: 180px;
+    margin-top: 185px;
     padding: 20px;
     background: #fff;
     border-radius: 20px;

@@ -12,7 +12,9 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 <%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="Admin/AdminPay.jsp" />
+<jsp:include page="teacher/teacherStudentInfoListPage.jsp" />
+=======
 </body>
 </html>

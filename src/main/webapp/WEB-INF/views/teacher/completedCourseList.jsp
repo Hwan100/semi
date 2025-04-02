@@ -16,7 +16,6 @@
             <% for (int i = 0; i < 6; i++) { %>
             <div class="course-card">
                 <div class="left-info">
-                    <div class="label">과정명</div>
                     <div class="title-row">
                         <div class="title">AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )</div>
                         <div class="progress-percent">100%</div>

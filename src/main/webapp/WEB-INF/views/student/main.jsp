@@ -23,7 +23,7 @@
                 <p>[강남 S] 2024. 12. 16 ~ 2025. 07. 18 ｜ 09:00 ~ 18:00 <br>
                     최지원 강사님 | 오환석 취업담임</p>
                 <div class="intro-btn-box">
-                    <button class="btn-small">내 정보 수정</button>
+                    <button class="btn-small">정보 수정</button>
                     <button class="btn-blank-small">수강정보</button>
                 </div>
             </div>

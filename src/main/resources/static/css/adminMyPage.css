@@ -1,6 +1,5 @@
 body {
     margin: auto;
-    /*padding: 160px 40px 40px;*/
     background-color: #E0F7FF;
     font-family: 'Inter', sans-serif;
 }
@@ -8,10 +7,9 @@ body {
 .background-box {
     max-width: 900px;
     margin: 160px 40px 0 310px;
-    /*transform: translateX(250px);*/
     background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
 
@@ -54,12 +52,28 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.top-grid {
+.top-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.top-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
     row-gap: 25px;
+    width: 100%;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+.form-group-row .form-group {
+    flex: 1;
 }
 
 .bottom-info-wrapper {
@@ -78,21 +92,28 @@ body {
     font-weight: 600;
     color: #003252;
     margin-bottom: 6px;
+    display: inline-flex;
+    width: 100px;
+    align-items: center;
+    gap: 3px;
 }
 
-.userRole {
-    background: #E7E7E7;
-}
-.form-group input {
+.form-group input,
+.form-group select {
     height: 40px;
     padding: 0 10px;
     font-size: 14px;
     border: 3px solid #E7E7E7;
     border-radius: 10px;
+    background-color: white;
 }
 
 .form-group.full {
     grid-column: span 2;
+}
+
+.userRole {
+    background: #E7E7E7;
 }
 
 .submit-btn {
@@ -110,4 +131,15 @@ body {
 
 .submit-btn:hover {
     background-color: #007ec0;
+}
+
+/* 🔵 필수 항목 별표 */
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+/* 🔵 상태 select 색상 */
+.status-select {
+    font-weight: bold;
 }

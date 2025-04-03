@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="/css/student.css">
+    <link rel="stylesheet" href="/css/studentMain.css">
     <link rel="stylesheet" href="/css/varibles.css">
     <link rel="stylesheet" href="/css/component.css">
 </head>

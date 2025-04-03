@@ -23,7 +23,7 @@
 
 <header class="header" onload=title()>
     <div class="header-breadcrumb">
-<%--        <span class="breadcrumb-icon"></span>--%>
+        <%--        <span class="breadcrumb-icon"></span>--%>
         <div>
             <p class="breadcrumb-text"></p>
             <p class="page-title">대시보드</p>
@@ -53,7 +53,7 @@
                 <img src="/icons/home.png" alt="대시보드 아이콘">
                 <div class="menu-title"><a href="/">대시보드</a></div>
             </div>
-            <%-- <div id="dashboard-submenu" class="submenu-container"></div> --%>
+            <div id="dashboard-submenu" class="submenu-container"></div>
 
             <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
                 <img src="/icons/user_box.png" alt="마이페이지 아이콘">
@@ -96,10 +96,12 @@
 
             <div id="resume-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a></div>
+                    <div class="submenu-text"><a href="resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a>
+                    </div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서 작성</a>
+                    <div class="submenu-text"><a href="resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서
+                        작성</a>
                     </div>
                 </div>
             </div>
@@ -126,13 +128,19 @@
                 <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
             </div>
 
-            <%--관리자용--%>
             <div id="myclass-submenu" class="submenu-container">
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="course.li?title1=강의 관리&title2=진행중인 과정">진행중인 과정</a></div>
                 </div>
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="completedCourse.li?title1=강의 관리&title2=종료된 과정">종료된 과정</a></div>
+                </div>
+                <%--관리자용--%>
+                <div class="submenu-item">
+                    <div class="submenu-text"><a href="createCourse.fo?title1=강의 관리&title2=강의 개설">강의 개설</a></div>
+                </div>
+                <div class="submenu-item">
+                    <div class="submenu-text"><a href="adminCourse.li?title1=강의 관리&title2=강의 조회">강의 조회</a></div>
                 </div>
             </div>
 
@@ -180,7 +188,6 @@
         }
     };
 </script>
-
 
 
 </body>

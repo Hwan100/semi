@@ -92,7 +92,66 @@
         </div>
         </div>
     </div>
-
 </div>
+
+<div id="modal" class="modal-overlay" style="display: none">
+    <div class="modal-wrap">
+        <div class="modal-header">
+            일정 등록
+            <img src="icons/x.png" class="close-button" onclick="closeModal()">
+        </div>
+        <div class="modal-body">
+            <div class="body1">
+                <span>일정명</span>
+                <input type="text" class="scheduleNameInput">
+            </div>
+            <div class="body2">
+                <span class="label">일시</span>
+                <input type="date" class="scheduleDateInput">
+                <input type="time" class="scheduleTimeInput">
+                <div class="start-label">시작</div>
+            </div>
+            <div class="body3">
+                <input type="date" class="scheduleDateInput">
+                <input type="time" class="scheduleTimeInput">
+                <div class="start-label">종료</div>
+            </div>
+            <div class="body4">
+                <span>상세내용</span>
+                <textarea class="detailContent" placeholder="내용을 입력하세요."></textarea>
+            </div>
+            <div class="button-line" style="width: 100%">
+                <button class="btn-blank-small" onclick="saveModal()">등록</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dayboxes = document.querySelectorAll(".day-box");
+        dayboxes.forEach(box => {
+            box.addEventListener("click", openModal);
+        });
+    });
+
+    function openModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = "none";
+    }
+
+    function  saveModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = "none";
+        alert('일정이 정상적으로 등록되었습니다.');
+    }
+</script>
 </body>
 </html>

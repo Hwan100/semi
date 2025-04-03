@@ -68,7 +68,7 @@
                         <td>aws 클라우드 기반...</td>
                         <td><progress class="custom-progress" max="100" value="75"></progress></td>
                         <td>자바 기초</td>
-                        <td><button>바로가기</button></td>
+                        <td><button class="btn-small">바로가기</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -241,10 +241,14 @@
                 </div>
             </div>
             <h2>일자 및 일정</h2>
-            <div>
-                <div>
-                    <p>과정 이름 > 일정 명</p>
-                    <p>2025.03.24</p>
+            <div class="schedule-items">
+                <div class="schedule-item">
+                    <p class="schedule-item-title">과정 이름 > 일정 명</p>
+                    <p class="schedule-date">2025.03.24</p>
+                </div>
+                <div class="schedule-item">
+                    <p class="schedule-item-title">과정 이름 > 일정 명</p>
+                    <p class="schedule-date">2025.03.24</p>
                 </div>
             </div>
         </section>

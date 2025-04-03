@@ -1,12 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<jsp:include page="../common/header.jsp"/>
 <head>
     <title>Teacher Attendance</title>
     <link rel="stylesheet" href="/css/TeacherAttendancePage.css">
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
+
 <div class="attendance-container">
+
     <div class="menu-tabs">
         <div class="tab active">출결 조회</div>
         <div class="tab inactive">학생 정보</div>
@@ -75,6 +77,161 @@
                 <td></td>
                 <td class="status late">지각</td>
             </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>최정욱</td>
+                <td>010-1111-3333</td>
+                <td>09:11</td>
+                <td></td>
+                <td></td>
+                <td class="status late">지각</td>
+            </tr>
+
+
             <%-- 추가 row는 여기에 계속 작성 --%>
             </tbody>
         </table>

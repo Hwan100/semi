@@ -1,19 +1,26 @@
 /* 전체 영역 */
 .attendance-container {
-    width: 1920px;
-    height: 1080px;
-    position: relative;
+    margin: 140px 40px 0 310px;
     background: #E0F7FF;
     overflow: hidden;
 }
 
+::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888; /* 스크롤바 색상 */
+    border-radius: 5px; /* 둥근 모서리 */
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 스크롤바 트랙(배경) 색상 */
+}
 /* 탭 메뉴 */
 .menu-tabs {
     display: flex;
     gap: 20px;
-    position: absolute;
-    top: 135px;
-    left: 310px;
 }
 
 .tab {
@@ -37,20 +44,16 @@
 .menu-tabs {
     display: flex;
     gap: 20px;
-    position: absolute;
-    top: 135px;
-    left: 315px;
+
 }
 
 .attendance-table-box {
-    position: absolute;
-    top: 195px; /* ✅ 간격을 40px로 조정 */
-    left: 315px;
-    width: 1084px;
-    height: 800px;
+    margin-top: 30px;
     background: white;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 70%;
 }
 
 
@@ -62,10 +65,13 @@
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #003252;
+
 }
 
 /* 헤더 */
 .attendance-table thead {
+    position: sticky;
+    top: 0;
     display: table;
     width: 100%;
     table-layout: fixed;
@@ -77,7 +83,7 @@
 .scrollable-tbody {
     display: block;
     height: 700px;
-    overflow-y: scroll;
+
     box-sizing: border-box;
 }
 
@@ -103,7 +109,7 @@
 
 /* 헤더 배경 */
 .attendance-table th {
-    background-color: rgba(11, 155, 227, 0.40);
+    background-color: #9cd5f2;
     font-weight: 600;
 }
 
@@ -136,7 +142,7 @@
     width: 70px; /* 상태 */
 }
 .attendance-table td:nth-child(7) {
-    width: 62px; /* 상태 */
+    width: 70px; /* 상태 */
 }
 
 /* 상태 색상 */

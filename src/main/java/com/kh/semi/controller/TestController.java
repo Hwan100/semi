@@ -27,7 +27,7 @@ public class TestController {
     public String myPage() {return "myPage/studentMyPageView";}
 
     @GetMapping("attendance.st")
-    public String attendanceManage() {return "studentPage/studentAttendancePageView";}
+    public String attendanceManage() {return "student/studentAttendancePageView";}
 
     @GetMapping("course.li")
     public String course() {return "teacher/courseList";}
@@ -36,17 +36,20 @@ public class TestController {
     public String completedCourse() {return "teacher/completedCourseList";}
 
     @GetMapping("finish.bo")
-    public String finish() {return "studentPage/finishPage";}
+    public String finish() {return "student/finishPage";}
 
     @GetMapping("studentVacation.li")
-    public String studentVacation() {return "studentPage/studentVacationView";}
+    public String studentVacation() {return "student/studentVacationView";}
 
     @GetMapping("studentPay.li")
-    public String studentPay() {return "studentPage/studentPay";}
+    public String studentPay() {return "student/studentPay";}
 
     @GetMapping("adminPay.li")
-    public String adminPay() {return "studentPage/studentPay";}
+    public String adminPay() {return "student/studentPay";}
 
     @GetMapping("adminSiteSetting.fo")
     public String adminSiteSetting() {return "admin/adminSiteSetting";}
+
+    @GetMapping("attendance.li")
+    public String attendanceList() {return "teacher/teacherAttendancePage";}
 }

@@ -13,7 +13,8 @@
 </head>
 <body>
 <%--    <jsp:include page="common/header.jsp" />    --%>
-<jsp:include page="admin/adminClassScheduleSet.jsp" />
+
+<jsp:include page="board/resumeFormView.jsp" />
 
 </body>
 </html>

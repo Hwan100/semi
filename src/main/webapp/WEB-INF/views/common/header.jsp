@@ -126,13 +126,19 @@
                 <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
             </div>
 
-            <%--관리자용--%>
             <div id="myclass-submenu" class="submenu-container">
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="course.li?title1=강의 관리&title2=진행중인 과정">진행중인 과정</a></div>
                 </div>
                 <div class="submenu-item">
                     <div class="submenu-text"><a href="completedCourse.li?title1=강의 관리&title2=종료된 과정">종료된 과정</a></div>
+                </div>
+                <%--관리자용--%>
+                <div class="submenu-item">
+                    <div class="submenu-text"><a href="createCourse.fo?title1=강의 관리&title2=강의 개설">강의 개설</a></div>
+                </div>
+                <div class="submenu-item">
+                    <div class="submenu-text"><a href="adminCourse.li?title1=강의 관리&title2=강의 조회">강의 조회</a></div>
                 </div>
             </div>
 

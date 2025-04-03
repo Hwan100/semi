@@ -20,7 +20,7 @@
                     <div class="date">2024.12.17 ~ 2025.07.18  |  09:00 ~ 18:00</div>
                 </div>
                 <div class="right-info">
-                    <button class="manage-btn" onclick="location.href='studentPay.li'">반 관리</button>
+                    <button class="manage-btn" onclick="location.href='attendance.li'">반 관리</button>
                 </div>
             </div>
             <% } %>

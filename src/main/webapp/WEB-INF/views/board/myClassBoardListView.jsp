@@ -124,7 +124,7 @@
         <div class="button-area">
             <button class="btn-blank-small" onclick="">수정</button>
             <button class="btn-blank-small" onclick="">작성</button>
-            <button class="btn-blank-small" onclick="history.back()">이전화면</button>
+<%--            <button class="btn-blank-small" onclick="history.back()">이전화면</button>--%>
         </div>
 
     </div>

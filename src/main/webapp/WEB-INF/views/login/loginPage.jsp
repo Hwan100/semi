@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,6 +7,7 @@
     <style>
         * {
             box-sizing: border-box;
+            transform: scale(0.9);
         }
 
         body {
@@ -97,7 +99,7 @@
 <body>
 <div class="login-box">
     <div class="logo">
-        <img src="../../../resource/icons/EduTrackLogo.png" alt="EduTrack 로고">
+        <img src="icons/logo.png" alt="EduTrack 로고">
     </div>
     <div class="form-group">
         <input type="text" placeholder="ID" name="user_id">

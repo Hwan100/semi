@@ -60,7 +60,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap:28px;
 }
 
 .sidebar-logo {
@@ -74,6 +74,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 11px;
+    margin-top: 100px;
 }
 
 .menu-item {

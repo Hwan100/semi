@@ -62,11 +62,11 @@
             </div>
 
             <div id="mypage-submenu" class="submenu-container">
-                <div class="submenu-item active">
-                    <div class="submenu-text"><a href="myPage.st?title1=마이페이지&title2=개인정보 수정">개인정보 수정</a></div>
+                <div class="submenu-item active" onclick="location.href='myPage.st?title1=마이페이지&title2=개인정보 수정';">
+                    <div class="submenu-text">개인정보 수정</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="finish.bo?title1=마이페이지&title2=수료증 발급">수료증 발급</a></div>
+                <div class="submenu-item" onclick="location.href='finish.bo?title1=마이페이지&title2=수료증 발급'">
+                    <div class="submenu-text">수료증 발급</div>
                 </div>
             </div>
 
@@ -77,14 +77,14 @@
             </div>
 
             <div id="attendance-submenu" class="submenu-container">
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="attendance.st?title1=출석 관리&title2=출석률 조회">출석률 조회</a></div>
+                <div class="submenu-item" onclick="location.href='attendance.st?title1=출석 관리&title2=출석률 조회'">
+                    <div class="submenu-text">출석률 조회</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="studentVacation.li?title1=출석 관리&title2=휴가 관리">휴가 관리</a></div>
+                <div class="submenu-item" onclick="location.href='studentVacation.li?title1=출석 관리&title2=휴가 관리'">
+                    <div class="submenu-text">휴가 관리</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="studentPay.li?title1=출석 관리&title2=급여 조회">급여 조회</a></div>
+                <div class="submenu-item" onclick="location.href='studentPay.li?title1=출석 관리&title2=급여 조회'">
+                    <div class="submenu-text">급여 조회</div>
                 </div>
             </div>
 
@@ -95,14 +95,11 @@
             </div>
 
             <div id="resume-submenu" class="submenu-container">
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a>
-                    </div>
+                <div class="submenu-item" onclick="location.href='resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
+                    <div class="submenu-text">자소서 및 이력서 관리</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서
-                        작성</a>
-                    </div>
+                <div class="submenu-item" onclick="location.href='resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성'">
+                    <div class="submenu-text">자소서 및 이력서</div>
                 </div>
             </div>
 
@@ -113,11 +110,11 @@
             </div>
 
             <div id="community-submenu" class="submenu-container">
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="notice.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
+                <div class="submenu-item" onclick="location.href='notice.bo?title1=커뮤니티&title2=공지사항'">
+                    <div class="submenu-text">공지사항</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="myClass.bo?title1=커뮤니티&title2=우리반 게시판">우리반 게시판</a></div>
+                <div class="submenu-item" onclick="location.href='myClass.bo?title1=커뮤니티&title2=우리반 게시판'">
+                    <div class="submenu-text">우리반 게시판</div>
                 </div>
             </div>
 
@@ -129,18 +126,18 @@
             </div>
 
             <div id="myclass-submenu" class="submenu-container">
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="course.li?title1=강의 관리&title2=진행중인 과정">진행중인 과정</a></div>
+                <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">
+                    <div class="submenu-text">진행중인 과정</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="completedCourse.li?title1=강의 관리&title2=종료된 과정">종료된 과정</a></div>
+                <div class="submenu-item" onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
+                    <div class="submenu-text">종료된 과정</div>
                 </div>
                 <%--관리자용--%>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="createCourse.fo?title1=강의 관리&title2=강의 개설">강의 개설</a></div>
+                <div class="submenu-item" onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
+                    <div class="submenu-text">강의 개설</div>
                 </div>
-                <div class="submenu-item">
-                    <div class="submenu-text"><a href="adminCourse.li?title1=강의 관리&title2=강의 조회">강의 조회</a></div>
+                <div class="submenu-item" onclick="location.href='adminCourse.li?title1=강의 관리&title2=강의 조회'">
+                    <div class="submenu-text">강의 조회</div>
                 </div>
             </div>
 

@@ -130,12 +130,14 @@ body {
     background-color: rgba(11, 155, 227, 0.4);
 }
 
-#home:hover a{
+.menu-item:hover{
     color: white;
+    cursor: pointer;
 }
 
-.submenu-item:hover a{
+.submenu-item:hover{
     color: white;
+    cursor: pointer;
 }
 
 .submenu-text {

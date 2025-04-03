@@ -14,7 +14,7 @@
 <body>
 <%--    <jsp:include page="common/header.jsp" />    --%>
 
-<jsp:include page="board/resumeFormView.jsp" />
+<jsp:include page="teacher/teacherVacationList.jsp" />
 
 </body>
 </html>

@@ -23,7 +23,7 @@
 
 <header class="header" onload=title()>
     <div class="header-breadcrumb">
-<%--        <span class="breadcrumb-icon"></span>--%>
+        <%--        <span class="breadcrumb-icon"></span>--%>
         <div>
             <p class="breadcrumb-text"></p>
             <p class="page-title">대시보드</p>
@@ -53,7 +53,7 @@
                 <img src="/icons/home.png" alt="대시보드 아이콘">
                 <div class="menu-title"><a href="/">대시보드</a></div>
             </div>
-            <%-- <div id="dashboard-submenu" class="submenu-container"></div> --%>
+            <div id="dashboard-submenu" class="submenu-container"></div>
 
             <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
                 <img src="/icons/user_box.png" alt="마이페이지 아이콘">
@@ -96,10 +96,12 @@
 
             <div id="resume-submenu" class="submenu-container">
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a></div>
+                    <div class="submenu-text"><a href="resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리">자소서 및 이력서 관리</a>
+                    </div>
                 </div>
                 <div class="submenu-item">
-                    <div class="submenu-text"><a href="resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서 작성</a>
+                    <div class="submenu-text"><a href="resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성">자소서 및 이력서
+                        작성</a>
                     </div>
                 </div>
             </div>
@@ -186,7 +188,6 @@
         }
     };
 </script>
-
 
 
 </body>

@@ -2,11 +2,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+<jsp:include page="../common/header.jsp"/>
 <head>
     <meta charset="UTF-8">
     <title>공지사항</title>
 <%--    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">--%>
     <style>
+
+        ::-webkit-scrollbar {
+            display: block;
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* 스크롤바 색상 */
+            border-radius: 5px; /* 둥근 모서리 */
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* 스크롤바 트랙(배경) 색상 */
+        }
+
         body{
             font-family: 'Inter', sans-serif;
         }
@@ -20,28 +35,31 @@
         .body-wrapper {
             margin-left: 310px;
             margin-right: 40px;
-            padding-top: 160px;
+            margin-top: 160px;
             background: #E0F7FF;
             min-height: 100vh;
-            overflow-y: auto;
-            padding-right: 20px;
+            /*overflow-y: auto;*/
         }
 
         .board-container {
-            width: 1400px;
             height: 300px;
-            margin: auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
             padding: 30px 30px;
             margin-bottom: 20px;
+            /*overflow-x: scroll;*/
         }
 
+        #scrollbar{
+            height: 200px;
+            overflow-x: scroll;
+        }
         .board-title {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 20px;
+            position: sticky;
         }
 
         #currentResumeList{
@@ -89,8 +107,6 @@
         }
 
         .list-container{
-            width: 1400px;
-            margin: auto;
             background: white;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
             padding: 30px 30px;
@@ -187,11 +203,12 @@
     </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
+
 
 <div class="body-wrapper">
     <div class="board-container">
         <div class="board-title">최근 열람한 문서</div>
+        <div id="scrollbar">
         <div id="currentResumeList">
             <div class="select">
                 <div class="resume-title">KH사직서</div>
@@ -218,6 +235,7 @@
                 <div class="lastModify">마지막 수정일</div>
                 <div class="lastModifyDate">2025.03.20</div>
             </div>
+        </div>
         </div>
     </div>
     <div class="list-container">
@@ -303,13 +321,34 @@
                     <td class="preview"><img src="/icons/Search.png">미리보기</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
+                <tr>
+                    <td class="title-bar">삼성자소서</td>
+                    <td class="other-bar">2025.03.28</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">삼성자소서</td>
+                    <td class="other-bar">2025.03.28</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
+                </tr>
+                <tr>
+                    <td class="title-bar">삼성자소서</td>
+                    <td class="other-bar">2025.03.28</td>
+                    <td class="other-bar">자소서</td>
+                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="download"><img src="/icons/Save.png">다운로드</td>
+                </tr>
             </tbody>
         </table>
-        <div class="page-bar">
-            <img src="/icons/leftPageMove.png" style="margin-right: 15px">
-            <img src="/icons/Page1.png" style="margin-right: 15px">
-            <img src="/icons/rightPageMove.png">
-        </div>
+<%--        <div class="page-bar">--%>
+<%--            <img src="/icons/leftPageMove.png" style="margin-right: 15px">--%>
+<%--            <img src="/icons/Page1.png" style="margin-right: 15px">--%>
+<%--            <img src="/icons/rightPageMove.png">--%>
+<%--        </div>--%>
     </div>
 
 </div>

@@ -31,7 +31,7 @@
                 <td style="width: 12%">날짜</td>
                 <td style="width: 35%">사유</td>
                 <td style="width: 30%">첨부파일</td>
-                <td style="width: 20%">-</td>
+                <td style="width: 20%">승인 여부</td>
             </tr>
         </thead>
         <tbody>

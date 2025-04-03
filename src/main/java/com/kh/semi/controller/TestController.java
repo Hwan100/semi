@@ -24,7 +24,7 @@ public class TestController {
     public String resumeDetail() {return "board/resumeDetailView";}
 
     @GetMapping("myPage.st")
-    public String myPage() {return "myPage/studentMyPageView";}
+    public String myPage() {return "myPage/adminMyPage";}
 
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}

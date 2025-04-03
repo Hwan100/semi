@@ -14,9 +14,7 @@
 <body>
 <%--    <jsp:include page="common/header.jsp" />    --%>
 <<<<<<< HEAD
-<jsp:include page="teacher/AdminCourseList.jsp" />
-=======
-<jsp:include page="admin/adminClassScheduleSet.jsp" />
+<jsp:include page="board/resumeFormView.jsp" />
 >>>>>>> 05240661973acf652231f08a06b0f407623ea1e6
 </body>
 </html>

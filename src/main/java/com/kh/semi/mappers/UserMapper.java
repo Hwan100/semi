@@ -10,4 +10,6 @@ public interface UserMapper {
     int updateUser(User u);
 
     User selectUserByNo(int userNo);
+
+    String getClassNameByClassNo(int classNo);
 }

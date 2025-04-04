@@ -20,8 +20,10 @@ public class UserServiceImpl implements UserService {
     public int updateUser(User u) {return userMapper.updateUser(u);}
 
     @Override
-    public User selectUserByNo(int userNo) {
-        return userMapper.selectUserByNo(userNo);}
+    public User selectUserByNo(int userNo) {return userMapper.selectUserByNo(userNo);}
+
+    @Override
+    public String getClassNameByClassNo(int classNo) {return userMapper.getClassNameByClassNo(classNo);}
 
 
 }

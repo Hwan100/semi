@@ -39,4 +39,30 @@
        WHERE USER_ID = #{userId}
          AND USER_STATUS = 'Y'
     </select>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE TB_USER
+        SET USER_NAME = #{userName},
+            USER_PHONE = #{userPhone},
+            USER_EMAIL = #{userEmail},
+            USER_ADDRESS = #{userAddress},
+            USER_ADDRESS_DETAIL = #{userAddressDetail},
+            USER_BIRTH = #{userBirth}
+        WHERE USER_ID = #{userId}
+          AND USER_STATUS = 'Y'
+    </update>
+
+    <select id="selectUserByNo" parameterType="User" resultMap="userResult">
+        SELECT *
+        FROM TB_USER
+        WHERE USER_NO = #{userNo}
+        AND STATUS = 'Y'
+    </select>
+
+    <select id="getClassNameByClassNo" parameterType="Class">
+            SELECT CLASS_NAME
+            FROM TB_CLASS
+            WHERE CLASS_NO = #{classNo}
+    </select>
+
 </mapper>

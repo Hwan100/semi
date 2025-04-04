@@ -26,17 +26,17 @@
                     <div class="form-group">
                         <label for="userType">구분</label>
                         <select id="userType" name="userType">
-                            <option value="학생" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>
-                            <option value="강사" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>
-                            <option value="관리자" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>
+                            <option value="1" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>
+                            <option value="2" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>
+                            <option value="3" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="userStatus">상태</label>
                         <select id="userStatus" name="userStatus">
-                            <option value="정상" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>
-                            <option value="탈퇴" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>
-                            <option value="휴면" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>
+                            <option value="Y" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>
+                            <option value="N" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>
+                            <option value="C" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>
                         </select>
 
                     </div>

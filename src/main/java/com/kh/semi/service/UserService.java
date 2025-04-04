@@ -9,4 +9,6 @@ public interface UserService {
     int updateUser(User u);
 
     User selectUserByNo(int userNo);
+
+    String getClassNameByClassNo(int classNo);
 }

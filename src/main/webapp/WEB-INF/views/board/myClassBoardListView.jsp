@@ -19,11 +19,12 @@
                 AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )
             </div>
         </div>
-
-        <div class="button-area">
-            <button class="btn-blank-small" onclick="">수정</button>
-            <button class="btn-blank-small" onclick="">작성</button>
-        </div>
+        <c:if test="${loginUser.userRole == 2 || loginUser.userRole == 3 }">
+            <div class="button-area">
+                <button class="btn-blank-small" onclick="">수정</button>
+                <button class="btn-blank-small" onclick="">작성</button>
+            </div>
+        </c:if>
     </div>
 
     <table class="board-table">

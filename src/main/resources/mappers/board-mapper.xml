@@ -1,0 +1,65 @@
+<mapper namespace="com.kh.semi.mappers.BoardMapper">
+
+    <resultMap id="boardResult" type="Board">
+        <result column="BOARD_NO" property="boardNo"/>
+        <result column="TITLE" property="title"/>
+        <result column="CONTENT" property="content"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="COUNT" property="count"/>
+        <result column="BRANCH" property="branch"/>
+        <result column="TYPE" property="type"/>
+        <result column="FILE_PATH" property="filePath"/>
+        <result column="USER_NO" property="userNo"/>
+        <result column="CLASS_NO" property="classNo"/>
+    </resultMap>
+
+    <!-- 게시글 목록 -->
+    <select id="selectBoardList" resultMap="boardResult">
+        SELECT * FROM TB_BOARD
+        WHERE TYPE = #{type}
+        ORDER BY BOARD_NO DESC
+    </select>
+
+    <!-- 게시글 상세 -->
+    <select id="selectBoard" resultMap="boardResult">
+        SELECT * FROM TB_BOARD
+        WHERE BOARD_NO = #{boardNo}
+    </select>
+
+    <!-- 게시글 등록 -->
+    <insert id="insertBoard" parameterType="Board">
+        INSERT INTO TB_BOARD (
+        BOARD_NO, TITLE, CONTENT, CREATE_DATE,
+        COUNT, BRANCH, TYPE, FILE_PATH,
+        USER_NO, CLASS_NO
+        ) VALUES (
+        SEQ_BOARD_NO.NEXTVAL,
+        #{title}, #{content}, SYSDATE,
+        0, #{branch}, #{type}, #{filePath},
+        #{userNo}, #{classNo}
+        )
+    </insert>
+
+    <!-- 게시글 수정 -->
+    <update id="updateBoard" parameterType="Board">
+        UPDATE TB_BOARD
+        SET TITLE = #{title},
+        CONTENT = #{content},
+        FILE_PATH = #{filePath}
+        WHERE BOARD_NO = #{boardNo}
+    </update>
+
+    <!-- 게시글 삭제 (완전 삭제) -->
+    <delete id="deleteBoard">
+        DELETE FROM TB_BOARD
+        WHERE BOARD_NO = #{boardNo}
+    </delete>
+
+    <!-- 조회수 증가 -->
+    <update id="increaseCount">
+        UPDATE TB_BOARD
+        SET COUNT = COUNT + 1
+        WHERE BOARD_NO = #{boardNo}
+    </update>
+
+</mapper>

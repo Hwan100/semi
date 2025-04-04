@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>
-                    <input type="text" id="userName" name="userName" value="${loginUser.userName}" readonly>
+                    <input type="text" id="userName" name="userName" value="${loginUser.userName}">
                 </div>
                 <div class="form-group">
                     <label for="userNo">회원 번호</label>

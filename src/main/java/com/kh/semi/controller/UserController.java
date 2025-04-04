@@ -62,6 +62,11 @@ public class UserController {
 
     @PostMapping("updateStudent.me")
     public ModelAndView updateStudent(ModelAndView mv, HttpSession session) {
+        if(session.getAttribute("loginUser") == null) {
+            mv.setViewName("login/loginPage");
+        } else {
+            String userName = (String) session.getAttribute("loginUser");
+        }
         return mv;
     }
 }

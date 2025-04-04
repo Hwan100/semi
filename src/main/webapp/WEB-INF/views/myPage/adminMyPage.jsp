@@ -81,7 +81,7 @@
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${loginUser.classNo}" readonly>
+                <input type="text" id="className" name="userClassName" value="${loginUser.className}" readonly>
             </div>
         </div>
 

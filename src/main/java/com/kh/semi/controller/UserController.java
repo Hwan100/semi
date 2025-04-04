@@ -22,7 +22,6 @@ public class UserController {
     @PostMapping("login.us")
     public ModelAndView login(User user, ModelAndView mv, HttpSession session) {
 
-        session.setAttribute("user", user);
         User loginUser = userService.loginUser(user.getUserId());
 
         if (loginUser == null) {
@@ -38,7 +37,7 @@ public class UserController {
         return mv;
     }
 
-    @GetMapping("logout.me")
+    @GetMapping("logout.us")
     public String logout(HttpSession session) {
         session.setAttribute("alertMsg", "로그아웃 완료");
         session.removeAttribute("loginUser");

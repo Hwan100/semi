@@ -22,8 +22,8 @@ public class UserController {
     @PostMapping("login.us")
     public ModelAndView login(User user, ModelAndView mv, HttpSession session) {
 
-        session.setAttribute("user", user);
         User loginUser = userService.loginUser(user.getUserId());
+        System.out.println(loginUser);
 
         if (loginUser == null) {
             mv.addObject("errorMsg", "아이디를 찾을 수 없습니다.");

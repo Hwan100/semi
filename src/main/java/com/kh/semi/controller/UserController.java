@@ -46,22 +46,34 @@ public class UserController {
         return "redirect:/";
     }
 
-    @PostMapping("myPage.st")
+    @PostMapping("myPage.me")
     public ModelAndView myPage(ModelAndView mv, HttpSession session) {
         if (session.getAttribute("loginUser") == null) {
             mv.setViewName("login/loginPage");
         } else {
-            switch (((User) session.getAttribute("loginUser")).getUserRole()) {
+            User loginUser = (User) session.getAttribute("loginUser");
+
+            mv.addObject("loginUser", loginUser);
+
+            switch (loginUser.getUserRole()) {
                 case 1 -> mv.setViewName("myPage/studentMyPage");
                 case 2 -> mv.setViewName("myPage/teacherMyPage");
                 case 3 -> mv.setViewName("myPage/adminMyPage");
+                default -> mv.setViewName("common/errorPage"); // 예외 처리
             }
         }
+
         return mv;
     }
 
     @PostMapping("updateStudent.me")
     public ModelAndView updateStudent(ModelAndView mv, HttpSession session) {
+        if(session.getAttribute("loginUser") == null) {
+            mv.setViewName("login/loginPage");
+        } else {
+            String userName = (String) session.getAttribute("loginUser");
+        }
         return mv;
     }
 }
+

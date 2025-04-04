@@ -36,7 +36,7 @@
                         <select id="userStatus" name="userStatus">
                             <option value="정상" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>
                             <option value="탈퇴" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>
-                            <option value="휴면" ${loginUser.userStatus == '휴면' ? 'selected' : ''}>휴면</option>
+                            <option value="휴면" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>
                         </select>
 
                     </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${loginUser.className}" readonly>
+                <input type="text" id="className" name="userClassName" value="${loginUser.classNo}" readonly>
             </div>
         </div>
 

@@ -26,4 +26,5 @@ public class User {
     private String userStatus;
     private String userProfileImg;
     private int departmentNo;
+    private String className;
 }

@@ -67,12 +67,24 @@ public class UserController {
     }
 
     @PostMapping("updateStudent.me")
-    public ModelAndView updateStudent(ModelAndView mv, HttpSession session) {
-        if(session.getAttribute("loginUser") == null) {
+    public ModelAndView updateStudent(User u, ModelAndView mv, HttpSession session) {
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser == null) {
             mv.setViewName("login/loginPage");
-        } else {
-            String userName = (String) session.getAttribute("loginUser");
+            return mv;
         }
+        u.setUserNo(loginUser.getUserNo());
+        int result = userService.updateUser(u);
+        if (result > 0) {
+            User updatedUser = userService.selectUserByNo(u.getUserNo());
+            session.setAttribute("loginUser", updatedUser);
+
+            mv.setViewName("redirect:/myPage.st");
+        } else {
+            mv.addObject("errorMsg", "회원 정보 수정에 실패했습니다.");
+            mv.setViewName("common/errorPage");
+        }
+
         return mv;
     }
 }

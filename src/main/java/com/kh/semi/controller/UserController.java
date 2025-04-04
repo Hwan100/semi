@@ -45,4 +45,23 @@ public class UserController {
 
         return "redirect:/";
     }
+
+    @PostMapping("myPage.st")
+    public ModelAndView myPage(ModelAndView mv, HttpSession session) {
+        if (session.getAttribute("loginUser") == null) {
+            mv.setViewName("login/loginPage");
+        } else {
+            switch (((User) session.getAttribute("loginUser")).getUserRole()) {
+                case 1 -> mv.setViewName("myPage/studentMyPage");
+                case 2 -> mv.setViewName("myPage/teacherMyPage");
+                case 3 -> mv.setViewName("myPage/adminMyPage");
+            }
+        }
+        return mv;
+    }
+
+    @PostMapping("updateStudent.me")
+    public ModelAndView updateStudent(ModelAndView mv, HttpSession session) {
+        return mv;
+    }
 }

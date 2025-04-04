@@ -1,9 +1,4 @@
 package com.kh.semi.domain.vo;
-
-<<<<<<< HEAD
-=======
-
->>>>>>> fedc78d (보드 제작중)
 import lombok.*;
 
 import java.sql.Date;
@@ -13,10 +8,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-<<<<<<< HEAD
 @EqualsAndHashCode
-=======
->>>>>>> fedc78d (보드 제작중)
 public class Board {
     private int boardNo;
     private String title;
@@ -29,7 +21,3 @@ public class Board {
     private int userNo;
     private int classNo;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> fedc78d (보드 제작중)

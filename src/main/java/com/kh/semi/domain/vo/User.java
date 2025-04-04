@@ -16,9 +16,9 @@ public class User {
     private String userId;
     private String userPwd;
     private String userName;
-    private int role;
-    private String phone;
-    private String email;
+    private int userRole;
+    private String userPhone;
+    private String userEmail;
     private String userAddress;
     private String userAddressDetail;
     private Date userBirth;

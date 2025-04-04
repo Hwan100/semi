@@ -112,7 +112,7 @@
     <button type="submit" class="login-button">로그인</button>
     <div class="options">
         <label><input type="checkbox"> 아이디 저장</label>
-        <a>회원가입</a>
+        <a href="enrollForm.me">회원가입</a>
     </div>
     <div>
         <h5 style="color: red">${errorMsg}</h5>

@@ -6,9 +6,9 @@ import java.sql.Date;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 public class User {
     private int userNo;

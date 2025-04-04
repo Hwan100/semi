@@ -35,7 +35,6 @@ public class UserController {
             session.setAttribute("loginUser", loginUser);
             mv.setViewName("redirect:/");
         }
-
         return mv;
     }
 

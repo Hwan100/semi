@@ -24,6 +24,7 @@ public class HomeController {
                 default -> mv.setViewName("student/main");
             }
         }
+
         return mv;
     }
 

@@ -52,4 +52,7 @@ public class TestController {
 
     @GetMapping("attendance.li")
     public String attendanceList() {return "teacher/teacherAttendancePage";}
+
+    @GetMapping("enrollForm.me")
+    public String enrollForm() {return "login/memberEnrollPage";}
 }

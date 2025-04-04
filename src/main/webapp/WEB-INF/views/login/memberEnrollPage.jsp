@@ -61,6 +61,7 @@
         }
 
         .second-info {
+            display: none;
             font-size: 14px;
             color: red;
         }
@@ -162,6 +163,11 @@
             color: black;
         }
 
+        input{
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -170,12 +176,12 @@
         <div id="logo"><img src="../../../../resources/static/icons/logo.png"></div>
         <div id="enroll">회원가입</div>
         <div id="contents">
-            <button id="idCheck">중복확인</button>
+            <button id="idCheck" onclick="idCheck()">중복확인</button>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">아이디</div>
-                    <div class="second-info">사용할 수 없는 아이디입니다.</div>
+                    <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
                 </div>
                 <div class="input-wrap">
                     <input placeholder="아이디 입력(6~20자)">
@@ -263,7 +269,7 @@
             </div>
             <div class="line" style="height: 150px">
                 <div class="top-line">
-                    <div class="first-info">전화번호</div>
+                    <div class="first-info">주소</div>
                 </div>
                 <div class="input-wrap">
                     <input style="margin-bottom: 11px" placeholder="주소를 입력해주세요.">
@@ -277,5 +283,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    function idCheck(){
+        const 
+    }
+</script>
 </body>
 </html>

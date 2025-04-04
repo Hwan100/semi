@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.semi.mappers.UserMapper">
+    <resultMap id="userResult" type="User">
+        <result column="USER_NO" property="userNo"/>
+        <result column="CLASS_NO" property="classNo"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="USER_PWD" property="userPwd"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="USER_ROLE" property="userRole"/>
+        <result column="USER_PHONE" property="userPhone"/>
+        <result column="USER_EMAIL" property="userEmail"/>
+        <result column="USER_ADDRESS" property="userAddress"/>
+        <result column="USER_ADDRESS_DETAIL" property="userAddressDetail"/>
+        <result column="USER_BIRTH" property="userBirth"/>
+        <result column="USER_JOIN_DATE" property="userJoinDate"/>
+        <result column="USER_STATUS" property="userStatus"/>
+        <result column="USER_PROFILE_IMG" property="userProfileImg"/>
+        <result column="DEPARTMENT_NO" property="departmentNo"/>
+    </resultMap>
+    <select id="loginUser" parameterType="User" resultMap="userResult">
+        SELECT  USER_NO,
+                CLASS_NO,
+                USER_ID,
+                USER_PWD,
+                USER_NAME,
+                USER_ROLE,
+                USER_PHONE,
+                USER_EMAIL,
+                USER_ADDRESS,
+                USER_ADDRESS_DETAIL,
+                USER_BIRTH,
+                USER_JOIN_DATE,
+                USER_PROFILE_IMG,
+                DEPARTMENT_NO
+        FROM TB_USER
+       WHERE USER_ID = #{userId}
+         AND USER_STATUS = 'Y'
+    </select>
+</mapper>

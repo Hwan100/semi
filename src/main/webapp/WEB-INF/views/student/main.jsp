@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<jsp:include page="../common/header.jsp"/>
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/css/studentMain.css">

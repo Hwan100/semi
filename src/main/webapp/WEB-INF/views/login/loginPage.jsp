@@ -7,7 +7,7 @@
     <style>
         * {
             box-sizing: border-box;
-            transform: scale(0.9);
+            /*transform: scale(0.9);*/
         }
 
         body {
@@ -24,21 +24,22 @@
 
         .login-box {
             position: relative;
-            width: 1107.75px;
-            height: 635px;
+            width: 850px;
+            height: 500px;
             background: #FFFFFF;
-            box-shadow: 2.2px 2.2px 2.95px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 18.4px;
-            padding-top: 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
         .logo {
-            width: 431.45px;
-            height: 172.58px;
-            margin-bottom: 40px;
+            width: 300px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .logo img {
@@ -48,22 +49,22 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
-            width: 565px;
+            margin-bottom: 10px;
+            width: 65%;
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 15px;
+            padding: 10px;
             font-size: 20px;
             background: #F1EFEF;
             border: 1px solid #979797;
         }
 
         .login-button {
-            width: 565px;
-            padding: 15px;
+            width: 65%;
+            padding: 10px;
             font-size: 22px;
             background: #CEF0FF;
             border: none;
@@ -72,7 +73,7 @@
         }
 
         .options {
-            width: 565px;
+            width: 65%;
             display: flex;
             justify-content: space-between;
             margin-top: 15px;
@@ -95,23 +96,27 @@
             cursor: pointer;
         }
     </style>
+
 </head>
 <body>
-<div class="login-box">
+<form action="login.us" class="login-box" method="post">
     <div class="logo">
         <img src="icons/logo.png" alt="EduTrack 로고">
     </div>
     <div class="form-group">
-        <input type="text" placeholder="ID" name="user_id">
+        <input type="text" placeholder="ID" name="userId">
     </div>
     <div class="form-group">
-        <input type="password" placeholder="PWD" name="user_pwd">
+        <input type="password" placeholder="PWD" name="userPwd">
     </div>
-    <button class="login-button">로그인</button>
+    <button type="submit" class="login-button">로그인</button>
     <div class="options">
         <label><input type="checkbox"> 아이디 저장</label>
-        <a>회원가입</a>
+        <a href="enrollForm.me">회원가입</a>
     </div>
-</div>
+    <div>
+        <h5 style="color: red">${errorMsg}</h5>
+    </div>
+</form>
 </body>
 </html>

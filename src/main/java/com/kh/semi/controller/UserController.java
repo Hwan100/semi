@@ -62,6 +62,6 @@ public class UserController {
 
     @PostMapping("updateStudent.me")
     public ModelAndView updateStudent(ModelAndView mv, HttpSession session) {
-        
+        return mv;
     }
 }

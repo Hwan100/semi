@@ -31,9 +31,9 @@ public class APIMemberController {
         int result = UserService.idCheck(checkId);
 
         if(result > 0){
-            return "NNNNN";
+            return "N";
         } else {
-            return "NNNNY";
+            return "Y";
         }
     }
 }

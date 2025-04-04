@@ -39,4 +39,9 @@
        WHERE USER_ID = #{userId}
          AND USER_STATUS = 'Y'
     </select>
+    <select id="idCheck" resultType="_int">
+        SELECT COUNT(*)
+        FROM TB_USER
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

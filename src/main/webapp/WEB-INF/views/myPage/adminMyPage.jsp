@@ -34,9 +34,9 @@
                     <div class="form-group">
                         <label for="userStatus">상태</label>
                         <select id="userStatus" name="userStatus">
-                            <option value="정상" ${loginUser.userStatus == '정상' ? 'selected' : ''}>정상</option>
-                            <option value="탈퇴" ${loginUser.userStatus == '탈퇴' ? 'selected' : ''}>탈퇴</option>
-                            <option value="휴면" ${loginUser.userStatus == '휴면' ? 'selected' : ''}>휴면</option>
+                            <option value="정상" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>
+                            <option value="탈퇴" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>
+                            <option value="휴면" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>
                         </select>
 
                     </div>

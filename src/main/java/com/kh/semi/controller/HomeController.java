@@ -5,6 +5,7 @@ import com.kh.semi.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.apache.ibatis.annotations.Case;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +22,20 @@ public class HomeController {
                 case 2 -> mv.setViewName("teacher/main");
                 case 3 -> mv.setViewName("admin/main");
                 default -> mv.setViewName("student/main");
+            }
+        }
+        return mv;
+    }
+
+    @PostMapping("myPage.st")
+    public ModelAndView myPage(ModelAndView mv, HttpSession session) {
+        if (session.getAttribute("loginUser") == null) {
+            mv.setViewName("login/loginPage");
+        } else {
+            switch (((User) session.getAttribute("loginUser")).getUserRole()) {
+                case 1 -> mv.setViewName("myPage/studentMyPage");
+                case 2 -> mv.setViewName("myPage/teacherMyPage");
+                case 3 -> mv.setViewName("myPage/adminMyPage");
             }
         }
         return mv;

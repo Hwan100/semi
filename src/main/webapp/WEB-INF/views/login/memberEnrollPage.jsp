@@ -88,6 +88,7 @@
             color: white;
             border: none;
             font-size: 20px;
+            cursor: pointer;
         }
 
         .birth-group {
@@ -177,14 +178,13 @@
         <div id="enroll">회원가입</div>
         <div id="contents">
             <button id="idCheck" onclick="idCheck()">중복확인</button>
-
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">아이디</div>
                     <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="아이디 입력(6~20자)">
+                    <input placeholder="아이디 입력(6~20자)" id="idInput">
                 </div>
             </div>
 
@@ -286,7 +286,8 @@
 
 <script>
     function idCheck(){
-        const 
+        const id = document.getElementById('idInput').value;
+        
     }
 </script>
 </body>

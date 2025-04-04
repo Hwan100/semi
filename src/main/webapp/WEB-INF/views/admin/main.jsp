@@ -9,8 +9,15 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/css/admin.css">5
+    <link rel="stylesheet" href="/css/varibles.css">
+    <link rel="stylesheet" href="/css/component.css">
 </head>
 <body>
+<%--
+    인사         결재 대기 목록(병,휴가 신청 등등)   일정
+    근태관리      최근 알림(입퇴실 내역)
+--%>
 <div class="content-container">
     <%-- 인사 --%>
     <section class="intro-section">
@@ -24,175 +31,37 @@
             </div>
         </div>
     </section>
-    <%-- 반 자소서 및 이력서 현황 --%>
-    <section class="resume-section">
-        <div class="resume-title">
-            <h2>자소서 및 이력서 현황</h2>
-            <button class="btn-blank-small">바로가기</button>
+    <%-- 근태 관리 --%>
+    <section class="attendance-section">
+        <h2 class="checkin-title">출결 체크</h2>
+        <p class="checkin-date">2025년 03월 21일 (금요일) 16:19:20</p>
+
+        <div class="checkin-time-total">06h 12m</div>
+
+        <div class="checkin-progress">
+            <div class="bar"><div class="fill" style="width: 65%;"></div></div>
         </div>
-        <div class="resume-items">
-            <div>
-                <img src="/icons/managedResume.png" alt="관리중인 자소서 및 이력서">
-                <p class="resume-item-title">관리중인 자소서 및 이력서</p>
-                <p class="right bottom"><span class="primary-bold">20</span>개</p>
-            </div>
-            <div>
-                <img src="/icons/checkedResume.png" alt="확인한 자소서 및 이력서">
-                <p class="resume-item-title">확인한 자소서 및 이력서</p>
-                <p class="right bottom"><span class="primary-bold">20</span>개</p>
-            </div>
-            <div>
-                <img src="/icons/notCheckResume.png" alt="미확인 자소서 및 이력서">
-                <p class="resume-item-title">미확인 자소서 및 이력서</p>
-                <p class="right bottom"><span class="primary-bold">20</span>개</p>
-            </div>
+
+        <div class="checkin-times">
+            <div><span class="label">입실시간</span><span class="time">09 : 05 : 30</span></div>
+            <div><span class="label">퇴실시간</span><span class="time">17 : 57 : 50</span></div>
         </div>
-    </section>
-    <%-- 일정 --%>
-    <section class="progress-section">
-        <h2>반별 진행상황</h2>
-        <table class="notice-table">
-            <thead>
-            <tr>
-                <th>과정명</th>
-                <th>진척도</th>
-                <th>진행상황</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>aws 클라우드 기반...</td>
-                <td><progress class="custom-progress" max="100" value="75"></progress></td>
-                <td>자바 기초</td>
-                <td><button class="btn-small">바로가기</button></td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-    <%-- 공지사항 --%>
-    <section class="announcement-section">
-        <div class="announcement-box">
-            <p>공지사항</p>
-            <button class="btn-blank-small">바로가기</button>
+
+        <div class="checkin-buttons">
+            <button class="btn enter active">입실</button>
+            <button class="btn out">외출 및 조퇴</button>
         </div>
-        <table class="notice-table">
-            <thead>
-            <tr>
-                <th>글번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            </tbody>
-        </table>
+        <button class="btn full leave">퇴실</button>
     </section>
-    <%-- 우리반 게시판 --%>
-    <section class="board-section">
-        <div class="announcement-box">
-            <p>우리반 게시판</p>
-            <button class="btn-blank-small">바로가기</button>
-        </div>
-        <table class="notice-table">
-            <thead>
-            <tr>
-                <th>글번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원... </td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            </tbody>
-        </table>
+    <%-- 결재 대기 목록(휴가, 병가 등등) --%>
+    <section class="list-section">
+
     </section>
-    <%-- 스케쥴 --%>
+    <%-- 최근 알림(입퇴실 내역 등등) --%>
+    <section class="alarm-section">
+
+    </section>
+    <%-- 스케쥴(일정) --%>
     <section class="schedule-section">
         <h2>스케쥴</h2>
         <div class="calendar">

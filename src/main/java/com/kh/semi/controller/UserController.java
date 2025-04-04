@@ -46,11 +46,13 @@ public class UserController {
         return "redirect:/";
     }
 
-    @PostMapping("myPage.st")
+    @PostMapping("myPage.me")
     public ModelAndView myPage(ModelAndView mv, HttpSession session) {
+        User loginUser = (User)session.getAttribute("loginUser");
         if (session.getAttribute("loginUser") == null) {
             mv.setViewName("login/loginPage");
         } else {
+            mv.addObject("loginUser", loginUser);
             switch (((User) session.getAttribute("loginUser")).getUserRole()) {
                 case 1 -> mv.setViewName("myPage/studentMyPage");
                 case 2 -> mv.setViewName("myPage/teacherMyPage");

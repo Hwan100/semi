@@ -26,7 +26,7 @@
             <div class="top-grid">
                 <div class="form-group">
                     <label for="userRole">회원 구분</label>
-                    <input type="text" class="userRole" id="userRole" name="userRole" value="${loginUser.userRole == 1 }" readonly>
+                    <input type="text" class="userRole" id="userRole" name="userRole" value="학생" readonly>
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>

@@ -15,7 +15,7 @@
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
 
-    <form action="update.me" method="post">
+    <form action="updateStudent.me" method="post">
 
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">

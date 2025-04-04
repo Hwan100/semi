@@ -36,9 +36,9 @@ body {
 }
 
 
-::-webkit-scrollbar {
-    display: none;
-}
+/*::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
 
 /* 사이드바 */
 .sidebar-container {

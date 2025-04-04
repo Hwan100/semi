@@ -17,6 +17,15 @@ public class UserServiceImpl implements UserService {
     public User loginUser(String userId) { return userMapper.loginUser(userId); }
 
     @Override
+    public int updateUser(User u) {return userMapper.updateUser(u);}
+
+    @Override
+    public User selectUserByNo(int userNo) {return userMapper.selectUserByNo(userNo);}
+
+    @Override
+    public String getClassNameByClassNo(int classNo) {return userMapper.getClassNameByClassNo(classNo);}
+
+    @Override
     public int idCheck(String userId) { return userMapper.idCheck(userId);
     }
 }

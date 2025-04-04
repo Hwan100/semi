@@ -1,5 +1,6 @@
 package com.kh.semi.domain.vo;
 
+
 import lombok.*;
 
 import java.sql.Date;

@@ -25,15 +25,5 @@ public class APIMemberController {
     public APIMemberController(UserService userService) {
         this.UserService = userService;
     }
-//
-    @GetMapping("/id")
-    public String checkUserId(String checkId){
-        int result = UserService.idCheck(checkId);
 
-        if(result > 0){
-            return "NNNNN";
-        } else {
-            return "NNNNY";
-        }
-    }
 }

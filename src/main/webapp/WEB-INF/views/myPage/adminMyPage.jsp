@@ -26,9 +26,9 @@
                     <div class="form-group">
                         <label for="userType">구분</label>
                         <select id="userType" name="userType">
-                            <option value="학생" ${loginUser.userType == '학생' ? 'selected' : ''}>학생</option>
-                            <option value="강사" ${loginUser.userType == '강사' ? 'selected' : ''}>강사</option>
-                            <option value="관리자" ${loginUser.userType == '관리자' ? 'selected' : ''}>관리자</option>
+                            <option value="학생" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>
+                            <option value="강사" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>
+                            <option value="관리자" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="enrollDate">가입일</label>
-                        <input type="text" id="enrollDate" name="enrollDate" value="${loginUser.enrollDate}" readonly>
+                        <input type="text" id="enrollDate" name="enrollDate" value="${loginUser.userJoinDate}" readonly>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="studentNo">학생 번호</label>
-                        <input type="text" id="studentNo" name="studentNo" value="${loginUser.studentNo}" readonly>
+                        <input type="text" id="studentNo" name="studentNo" value="${loginUser.userNo}" readonly>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${loginUser.className}" readonly>
+                <input type="text" id="className" name="userClassName" value="${loginUser.classNo}" readonly>
             </div>
         </div>
 

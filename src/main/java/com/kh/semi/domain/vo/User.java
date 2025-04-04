@@ -23,7 +23,7 @@ public class User {
     private String userAddressDetail;
     private Date userBirth;
     private Date userJoinDate;
-    private String status;
+    private String userStatus;
     private String userProfileImg;
     private int departmentNo;
 }

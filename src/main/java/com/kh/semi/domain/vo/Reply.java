@@ -16,10 +16,4 @@ public class Reply {
     private Date date;
     private int userNo;
     private int boardNo;
-    REPLY_NO
-            CONTENT
-    CREATE_DATE
-            USER_NO
-    BOARD_NO
-
-}
+ }

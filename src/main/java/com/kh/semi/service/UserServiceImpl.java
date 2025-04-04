@@ -16,4 +16,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User loginUser(String userId) { return userMapper.loginUser(userId); }
 
+    @Override
+    public int updateUser(User u) {return userMapper.updateUser(u);}
+
+    @Override
+    public User selectUserByNo(int userNo) {
+        return userMapper.selectUserByNo(userNo);}
+
+
 }

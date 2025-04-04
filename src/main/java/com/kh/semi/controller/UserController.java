@@ -37,7 +37,7 @@ public class UserController {
         return mv;
     }
 
-    @GetMapping("logout.me")
+    @GetMapping("logout.us")
     public String logout(HttpSession session) {
         session.setAttribute("alertMsg", "로그아웃 완료");
         session.removeAttribute("loginUser");

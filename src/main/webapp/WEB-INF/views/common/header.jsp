@@ -32,11 +32,17 @@
 
     <div class="user-info">
         <img class="profile-img" src="https://placehold.co/70x70" alt="프로필">
-        <div class="welcome-msg">
-            <span>환영합니다.</span>
-            <strong>KH학생</strong>님
+        <div id="welcome">
+            <div class="welcome-msg">
+                <span id="welcomeMsg">환영합니다.</span>
+                <span>
+                <strong>${loginUser.userName}</strong> 님
+            </span>
+            </div>
+            <div class="dropdown-arrow">
+                <img src="/icons/expand_down.png" style="width: 24px; height: 24px;" alt="">
+            </div>
         </div>
-        <div class="dropdown-arrow"></div>
     </div>
     <hr>
 </header>

@@ -189,14 +189,15 @@ body {
     align-items: center;
     gap: 12px;
     background: white;
-    padding: 8px 16px;
+    padding: 4px 8px;
     border-radius: 50px;
+    width: 260px;
 }
 
 .profile-img {
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .welcome-msg {
@@ -218,4 +219,15 @@ hr {
     background-color: white;
     border: none;
     border-radius: 10px;
+}
+
+#welcome{
+    display: flex;
+    width: 140px;
+    justify-content: space-between;
+    align-items: center;
+}
+#welcomeMsg{
+    color: #c6c6c6;
+    font-size: small;
 }

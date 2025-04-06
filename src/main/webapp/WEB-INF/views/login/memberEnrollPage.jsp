@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         #layout {
             position: relative;
@@ -88,6 +90,7 @@
             color: white;
             border: none;
             font-size: 20px;
+            cursor: pointer;
         }
 
         .birth-group {
@@ -108,13 +111,13 @@
             background-size: 20px;
         }
 
-        #emailInput {
+        #emailInputline {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        #emailInput input {
+        #emailInputline input {
             width: 330px;
             height: 47px;
             border-radius: 10px;
@@ -123,7 +126,7 @@
             border: 1px solid #ccc;
         }
 
-        #emailInput select {
+        #emailInputline select {
             width: 330px;
             height: 47px;
             border-radius: 10px;
@@ -132,7 +135,7 @@
             border: 1px solid #ccc;
         }
 
-        #emailInput .at {
+        #emailInputline .at {
             font-size: 20px;
         }
 
@@ -173,80 +176,73 @@
 <body>
 <div id="layout">
     <div id="enrollCard">
-        <div id="logo"><img src="../../../../resources/static/icons/logo.png"></div>
+        <div id="logo"><img src="icons/logo.png"></div>
         <div id="enroll">회원가입</div>
         <div id="contents">
             <button id="idCheck" onclick="idCheck()">중복확인</button>
-
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">아이디</div>
                     <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="아이디 입력(6~20자)">
+                    <input placeholder="아이디 입력(5~20자)" id="idInput" required>
                 </div>
             </div>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">비밀번호</div>
-                    <div class="second-info">20자 이내의 비밀번호를 입력해주세요.</div>
+                    <div class="second-info" id="pwdInfo"></div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )">
+                    <input type="password" id="pwdInput" placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )" required>
                 </div>
             </div>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">비밀번호 확인</div>
-                    <div class="second-info">비밀번호가 일치하지 않습니다.</div>
+                    <div class="second-info" id="pwdWarning"></div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="비밀번호 재입력">
+                    <input type="password" id="pwdCheck" placeholder="비밀번호 재입력" required>
                 </div>
             </div>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">이름</div>
+                    <div class="second-info" id="nameWarning">이름을 확인해주세요.</div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="이름을 입력해주세요.">
+                    <input id="nameInput" placeholder="이름을 입력해주세요." required>
                 </div>
             </div>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">전화번호</div>
+                    <div class="second-info" id="phoneWarning"></div>
                 </div>
                 <div class="input-wrap">
-                    <input placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )">
+                    <input id="phoneInput" placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )" required>
                 </div>
             </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">비상연락망</div>
-                </div>
-                <div class="input-wrap">
-                    <input placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )">
-                </div>
-            </div>
 
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">생년월일</div>
                 </div>
                 <div class="birth-group">
-                    <select>
+                    <select id="yearSelect">
                         <option disabled selected>연도</option>
                     </select>
-                    <select>
+                    <select id="monthSelect">
                         <option disabled selected>월</option>
                     </select>
-                    <select>
+                    <select id="daySelect">
                         <option disabled selected>일</option>
                     </select>
                 </div>
@@ -255,17 +251,20 @@
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">이메일 주소</div>
+                    <div class="second-info" id="emailWarning"></div>
                 </div>
-                <div id="emailInput">
-                    <input type="text" placeholder="이메일 주소">
+                <div id="emailInputline">
+                    <input id="emailInput" type="text" placeholder="이메일 주소">
                     <div class="at">@</div>
-                    <select>
-                        <option disabled selected>naver.com</option>
+                    <select id="emailDomainSelect">
+                        <option>naver.com</option>
                         <option>gmail.com</option>
                         <option>daum.net</option>
-                        <option>직접입력</option>
+                        <option value="custom">직접입력</option>
                     </select>
+                    <input type="text" id="customDomain" placeholder="도메인 입력" style="display: none;">
                 </div>
+
             </div>
             <div class="line" style="height: 150px">
                 <div class="top-line">
@@ -277,7 +276,7 @@
                 </div>
             </div>
             <div class="btn-box">
-                <button class="submit-btn">가입신청</button>
+                <button class="submit-btn" disabled id="submitBtn">가입신청</button>
                 <button class="cancel-btn">돌아가기</button>
             </div>
         </div>
@@ -285,9 +284,206 @@
 </div>
 
 <script>
-    function idCheck(){
-        const 
+    function idCheck() {
+        const id = document.getElementById('idInput').value;
+        document.getElementById('idWarning').style.display = "none";
+        if(id.length < 5 || id.length > 20){
+            alert("아이디는 5~20자 사이여야 합니다.")
+            return;
+        } else {
+            getIdCheck({checkId : id}, drawIdCheck)
+        }
+        console.log("입력된 아이디:", id);
+        // 이후 AJAX 요청 or 검증 로직 실행
     }
+
+    function getIdCheck(id, callback) {
+        $.ajax ({
+            url: "/api/user/id",
+            data: id,
+            success: function (res){
+                callback(res);
+            }, error: function (){
+                console.log("아이디 중복체크 ajax 실패");
+            }
+    })
+    }
+
+    function drawIdCheck(isCheck){
+        const warning = document.getElementById("idWarning");
+        const submitBtn = document.getElementById("submitBtn");
+
+        warning.style.display = "block";
+
+        if(isCheck === 'N') {
+            submitBtn.disabled = true;
+            warning.style.color = "red";
+            warning.innerHTML = "사용할 수 없는 아이디입니다."
+        } else {
+            warning.style.color = "green";
+            warning.innerText = "사용 가능한 아이디입니다.";
+            submitBtn.disabled = false;
+        }
+    }
+
+    document.getElementById("pwdInput").addEventListener('input', function () {
+        const pwd = document.getElementById("pwdInput").value;
+        const Info = document.getElementById("pwdInfo");
+        const submitBtn = document.getElementById("submitBtn");
+
+        Info.style.display = "none";
+        submitBtn.disabled = false;
+
+        if(pwd.length < 8 || pwd.length >= 20){
+            Info.style.display = "block";
+            Info.innerHTML = ("8~20자 이내의 비밀번호를 입력해주세요.");
+            submitBtn.disabled = true;
+        } else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd)){
+            Info.style.display = "block";
+            Info.innerHTML = ("문자, 숫자, 특수문자를 포함해주세요.");
+            submitBtn.disabled = true;
+        }
+    })
+
+    document.getElementById("pwdCheck").addEventListener('input', function (){
+        const pwd = document.getElementById("pwdInput").value;
+        const pwdCheck = document.getElementById("pwdCheck").value;
+        const warning = document.getElementById("pwdWarning");
+
+        warning.style.display = "none";
+
+        if(pwd.length >= 8 && pwd.length <= 20 && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd) && pwd === pwdCheck){
+            warning.style.display = "block";
+            warning.style.color = "green";
+            warning.innerHTML = "비밀번호와 일치합니다.";
+        } else if(pwd.length >= 8 && pwd.length <= 20 && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd) && pwd !== pwdCheck) {
+            warning.style.display = "block";
+            warning.style.color = "red";
+            warning.innerHTML = "비밀번호와 일치하지 않습니다.";
+        } else {
+            warning.style.display = "block"
+            warning.style.color = "red";
+            warning.innerHTML = "비밀번호를 확인해주세요.";
+        }
+    })
+
+    document.getElementById("nameInput").addEventListener('blur' , function (){
+        const name = document.getElementById("nameInput").value;
+        const warning = document.getElementById("nameWarning");
+
+        warning.style.display = "none";
+
+        if(!/^[가-힣]{2,5}$/.test(name)){
+            warning.style.display = "block";
+        }
+    })
+
+
+    document.getElementById("phoneInput").addEventListener('input', function (){
+        const phone = document.getElementById("phoneInput").value;
+        const warning = document.getElementById("phoneWarning");
+
+        warning.style.display = "none";
+
+        if(phone.length !== 11 || !/^010[0-9]{8}$/.test(phone)){
+            warning.style.display = "block"
+            warning.innerHTML = "전화번호를 확인해주세요.";
+            warning.style.color = "red";
+        }
+    })
+
+    window.addEventListener('DOMContentLoaded', function () {
+        const yearSelect = document.getElementById("yearSelect");
+        const monthSelect = document.getElementById("monthSelect");
+        const daySelect = document.getElementById("daySelect");
+
+        const now = new Date();
+        const currentYear = now.getFullYear();
+
+        // 연도: 1980 ~ 현재
+        for (let y = currentYear; y >= 1980; y--) {
+            const option = document.createElement("option");
+            option.value = y;
+            option.text = y;
+            yearSelect.appendChild(option);
+        }
+
+        // 월: 1 ~ 12
+        for (let m = 1; m <= 12; m++) {
+            const option = document.createElement("option");
+            option.value = m;
+            option.text = m;
+            monthSelect.appendChild(option);
+        }
+
+        // 일자 채우기 함수
+        function populateDays(year, month) {
+            daySelect.innerHTML = '<option disabled selected>일</option>'; // 초기화
+
+            if (!year || !month) return;
+
+            const daysInMonth = new Date(year, month, 0).getDate(); // 해당 월의 마지막 날
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const option = document.createElement("option");
+                option.value = d;
+                option.text = d;
+                daySelect.appendChild(option);
+            }
+        }
+
+        // 연도 또는 월 변경 시 일 자동 조정
+        yearSelect.addEventListener('change', () => {
+            const year = parseInt(yearSelect.value);
+            const month = parseInt(monthSelect.value);
+            if (!isNaN(year) && !isNaN(month)) {
+                populateDays(year, month);
+            }
+        });
+
+        monthSelect.addEventListener('change', () => {
+            const year = parseInt(yearSelect.value);
+            const month = parseInt(monthSelect.value);
+            if (!isNaN(year) && !isNaN(month)) {
+                populateDays(year, month);
+            }
+        });
+    });
+
+    document.getElementById("emailInput").addEventListener('input',function (){
+        const email = document.getElementById("emailInput").value;
+        const warning = document.getElementById("emailWarning");
+
+        warning.style.display = "none";
+
+        if (!/^[a-zA-Z0-9._%+-]+$/.test(email)){
+            warning.style.display = "block";
+            warning.innerHTML = "이메일을 확인해주세요."
+        }
+    })
+
+    document.getElementById("emailDomainSelect").addEventListener("change", function () {
+        const selectedValue = this.value;
+        const customInput = document.getElementById("customDomain");
+
+        if (selectedValue === "custom") {
+            customInput.style.display = "inline-block";
+        } else {
+            customInput.style.display = "none";
+        }
+    });
+
+    document.getElementById("customDomain").addEventListener("input", function (){
+        const backemail = document.getElementById("customDomain").value;
+        const frontEmail = document.getElementById("emailInput").value;
+
+        warning.style.display = "none";
+
+        if (!/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(backemail) || !/^[a-zA-Z0-9._%+-]+$/.test(frontEmail)){
+            warning.style.display = "block";
+            warning.innerHTML = "이메일을 확인해주세요."
+        }
+    })
 </script>
 </body>
 </html>

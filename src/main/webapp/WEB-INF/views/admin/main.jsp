@@ -18,6 +18,7 @@
     인사         결재 대기 목록(병,휴가 신청 등등)   일정
     근태관리      최근 알림(입퇴실 내역)
 --%>
+<jsp:include page="../common/header.jsp"/>
 <div class="content-container">
     <%-- 인사 --%>
     <section class="intro-section">

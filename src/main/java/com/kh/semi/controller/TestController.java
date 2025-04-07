@@ -45,4 +45,7 @@ public class TestController {
 
     @GetMapping("enrollForm.me")
     public String enrollForm() {return "login/memberEnrollPage";}
+
+    @GetMapping("createCourse.fo")
+    public String createClass() {return "admin/adminCreateClass";}
 }

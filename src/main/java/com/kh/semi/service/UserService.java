@@ -13,4 +13,6 @@ public interface UserService {
     String getClassNameByClassNo(int classNo);
 
     int idCheck(String checkId);
+
+    int insertUser(User u);
 }

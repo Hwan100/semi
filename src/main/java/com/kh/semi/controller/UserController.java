@@ -4,6 +4,7 @@ import com.kh.semi.domain.vo.User;
 import com.kh.semi.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,10 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     private final UserService userService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService ,BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @PostMapping("login.us")
@@ -134,6 +137,25 @@ public class UserController {
         return mv;
     }
 
+    @PostMapping("insert.us")
+    public ModelAndView insert(User u, ModelAndView mv, HttpSession session) {
+        String pwd = bCryptPasswordEncoder.encode(u.getUserPwd());
+        u.setUserPwd(pwd);
+
+        int result = userService.insertUser(u);
+
+        if (result > 0) {
+            session.setAttribute("alertMsg", "성공적으로 회원가입을 완료했습니다.");
+            session.setAttribute("loginUser", u);
+            mv.setViewName("redirect:/");
+        } else {
+            session.setAttribute("errorMsg", "회원가입을 실패하였습니다.");
+            mv.setViewName("redirect:/");
+        }
+        System.out.println("생년월일 확인: " + u.getUserBirth());
+
+        return mv;
+    }
 
 
 

@@ -13,8 +13,8 @@
     <title>대시보드</title>
 
 </head>
-<body onload="location.href='/'">
-<%--    <jsp:include page="common/header.jsp" />--%>
+<body>
+    <jsp:include page="common/header.jsp" />
 <%--    <c:choose>--%>
 <%--        <c:when test="${USER_ROLE == 1}">--%>
 
@@ -29,5 +29,6 @@
 
 <%--        </c:otherwise>--%>
 <%--    </c:choose>--%>
+    <jsp:include page="admin/main.jsp" />
 </body>
 </html>

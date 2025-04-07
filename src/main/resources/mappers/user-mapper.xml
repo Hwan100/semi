@@ -37,7 +37,7 @@
                 USER_PROFILE_IMG,
                 DEPARTMENT_NO
         FROM TB_USER U
-        JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
+        LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
        WHERE USER_ID = #{userId}
          AND USER_STATUS = 'Y'
     </select>
@@ -58,7 +58,7 @@
         SELECT *
         FROM TB_USER
         WHERE USER_NO = #{userNo}
-        AND STATUS = 'Y'
+        AND USER_STATUS = 'Y'
     </select>
 
     <select id="getClassNameByClassNo" parameterType="Class">

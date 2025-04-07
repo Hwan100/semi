@@ -246,7 +246,6 @@ body {
 
 /* 캘린더 */
 .calendar {
-    width: 300px;
     background-color: white;
     border-radius: 16px;
     padding: 0px 10px;
@@ -262,7 +261,7 @@ body {
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 1px 5px;
+    gap: 15px 5px;
     font-size: 11px;
 }
 
@@ -292,6 +291,29 @@ body {
 
 .su {
     color: #e53935; /* 빨간 일요일 */
+}
+
+.schedule-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.schedule-item {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.schedule-item-title {
+    font-weight: bold;
+}
+
+.schedule-date {
+    color: var(--color-btn-gray);
 }
 
 /* 공지사항 */

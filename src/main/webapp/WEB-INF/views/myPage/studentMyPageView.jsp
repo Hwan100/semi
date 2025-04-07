@@ -15,7 +15,7 @@
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
 
-    <form action="updateStudent.me" method="post">
+    <form action="StudentUpdate.me" method="post">
 
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">
@@ -36,6 +36,7 @@
                 <div class="form-group">
                     <label for="userNo">회원 번호</label>
                     <input type="text" id="userNo" name="userNo" value="${loginUser.userNo}" readonly>
+                    <input type="hidden" name="userId" value="${loginUser.userId}">
                 </div>
                 <div class="form-group">
                     <label for="userBirth">생년월일</label>

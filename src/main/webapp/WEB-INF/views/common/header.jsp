@@ -39,14 +39,59 @@
                 <strong>${loginUser.userName}</strong> 님
             </span>
             </div>
-            <div class="dropdown-arrow">
+            <div id="dropdown-arrow">
                 <img src="/icons/expand_down.png" style="width: 24px; height: 24px;" alt="">
             </div>
         </div>
     </div>
+
+    <script>
+        // 헤더 드롭다운 메뉴 생성
+        const triggerBtn = document.getElementById('dropdown-arrow');
+        let dropdownEl = null;
+
+        triggerBtn.addEventListener('click', (e) => {
+            // 기존 드롭다운 제거
+            if (dropdownEl) {
+                dropdownEl.remove();
+                dropdownEl = null;
+                return;
+            }
+
+            // 새 드롭다운 생성
+            dropdownEl = document.createElement('div');
+            dropdownEl.className = 'dropdown-menu';
+            dropdownEl.innerHTML = `
+      <div class="dropdown-item">내정보 수정</div>
+      <div class="dropdown-item" onclick="location.href='logout.us'">로그아웃</div>
+    `;
+
+            // 버튼 아래에 위치
+            const rect = triggerBtn.getBoundingClientRect();
+            dropdownEl.style.top = (rect.bottom + window.scrollY) + 'px';
+            dropdownEl.style.left = (rect.left + window.scrollX - 100) + 'px';
+
+            // body에 추가
+            document.body.appendChild(dropdownEl);
+
+            // 마우스가 벗어나면 닫기
+            dropdownEl.addEventListener('mouseleave', () => {
+                dropdownEl.remove();
+                dropdownEl = null;
+            });
+        });
+
+        // 버튼 외 다른 곳 누르면 닫기
+        document.addEventListener('click', (e) => {
+            if (dropdownEl && !dropdownEl.contains(e.target) && e.target !== triggerBtn) {
+                dropdownEl.remove();
+                dropdownEl = null;
+            }
+        });
+    </script>
+
     <hr>
 </header>
-
 
 <div class="sidebar-container">
     <div class="sidebar">
@@ -68,7 +113,7 @@
             </div>
 
             <div id="mypage-submenu" class="submenu-container">
-                <div class="submenu-item active" onclick="location.href='myPage.st?title1=마이페이지&title2=개인정보 수정';">
+                <div class="submenu-item active" onclick="location.href='myPage.me?title1=마이페이지&title2=개인정보 수정';">
                     <div class="submenu-text"><a href="myPage.me">개인정보 수정</a></div>
                 </div>
                 <div class="submenu-item" onclick="location.href='finish.bo?title1=마이페이지&title2=수료증 발급'">

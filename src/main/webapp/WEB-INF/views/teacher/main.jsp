@@ -23,7 +23,7 @@
                 <p>강사님은 현재 N개의 반을 맡고 계세요. <br>
                 오늘도 시작해볼까요?</p>
                 <div class="intro-btn-box">
-                    <button class="btn-small">내 정보 수정</button>
+                    <button class="btn-small" onclick="location.href='myPage.me'">내 정보 수정</button>
                     <button class="btn-blank-small">반관리</button>
                 </div>
             </div>

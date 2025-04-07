@@ -97,6 +97,59 @@
             display: flex;
             gap: 10px;
         }
+
+        #pagingArea {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        ul.pagination {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.pagination li.page-item a.page-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #000000;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            color: #000000;
+            background-color: #fff;
+            text-decoration: none;
+        }
+
+        ul.pagination li.page-item.active a.page-link {
+            background-color: #33363F;
+            color: #ffffff;
+            : 1px solid #33363F;
+        }
+
+        ul.pagination li.page-item.disabled a.page-link {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        ul.pagination li.page-item a.page-link::before {
+            font-weight: bold;
+        }
+
+        ul.pagination li.page-item a.page-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        .page-item, .disabled, .page-link{
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +162,7 @@
 
         <div class="button-area">
             <button class="btn-blank-small" onclick="">수정</button>
-            <button class="btn-blank-small" onclick="">작성</button>
+            <button class="btn-blank-small" onclick="location.href='enrollForm.no'">작성</button>
 <%--            <button class="btn-blank-small" onclick="history.back()">이전화면</button>--%>
         </div>
     </div>
@@ -123,48 +176,48 @@
         <div style="flex: 0 0 100px;">작성일</div>
     </div>
 
-    <!-- 게시글 리스트 -->
-    <c:forEach var="b" items="${list}">
-        <div class="board-row">
-            <div style="flex: 0 0 100px;">${b.boardNo}</div>
-            <div style="flex: 0 0 130px;">${b.branch}</div>
-            <div class="board-title-cell">
-                <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
-            </div>
-            <div style="flex: 0 0 150px;">${b.boardWriter}</div>
-            <div style="flex: 0 0 100px;">${b.count}</div>
-            <div style="flex: 0 0 100px;">${b.createDate}</div>
-        </div>
-    </c:forEach>
-
-    <!-- 페이지네이션 -->
-    <!-- 게시글 리스트 -->
-    <!-- ✅ 예시 게시글 (임시 데이터) -->
-    <div class="board-row">
-        <div style="flex: 0 0 100px;">999</div>
-        <div style="flex: 0 0 130px;">강남지점</div>
-        <div class="board-title-cell">
-            <a href="#">[예시] 시스템 점검 안내</a>
-        </div>
-        <div style="flex: 0 0 150px;">관리자</div>
-        <div style="flex: 0 0 100px;">123</div>
-        <div style="flex: 0 0 100px;">2025-03-27</div>
-    </div>
-
     <!-- ✅ 실제 게시글 반복 -->
     <c:forEach var="b" items="${list}">
         <div class="board-row">
             <div style="flex: 0 0 100px;">${b.boardNo}</div>
             <div style="flex: 0 0 130px;">${b.branch}</div>
             <div class="board-title-cell">
-                <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
+                <a href="detail.bo?bno=${b.boardNo}">${b.title}</a>
             </div>
-            <div style="flex: 0 0 150px;">${b.boardWriter}</div>
+            <div style="flex: 0 0 150px;">${b.userName}</div>
             <div style="flex: 0 0 100px;">${b.count}</div>
             <div style="flex: 0 0 100px;">${b.createDate}</div>
         </div>
     </c:forEach>
 
+
+    <div id="pagingArea">
+        <ul class="pagination">
+
+            <c:choose>
+                <c:when test="${ pi.currentPage eq 1 }">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage - 1}">Previous</a></li>
+                </c:otherwise>
+            </c:choose>
+
+            <c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
+                <li class="page-item"><a class="page-link" href="notice.bo?cpage=${p}">${p}</a></li>
+            </c:forEach>
+
+            <c:choose>
+                <c:when test="${ pi.currentPage eq pi.maxPage }">
+                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage + 1}">Next</a></li>
+                </c:otherwise>
+            </c:choose>
+
+        </ul>
+    </div>
 
 </div>
 </body>

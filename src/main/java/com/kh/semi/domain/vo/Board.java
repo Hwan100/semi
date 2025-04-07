@@ -22,4 +22,6 @@ public class Board {
     private String filePath;
     private int userNo;
     private int classNo;
+
+    private String userName;
 }

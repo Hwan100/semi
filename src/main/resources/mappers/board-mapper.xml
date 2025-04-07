@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.semi.mappers.BoardMapper">
+    <resultMap id="boardResult" type="Board">
+        <result column="BOARD_NO" property="boardNo" />
+        <result column="TITLE" property="title" />
+        <result column="CONTENT" property="content" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="COUNT" property="count" />
+        <result column="BRANCH" property="branch" />
+        <result column="TYPE" property="type" />
+        <result column="FILE_PATH" property="filePath" />
+        <result column="USER_NO" property="userNo" />
+        <result column="CLASS_NO" property="classNo" />
+
+        <result column="USER_NAME" property="userName" />
+    </resultMap>
+
+    <select id="selectBoardCount" resultType="_int">
+        SELECT COUNT(*)
+        FROM TB_BOARD
+    </select>
+
+    <select id="selectNoticeBoardList" resultMap="boardResult">
+        SELECT BOARD_NO,
+        BRANCH,
+        TITLE,
+        U.USER_NAME,
+        COUNT,
+        TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+        FROM TB_BOARD
+        JOIN TB_USER U USING (USER_NO)
+        WHERE TYPE = 1
+        ORDER BY BOARD_NO DESC
+    </select>
+
+    <insert id="insertNoticeBoard" parameterType="Board">
+        INSERT INTO TB_BOARD (
+        BOARD_NO,
+        TITLE,
+        CONTENT,
+        CREATE_DATE,
+        COUNT,
+        BRANCH,
+        TYPE,
+        FILE_PATH,
+        USER_NO,
+        CLASS_NO
+        ) VALUES (
+        SEQ_BOARD_NO.NEXTVAL,
+        #{title},
+        #{content},
+        SYSDATE,
+        0,
+        #{branch},
+        1,
+        #{filePath},
+        #{userNo},
+        NULL
+        )
+    </insert>
+</mapper>

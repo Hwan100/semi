@@ -15,4 +15,6 @@ public interface UserMapper {
     String getClassNameByClassNo(int classNo);
 
     int idCheck(@Param("userId") String userId);
+
+    int insertUser(User u);
 }

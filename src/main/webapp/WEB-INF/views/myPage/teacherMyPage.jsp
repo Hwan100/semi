@@ -22,7 +22,8 @@
             <div class="top-grid">
                 <div class="form-group">
                     <label for="userRole">회원 구분</label>
-                    <input type="text" id="userRole" name="userRole" class="userRole" value="강사" readonly>
+                    <input type="text" id="userRole" name="userRoleDisplay" class="userRoleDisplay" value="강사" readonly>
+                    <input type="hidden" name="userRole" value="2">
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>
@@ -31,6 +32,7 @@
                 <div class="form-group">
                     <label for="userNo">회원 번호</label>
                     <input type="text" id="userNo" name="userNo" value="${loginUser.userNo}" readonly>
+                    <input type="hidden" name="userId" value="${loginUser.userId}">
                 </div>
                 <div class="form-group">
                     <label for="userBirth">생년월일</label>

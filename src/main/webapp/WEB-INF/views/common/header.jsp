@@ -114,7 +114,7 @@
             </div>
 
             <div id="mypage-submenu" class="submenu-container">
-                <div class="submenu-item active" onclick="location.href='myPage.st?title1=마이페이지&title2=개인정보 수정';">
+                <div class="submenu-item active" onclick="location.href='myPage.me?title1=마이페이지&title2=개인정보 수정';">
                     <div class="submenu-text"><a href="myPage.me">개인정보 수정</a></div>
                 </div>
                 <div class="submenu-item" onclick="location.href='finish.bo?title1=마이페이지&title2=수료증 발급'">

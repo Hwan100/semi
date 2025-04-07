@@ -55,6 +55,7 @@
                     <div class="form-group">
                         <label for="studentNo">학생 번호</label>
                         <input type="text" id="studentNo" name="studentNo" value="${loginUser.userNo}" readonly>
+                        <input type="hidden" name="userId" value="${loginUser.userId}">
                     </div>
                 </div>
 

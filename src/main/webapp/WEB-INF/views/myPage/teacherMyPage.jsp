@@ -11,7 +11,7 @@
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
 
-    <form action="updateTeacher.me" method="post">
+    <form action="teacherUpdate.me" method="post">
 
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">
@@ -22,7 +22,8 @@
             <div class="top-grid">
                 <div class="form-group">
                     <label for="userRole">회원 구분</label>
-                    <input type="text" id="userRole" name="userRole" class="userRole" value="강사" readonly>
+                    <input type="text" id="userRole" name="userRoleDisplay" class="userRoleDisplay" value="강사" readonly>
+                    <input type="hidden" name="userRole" value="2">
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>
@@ -31,6 +32,7 @@
                 <div class="form-group">
                     <label for="userNo">회원 번호</label>
                     <input type="text" id="userNo" name="userNo" value="${loginUser.userNo}" readonly>
+                    <input type="hidden" name="userId" value="${loginUser.userId}">
                 </div>
                 <div class="form-group">
                     <label for="userBirth">생년월일</label>

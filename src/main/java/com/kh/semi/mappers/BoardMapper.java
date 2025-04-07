@@ -1,5 +1,4 @@
-package com.kh.semi.mapper;
-
+package com.kh.semi.mappers;
 
 import java.util.List;
 import com.kh.semi.domain.vo.Board;

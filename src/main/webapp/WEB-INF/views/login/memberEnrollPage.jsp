@@ -234,6 +234,7 @@
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">생년월일</div>
+                    <div class="second-info" id="birthWarning">생일을 입력해주세요.</div>
                 </div>
                 <div class="birth-group">
                     <select id="yearSelect">
@@ -251,7 +252,7 @@
             <div class="line">
                 <div class="top-line">
                     <div class="first-info">이메일 주소</div>
-                    <div class="second-info" id="emailWarning"></div>
+                    <div class="second-info" id="emailWarning">이메일을 확인해주세요.</div>
                 </div>
                 <div id="emailInputline">
                     <input id="emailInput" type="text" placeholder="이메일 주소">
@@ -284,6 +285,8 @@
 </div>
 
 <script>
+
+
     function idCheck() {
         const id = document.getElementById('idInput').value;
         document.getElementById('idWarning').style.display = "none";
@@ -316,13 +319,13 @@
         warning.style.display = "block";
 
         if(isCheck === 'N') {
-            submitBtn.disabled = true;
             warning.style.color = "red";
             warning.innerHTML = "사용할 수 없는 아이디입니다."
+            return false;
         } else {
             warning.style.color = "green";
             warning.innerText = "사용 가능한 아이디입니다.";
-            submitBtn.disabled = false;
+            return true;
         }
     }
 
@@ -356,18 +359,21 @@
             warning.style.display = "block";
             warning.style.color = "green";
             warning.innerHTML = "비밀번호와 일치합니다.";
+            return true;
         } else if(pwd.length >= 8 && pwd.length <= 20 && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd) && pwd !== pwdCheck) {
             warning.style.display = "block";
             warning.style.color = "red";
             warning.innerHTML = "비밀번호와 일치하지 않습니다.";
+            return false;
         } else {
             warning.style.display = "block"
             warning.style.color = "red";
             warning.innerHTML = "비밀번호를 확인해주세요.";
+            return false;
         }
     })
 
-    document.getElementById("nameInput").addEventListener('blur' , function (){
+    document.getElementById("nameInput").addEventListener('input' , function (){
         const name = document.getElementById("nameInput").value;
         const warning = document.getElementById("nameWarning");
 
@@ -389,6 +395,9 @@
             warning.style.display = "block"
             warning.innerHTML = "전화번호를 확인해주세요.";
             warning.style.color = "red";
+            return false;
+        } else {
+            return true;
         }
     })
 
@@ -450,15 +459,34 @@
         });
     });
 
+    function validateBirth(){
+        const year = document.getElementById("yearSelect").value;
+        const month = document.getElementById("monthSelect").value;
+        const day = document.getElementById("daySelect").value;
+        const warning = document.getElementById("birthWarning");
+
+        if(year === "연도" || month === "월" || day === "일") {
+            warning.style.display = "block";
+            return false;
+        } else {
+            warning.style.display = "none";
+            return true;
+        }
+    }
+
     document.getElementById("emailInput").addEventListener('input',function (){
-        const email = document.getElementById("emailInput").value;
+        const frontemail = document.getElementById("emailInput").value;
+        const selectDomain = document.getElementById("emailDomainSelect").value
+        const backemail = document.getElementById("customDomain").value;
         const warning = document.getElementById("emailWarning");
 
         warning.style.display = "none";
 
-        if (!/^[a-zA-Z0-9._%+-]+$/.test(email)){
+        if (!/^[a-zA-Z0-9._%+-]+$/.test(frontemail)){
             warning.style.display = "block";
-            warning.innerHTML = "이메일을 확인해주세요."
+        }
+        if ( selectDomain.value === "custom" && !/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(backemail))  {
+            warning.style.display = "block";
         }
     })
 
@@ -474,16 +502,175 @@
     });
 
     document.getElementById("customDomain").addEventListener("input", function (){
-        const backemail = document.getElementById("customDomain").value;
-        const frontEmail = document.getElementById("emailInput").value;
+        const custom = document.getElementById("customDomain").value;
+        const warning = document.getElementById("emailWarning");
+        const frontemail = document.getElementById("emailInput").value;
 
         warning.style.display = "none";
 
-        if (!/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(backemail) || !/^[a-zA-Z0-9._%+-]+$/.test(frontEmail)){
+        if(!/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(custom)){
             warning.style.display = "block";
-            warning.innerHTML = "이메일을 확인해주세요."
+        } else if (!/^[a-zA-Z0-9._%+-]+$/.test(frontemail)){
+            warning.style.display = "block";
+        } else {
+            warning.style.display = "none";
         }
     })
+
+    <%-- 여기부터 유효성 검사 --%>
+    function validateId() {
+        const id = document.getElementById('idInput').value;
+        const warning = document.getElementById('idWarning');
+
+        if (id.length < 5 || id.length > 20) {
+            warning.style.display = "block";
+            warning.style.color = "red";
+            warning.innerText = "아이디는 5~20자 사이여야 합니다.";
+            return false;
+        }
+
+        // 실제 중복검사 결과는 AJAX 후 처리되므로 여기선 true만 임시로 반환
+        if (warning.innerText === "사용 가능한 아이디입니다.") {
+            return true;
+        }
+
+        warning.style.display = "block";
+        return false;
+    }
+
+    function validatePwd() {
+        const pwd = document.getElementById("pwdInput").value;
+        const Info = document.getElementById("pwdInfo");
+
+        Info.style.display = "none";
+
+        if (pwd.length < 8 || pwd.length > 20) {
+            Info.style.display = "block";
+            Info.innerHTML = "8~20자 이내의 비밀번호를 입력해주세요.";
+            return false;
+        } else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd)) {
+            Info.style.display = "block";
+            Info.innerHTML = "문자, 숫자, 특수문자를 포함해주세요.";
+            return false;
+        }
+
+        return true;
+    }
+
+    function validatePwdCheck() {
+        const pwd = document.getElementById("pwdInput").value;
+        const pwdCheck = document.getElementById("pwdCheck").value;
+        const warning = document.getElementById("pwdWarning");
+
+        warning.style.display = "none";
+
+        if (pwd !== pwdCheck) {
+            warning.style.display = "block";
+            warning.style.color = "red";
+            warning.innerHTML = "비밀번호와 일치하지 않습니다.";
+            return false;
+        }
+
+        if (validatePwd()) {
+            warning.style.display = "block";
+            warning.style.color = "green";
+            warning.innerHTML = "비밀번호와 일치합니다.";
+            return true;
+        }
+
+        return false;
+    }
+
+    function validateName() {
+        const name = document.getElementById("nameInput").value;
+        const warning = document.getElementById("nameWarning");
+
+        if (!/^[가-힣]{2,5}$/.test(name)) {
+            warning.style.display = "block";
+            return false;
+        }
+
+        warning.style.display = "none";
+        return true;
+    }
+
+    function validatePhone() {
+        const phone = document.getElementById("phoneInput").value;
+        const warning = document.getElementById("phoneWarning");
+
+        if (phone.length !== 11 || !/^010[0-9]{8}$/.test(phone)) {
+            warning.style.display = "block";
+            warning.style.color = "red";
+            warning.innerHTML = "전화번호를 확인해주세요.";
+            return false;
+        }
+
+        warning.style.display = "none";
+        return true;
+    }
+
+    function validateBirth() {
+        const year = document.getElementById("yearSelect").value;
+        const month = document.getElementById("monthSelect").value;
+        const day = document.getElementById("daySelect").value;
+        const warning = document.getElementById("birthWarning");
+
+        if (year === "연도" || month === "월" || day === "일") {
+            warning.style.display = "block";
+            return false;
+        }
+
+        warning.style.display = "none";
+        return true;
+    }
+
+    function validateEmail() {
+        const front = document.getElementById("emailInput").value;
+        const domainSelect = document.getElementById("emailDomainSelect");
+        const domain = domainSelect.value;
+        const custom = document.getElementById("customDomain").value;
+        const warning = document.getElementById("emailWarning");
+
+        const isFrontValid = /^[a-zA-Z0-9._%+-]+$/.test(front);
+        const isBackValid = domain === "custom"
+            ? /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(custom)
+            : /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(domain);
+
+        if (!isFrontValid || !isBackValid) {
+            warning.style.display = "block";
+            return false;
+        }
+
+        warning.style.display = "none";
+        return true;
+    }
+
+    function validateAll() {
+        const isValid =
+            validateId() &&
+            validatePwd() &&
+            validatePwdCheck() &&
+            validateName() &&
+            validatePhone() &&
+            validateBirth() &&
+            validateEmail();
+
+        if (isValid) {
+            alert("회원가입 완료!");
+            // 여기서 form 제출 처리 가능
+        } else {
+            alert("입력값을 다시 확인해주세요.");
+        }
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", function (e) {
+        e.preventDefault(); // 혹시 form 태그 있으면 실제 전송 막기
+        validateAll();
+    });
+
+
+
+
 </script>
 </body>
 </html>

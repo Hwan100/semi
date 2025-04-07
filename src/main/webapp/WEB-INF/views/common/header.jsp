@@ -93,7 +93,6 @@
     <hr>
 </header>
 
-
 <div class="sidebar-container">
     <div class="sidebar">
         <a href="/">

@@ -59,29 +59,23 @@ public class UserController {
                 case 1 -> mv.setViewName("myPage/studentMyPageView");
                 case 2 -> mv.setViewName("myPage/teacherMyPage");
                 case 3 -> mv.setViewName("myPage/adminMyPage");
-                default -> mv.setViewName("comm on/errorPage"); // 예외 처리
+                default -> mv.setViewName("common/error"); // 예외 처리
             }
-            System.out.println("로그인한 유저 등급: " + loginUser.getUserRole());
-            System.out.println("현재 로그인 유저: " + loginUser.getUserId());
-            System.out.println("역할: " + loginUser.getUserRole());
         }
 
         return mv;
     }
-
-    @PostMapping("updateStudent.me")
+    @PostMapping("StudentUpdate.me")
     public ModelAndView updateStudent(User u, ModelAndView mv, HttpSession session) {
         User loginUser = (User) session.getAttribute("loginUser");
         if (loginUser == null) {
-            mv.setViewName("login/loginPage");
+            mv.setViewName("redirect:/");
             return mv;
         }
-        System.out.println("🔍 넘어온 수정 데이터: " + u);
         u.setUserNo(loginUser.getUserNo());
         session.setAttribute("user", u);
         int result = userService.updateUser(u);
 
-        System.out.println("🔧 updateUser 결과: " + result);
         if (result > 0) {
             User updatedUser = userService.selectUserByNo(u.getUserNo());
             session.setAttribute("loginUser", updatedUser);
@@ -89,11 +83,58 @@ public class UserController {
             mv.setViewName("redirect:/myPage.me");
         } else {
             mv.addObject("errorMsg", "회원 정보 수정에 실패했습니다.");
-            mv.setViewName("common/errorPage");
+            mv.setViewName("common/error");
         }
-
         return mv;
     }
+
+    @PostMapping("teacherUpdate.me")
+    public ModelAndView updateTeacher(User u, ModelAndView mv, HttpSession session) {
+        User loginTeacher = (User) session.getAttribute("loginUser");
+        if (loginTeacher == null) {
+            mv.setViewName("redirect:/");
+            return mv;
+        }
+        u.setUserNo(loginTeacher.getUserNo());
+        session.setAttribute("user", u);
+        int result = userService.updateUser(u);
+
+        if (result > 0) {
+            User updatedUser = userService.selectUserByNo(u.getUserNo());
+            session.setAttribute("loginUser", updatedUser);
+
+            mv.setViewName("redirect:/myPage.me");
+        } else {
+            mv.addObject("errorMsg", "회원 정보 수정에 실패했습니다.");
+            mv.setViewName("common/error");
+        }
+        return mv;
+    }
+
+    @PostMapping("adminUpdate.me")
+    public ModelAndView aminTeacher(User u, ModelAndView mv, HttpSession session) {
+        User loginAdmin = (User) session.getAttribute("loginUser");
+        if (loginAdmin == null) {
+            mv.setViewName("redirect:/");
+            return mv;
+        }
+        u.setUserNo(loginAdmin.getUserNo());
+        session.setAttribute("user", u);
+        int result = userService.updateUser(u);
+
+        if (result > 0) {
+            User updatedUser = userService.selectUserByNo(u.getUserNo());
+            session.setAttribute("loginUser", updatedUser);
+
+            mv.setViewName("redirect:/myPage.me");
+        } else {
+            mv.addObject("errorMsg", "회원 정보 수정에 실패했습니다.");
+            mv.setViewName("common/error");
+        }
+        return mv;
+    }
+
+
 
 
 }

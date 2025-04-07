@@ -30,7 +30,7 @@
             <h2>안녕하세요. ${loginUser.userName}님</h2>
             <p>오늘도 좋은 하루에요!</p>
             <div class="intro-btn-box">
-                <button class="btn-small">내 정보 수정</button>
+                <button class="btn-small" onclick="location.href='myPage.me'">내 정보 수정</button>
                 <button class="btn-blank-small">강의 관리</button>
             </div>
         </div>

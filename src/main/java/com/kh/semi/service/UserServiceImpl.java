@@ -27,4 +27,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int idCheck(String userId) { return userMapper.idCheck(userId);
     }
+
+    @Override
+    public int insertUser(User u) {return userMapper.insertUser(u);}
 }

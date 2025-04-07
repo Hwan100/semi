@@ -174,114 +174,116 @@
     </style>
 </head>
 <body>
-<div id="layout">
-    <div id="enrollCard">
-        <div id="logo"><img src="icons/logo.png"></div>
-        <div id="enroll">회원가입</div>
-        <div id="contents">
-            <button id="idCheck" onclick="idCheck()">중복확인</button>
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">아이디</div>
-                    <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
-                </div>
-                <div class="input-wrap">
-                    <input placeholder="아이디 입력(5~20자)" id="idInput" required>
-                </div>
-            </div>
+        <div id="layout">
+            <div id="enrollCard">
+                <div id="logo"><img src="icons/logo.png"></div>
+                <div id="enroll">회원가입</div>
+                <div id="contents">
+                    <button type="button" id="idCheck" onclick="idCheck()">중복확인</button>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">아이디</div>
+                            <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
+                        </div>
+                        <div class="input-wrap">
+                            <input name="userId" placeholder="아이디 입력(5~20자)" id="idInput" >
+                        </div>
+                    </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">비밀번호</div>
-                    <div class="second-info" id="pwdInfo"></div>
-                </div>
-                <div class="input-wrap">
-                    <input type="password" id="pwdInput" placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )" required>
-                </div>
-            </div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">비밀번호</div>
+                            <div class="second-info" id="pwdInfo"></div>
+                        </div>
+                        <div class="input-wrap">
+                            <input name="userPwd" type="password" id="pwdInput" placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )" >
+                        </div>
+                    </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">비밀번호 확인</div>
-                    <div class="second-info" id="pwdWarning"></div>
-                </div>
-                <div class="input-wrap">
-                    <input type="password" id="pwdCheck" placeholder="비밀번호 재입력" required>
-                </div>
-            </div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">비밀번호 확인</div>
+                            <div class="second-info" id="pwdWarning"></div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="password" id="pwdCheck" placeholder="비밀번호 재입력" >
+                        </div>
+                    </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">이름</div>
-                    <div class="second-info" id="nameWarning">이름을 확인해주세요.</div>
-                </div>
-                <div class="input-wrap">
-                    <input id="nameInput" placeholder="이름을 입력해주세요." required>
-                </div>
-            </div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">이름</div>
+                            <div class="second-info" id="nameWarning">이름을 확인해주세요.</div>
+                        </div>
+                        <div class="input-wrap">
+                            <input name="userName" id="nameInput" placeholder="이름을 입력해주세요." >
+                        </div>
+                    </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">전화번호</div>
-                    <div class="second-info" id="phoneWarning"></div>
-                </div>
-                <div class="input-wrap">
-                    <input id="phoneInput" placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )" required>
-                </div>
-            </div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">전화번호</div>
+                            <div class="second-info" id="phoneWarning"></div>
+                        </div>
+                        <div class="input-wrap">
+                            <input name="userPhone" id="phoneInput" placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )" >
+                        </div>
+                    </div>
 
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">생년월일</div>
-                </div>
-                <div class="birth-group">
-                    <select id="yearSelect">
-                        <option disabled selected>연도</option>
-                    </select>
-                    <select id="monthSelect">
-                        <option disabled selected>월</option>
-                    </select>
-                    <select id="daySelect">
-                        <option disabled selected>일</option>
-                    </select>
-                </div>
-            </div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">생년월일</div>
+                            <div class="second-info" id="birthWarning">생일을 입력해주세요.</div>
+                        </div>
+                        <div class="birth-group">
+                            <select id="yearSelect" name="year">
+                                <option  disabled selected>연도</option>
+                            </select>
+                            <select  id="monthSelect" name="month">
+                                <option  disabled selected>월</option>
+                            </select>
+                            <select id="daySelect" name="day">
+                                <option disabled selected>일</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="userBirth" id="hiddenBirth">
+                    </div>
 
-            <div class="line">
-                <div class="top-line">
-                    <div class="first-info">이메일 주소</div>
-                    <div class="second-info" id="emailWarning"></div>
+                    <div class="line">
+                        <div class="top-line">
+                            <div class="first-info">이메일 주소</div>
+                            <div class="second-info" id="emailWarning">이메일을 확인해주세요.</div>
+                        </div>
+                        <div id="emailInputline">
+                            <input id="emailInput" type="text" placeholder="이메일 주소">
+                            <div class="at">@</div>
+                            <select id="emailDomainSelect">
+                                <option>naver.com</option>
+                                <option>gmail.com</option>
+                                <option>daum.net</option>
+                                <option value="custom">직접입력</option>
+                            </select>
+                            <input type="text" id="customDomain" placeholder="도메인 입력" style="display: none;">
+                        </div>
+                        <input type="hidden" name="userEmail" id="hiddenEmail">
+                    </div>
+                    <div class="line" style="height: 150px">
+                        <div class="top-line">
+                            <div class="first-info">주소</div>
+                        </div>
+                        <div class="input-wrap">
+                            <input name="userAddress" style="margin-bottom: 11px" placeholder="주소를 입력해주세요.">
+                            <input name="userAddressDetail" placeholder="상세 주소">
+                        </div>
+                    </div>
+                    <div class="btn-box">
+                        <button class="submit-btn" id="submitBtn">가입신청</button>
+                        <button class="cancel-btn">돌아가기</button>
+                    </div>
                 </div>
-                <div id="emailInputline">
-                    <input id="emailInput" type="text" placeholder="이메일 주소">
-                    <div class="at">@</div>
-                    <select id="emailDomainSelect">
-                        <option>naver.com</option>
-                        <option>gmail.com</option>
-                        <option>daum.net</option>
-                        <option value="custom">직접입력</option>
-                    </select>
-                    <input type="text" id="customDomain" placeholder="도메인 입력" style="display: none;">
-                </div>
-
-            </div>
-            <div class="line" style="height: 150px">
-                <div class="top-line">
-                    <div class="first-info">주소</div>
-                </div>
-                <div class="input-wrap">
-                    <input style="margin-bottom: 11px" placeholder="주소를 입력해주세요.">
-                    <input placeholder="상세 주소">
-                </div>
-            </div>
-            <div class="btn-box">
-                <button class="submit-btn" disabled id="submitBtn">가입신청</button>
-                <button class="cancel-btn">돌아가기</button>
             </div>
         </div>
-    </div>
-</div>
 
 <script>
     function idCheck() {
@@ -306,7 +308,7 @@
             }, error: function (){
                 console.log("아이디 중복체크 ajax 실패");
             }
-    })
+        })
     }
 
     function drawIdCheck(isCheck){
@@ -316,13 +318,13 @@
         warning.style.display = "block";
 
         if(isCheck === 'N') {
-            submitBtn.disabled = true;
             warning.style.color = "red";
             warning.innerHTML = "사용할 수 없는 아이디입니다."
+            return false;
         } else {
             warning.style.color = "green";
             warning.innerText = "사용 가능한 아이디입니다.";
-            submitBtn.disabled = false;
+            return true;
         }
     }
 
@@ -356,18 +358,21 @@
             warning.style.display = "block";
             warning.style.color = "green";
             warning.innerHTML = "비밀번호와 일치합니다.";
+            return true;
         } else if(pwd.length >= 8 && pwd.length <= 20 && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).+$/.test(pwd) && pwd !== pwdCheck) {
             warning.style.display = "block";
             warning.style.color = "red";
             warning.innerHTML = "비밀번호와 일치하지 않습니다.";
+            return false;
         } else {
             warning.style.display = "block"
             warning.style.color = "red";
             warning.innerHTML = "비밀번호를 확인해주세요.";
+            return false;
         }
     })
 
-    document.getElementById("nameInput").addEventListener('blur' , function (){
+    document.getElementById("nameInput").addEventListener('input' , function (){
         const name = document.getElementById("nameInput").value;
         const warning = document.getElementById("nameWarning");
 
@@ -389,6 +394,9 @@
             warning.style.display = "block"
             warning.innerHTML = "전화번호를 확인해주세요.";
             warning.style.color = "red";
+            return false;
+        } else {
+            return true;
         }
     })
 
@@ -448,17 +456,37 @@
                 populateDays(year, month);
             }
         });
+
     });
 
+    function validateBirth(){
+        const year = document.getElementById("yearSelect").value;
+        const month = document.getElementById("monthSelect").value;
+        const day = document.getElementById("daySelect").value;
+        const warning = document.getElementById("birthWarning");
+
+        if(year === "연도" || month === "월" || day === "일") {
+            warning.style.display = "block";
+            return false;
+        } else {
+            warning.style.display = "none";
+            return true;
+        }
+    }
+
     document.getElementById("emailInput").addEventListener('input',function (){
-        const email = document.getElementById("emailInput").value;
+        const frontemail = document.getElementById("emailInput").value;
+        const selectDomain = document.getElementById("emailDomainSelect").value
+        const backemail = document.getElementById("customDomain").value;
         const warning = document.getElementById("emailWarning");
 
         warning.style.display = "none";
 
-        if (!/^[a-zA-Z0-9._%+-]+$/.test(email)){
+        if (!/^[a-zA-Z0-9._%+-]+$/.test(frontemail)){
             warning.style.display = "block";
-            warning.innerHTML = "이메일을 확인해주세요."
+        }
+        if ( selectDomain.value === "custom" && !/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(backemail))  {
+            warning.style.display = "block";
         }
     })
 
@@ -474,16 +502,122 @@
     });
 
     document.getElementById("customDomain").addEventListener("input", function (){
-        const backemail = document.getElementById("customDomain").value;
-        const frontEmail = document.getElementById("emailInput").value;
+        const custom = document.getElementById("customDomain").value;
+        const warning = document.getElementById("emailWarning");
+        const frontemail = document.getElementById("emailInput").value;
 
         warning.style.display = "none";
 
-        if (!/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(backemail) || !/^[a-zA-Z0-9._%+-]+$/.test(frontEmail)){
+        if(!/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(custom)){
             warning.style.display = "block";
-            warning.innerHTML = "이메일을 확인해주세요."
+        } else if (!/^[a-zA-Z0-9._%+-]+$/.test(frontemail)){
+            warning.style.display = "block";
+        } else {
+            warning.style.display = "none";
         }
     })
+
+    <%--여기서부터 유효성 검사--%>
+    function runValidation() {
+        const id = document.getElementById("idInput").value;
+        const idWarning = document.getElementById("idWarning");
+
+        if (id.length < 5 || id.length > 20 || idWarning.innerText !== "사용 가능한 아이디입니다.") {
+            alert("아이디를 다시 확인해주세요.");
+            return false;
+        }
+
+        const pwd = document.getElementById("pwdInput").value;
+        const pwdCheck = document.getElementById("pwdCheck").value;
+        const pwdValid = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{8,20}$/;
+        if (!pwdValid.test(pwd)) {
+            alert("비밀번호 형식을 확인해주세요.");
+            return false;
+        }
+        if (pwd !== pwdCheck) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return false;
+        }
+
+        const name = document.getElementById("nameInput").value;
+        if (!/^[가-힣]{2,5}$/.test(name)) {
+            alert("이름을 확인해주세요.");
+            return false;
+        }
+
+        const phone = document.getElementById("phoneInput").value;
+        if (!/^010\d{8}$/.test(phone)) {
+            alert("전화번호를 확인해주세요.");
+            return false;
+        }
+
+        const year = document.getElementById("yearSelect").value;
+        const monthRaw = document.getElementById("monthSelect").value;
+        const dayRaw = document.getElementById("daySelect").value;
+
+        if (year === "연도" || monthRaw === "월" || dayRaw === "일") {
+            alert("생년월일을 선택해주세요.");
+            return false;
+        }
+
+        const month = monthRaw.padStart(2, '0');
+        const day = dayRaw.padStart(2, '0');
+        document.getElementById("hiddenBirth").value = year + '-' + month + '-' + day ;
+
+
+        const front = document.getElementById("emailInput").value;
+        const domainSelect = document.getElementById("emailDomainSelect");
+        const domain = domainSelect.value === "custom" ? document.getElementById("customDomain").value : domainSelect.value;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+$/;
+        const domainRegex = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(front) || !domainRegex.test(domain)) {
+            alert("이메일 주소를 확인해주세요.");
+            return false;
+        }
+
+        // Hidden 필드 세팅
+        document.getElementById("hiddenBirth").value = year + '-' + month + '-' + day ;
+        document.getElementById("hiddenEmail").value = front + '@' + domain;
+
+        console.log("선택된 날짜:", year, month, day);
+
+        return true;
+    }
+
+
+    document.getElementById("submitBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (!runValidation()) return;
+
+        const data = {
+            userId: document.getElementById("idInput").value,
+            userPwd: document.getElementById("pwdInput").value,
+            userName: document.getElementById("nameInput").value,
+            userPhone: document.getElementById("phoneInput").value,
+            userBirth: document.getElementById("hiddenBirth").value,
+            userEmail: document.getElementById("hiddenEmail").value,
+            userAddress: document.querySelector('input[name="userAddress"]').value,
+            userAddressDetail: document.querySelector('input[name="userAddressDetail"]').value
+        };
+
+        $.ajax({
+            url: "/insert.us",
+            method: "POST",
+            data: data,
+            success: function (res) {
+                alert("회원가입이 완료되었습니다!");
+                // 원하면 페이지 이동
+                location.href = "/";
+            },
+            error: function () {
+                alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+            }
+        });
+    });
+
+
+
 </script>
 </body>
 </html>

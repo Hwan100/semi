@@ -63,6 +63,10 @@ public class BoardServiceImpl implements BoardService{
 
     @Override
     public int insertResumeBoard(ResumeBoard board) {
+        return boardMapper.insertResumeBoard(board);
+    }
+    @Override
+    public int insertResumeBoard(ResumeBoard board) {
         return 0;
     }
 

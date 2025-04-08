@@ -16,6 +16,7 @@
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
         <result column="BOARD_STATUS" property="boardStatus"/>
+        <result column="BOARD_STATUS" property="status"/>
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
@@ -130,4 +131,23 @@
         WHERE BOARD_NO = #{boardNo}
     </update>
 
+    <insert id="insertResumeBoard" parameterType="ResumeBoard">
+        INSERT INTO TB_RESUME_BOARD(
+        RESUME_NO,
+        USER_NO,
+        TYPE,
+        TITLE,
+        CHANGE_NAME,
+        ORIGIN_NAME,
+        TITLE)
+        VALUES(
+        SEQ_RESUME_NO.NEXTVAL,
+        #{userNo},
+        #{type},
+        #{title},
+        #{changeName},
+        #{originName},
+        #{content}
+        )
+    </insert>
 </mapper>

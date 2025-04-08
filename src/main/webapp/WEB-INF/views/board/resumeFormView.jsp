@@ -173,7 +173,7 @@
 
         <!-- 숨겨진 파일 input -->
         <div style="display: none">
-            <input type="file" id="file" name="uploadFile" onchange="loadFileName(this)">
+            <input type="file" id="file" name="upfile" onchange="loadFileName(this)">
         </div>
     </form>
 </div>

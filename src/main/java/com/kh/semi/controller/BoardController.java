@@ -88,15 +88,21 @@ public class BoardController {
 
     @PostMapping("saveResume.bo")
     public String saveResume(@ModelAttribute ResumeBoard resumeBoard, MultipartFile upfile, HttpSession session , Model model) {
-        System.out.println(resumeBoard);
-        System.out.println(upfile);
 
-        if (!upfile.getOriginalFilename().equals("")) {
-            String changeName = Template.saveFile(upfile, session, "/uploadfile/");
+        User user = (User)session.getAttribute("loginUser");
+        int userNo = user.getUserNo();
 
-            resumeBoard.setChangeName("/uploadfile/" + changeName);
+        resumeBoard.setUserNo(userNo);
+
+        if(!upfile.getOriginalFilename().equals("")){
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+
+            resumeBoard.setChangeName("/resources/uploadfile/" + changeName);
             resumeBoard.setOriginName(changeName);
         }
+
+        System.out.println(resumeBoard);
+        System.out.println(upfile);
 
         int result = boardService.insertResumeBoard(resumeBoard);
 

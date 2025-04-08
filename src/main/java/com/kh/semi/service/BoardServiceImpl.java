@@ -61,7 +61,10 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.selectResumeBoardList(rowBounds, userId);
     }
 
-
+    @Override
+    public int insertResumeBoard(ResumeBoard board) {
+        return 0;
+    }
 
 
 }

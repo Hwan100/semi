@@ -91,7 +91,7 @@ public class BoardController {
         System.out.println(resumeBoard);
         System.out.println(upfile);
 
-        if(!upfile.getOriginalFilename().equals("")){
+        if (!upfile.getOriginalFilename().equals("")) {
             String changeName = Template.saveFile(upfile, session, "/uploadfile/");
 
             resumeBoard.setChangeName("/uploadfile/" + changeName);
@@ -100,13 +100,14 @@ public class BoardController {
 
         int result = boardService.insertResumeBoard(resumeBoard);
 
-        if(result > 0){
-            session.setAttribute("alretMsg","게시글 작성 완료");
+        if (result > 0) {
+            session.setAttribute("alretMsg", "게시글 작성 완료");
             return "redirect:/resumeForm.bo";
         } else {
             session.setAttribute("errorMsg", "게시글 작성 실패");
             return "redirect:/resumeForm.bo";
         }
+    }
 
     @GetMapping("detail.no")
     public String selectBoardDetail(int bno, Model model) {

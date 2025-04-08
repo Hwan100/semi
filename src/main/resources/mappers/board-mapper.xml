@@ -15,10 +15,7 @@
         <result column="ORIGIN_NAME" property="originName" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
-<<<<<<< HEAD
-=======
-        <result column="BOARD_STATUS" property="status"/>
->>>>>>> 999559134a34eb113b0532959b695988e4cff787
+        <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
@@ -40,17 +37,25 @@
     </select>
 
     <select id="selectNoticeBoardList" resultMap="boardResult">
-        SELECT BOARD_NO,
-        BRANCH,
-        TITLE,
-        U.USER_NAME,
-        COUNT,
-        TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
-        FROM TB_BOARD
-        JOIN TB_USER U USING (USER_NO)
-        WHERE TYPE = 1
-          AND BOARD_STATUS = 'Y'
-        ORDER BY BOARD_NO DESC
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        B.CONTENT,
+        B.CREATE_DATE,
+        B.COUNT,
+        B.BRANCH,
+        B.TYPE,
+        B.CHANGE_NAME,
+        B.ORIGIN_NAME,
+        B.USER_NO,
+        B.CLASS_NO,
+        B.BOARD_STATUS,
+        U.USER_NAME
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        WHERE B.TYPE = 1
+        AND B.BOARD_STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
     </select>
 
     <insert id="insertNoticeBoard" parameterType="Board">
@@ -77,7 +82,6 @@
         )
     </insert>
 
-<<<<<<< HEAD
     <select id="selectResumeBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_RESUME_BOARD
@@ -91,7 +95,6 @@
         FROM TB_RESUME_BOARD
         WHERE USER_ID = #{userId}
     </select>
-=======
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
         SET COUNT = COUNT + 1
@@ -115,9 +118,8 @@
            AND BOARD_NO = #{bno}
     </select>
 
-<<<<<<< HEAD
->>>>>>> 999559134a34eb113b0532959b695988e4cff787
-=======
+
+
     <update id="updateNoticeBoard" >
         UPDATE BOARD
         SET TITLE = #{title},
@@ -128,5 +130,4 @@
         WHERE BOARD_NO = #{boardNo}
     </update>
 
->>>>>>> 5e43735a5306f09f9feffa51301e2f9dc68f6560
 </mapper>

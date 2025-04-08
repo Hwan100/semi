@@ -215,7 +215,7 @@
             </c:choose>
 
         </ul>
-    </div><c:out value="${list}" />
+    </div>
 
 </div>
 </body>

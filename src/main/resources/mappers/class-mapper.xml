@@ -3,5 +3,77 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.semi.mappers.ClassMapper">
+    <resultMap id="classResult" type="Class">
+        <result column="CLASS_NO" property="classNo" />
+        <result column="CLASS_NAME" property="className" />
+        <result column="START_DATE" property="startDate" />
+        <result column="END_DATE" property="endDate" />
+        <result column="COURSE_NAME" property="courseName" />
+        <result column="DESCRIPTION" property="description" />
+        <result column="USER_NO" property="userNo" />
+        <result column="ROOM_NAME" property="roomName" />
+    </resultMap>
+    <resultMap id="classTimeResult" type="ClassTime">
+        <result column="CLASS_DATE" property="classDate" />
+        <result column="CLASS_START_TIME" property="classStartTime" />
+        <result column="CLASS_END_TIME" property="classEndTime" />
+        <result column="CLASS_NO" property="classNo" />
+    </resultMap>
+    <resultMap id="scheduleResult" type="Schedule">
+        <result column="SCHEDULE_NO" property="scheduleNo" />
+        <result column="TITLE" property="title" />
+        <result column="START_DATE" property="startDate" />
+        <result column="END_DATE" property="endDate" />
+        <result column="DESCRIPTION" property="description" />
+        <result column="CLASS_NO" property="classNo" />
+    </resultMap>
 
+<!--  강의 개설  -->
+    <insert id="insertClass" parameterType="Class">
+        <selectKey keyProperty="classNo" resultType="int" order="BEFORE">
+            SELECT SEQ_CLASS_NO.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO TB_CLASS (
+            CLASS_NO, CLASS_NAME, START_DATE, END_DATE,
+            COURSE_NAME, DESCRIPTION, USER_NO, ROOM_NAME
+        ) VALUES (
+            #{classNo}, #{className}, #{startDate}, #{endDate},
+            #{courseName}, #{description}, #{userNo}, #{roomName}
+        )
+    </insert>
+
+<!-- 강의 요일 등록 -->
+    <insert id="insertClassTime">
+        INSERT INTO TB_CLASS_TIME (
+            CLASS_DATE,
+            CLASS_START_TIME,
+            CLASS_END_TIME,
+            CLASS_NO
+        ) VALUES (
+            #{classDate},
+            #{classStartTime},
+            #{classEndTime},
+            #{classNo}
+        )
+    </insert>
+
+<!-- 강의 일정 등록 -->
+    <insert id="insertSchedule">
+        INSERT INTO TB_SCHEDULE (
+            SCHEDULE_NO,
+            TITLE,
+            START_DATE,
+            END_DATE,
+            DESCRIPTION,
+            CLASS_NO
+        ) VALUES (
+            SEQ_SCHEDULE_NO.NEXTVAL,
+            #{title},
+            #{startDate},
+            #{endDate},
+            #{description},
+            #{classNo}
+        )
+    </insert>
 </mapper>

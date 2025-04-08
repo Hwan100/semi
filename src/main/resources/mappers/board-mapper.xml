@@ -16,7 +16,7 @@
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
         <result column="BOARD_STATUS" property="boardStatus"/>
-        <result column="BOARD_STATUS" property="status"/>
+        <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
@@ -119,13 +119,11 @@
            AND BOARD_NO = #{bno}
     </select>
 
-
-
     <update id="updateNoticeBoard" >
-        UPDATE BOARD
+        UPDATE TB_BOARD
         SET TITLE = #{title},
             CONTENT = #{content},
-            BRANCH = #{branch}m
+            BRANCH = #{branch},
             ORIGIN_NAME = #{originName},
             CHANGE_NAME = #{changeName}
         WHERE BOARD_NO = #{boardNo}
@@ -150,4 +148,10 @@
         #{content}
         )
     </insert>
+
+    <update id="deleteNoticeBoard">
+        UPDATE TB_BOARD
+        SET BOARD_STATUS = 'N'
+        WHERE BOARD_NO = #{bno}
+    </update>
 </mapper>

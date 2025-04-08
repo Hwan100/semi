@@ -18,6 +18,7 @@
     <div class="button-area">
 <c:if test="${loginUser.userName eq b.userName || loginUser.userRole eq '3'}">
   <button onclick="postFormSubmit('edit')"><a>수정</a></button>
+  <button onclick="postFormSubmit('delete')"><a>삭제</a></button>
 </c:if>
       <button onclick="history.back()">이전화면</button>
 <%--      <button onclick="location.href='myclassList.bo'">목록</button>--%>
@@ -63,6 +64,10 @@
       switch(type){
         case "edit" : {
           $(formEl).attr("action", "updateForm.no");
+        }break;
+        case "delete":{
+          //formEl.action = "delete.bo";
+          $(formEl).attr("action", "delete.no")
         }break;
       }
       $(formEl).submit();

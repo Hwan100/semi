@@ -27,6 +27,7 @@
     <div class="title">공지사항 작성</div>
 
     <form id="enrollForm" method="post" action="update.no" enctype="multipart/form-data">
+        <input type="hidden" name="boardNo" value="${b.boardNo }">
         <table>
             <tr>
                 <th><label for="title">제목</label></th>
@@ -39,7 +40,7 @@
             </tr>
             <tr>
                 <th><label for="branch">지점명</label></th>
-                <td><input type="text" id="branch" name="branch" value="${b.branch}"></td>
+                <td><input type="text" id="branch" name="branch" value="${b.branch}" required></td>
             </tr>
             <tr>
                 <th><label for="upfile">첨부파일</label></th>
@@ -66,6 +67,13 @@
         </div>
     </form>
 </div>
+
+<script>
+    document.getElementById('title').required = true;
+    document.getElementById('content').required = true;
+    document.getElementById('branch').required = true;
+
+</script>
 
 </body>
 </html>

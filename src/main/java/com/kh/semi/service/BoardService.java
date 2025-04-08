@@ -28,4 +28,6 @@ public interface BoardService {
 
     int insertResumeBoard(ResumeBoard board);
 
+    int deleteNoticeBoard(int bno);
+
 }

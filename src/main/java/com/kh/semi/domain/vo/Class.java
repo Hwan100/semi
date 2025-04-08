@@ -18,4 +18,5 @@ public class Class {
     private String courseName;
     private String description;
     private int userNo;
+    private String roomName;
 }

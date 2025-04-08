@@ -18,6 +18,7 @@
         <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="USER_NAME" property="userName" />
+        <result column="ROOM_NAME" property="roomName" />
     </resultMap>
 
     <resultMap id="resumeBoardResult" type="ResumeBoard">
@@ -104,19 +105,22 @@
     </update>
 
     <select id="selectNoticeBoard" resultMap="boardResult">
-        SELECT BOARD_NO,
-               TITLE,
-               BRANCH,
+        SELECT B.BOARD_NO,
+               B.TITLE,
+               B.BRANCH,
+               B.CLASS_NO,
+               C.ROOM_NAME,
                U.USER_NAME,
-               CONTENT,
-               ORIGIN_NAME,
-               CHANGE_NAME,
-               COUNT,
-               TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
-          FROM TB_BOARD
-          JOIN TB_USER U USING (USER_NO)
+               B.CONTENT,
+               B.ORIGIN_NAME,
+               B.CHANGE_NAME,
+               B.COUNT,
+               TO_CHAR(B.CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+          FROM TB_BOARD B
+          JOIN TB_USER U ON B.USER_NO = U.USER_NO
+          JOIN TB_CLASS C ON B.CLASS_NO = C.CLASS_NO
          WHERE BOARD_STATUS = 'Y'
-           AND BOARD_NO = #{bno}
+           AND B.BOARD_NO = #{bno}
     </select>
 
     <update id="updateNoticeBoard" >
@@ -154,4 +158,87 @@
         SET BOARD_STATUS = 'N'
         WHERE BOARD_NO = #{bno}
     </update>
+
+    <select id="selectMyClassBoardList" resultMap="boardResult">
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        B.CONTENT,
+        B.CREATE_DATE,
+        B.COUNT,
+        B.BRANCH,
+        B.TYPE,
+        B.CHANGE_NAME,
+        B.ORIGIN_NAME,
+        B.USER_NO,
+        B.CLASS_NO,
+        B.BOARD_STATUS,
+        U.USER_NAME
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        WHERE B.TYPE = 2
+        AND B.BOARD_STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
+    </select>
+
+
+    <select id="selectClassNoByRoomName" parameterType="String" resultType="_int">
+        SELECT CLASS_NO
+        FROM TB_CLASS
+        WHERE ROOM_NAME = #{roomName}
+    </select>
+
+    <insert id="insertMyClassBoard" parameterType="Board">
+        INSERT INTO TB_BOARD (
+        BOARD_NO,
+        TITLE,
+        CONTENT,
+        BRANCH,
+        TYPE,
+        ORIGIN_NAME,
+        CHANGE_NAME,
+        USER_NO,
+        CLASS_NO
+        ) VALUES (
+        SEQ_BOARD_NO.NEXTVAL,
+        #{title},
+        #{content},
+        #{branch},
+        2,
+        #{originName},
+        #{changeName},
+        #{userNo},
+        #{classNo}
+        )
+    </insert>
+
+
+    <select id="selectMyClassBoard" resultMap="boardResult">
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        C.ROOM_NAME,
+        U.USER_NAME,
+        B.CONTENT,
+        B.ORIGIN_NAME,
+        B.CHANGE_NAME,
+        B.COUNT,
+        TO_CHAR(B.CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        JOIN TB_CLASS C ON B.CLASS_NO = C.CLASS_NO
+        WHERE B.BOARD_STATUS = 'Y'
+        AND B.BOARD_NO = #{bno}
+    </select>
+
+    <update id="updateMyClassBoard" >
+        UPDATE TB_BOARD
+        SET TITLE = #{title},
+        CONTENT = #{content},
+        CLASS_NO = #{classNo},
+        ORIGIN_NAME = #{originName},
+        CHANGE_NAME = #{changeName}
+        WHERE BOARD_NO = #{boardNo}
+    </update>
+
 </mapper>

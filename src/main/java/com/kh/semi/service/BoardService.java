@@ -30,4 +30,12 @@ public interface BoardService {
 
     int deleteNoticeBoard(int bno);
 
+    List<Board> selectMyClassBoardList(PageInfo pi);
+
+    int insertMyClassBoard(Board board);
+
+    Board selectMyClassBoard(int bno);
+
+    int  updateMyClassBoard(Board board);
+
 }

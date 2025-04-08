@@ -71,5 +71,46 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.deleteNoticeBoard(bno);
     }
 
+    @Override
+    public List<Board> selectMyClassBoardList(PageInfo pi) {
+        int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+        RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+        return boardMapper.selectMyClassBoardList(rowBounds);
+    }
+
+    @Override
+    public int insertMyClassBoard(Board board) {
+        System.out.println("입력된 roomName: " + board.getRoomName());
+
+        Integer classNo = boardMapper.selectClassNoByRoomName(board.getRoomName());
+        System.out.println("조회된 classNo: " + classNo);
+
+        if (classNo == null) {
+            throw new IllegalArgumentException("입력한 반 이름(roomName)에 해당하는 CLASS_NO가 없습니다.");
+        }
+        board.setClassNo(classNo);
+
+        return boardMapper.insertMyClassBoard(board);
+    }
+
+    @Override
+    public Board selectMyClassBoard(int bno) {
+        return boardMapper.selectMyClassBoard(bno);
+    }
+
+    @Override
+    public int updateMyClassBoard(Board board) {
+        System.out.println("입력된 roomName: " + board.getRoomName());
+
+        Integer classNo = boardMapper.selectClassNoByRoomName(board.getRoomName());
+        System.out.println("조회된 classNo: " + classNo);
+
+        if (classNo == null) {
+            throw new IllegalArgumentException("입력한 반 이름(roomName)에 해당하는 CLASS_NO가 없습니다.");
+        }
+        board.setClassNo(classNo);
+        return boardMapper.updateMyClassBoard(board);
+    }
+
 
 }

@@ -26,7 +26,7 @@
 
     <div class="info-bar">
       <div class="left">공지사항</div>
-      <div class="right">작성자: >${b.userName } | ${b.createDate }</div>
+      <div class="right">작성자: ${b.userName } | ${b.createDate }</div>
     </div>
     <div>
       <div class="left">첨부파일</div>
@@ -63,11 +63,11 @@
       const formEl = document.querySelector("#postForm");
       switch(type){
         case "edit" : {
-          $(formEl).attr("action", "updateForm.no");
+          $(formEl).attr("action", "updateForm.cl");
         }break;
         case "delete":{
           //formEl.action = "delete.bo";
-          $(formEl).attr("action", "delete.no")
+          $(formEl).attr("action", "delete.bo")
         }break;
       }
       $(formEl).submit();

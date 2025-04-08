@@ -31,4 +31,14 @@ public interface BoardMapper {
     int insertResumeBoard(ResumeBoard board);
 
     int deleteNoticeBoard(int bno);
+
+    List<Board> selectMyClassBoardList(RowBounds rowBounds);
+
+    Integer selectClassNoByRoomName(String roomName);
+
+    int insertMyClassBoard(Board board);
+
+    Board selectMyClassBoard(int bno);
+
+    int  updateMyClassBoard(Board board);
 }

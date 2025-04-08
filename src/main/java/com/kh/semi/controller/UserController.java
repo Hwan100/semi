@@ -144,6 +144,7 @@ public class UserController {
     @PostMapping("insert.us")
     public ModelAndView insert(User u, ModelAndView mv, HttpSession session) {
         String pwd = bCryptPasswordEncoder.encode(u.getUserPwd());
+        System.out.println("암호화된 pwd : " + pwd);
         u.setUserPwd(pwd);
 
         int result = userService.insertUser(u);

@@ -13,7 +13,12 @@ public interface BoardService {
 
     List<Board> selectNoticeBoardList(PageInfo pi);
 
-    int insertBoard(Board board);
+    int insertNoticeBoard(Board board);
+
+    int increaseNoticeCount(int bno);
+
+    Board selectNoticeBoard(int bno);
+
 
     //자소서 및 이력서 게시글 카운팅
     int selectResumeBoardCount();

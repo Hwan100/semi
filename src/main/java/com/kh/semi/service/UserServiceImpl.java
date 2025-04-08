@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insertUser(User u) {return userMapper.insertUser(u);}
+
+    @Override
+    public int selectUserNoById(String userId) {
+        return userMapper.selectUserNoById(userId);
+    }
 }

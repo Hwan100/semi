@@ -15,4 +15,6 @@ public interface UserService {
     int idCheck(String checkId);
 
     int insertUser(User u);
+
+    int selectUserNoById(String userId);
 }

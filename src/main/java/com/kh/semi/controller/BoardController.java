@@ -52,7 +52,7 @@ public class BoardController {
         System.out.println(board);
         System.out.println(upfile);
 
-        int result = boardService.insertBoard(board);
+        int result = boardService.insertNoticeBoard(board);
 
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 작성 성공");
@@ -63,6 +63,7 @@ public class BoardController {
         }
     }
 
+<<<<<<< HEAD
     @GetMapping("resume.bo")
     public String selectResumeBoardList(@RequestParam(defaultValue = "1") int cpage, Model model, HttpSession session) {
         int boardCount = boardService.selectResumeBoardCount();
@@ -99,6 +100,22 @@ public class BoardController {
             session.setAttribute("errorMsg", "게시글 작성 실패");
             return "redirect:/resumeForm.bo";
         }
+=======
+    @GetMapping("detail.no")
+    public String selectBoardDetail(int bno, Model model) {
+        int result = boardService.increaseNoticeCount(bno);
+
+        if(result > 0){
+            Board b = boardService.selectNoticeBoard(bno);
+            model.addAttribute("b", b);
+
+            return "board/noticeDetailView";
+        } else {
+            model.addAttribute("errorMsg", "게시글 조회 실패");
+            return "common/errorPage";
+        }
+
+>>>>>>> 999559134a34eb113b0532959b695988e4cff787
     }
 
 }

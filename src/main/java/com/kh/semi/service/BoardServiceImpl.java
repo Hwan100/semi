@@ -32,8 +32,18 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public int insertBoard(Board board) {
-        return boardMapper.insertBoard(board);
+    public int insertNoticeBoard(Board board) {
+        return boardMapper.insertNoticeBoard(board);
+    }
+
+    @Override
+    public int increaseNoticeCount(int bno) {
+        return boardMapper.increaseNoticeCount(bno);
+    }
+
+    @Override
+    public Board selectNoticeBoard(int bno) {
+        return boardMapper.selectNoticeBoard(bno);
     }
 
     @Override

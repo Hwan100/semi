@@ -17,4 +17,6 @@ public interface UserMapper {
     int idCheck(@Param("userId") String userId);
 
     int insertUser(User u);
+
+    int selectUserNoById(String userId);
 }

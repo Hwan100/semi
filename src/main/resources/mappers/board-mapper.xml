@@ -14,6 +14,10 @@
         <result column="FILE_PATH" property="filePath" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
+<<<<<<< HEAD
+=======
+        <result column="BOARD_STATUS" property="status"/>
+>>>>>>> 999559134a34eb113b0532959b695988e4cff787
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
@@ -31,6 +35,7 @@
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_BOARD
+        WHERE BOARD_STATUS = 'Y'
     </select>
 
     <select id="selectNoticeBoardList" resultMap="boardResult">
@@ -43,6 +48,7 @@
         FROM TB_BOARD
         JOIN TB_USER U USING (USER_NO)
         WHERE TYPE = 1
+          AND BOARD_STATUS = 'Y'
         ORDER BY BOARD_NO DESC
     </select>
 
@@ -72,6 +78,7 @@
         )
     </insert>
 
+<<<<<<< HEAD
     <select id="selectResumeBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_RESUME_BOARD
@@ -85,4 +92,26 @@
         FROM TB_RESUME_BOARD
         WHERE USER_ID = #{userId}
     </select>
+=======
+    <update id="increaseNoticeCount">
+        UPDATE TB_BOARD
+        SET COUNT = COUNT + 1
+        WHERE BOARD_NO = #{bno}
+        AND BOARD_STATUS = 'Y'
+    </update>
+
+    <select id="selectNoticeBoard" resultMap="boardResult">
+        SELECT BOARD_NO,
+               TITLE,
+               U.USER_NAME,
+               CONTENT,
+               COUNT,
+               TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+          FROM TB_BOARD
+          JOIN TB_USER U USING (USER_NO)
+         WHERE BOARD_STATUS = 'Y'
+           AND BOARD_NO = #{bno}
+    </select>
+
+>>>>>>> 999559134a34eb113b0532959b695988e4cff787
 </mapper>

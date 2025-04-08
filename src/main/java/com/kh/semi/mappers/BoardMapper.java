@@ -26,7 +26,9 @@ public interface BoardMapper {
 
     Board selectNoticeBoard(int bno);
 
-    int updateNoticeBoard(Board board);
+    int updateNoticeBoard(Board b);
 
     int insertResumeBoard(ResumeBoard board);
+
+    int deleteNoticeBoard(int bno);
 }

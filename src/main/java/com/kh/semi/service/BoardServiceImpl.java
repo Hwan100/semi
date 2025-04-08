@@ -40,5 +40,10 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.increaseNoticeCount(bno);
     }
 
+    @Override
+    public Board selectNoticeBoard(int bno) {
+        return boardMapper.selectNoticeBoard(bno);
+    }
+
 
 }

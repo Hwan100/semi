@@ -94,4 +94,8 @@
             #{userBirth}
         )
     </insert>
+
+    <select id="selectUserNoById" resultType="int" parameterType="string">
+        SELECT USER_NO FROM TB_USER WHERE USER_ID = #{userId}
+    </select>
 </mapper>

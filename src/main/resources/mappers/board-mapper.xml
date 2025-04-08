@@ -14,13 +14,14 @@
         <result column="FILE_PATH" property="filePath" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
-
+        <result column="BOARD_STATUS" property="status"/>
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_BOARD
+        WHERE BOARD_STATUS = 'Y'
     </select>
 
     <select id="selectNoticeBoardList" resultMap="boardResult">
@@ -33,6 +34,7 @@
         FROM TB_BOARD
         JOIN TB_USER U USING (USER_NO)
         WHERE TYPE = 1
+          AND BOARD_STATUS = 'Y'
         ORDER BY BOARD_NO DESC
     </select>
 
@@ -63,9 +65,23 @@
     </insert>
 
     <update id="increaseNoticeCount">
-        UPDATE BOARD
+        UPDATE TB_BOARD
         SET COUNT = COUNT + 1
         WHERE BOARD_NO = #{bno}
+        AND BOARD_STATUS = 'Y'
     </update>
+
+    <select id="selectNoticeBoard" resultMap="boardResult">
+        SELECT BOARD_NO,
+               TITLE,
+               U.USER_NAME,
+               CONTENT,
+               COUNT,
+               TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+          FROM TB_BOARD
+          JOIN TB_USER U USING (USER_NO)
+         WHERE BOARD_STATUS = 'Y'
+           AND BOARD_NO = #{bno}
+    </select>
 
 </mapper>

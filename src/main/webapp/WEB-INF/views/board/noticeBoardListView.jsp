@@ -161,7 +161,6 @@
         <div class="board-title">공지사항</div>
 
         <div class="button-area">
-            <button class="btn-blank-small" onclick="">수정</button>
             <button class="btn-blank-small" onclick="location.href='enrollForm.no'">작성</button>
 <%--            <button class="btn-blank-small" onclick="history.back()">이전화면</button>--%>
         </div>

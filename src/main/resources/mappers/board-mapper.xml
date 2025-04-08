@@ -29,6 +29,7 @@
         <result column="ORIGIN_NAME" property="originName" />
         <result column="CREATED_DATE" property="createDate" />
         <result column="UPDATE_DATE" property="updateDate" />
+        <result column="CONTENT" property="content" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
@@ -92,9 +93,9 @@
         SELECT TITLE,
             UPDATE_DATE,
             TYPE,
-            CREATE_DATE
+            CREATED_DATE
         FROM TB_RESUME_BOARD
-        WHERE USER_ID = #{userId}
+        WHERE USER_NO = #{userNo}
     </select>
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
@@ -137,7 +138,7 @@
         TITLE,
         CHANGE_NAME,
         ORIGIN_NAME,
-        TITLE)
+        CONTENT)
         VALUES(
         SEQ_RESUME_NO.NEXTVAL,
         #{userNo},

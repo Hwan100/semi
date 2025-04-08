@@ -74,11 +74,11 @@ public class BoardController {
         int boardCount = boardService.selectResumeBoardCount();
 
         User user = (User)session.getAttribute("loginUser");
-        String userId = user.getUserId();
+        int userNo = user.getUserNo();
         PageInfo pi = new PageInfo(boardCount, cpage, 5, 10);
-        List<ResumeBoard> list = boardService.selectResumeBoardList(pi,userId);
+        List<ResumeBoard> list = boardService.selectResumeBoardList(pi,userNo);
 
-        return "board/resumeBoardListView";
+        return "board/resumeListView";
     }
 
     @GetMapping("resumeForm.bo")
@@ -105,8 +105,8 @@ public class BoardController {
         int result = boardService.insertResumeBoard(resumeBoard);
 
         if (result > 0) {
-            session.setAttribute("alretMsg", "게시글 작성 완료");
-            return "redirect:/resumeForm.bo";
+            session.setAttribute("alertMsg", "게시글 작성 완료");
+            return "redirect:/resume.bo";
         } else {
             session.setAttribute("errorMsg", "게시글 작성 실패");
             return "redirect:/resumeForm.bo";
@@ -126,8 +126,6 @@ public class BoardController {
             model.addAttribute("errorMsg", "게시글 조회 실패");
             return "common/error";
         }
-
-
     }
 
     @GetMapping("updateForm.no")

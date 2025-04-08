@@ -17,7 +17,7 @@ public interface BoardMapper {
 
     int insertBoard(Board board);
     int selectResumeBoardCount();
-    List<ResumeBoard> selectResumeBoardList(RowBounds rowBounds, @Param("userId") String userId);
+    List<ResumeBoard> selectResumeBoardList(RowBounds rowBounds, @Param("userNo") int userNo);
 
 
     int insertNoticeBoard(Board board);

@@ -175,7 +175,6 @@
         <div style="flex: 0 0 100px;">작성일</div>
     </div>
 
-    <!-- ✅ 실제 게시글 반복 -->
     <c:forEach var="b" items="${list}">
         <div class="board-row">
             <div style="flex: 0 0 100px;">${b.boardNo}</div>
@@ -216,7 +215,7 @@
             </c:choose>
 
         </ul>
-    </div>
+    </div><c:out value="${list}" />
 
 </div>
 </body>

@@ -11,7 +11,8 @@
         <result column="COUNT" property="count" />
         <result column="BRANCH" property="branch" />
         <result column="TYPE" property="type" />
-        <result column="FILE_PATH" property="filePath" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="ORIGIN_NAME" property="originName" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
         <result column="BOARD_STATUS" property="status"/>
@@ -43,22 +44,20 @@
         BOARD_NO,
         TITLE,
         CONTENT,
-        CREATE_DATE,
-        COUNT,
         BRANCH,
         TYPE,
-        FILE_PATH,
+        ORIGIN_NAME,
+        CHANGE_NAME,
         USER_NO,
         CLASS_NO
         ) VALUES (
         SEQ_BOARD_NO.NEXTVAL,
         #{title},
         #{content},
-        SYSDATE,
-        0,
         #{branch},
         1,
-        #{filePath},
+        #{originName},
+        #{changeName},
         #{userNo},
         NULL
         )
@@ -74,8 +73,11 @@
     <select id="selectNoticeBoard" resultMap="boardResult">
         SELECT BOARD_NO,
                TITLE,
+               BRANCH,
                U.USER_NAME,
                CONTENT,
+               ORIGIN_NAME,
+               CHANGE_NAME,
                COUNT,
                TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
           FROM TB_BOARD
@@ -83,5 +85,15 @@
          WHERE BOARD_STATUS = 'Y'
            AND BOARD_NO = #{bno}
     </select>
+
+    <update id="updateNoticeBoard" >
+        UPDATE BOARD
+        SET TITLE = #{title},
+            CONTENT = #{content},
+            BRANCH = #{branch}m
+            ORIGIN_NAME = #{originName},
+            CHANGE_NAME = #{changeName}
+        WHERE BOARD_NO = #{boardNo}
+    </update>
 
 </mapper>

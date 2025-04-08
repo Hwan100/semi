@@ -17,4 +17,6 @@ public interface BoardMapper {
     int increaseNoticeCount(int bno);
 
     Board selectNoticeBoard(int bno);
+
+    int updateNoticeBoard(Board board);
 }

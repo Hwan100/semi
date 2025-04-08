@@ -18,5 +18,6 @@ public interface BoardService {
 
     Board selectNoticeBoard(int bno);
 
+    int updateNoticeBoard(Board b);
 
 }

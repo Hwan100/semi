@@ -31,6 +31,19 @@
 
   <table id="contentArea" class="content-area">
     <tr>
+      <th>첨부파일</th>
+      <td colspan="3">
+        <c:choose>
+          <c:when test="${not empty b.originName }">
+            <a href="${b.changeName }" download="${b.originName }">${b.originName }</a>
+          </c:when>
+          <c:otherwise>
+            첨부파일이 없습니다.
+          </c:otherwise>
+        </c:choose>
+      </td>
+    </tr>
+    <tr>
       <th>내용</th>
       <td colspan="3"></td>
     </tr>
@@ -50,11 +63,7 @@
         case "edit" : {
           $(formEl).attr("action", "updateForm.no");
         }break;
-        case "delete":{
-          $(formEl).attr("action", "delete.no")
-        }break;
       }
-
       $(formEl).submit();
     }
   </script>

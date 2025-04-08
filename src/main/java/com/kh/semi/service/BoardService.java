@@ -19,6 +19,7 @@ public interface BoardService {
 
     Board selectNoticeBoard(int bno);
 
+    int updateNoticeBoard(Board b);
 
     //자소서 및 이력서 게시글 카운팅
     int selectResumeBoardCount();

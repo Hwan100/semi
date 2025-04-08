@@ -26,7 +26,7 @@
 <div class="container">
     <div class="title">공지사항 작성</div>
 
-    <form id="enrollForm" method="post" action="insert.no" enctype="multipart/form-data">
+    <form id="enrollForm" method="post" action="update.no" enctype="multipart/form-data">
         <table>
             <tr>
                 <th><label for="title">제목</label></th>
@@ -46,10 +46,11 @@
                 <td>
                     <input type="file" id="upfile" class="form-control-file border" name="reupfile">
 
-                    <c:if test="${not empty b.filePath}">
+                    <c:if test="${not empty b.originName}">
                         현재 업로드된 파일 :
-                        <a href="${b.filePath }" download="${b.filePath }">${b.filePath }</a>
-                        <input type="hidden" name="originName" value="${b.filePath }">
+                        <a href="${b.changeName }" download="${b.originName }">${b.originName }</a>
+                        <input type="hidden" name="originName" value="${b.originName }">
+                        <input type="hidden" name="changeName" value="${b.changeName }">
                     </c:if>
                 </td>
             </tr>

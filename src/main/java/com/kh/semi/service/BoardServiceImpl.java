@@ -47,6 +47,11 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
+    public int updateNoticeBoard(Board b) {
+        return boardMapper.updateNoticeBoard(b);
+    }
+
+    @Override
     public int selectResumeBoardCount() {return boardMapper.selectResumeBoardCount() ;}
 
     @Override

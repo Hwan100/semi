@@ -8,7 +8,7 @@
   <body>
   <jsp:include page="../common/header.jsp" />
   <div class="main-container">
-    <form class="form-box" method="post" action="">
+    <form class="form-box" method="post" action="insert.fo">
 
       <!-- 왼쪽 폼 영역 -->
       <div class="left-form">
@@ -16,7 +16,7 @@
         <div class="form-group">
           <label for="className">강의 명</label>
           <input type="text" id="className" name="className" class="input-full">
-          <input type="hidden" name="courseName">
+          <input type="hidden" id="courseName" name="courseName">
         </div>
 
         <!-- 기간 -->
@@ -49,6 +49,15 @@
               endInput.value = ''; // or 경고창 띄우기
             }
           });
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const inputA = document.getElementById("className");
+            const inputB = document.getElementById("courseName");
+
+            inputA.addEventListener("input", function () {
+              inputB.value = inputA.value;
+            });
+          });
         </script>
 
         <!-- 강의실, 강사 -->
@@ -58,8 +67,8 @@
             <input type="text" id="description" name="description" class="input-half">
           </div>
           <div class="form-group">
-            <label for="classRoom">강의장</label>
-            <input type="text" id="classRoom" name="classRoom" class="input-half">
+            <label for="roomName">강의장</label>
+            <input type="text" id="roomName" name="roomName" class="input-half">
           </div>
         </div>
 

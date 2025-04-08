@@ -8,7 +8,7 @@
   <body>
   <jsp:include page="../common/header.jsp" />
   <div class="main-container">
-    <div class="form-box">
+    <form class="form-box" method="post" action="">
 
       <!-- 왼쪽 폼 영역 -->
       <div class="left-form">
@@ -16,15 +16,23 @@
         <div class="form-group">
           <label for="className">강의 명</label>
           <input type="text" id="className" name="className" class="input-full">
+          <input type="hidden" name="courseName">
         </div>
 
         <!-- 기간 -->
-        <div class="form-group">
-          <label>기간</label>
-          <div class="date-row">
-            <input type="date" name="startDate" class="date-input" placeholder="시작일" id="startDate">
-            <span class="date-dash">-</span>
-            <input type="date" name="endDate" class="date-input" placeholder="종료일" id="endDate">
+        <div class="form-row">
+          <div class="form-group">
+            <label>기간</label>
+            <div class="date-row">
+              <input type="date" name="startDate" class="date-input" placeholder="시작일" id="startDate">
+              <span class="date-dash">-</span>
+              <input type="date" name="endDate" class="date-input" placeholder="종료일" id="endDate">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="teacherName">강사</label>
+            <input type="hidden" id="userNo" name="userNo">
+            <input type="text" id="teacherName" name="teacher" class="input-half" onclick="openTeacherModal()" placeholder="미배정" readonly>
           </div>
         </div>
         <script>
@@ -45,13 +53,9 @@
 
         <!-- 강의실, 강사 -->
         <div class="form-row">
-          <div class="form-group half">
-            <label for="classroom">강의실 지정</label>
-            <input type="text" id="classroom" name="classroom" class="input-half">
-          </div>
-          <div class="form-group half">
-            <label for="teacher">강사</label>
-            <input type="text" id="teacher" name="teacher" class="input-half">
+          <div class="form-group">
+            <label for="description">강의 설명</label>
+            <input type="text" id="description" name="description" class="input-half">
           </div>
         </div>
 
@@ -70,22 +74,6 @@
       </div>
 
       <div class="right-section">
-<%--        <div class="calendar-box">--%>
-<%--          <div class="calendar-header">--%>
-<%--            <button class="calendar-arrow">&#9664;</button>--%>
-<%--            <span class="calendar-month">February</span>--%>
-<%--            <button class="calendar-arrow">&#9654;</button>--%>
-<%--          </div>--%>
-
-<%--          <div class="calendar-grid">--%>
-<%--            <div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div><div>Su</div>--%>
-<%--            <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div>1</div><div>2</div>--%>
-<%--            <div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>--%>
-<%--            <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>--%>
-<%--            <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div>--%>
-<%--            <div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>--%>
-<%--          </div>--%>
-<%--        </div>--%>
         <div class="calendar-container">
           <div class="calendar-header">
             <button class="calendar-nav" onclick="changeMonth(-1)">&#9664;</button>
@@ -107,6 +95,7 @@
         </div>
 
         <script>
+          <%-- 달력 생성 코드 --%>
           let currentDate = new Date();
 
           function renderCalendar(date) {
@@ -156,9 +145,9 @@
         <div class="schedule-box">
           <div class="form-group">
             <label>강의 일정</label>
-            <button type="button" class="btn-outline-small">추가</button>
+            <button type="button" class="btn-outline-small" onclick="openScheduleModal()">추가</button>
           </div>
-          <div class="schedule-input-box" >
+          <div class="schedule-input-box" id="schedule-input-box">
             <div class="input-box">
               <div class="info-box">일정을 추가하세요.</div>
             </div>
@@ -170,10 +159,11 @@
         <button type="submit" class="btn-primary">개설</button>
         <button type="button" class="btn-outline">취소</button>
       </div>
-    </div>
+    </form>
   </div>
 
-  <div id="modal" class="modal-overlay" style="display: none">
+  <%--  강의 요일 모달 --%>
+  <div id="daysModal" class="modal-overlay" style="display: none">
     <div class="modal-wrap">
       <div class="modal-title">
         강의 요일 일정
@@ -234,58 +224,231 @@
     </div>
   </div>
 
-<%--  <script>--%>
-<%--    document.addEventListener("DOMContentLoaded", function () {--%>
-<%--      const addClassTime = document.getElementById('addClassTime');--%>
-<%--      addClassTime.addEventListener("click", openModal);--%>
+  <%--  강의 일정 모달 --%>
+  <div id="scheduleModal" class="modal-overlay" style="display: none">
+    <div class="modal-wrap">
+      <div class="modal-title">
+        강의 일정
+      </div>
+      <div style="margin-left: 40px; margin-top: 50px; margin-right: 40px;">
+        <label for="schedule-title">강의 일정 명</label>
+        <input type="text" name="schedule-title" id="schedule-title" class="input-half">
+      </div>
+      <div style="margin: 0 40px;">
+        <label>강의 일정기간</label>
+        <div class="date-row">
+          <input type="date" name="scheduleStartDate" class="date-input" placeholder="시작일" id="scheduleStartDate">
+          <span class="date-dash">-</span>
+          <input type="date" name="scheduleEndDate" class="date-input" placeholder="종료일" id="scheduleEndDate">
+        </div>
+      </div>
+      <div style="margin-left: 40px; margin-top: 50px; margin-right: 40px;">
+        <label for="schedule-description">강의 일정 설명</label>
+        <input type="text" name="schedule-title" id="schedule-description" class="input-half">
+      </div>
+      <div class="save-btn-line">
+        <div>
+          <button onclick="saveSchedule()" class="btn-blank-small" style="margin-right: 15px;">저장</button>
+          <button onclick="closeScheduleModal()" class="btn-blank-small">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%--      // 요일 버튼 클릭 시 선택 토글--%>
-<%--      const dayButtons = document.querySelectorAll(".day-btn");--%>
-<%--      dayButtons.forEach(button => {--%>
-<%--        button.addEventListener("click", function () {--%>
-<%--          button.classList.toggle("selected");--%>
-<%--        });--%>
-<%--      });--%>
-<%--    });--%>
+  <script>
+    const scheduleStartDate = document.getElementById('scheduleStartDate');
+    const scheduleEndDate = document.getElementById('scheduleEndDate');
 
-<%--    function openModal(){--%>
-<%--      document.getElementById('modal').style.display = "flex";--%>
-<%--    }--%>
+    // 시작일이 변경될 때
+    scheduleStartDate.addEventListener('change', () => {
+      const startDate = scheduleStartDate.value;
+      scheduleEndDate.min = startDate; // 종료일 최소값 설정
 
-<%--    function  closeModal(){--%>
-<%--      document.getElementById('modal').style.display = "none";--%>
-<%--    }--%>
+      // 만약 종료일이 시작일보다 빠르면 초기화
+      if (scheduleEndDate.value && scheduleEndDate.value < startDate) {
+        scheduleEndDate.value = ''; // or 경고창 띄우기
+      }
+    });
 
-<%--    function savaModal() {--%>
-<%--      alert("변경사항이 저장되었습니다.");--%>
-<%--      closeModal();--%>
-<%--    }--%>
+    function openScheduleModal() {
+      document.getElementById("scheduleModal").style.display = "flex";
+      getTeacherList(drawTeacherList);
+    }
 
-<%--    document.addEventListener("DOMContentLoaded", function () {--%>
-<%--      const hourSelects = document.querySelectorAll(".hourSelect");--%>
-<%--      const minuteSelects = document.querySelectorAll(".minuteSelect");--%>
+    function closeScheduleModal() {
+      document.getElementById("scheduleModal").style.display = "none";
+    }
 
-<%--      // 시: 0~23--%>
-<%--      for (let i = 0; i <= 23; i++) {--%>
-<%--        const option = document.createElement("option");--%>
-<%--        option.value = i;--%>
-<%--        option.textContent = i.toString().padStart(2, '0');--%>
-<%--        hourSelects.forEach(select => {--%>
-<%--          select.appendChild(option.cloneNode(true)); // 복제해서 각각 넣어줘야 함--%>
-<%--        });--%>
-<%--      }--%>
+    function saveSchedule() {
+      const start = document.getElementById("scheduleStartDate").value;
+      const end = document.getElementById("scheduleEndDate").value;
+      const title = document.getElementById("schedule-title").value;
+      const description = document.getElementById("schedule-description").value;
+      const scheduleBox = document.getElementById("schedule-input-box");
 
-<%--      // 분: 0~59--%>
-<%--      for (let i = 0; i <= 59; i++) {--%>
-<%--        const option = document.createElement("option");--%>
-<%--        option.value = i;--%>
-<%--        option.textContent = i.toString().padStart(2, '0');--%>
-<%--        minuteSelects.forEach(select => {--%>
-<%--          select.appendChild(option.cloneNode(true)); // cloneNode 꼭 필요!--%>
-<%--        });--%>
-<%--      }--%>
-<%--    });--%>
-<%--  </script>--%>
+      const item = document.createElement("div");
+      item.className = "class-time-item";
+
+      const topDiv = document.createElement("div");
+      topDiv.className = "topBox";
+
+      const labelDiv = document.createElement("div");
+      labelDiv.className = "label";
+      labelDiv.innerHTML = start + " ~ " + end + " | " + '<strong>' + title + '</strong>';
+
+      const inputTitle = document.createElement("input");
+      inputTitle.type = "hidden";
+      inputTitle.name = "scheduleTitle[]";
+      inputTitle.value = title;
+
+      const timeDiv = document.createElement("div");
+      timeDiv.className = "time";
+      timeDiv.innerHTML = description;
+
+      const inputDescription = document.createElement("input");
+      inputDescription.type = "hidden";
+      inputDescription.name = "scheduleDescription[]";
+      inputDescription.value = description;
+
+      const inputStartTime = document.createElement("input");
+      inputStartTime.type = "hidden";
+      inputStartTime.name = "scheduleStartTime[]";
+      inputStartTime.value = start;
+
+      const inputEndTime = document.createElement("input");
+      inputEndTime.type = "hidden";
+      inputEndTime.name = "scheduleEndTime[]";
+      inputEndTime.value = start;
+
+      const actionDiv = document.createElement("div");
+      actionDiv.className = "actions";
+
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "수정";
+      // editBtn.onclick = function () { editSchedule(editBtn); };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "삭제";
+      deleteBtn.onclick = function () { deleteSchedule(deleteBtn); };
+
+      timeDiv.appendChild(inputTitle);
+      timeDiv.appendChild(inputDescription);
+      timeDiv.appendChild(inputStartTime);
+      timeDiv.appendChild(inputEndTime);
+
+      actionDiv.appendChild(editBtn);
+      actionDiv.appendChild(deleteBtn);
+
+      topDiv.appendChild(labelDiv);
+      topDiv.appendChild(actionDiv);
+
+      item.appendChild(topDiv);
+      item.appendChild(timeDiv);
+
+      scheduleBox.appendChild(item);
+      console.log("hideInfoBox 작동 전!");
+      hideInfoBox1();
+      console.log("hideInfoBox 작동 후 !");
+      closeScheduleModal();
+    }
+
+    function deleteSchedule(btn) {
+      const item = btn.closest(".class-time-item");
+      item.remove();
+      hideInfoBox1();
+    }
+
+    function hideInfoBox1() {
+      const scheduleBox = document.getElementById("schedule-input-box");
+      const infoBox1 = document.querySelector("#schedule-input-box .input-box");
+
+      console.log(infoBox1);
+
+      if(scheduleBox.childElementCount === 1) {
+        return infoBox1.style.display = "flex";
+      } else {
+        return infoBox1.style.display = "none";
+      }
+    }
+
+  </script>
+
+  <%--  강의 강사 리스트 모달 --%>
+  <div id="teacherModal" class="modal-overlay" style="display: none">
+    <div class="modal-wrap">
+      <div class="modal-title">
+        강의 강사 선택
+      </div>
+      <div id="selectTeacher">
+        <table>
+          <thead>
+            <tr>
+              <th>강사 번호</th>
+              <th>강사 이름</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="save-btn-line">
+        <div>
+          <button onclick="closeTeacherModal()" class="btn-blank-small">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTeacherModal() {
+      document.getElementById("teacherModal").style.display = "flex";
+      getTeacherList(drawTeacherList);
+    }
+
+    function closeTeacherModal() {
+      document.getElementById("teacherModal").style.display = "none";
+    }
+
+    function getTeacherList(callback){
+      console.log("작동");
+      $.ajax({
+        url: "/api/user/allTeacherList",
+        success: function (data) {
+          // console.log(data);
+          callback(data)
+        }, error: function () {
+
+        }
+      })
+    }
+
+    function drawTeacherList(teacherList) {
+      let str = "";
+      for(let t of teacherList) {
+        str += "<tr onclick='selectTeacher(this)'>" +
+                "<td>" + t.userNo + "</td>" +
+                "<td>" + t.userName + "</td>" +
+                "</tr>";
+      }
+      const teacherListBody = document.querySelector("#selectTeacher tbody");
+      teacherListBody.innerHTML = str;
+    }
+
+    function selectTeacher(select) {
+      // const text = document.getElementById("userNo");
+      // text.childNodes.item(0)
+      // console.log(select.childNodes.item(0).innerText);
+      // let no = select.
+      const teacherNo = document.getElementById("userNo");
+      teacherNo.value = select.childNodes.item(0).innerText;
+
+      const teacherName = document.getElementById("teacherName");
+      teacherName.value = select.childNodes.item(1).innerText;
+
+      closeTeacherModal();
+    }
+  </script>
 
   <script>
     let selectedDays = new Map(); // Map으로 요일: 시간쌍 형태로 저장
@@ -317,12 +480,12 @@
 
     function openModal() {
       editingElement = null;
-      document.getElementById("modal").style.display = "flex";
+      document.getElementById("daysModal").style.display = "flex";
       resetDayButtons();
     }
 
     function closeModal() {
-      document.getElementById("modal").style.display = "none";
+      document.getElementById("daysModal").style.display = "none";
       editingElement = null;
       resetDayButtons();
     }
@@ -361,24 +524,6 @@
         return;
       }
 
-      // selected.forEach(btn => {
-      //   const day = btn.textContent;
-      //   const item = document.createElement("div");
-      //   item.className = "class-time-item";
-      //   item.dataset.day = day;
-      //   // item.innerHTML = '<div class="label">' + day + '요일 | 수업</div>' +
-      //   //                   '<div class="time">' + start + " ~ " + end + '</div>' +
-      //   //                   '<div class="actions">' +
-      //   //                       '<button onclick="editSchedule(this)">수정</button>' +
-      //   //                       '<button onclick="deleteSchedule(this, ' + day + ')">삭제</button>'
-      //   //                   '</div>';
-      //   item.querySelector(".label").textContent = (day + "요일 | 수업");
-      //   item.querySelector(".time").textContent = start + " ~ " + end;
-      //   item.querySelector(".actions button:nth-child(2)").setAttribute("onclick", "deleteSchedule(this, '" + day + "')");
-      //   weekBox.appendChild(item);
-      //   selectedDays.add(day);
-      // });
-
       selected.forEach(function(btn) {
         const day = btn.textContent;
         const item = document.createElement("div");
@@ -392,20 +537,40 @@
         labelDiv.className = "label";
         labelDiv.innerHTML = day + "요일 | " + '<strong>수업</strong>';
 
+        const inputDays = document.createElement("input");
+        inputDays.type = "hidden";
+        inputDays.name = "classDate[]";
+        inputDays.value = day;
+
         const timeDiv = document.createElement("div");
         timeDiv.className = "time";
         timeDiv.textContent = "" + start + " ~ " + end;
+
+        const inputStartTime = document.createElement("input");
+        inputStartTime.type = "hidden";
+        inputStartTime.name = "classStartTime[]";
+        inputStartTime.value = start;
+
+        const inputEndTime = document.createElement("input");
+        inputEndTime.type = "hidden";
+        inputEndTime.name = "classEndTime[]";
+        inputEndTime.value = start;
 
         const actionDiv = document.createElement("div");
         actionDiv.className = "actions";
 
         const editBtn = document.createElement("button");
         editBtn.textContent = "수정";
-        editBtn.onclick = function () { editSchedule(editBtn); };
+        editBtn.onclick = function () { editDays(editBtn); };
 
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "삭제";
-        deleteBtn.onclick = function () { deleteSchedule(deleteBtn, day); };
+        deleteBtn.onclick = function () { deleteDays(deleteBtn, day); };
+
+        timeDiv.appendChild(inputStartTime);
+        timeDiv.appendChild(inputEndTime);
+
+        labelDiv.appendChild(inputDays);
 
         actionDiv.appendChild(editBtn);
         actionDiv.appendChild(deleteBtn);
@@ -424,7 +589,7 @@
       closeModal();
     }
 
-    function editSchedule(btn) {
+    function editDays(btn) {
       const item = btn.closest(".class-time-item");
       editingElement = item;
       const day = item.dataset.day;
@@ -447,17 +612,17 @@
         }
       });
 
-      document.getElementById("modal").style.display = "flex";
+      document.getElementById("daysModal").style.display = "flex";
     }
 
-    function deleteSchedule(btn, day) {
+    function deleteDays(btn, day) {
       const item = btn.closest(".class-time-item");
       item.remove();
       selectedDays.delete(day);
       hideInfoBox();
     }
 
-    function hideInfoBox(qualifiedName, value) {
+    function hideInfoBox() {
       const infoBox = document.querySelector(".input-box:first-child");
       if(selectedDays.size === 0) {
         return infoBox.style.display = "flex";

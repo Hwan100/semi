@@ -24,7 +24,7 @@ public interface BoardService {
     //자소서 및 이력서 게시글 카운팅
     int selectResumeBoardCount();
 
-    List<ResumeBoard> selectResumeBoardList(PageInfo pi, String userId);
+    List<ResumeBoard> selectResumeBoardList(PageInfo pi, int userNo);
 
     int insertResumeBoard(ResumeBoard board);
 

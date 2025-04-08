@@ -14,8 +14,18 @@
         <result column="FILE_PATH" property="filePath" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
-
         <result column="USER_NAME" property="userName" />
+    </resultMap>
+
+    <resultMap id="resumeBoardResult" type="ResumeBoard">
+        <result column="RESUME_NO" property="resumeNo" />
+        <result column="USER_NO" property="userNo" />
+        <result column="TYPE" property="type" />
+        <result column="TITLE" property="title" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="ORIGIN_NAME" property="originName" />
+        <result column="CREATED_DATE" property="createDate" />
+        <result column="UPDATE_DATE" property="updateDate" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
@@ -61,4 +71,18 @@
         NULL
         )
     </insert>
+
+    <select id="selectResumeBoardCount" resultType="_int">
+        SELECT COUNT(*)
+        FROM TB_RESUME_BOARD
+    </select>
+
+    <select id="selectResumeBoardList" resultMap="resumeBoardResult">
+        SELECT TITLE,
+            UPDATE_DATE,
+            TYPE,
+            CREATE_DATE
+        FROM TB_RESUME_BOARD
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

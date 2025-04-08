@@ -2,6 +2,7 @@ package com.kh.semi.service;
 
 import com.kh.semi.domain.vo.Board;
 import com.kh.semi.domain.vo.PageInfo;
+import com.kh.semi.domain.vo.ResumeBoard;
 import com.kh.semi.mappers.BoardMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,18 @@ public class BoardServiceImpl implements BoardService{
     public int insertBoard(Board board) {
         return boardMapper.insertBoard(board);
     }
+
+    @Override
+    public int selectResumeBoardCount() {return boardMapper.selectResumeBoardCount() ;}
+
+    @Override
+    public List<ResumeBoard> selectResumeBoardList(PageInfo pi, String userId) {
+        int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+        RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+        return boardMapper.selectResumeBoardList(rowBounds, userId);
+    }
+
+
 
 
 }

@@ -197,7 +197,7 @@
     <div class="semi-wrap">
         <div class="header-line">
             <!-- 제목 -->
-            <div class="header-title">삼성 자소서</div>
+            <div class="header-title">${r.title}</div>
 
             <!-- 버튼 -->
             <div class="button-group">
@@ -207,15 +207,27 @@
 
             <!-- 하단 info-group -->
             <div class="info-group">
-                <div>자소서</div>
-                <div>2025.03.20</div>
+                <div>
+                    <c:choose>
+                        <c:when test="${b.type == 1}">자소서</c:when>
+                        <c:when test="${b.type == 2}">이력서</c:when>
+                        <c:otherwise>기타</c:otherwise>
+                    </c:choose>
+                </div>
+                <div>최근 수정 날짜 : ${r.updateDate}</div>
             </div>
         </div>
         <div class="contents-line">
-            <textarea class="contents">자소서 내용인데요 양식처럼 분류를 해서 보일지 아니면 그냥 이대로 놔둘지 모르겠네요</textarea>
+            <textarea class="contents">${r.content}</textarea>
             <div class="file-line">
                 <span><img src="/icons/paperclip.png"></span>
-                <div class="file">첨부 파일 0개</div>
+                <div class="file">
+                    <c:choose>
+                        <c:when test="${r.changeName == ''}">첨부 파일 0개</c:when>
+                        <c:otherwise>${r.originName}</c:otherwise>
+                    </c:choose>
+
+                </div>
             </div>
             <div class="file-line" style="margin-top: 0px; background-color: white">
                 <span><img src="/icons/download.png"></span>

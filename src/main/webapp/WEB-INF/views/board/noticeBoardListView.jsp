@@ -193,13 +193,12 @@
 
     <div id="pagingArea">
         <ul class="pagination">
-
             <c:choose>
                 <c:when test="${ pi.currentPage eq 1 }">
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/leftPageMove.png"></a></li>
                 </c:when>
                 <c:otherwise>
-                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage - 1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage - 1}"><img src="/icons/leftPageMove.png"></a></li>
                 </c:otherwise>
             </c:choose>
 
@@ -209,10 +208,10 @@
 
             <c:choose>
                 <c:when test="${ pi.currentPage eq pi.maxPage }">
-                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/rightPageMove.png"></a></li>
                 </c:when>
                 <c:otherwise>
-                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage + 1}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage + 1}"><img src="/icons/rightPageMove.png"></a></li>
                 </c:otherwise>
             </c:choose>
 

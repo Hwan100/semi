@@ -17,7 +17,7 @@ public interface BoardMapper {
 
     int insertBoard(Board board);
     int selectResumeBoardCount();
-    List<ResumeBoard> selectResumeBoardList(RowBounds rowBounds, @Param("userId") String userId);
+    List<ResumeBoard> selectResumeBoardList(RowBounds rowBounds, @Param("userNo") int userNo);
 
 
     int insertNoticeBoard(Board board);
@@ -31,6 +31,10 @@ public interface BoardMapper {
     int insertResumeBoard(ResumeBoard board);
 
     int deleteNoticeBoard(int bno);
+
+    List<ResumeBoard> selectCurrentResumeBoardList(int userNo);
+
+    ResumeBoard selectResumeBoard(int bno);
 
     List<Board> selectMyClassBoardList(RowBounds rowBounds);
 

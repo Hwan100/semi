@@ -55,10 +55,10 @@ public class BoardServiceImpl implements BoardService{
     public int selectResumeBoardCount() {return boardMapper.selectResumeBoardCount() ;}
 
     @Override
-    public List<ResumeBoard> selectResumeBoardList(PageInfo pi, String userId) {
+    public List<ResumeBoard> selectResumeBoardList(PageInfo pi, int userNo) {
         int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
         RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
-        return boardMapper.selectResumeBoardList(rowBounds, userId);
+        return boardMapper.selectResumeBoardList(rowBounds, userNo);
     }
 
     @Override
@@ -69,6 +69,16 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public int deleteNoticeBoard(int bno) {
         return boardMapper.deleteNoticeBoard(bno);
+    }
+
+    @Override
+    public List<ResumeBoard> selectCurrentResumeBoardList(int userNo) {
+        return boardMapper.selectCurrentResumeBoardList(userNo);
+    }
+
+    @Override
+    public ResumeBoard selectResumeBoard(int bno) {
+        return boardMapper.selectResumeBoard(bno);
     }
 
     @Override

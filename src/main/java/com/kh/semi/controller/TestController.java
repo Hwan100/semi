@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
-    @GetMapping("resumeDetail.bo")
-    public String resumeDetail() {return "board/resumeDetailView";}
-
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}
 

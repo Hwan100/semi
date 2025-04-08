@@ -79,6 +79,11 @@ public class BoardController {
         int userNo = user.getUserNo();
         PageInfo pi = new PageInfo(boardCount, cpage, 5, 10);
         List<ResumeBoard> list = boardService.selectResumeBoardList(pi,userNo);
+        List<ResumeBoard> clist = boardService.selectCurrentResumeBoardList(userNo);
+
+        model.addAttribute("list", list);
+        model.addAttribute("pi", pi);
+        model.addAttribute("clist", clist);
 
         return "board/resumeListView";
     }
@@ -98,7 +103,7 @@ public class BoardController {
             String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
 
             resumeBoard.setChangeName("/resources/uploadfile/" + changeName);
-            resumeBoard.setOriginName(changeName);
+            resumeBoard.setOriginName(upfile.getOriginalFilename());
         }
 
         System.out.println(resumeBoard);
@@ -174,6 +179,15 @@ public class BoardController {
             model.addAttribute("errorMsg", "게시글 수정 실패");
             return "common/error";
         }
+    }
+
+    @GetMapping("resumeDetail.bo")
+    public String resumeDetail(int bno,Model model) {
+        ResumeBoard r = boardService.selectResumeBoard(bno);
+
+        model.addAttribute("r", r);
+
+        return "board/resumeDetailView";
     }
 
 }

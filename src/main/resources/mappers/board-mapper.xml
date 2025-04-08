@@ -96,6 +96,7 @@
             CREATED_DATE
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
+        ORDER BY CREATED_DATE DESC
     </select>
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
@@ -155,4 +156,18 @@
         SET BOARD_STATUS = 'N'
         WHERE BOARD_NO = #{bno}
     </update>
+
+    <select id="selectCurrentResumeBoardList" resultMap="resumeBoardResult">
+        SELECT TITLE, UPDATE_DATE
+        FROM TB_RESUME_BOARD
+        WHERE USER_NO = #{userNo}
+        ORDER BY UPDATE_DATE DESC
+        FETCH FIRST 5 ROWS ONLY
+    </select>
+
+    <select id="selectResumeBoard" resultMap="resumeBoardResult">
+        SELECT *
+        FROM TB_RESUME_BOARD
+        WHERE RESUME_NO = #{bno}
+    </select>
 </mapper>

@@ -71,5 +71,15 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.deleteNoticeBoard(bno);
     }
 
+    @Override
+    public List<ResumeBoard> selectCurrentResumeBoardList(int userNo) {
+        return boardMapper.selectCurrentResumeBoardList(userNo);
+    }
+
+    @Override
+    public ResumeBoard selectResumeBoard(int bno) {
+        return boardMapper.selectResumeBoard(bno);
+    }
+
 
 }

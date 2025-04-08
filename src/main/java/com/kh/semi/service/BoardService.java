@@ -30,4 +30,8 @@ public interface BoardService {
 
     int deleteNoticeBoard(int bno);
 
+    List<ResumeBoard> selectCurrentResumeBoardList(int userNo);
+
+    ResumeBoard selectResumeBoard(int bno);
+
 }

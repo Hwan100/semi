@@ -57,6 +57,10 @@
             <label for="description">강의 설명</label>
             <input type="text" id="description" name="description" class="input-half">
           </div>
+          <div class="form-group">
+            <label for="classRoom">강의장</label>
+            <input type="text" id="classRoom" name="classRoom" class="input-half">
+          </div>
         </div>
 
         <!-- 강의 요일 -->
@@ -76,9 +80,9 @@
       <div class="right-section">
         <div class="calendar-container">
           <div class="calendar-header">
-            <button class="calendar-nav" onclick="changeMonth(-1)">&#9664;</button>
+            <button type="button" class="calendar-nav" onclick="changeMonth(-1)">&#9664;</button>
             <h2 id="calendarTitle"></h2>
-            <button class="calendar-nav" onclick="changeMonth(1)">&#9654;</button>
+            <button type="button" class="calendar-nav" onclick="changeMonth(1)">&#9654;</button>
           </div>
           <div class="calendar-grid">
             <div class="calendar-day">월</div>

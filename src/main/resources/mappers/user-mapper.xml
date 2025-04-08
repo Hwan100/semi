@@ -94,4 +94,9 @@
             #{userBirth}
         )
     </insert>
+    <select id="allTeacherList" resultMap="userResult">
+        SELECT *
+        FROM TB_USER
+        WHERE USER_ROLE = 2
+    </select>
 </mapper>

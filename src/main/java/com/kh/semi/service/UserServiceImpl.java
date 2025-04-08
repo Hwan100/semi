@@ -5,6 +5,8 @@ import com.kh.semi.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
@@ -30,4 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insertUser(User u) {return userMapper.insertUser(u);}
+
+    @Override
+    public ArrayList<User> allTeacherList() { return userMapper.allTeacherList(); }
 }

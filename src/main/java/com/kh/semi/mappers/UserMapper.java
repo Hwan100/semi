@@ -21,4 +21,6 @@ public interface UserMapper {
     int insertUser(User u);
 
     ArrayList<User> allTeacherList();
+
+    int selectUserNoById(String userId);
 }

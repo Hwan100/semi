@@ -11,29 +11,52 @@
         <result column="COUNT" property="count" />
         <result column="BRANCH" property="branch" />
         <result column="TYPE" property="type" />
-        <result column="FILE_PATH" property="filePath" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="ORIGIN_NAME" property="originName" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
-
+        <result column="BOARD_STATUS" property="boardStatus"/>
+        <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="USER_NAME" property="userName" />
+    </resultMap>
+
+    <resultMap id="resumeBoardResult" type="ResumeBoard">
+        <result column="RESUME_NO" property="resumeNo" />
+        <result column="USER_NO" property="userNo" />
+        <result column="TYPE" property="type" />
+        <result column="TITLE" property="title" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="ORIGIN_NAME" property="originName" />
+        <result column="CREATED_DATE" property="createDate" />
+        <result column="UPDATE_DATE" property="updateDate" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_BOARD
+        WHERE BOARD_STATUS = 'Y'
     </select>
 
     <select id="selectNoticeBoardList" resultMap="boardResult">
-        SELECT BOARD_NO,
-        BRANCH,
-        TITLE,
-        U.USER_NAME,
-        COUNT,
-        TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
-        FROM TB_BOARD
-        JOIN TB_USER U USING (USER_NO)
-        WHERE TYPE = 1
-        ORDER BY BOARD_NO DESC
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        B.CONTENT,
+        B.CREATE_DATE,
+        B.COUNT,
+        B.BRANCH,
+        B.TYPE,
+        B.CHANGE_NAME,
+        B.ORIGIN_NAME,
+        B.USER_NO,
+        B.CLASS_NO,
+        B.BOARD_STATUS,
+        U.USER_NAME
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        WHERE B.TYPE = 1
+        AND B.BOARD_STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
     </select>
 
     <insert id="insertNoticeBoard" parameterType="Board">
@@ -41,24 +64,94 @@
         BOARD_NO,
         TITLE,
         CONTENT,
-        CREATE_DATE,
-        COUNT,
         BRANCH,
         TYPE,
-        FILE_PATH,
+        ORIGIN_NAME,
+        CHANGE_NAME,
         USER_NO,
         CLASS_NO
         ) VALUES (
         SEQ_BOARD_NO.NEXTVAL,
         #{title},
         #{content},
-        SYSDATE,
-        0,
         #{branch},
         1,
-        #{filePath},
+        #{originName},
+        #{changeName},
         #{userNo},
         NULL
         )
     </insert>
+
+    <select id="selectResumeBoardCount" resultType="_int">
+        SELECT COUNT(*)
+        FROM TB_RESUME_BOARD
+    </select>
+
+    <select id="selectResumeBoardList" resultMap="resumeBoardResult">
+        SELECT TITLE,
+            UPDATE_DATE,
+            TYPE,
+            CREATE_DATE
+        FROM TB_RESUME_BOARD
+        WHERE USER_ID = #{userId}
+    </select>
+    <update id="increaseNoticeCount">
+        UPDATE TB_BOARD
+        SET COUNT = COUNT + 1
+        WHERE BOARD_NO = #{bno}
+        AND BOARD_STATUS = 'Y'
+    </update>
+
+    <select id="selectNoticeBoard" resultMap="boardResult">
+        SELECT BOARD_NO,
+               TITLE,
+               BRANCH,
+               U.USER_NAME,
+               CONTENT,
+               ORIGIN_NAME,
+               CHANGE_NAME,
+               COUNT,
+               TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+          FROM TB_BOARD
+          JOIN TB_USER U USING (USER_NO)
+         WHERE BOARD_STATUS = 'Y'
+           AND BOARD_NO = #{bno}
+    </select>
+
+    <update id="updateNoticeBoard" >
+        UPDATE TB_BOARD
+        SET TITLE = #{title},
+            CONTENT = #{content},
+            BRANCH = #{branch},
+            ORIGIN_NAME = #{originName},
+            CHANGE_NAME = #{changeName}
+        WHERE BOARD_NO = #{boardNo}
+    </update>
+
+    <insert id="insertResumeBoard" parameterType="ResumeBoard">
+        INSERT INTO TB_RESUME_BOARD(
+        RESUME_NO,
+        USER_NO,
+        TYPE,
+        TITLE,
+        CHANGE_NAME,
+        ORIGIN_NAME,
+        TITLE)
+        VALUES(
+        SEQ_RESUME_NO.NEXTVAL,
+        #{userNo},
+        #{type},
+        #{title},
+        #{changeName},
+        #{originName},
+        #{content}
+        )
+    </insert>
+
+    <update id="deleteNoticeBoard">
+        UPDATE TB_BOARD
+        SET BOARD_STATUS = 'N'
+        WHERE BOARD_NO = #{bno}
+    </update>
 </mapper>

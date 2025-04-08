@@ -143,7 +143,7 @@
         <button type="button" class="btn-blank-small" id="btn1" onclick="history.back()">이전화면</button>
     </div>
 
-    <form method="post" action="saveResume.jsp" enctype="multipart/form-data">
+    <form method="post" action="saveResume.bo" enctype="multipart/form-data">
         <div class="contents">
             <div class="contents-top-line">
                 <div class="contents-title-line">
@@ -156,10 +156,10 @@
                     <span id="fileName">선택된 파일 없음</span>
 
                     <label style="margin-left: 30px;">
-                        <input type="radio" name="division" id="division1" value="자소서"> 자소서
+                        <input type="radio" name="type" id="division1" value="1"> 자소서
                     </label>
                     <label style="margin-left: 15px;">
-                        <input type="radio" name="division" id="division2" value="이력서"> 이력서
+                        <input type="radio" name="type" id="division2" value="2"> 이력서
                     </label>
                 </div>
             </div>
@@ -173,7 +173,7 @@
 
         <!-- 숨겨진 파일 input -->
         <div style="display: none">
-            <input type="file" id="file" name="file" onchange="loadFileName(this)">
+            <input type="file" id="file" name="upfile" onchange="loadFileName(this)">
         </div>
     </form>
 </div>

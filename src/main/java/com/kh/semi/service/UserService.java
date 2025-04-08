@@ -19,4 +19,6 @@ public interface UserService {
     int insertUser(User u);
 
     ArrayList<User> allTeacherList();
+
+    int selectUserNoById(String userId);
 }

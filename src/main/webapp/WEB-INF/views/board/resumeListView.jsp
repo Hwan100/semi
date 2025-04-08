@@ -207,7 +207,7 @@
 
 <div class="body-wrapper">
     <div class="board-container">
-        <div class="board-title">최근 열람한 문서</div>
+        <div class="board-title">최근 수정한 문서</div>
         <div id="scrollbar">
         <div id="currentResumeList">
             <div class="select">
@@ -255,91 +255,70 @@
                     <td class="title-bar" onclick="location.href='resumeDetail.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리&division=자소서&title3=삼성자소서'">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성 자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
                 <tr>
                     <td class="title-bar">삼성자소서</td>
                     <td class="other-bar">2025.03.28</td>
                     <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview"><img src="/icons/Search.png">미리보기</td>
+                    <td class="preview">작성일</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
             </tbody>

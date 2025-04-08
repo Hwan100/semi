@@ -2,6 +2,8 @@ package com.kh.semi.controller;
 
 import com.kh.semi.domain.vo.Board;
 import com.kh.semi.domain.vo.PageInfo;
+import com.kh.semi.domain.vo.ResumeBoard;
+import com.kh.semi.domain.vo.User;
 import com.kh.semi.service.BoardService;
 import com.kh.semi.service.UserService;
 import com.kh.semi.utils.Template;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,13 +53,127 @@ public class BoardController {
         System.out.println(board);
         System.out.println(upfile);
 
-        int result = boardService.insertBoard(board);
+        if(!upfile.getOriginalFilename().equals("")){
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+
+            board.setChangeName("/resources/uploadfile/" + changeName);
+            board.setOriginName(upfile.getOriginalFilename());
+        }
+
+        int result = boardService.insertNoticeBoard(board);
 
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 작성 성공");
             return "redirect:/notice.bo";
         } else {
             model.addAttribute("errorMsg", "게시글 작성 실패");
+            return "common/error";
+        }
+    }
+
+    @GetMapping("resume.bo")
+    public String selectResumeBoardList(@RequestParam(defaultValue = "1") int cpage, Model model, HttpSession session) {
+        int boardCount = boardService.selectResumeBoardCount();
+
+        User user = (User)session.getAttribute("loginUser");
+        String userId = user.getUserId();
+        PageInfo pi = new PageInfo(boardCount, cpage, 5, 10);
+        List<ResumeBoard> list = boardService.selectResumeBoardList(pi,userId);
+
+        return "board/resumeBoardListView";
+    }
+
+    @GetMapping("resumeForm.bo")
+    public String resumeForm() {return "board/resumeFormView";}
+
+    @PostMapping("saveResume.bo")
+    public String saveResume(@ModelAttribute ResumeBoard resumeBoard, MultipartFile upfile, HttpSession session , Model model) {
+
+        User user = (User)session.getAttribute("loginUser");
+        int userNo = user.getUserNo();
+
+        resumeBoard.setUserNo(userNo);
+
+        if(!upfile.getOriginalFilename().equals("")){
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+
+            resumeBoard.setChangeName("/resources/uploadfile/" + changeName);
+            resumeBoard.setOriginName(changeName);
+        }
+
+        System.out.println(resumeBoard);
+        System.out.println(upfile);
+
+        int result = boardService.insertResumeBoard(resumeBoard);
+
+        if (result > 0) {
+            session.setAttribute("alretMsg", "게시글 작성 완료");
+            return "redirect:/resumeForm.bo";
+        } else {
+            session.setAttribute("errorMsg", "게시글 작성 실패");
+            return "redirect:/resumeForm.bo";
+        }
+    }
+
+    @GetMapping("detail.no")
+    public String selectBoardDetail(int bno, Model model) {
+        int result = boardService.increaseNoticeCount(bno);
+
+        if(result > 0){
+            Board b = boardService.selectNoticeBoard(bno);
+            model.addAttribute("b", b);
+
+            return "board/noticeDetailView";
+        } else {
+            model.addAttribute("errorMsg", "게시글 조회 실패");
+            return "common/error";
+        }
+
+
+    }
+
+    @GetMapping("updateForm.no")
+    public String updateBoard(@RequestParam(value = "bno") int boardNo, Model model) {
+
+        model.addAttribute("b", boardService.selectNoticeBoard(boardNo));
+        return "board/boardUpdateForm";
+    }
+
+    @PostMapping("update.no")
+    public String updateBoard(@ModelAttribute Board b, MultipartFile reupfile, HttpSession session, Model model) {
+        //새로운 첨부파일 있다면 저장 후 b객체에 파일명 수정
+        //b객체 전달받은 값으로 수정
+
+        //새로운 첨부 파일이 있는가?
+        if(!reupfile.getOriginalFilename().equals("")){
+            //기존첨파일 삭제
+            if(b.getChangeName() != null && !b.getChangeName().equals("")){
+                new File(session.getServletContext().getRealPath(b.getChangeName())).delete();
+            }
+
+            String changeName = Template.saveFile(reupfile, session, "/resources/uploadfile/");
+            b.setChangeName("/resources/uploadfile/" + changeName);
+            b.setOriginName(reupfile.getOriginalFilename());
+        }
+
+        int result = boardService.updateNoticeBoard(b);
+        if(result > 0){
+            session.setAttribute("alertMsg", "게시글 수정 성공");
+            return "redirect:/detail.no?bno=" + b.getBoardNo();
+        } else {
+            model.addAttribute("errorMsg", "게시글 수정 실패");
+            return "common/error";
+        }
+    }
+
+    @GetMapping("delete.no")
+    public String deleteBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
+        int result = boardService.deleteNoticeBoard(bno);
+        if(result > 0){
+            session.setAttribute("alertMsg", "게시글 삭제 성공");
+            return "redirect:/notice.bo";
+        } else {
+            model.addAttribute("errorMsg", "게시글 수정 실패");
             return "common/error";
         }
     }

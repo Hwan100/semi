@@ -161,7 +161,6 @@
         <div class="board-title">공지사항</div>
 
         <div class="button-area">
-            <button class="btn-blank-small" onclick="">수정</button>
             <button class="btn-blank-small" onclick="location.href='enrollForm.no'">작성</button>
 <%--            <button class="btn-blank-small" onclick="history.back()">이전화면</button>--%>
         </div>
@@ -176,13 +175,12 @@
         <div style="flex: 0 0 100px;">작성일</div>
     </div>
 
-    <!-- ✅ 실제 게시글 반복 -->
     <c:forEach var="b" items="${list}">
         <div class="board-row">
             <div style="flex: 0 0 100px;">${b.boardNo}</div>
             <div style="flex: 0 0 130px;">${b.branch}</div>
             <div class="board-title-cell">
-                <a href="detail.bo?bno=${b.boardNo}">${b.title}</a>
+                <a href="detail.no?bno=${b.boardNo}">${b.title}</a>
             </div>
             <div style="flex: 0 0 150px;">${b.userName}</div>
             <div style="flex: 0 0 100px;">${b.count}</div>

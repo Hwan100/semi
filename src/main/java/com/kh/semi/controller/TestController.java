@@ -6,13 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
-
-    @GetMapping("resume.bo")
-    public String resumeManage() {return "board/resumeListView";}
-
-    @GetMapping("resumeForm.bo")
-    public String resumeForm() {return "board/resumeFormView";}
-
     @GetMapping("resumeDetail.bo")
     public String resumeDetail() {return "board/resumeDetailView";}
 

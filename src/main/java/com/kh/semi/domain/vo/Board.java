@@ -19,9 +19,10 @@ public class Board {
     private int count;
     private String branch;
     private int type;
-    private String filePath;
+    private String originName;
+    private String changeName;
     private int userNo;
     private int classNo;
-
+    private String boardStatus;
     private String userName;
 }

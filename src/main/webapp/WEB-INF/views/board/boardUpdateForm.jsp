@@ -26,11 +26,12 @@
 <div class="container">
     <div class="title">공지사항 작성</div>
 
-    <form id="enrollForm" method="post" action="insert.no" enctype="multipart/form-data">
+    <form id="enrollForm" method="post" action="update.no" enctype="multipart/form-data">
+        <input type="hidden" name="boardNo" value="${b.boardNo }">
         <table>
             <tr>
                 <th><label for="title">제목</label></th>
-                <td><input type="text" id="title" name="title" required></td>
+                <td><input type="text" id="title" name="title" value="${b.title}" required></td>
             </tr>
             <tr>
                 <th><label for="writer">작성자</label></th>
@@ -39,20 +40,29 @@
             </tr>
             <tr>
                 <th><label for="branch">지점명</label></th>
-                <td><input type="text" id="branch" name="branch" required></td>
+                <td><input type="text" id="branch" name="branch" value="${b.branch}" required></td>
             </tr>
             <tr>
                 <th><label for="upfile">첨부파일</label></th>
-                <td><input type="file" id="upfile" class="form-control-file border" name="upfile"></td>
+                <td>
+                    <input type="file" id="upfile" class="form-control-file border" name="reupfile">
+
+                    <c:if test="${not empty b.originName}">
+                        현재 업로드된 파일 :
+                        <a href="${b.changeName }" download="${b.originName }">${b.originName }</a>
+                        <input type="hidden" name="originName" value="${b.originName }">
+                        <input type="hidden" name="changeName" value="${b.changeName }">
+                    </c:if>
+                </td>
             </tr>
             <tr>
                 <th><label for="content">내용</label></th>
-                <td><textarea id="content" name="content" required></textarea></td>
+                <td><textarea id="content" name="content" required>${b.content}</textarea></td>
             </tr>
         </table>
 
         <div style="text-align: right; margin-top: 20px;">
-            <button type="submit" class="btn-submit">등록</button>
+            <button type="submit" class="btn-submit">수정</button>
             <button type="reset" class="btn-secondary">취소</button>
         </div>
     </form>
@@ -60,11 +70,8 @@
 
 <script>
     document.getElementById('title').required = true;
-    document.getElementById('branch').required = true;
     document.getElementById('content').required = true;
-</script>
-
-<script>
+    document.getElementById('branch').required = true;
 
 </script>
 

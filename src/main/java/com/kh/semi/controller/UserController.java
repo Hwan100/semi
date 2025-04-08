@@ -30,15 +30,19 @@ public class UserController {
         if (loginUser == null) {
             mv.addObject("errorMsg", "아이디를 찾을 수 없습니다.");
             mv.setViewName("login/loginPage");
-        } else if(!user.getUserPwd().equals(loginUser.getUserPwd())) {
-            mv.addObject("errorMsg", "비밀번호가 일치하지 않습니다.");
-            mv.setViewName("login/loginPage");
         } else {
-            session.setAttribute("loginUser", loginUser);
-            mv.setViewName("redirect:/");
+            // 암호화된 비밀번호 비교
+            if (!bCryptPasswordEncoder.matches(user.getUserPwd(), loginUser.getUserPwd())) {
+                mv.addObject("errorMsg", "비밀번호가 일치하지 않습니다.");
+                mv.setViewName("login/loginPage");
+            } else {
+                session.setAttribute("loginUser", loginUser);
+                mv.setViewName("redirect:/");
+            }
         }
         return mv;
     }
+
 
     @GetMapping("logout.us")
     public String logout(HttpSession session) {

@@ -579,8 +579,6 @@
         document.getElementById("hiddenBirth").value = year + '-' + month + '-' + day ;
         document.getElementById("hiddenEmail").value = front + '@' + domain;
 
-        console.log("선택된 날짜:", year, month, day);
-
         return true;
     }
 

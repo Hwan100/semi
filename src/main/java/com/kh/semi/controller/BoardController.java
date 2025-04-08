@@ -107,6 +107,7 @@ public class BoardController {
             session.setAttribute("errorMsg", "게시글 작성 실패");
             return "redirect:/resumeForm.bo";
         }
+    }
 
     @GetMapping("detail.no")
     public String selectBoardDetail(int bno, Model model) {

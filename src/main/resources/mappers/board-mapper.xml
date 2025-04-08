@@ -15,10 +15,7 @@
         <result column="ORIGIN_NAME" property="originName" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
-<<<<<<< HEAD
-=======
         <result column="BOARD_STATUS" property="status"/>
->>>>>>> 999559134a34eb113b0532959b695988e4cff787
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
@@ -77,7 +74,6 @@
         )
     </insert>
 
-<<<<<<< HEAD
     <select id="selectResumeBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_RESUME_BOARD
@@ -91,7 +87,6 @@
         FROM TB_RESUME_BOARD
         WHERE USER_ID = #{userId}
     </select>
-=======
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
         SET COUNT = COUNT + 1
@@ -114,10 +109,6 @@
          WHERE BOARD_STATUS = 'Y'
            AND BOARD_NO = #{bno}
     </select>
-
-<<<<<<< HEAD
->>>>>>> 999559134a34eb113b0532959b695988e4cff787
-=======
     <update id="updateNoticeBoard" >
         UPDATE BOARD
         SET TITLE = #{title},
@@ -127,6 +118,4 @@
             CHANGE_NAME = #{changeName}
         WHERE BOARD_NO = #{boardNo}
     </update>
-
->>>>>>> 5e43735a5306f09f9feffa51301e2f9dc68f6560
 </mapper>

@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <th><label for="branch">지점명</label></th>
-                <td><input type="text" id="branch" name="branch"></td>
+                <td><input type="text" id="branch" name="branch" required></td>
             </tr>
             <tr>
                 <th><label for="upfile">첨부파일</label></th>
@@ -57,6 +57,16 @@
         </div>
     </form>
 </div>
+
+<script>
+    document.getElementById('title').required = true;
+    document.getElementById('branch').required = true;
+    document.getElementById('content').required = true;
+</script>
+
+<script>
+
+</script>
 
 </body>
 </html>

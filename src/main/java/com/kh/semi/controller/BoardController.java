@@ -106,8 +106,8 @@ public class BoardController {
 
         int result = boardService.insertResumeBoard(resumeBoard);
 
-        if(result > 0){
-            session.setAttribute("alretMsg","게시글 작성 완료");
+        if (result > 0) {
+            session.setAttribute("alretMsg", "게시글 작성 완료");
             return "redirect:/resumeForm.bo";
         } else {
             session.setAttribute("errorMsg", "게시글 작성 실패");

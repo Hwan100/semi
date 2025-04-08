@@ -15,6 +15,7 @@
         <result column="ORIGIN_NAME" property="originName" />
         <result column="USER_NO" property="userNo" />
         <result column="CLASS_NO" property="classNo" />
+        <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="BOARD_STATUS" property="status"/>
         <result column="USER_NAME" property="userName" />
     </resultMap>
@@ -37,17 +38,25 @@
     </select>
 
     <select id="selectNoticeBoardList" resultMap="boardResult">
-        SELECT BOARD_NO,
-        BRANCH,
-        TITLE,
-        U.USER_NAME,
-        COUNT,
-        TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
-        FROM TB_BOARD
-        JOIN TB_USER U USING (USER_NO)
-        WHERE TYPE = 1
-          AND BOARD_STATUS = 'Y'
-        ORDER BY BOARD_NO DESC
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        B.CONTENT,
+        B.CREATE_DATE,
+        B.COUNT,
+        B.BRANCH,
+        B.TYPE,
+        B.CHANGE_NAME,
+        B.ORIGIN_NAME,
+        B.USER_NO,
+        B.CLASS_NO,
+        B.BOARD_STATUS,
+        U.USER_NAME
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        WHERE B.TYPE = 1
+        AND B.BOARD_STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
     </select>
 
     <insert id="insertNoticeBoard" parameterType="Board">
@@ -109,6 +118,9 @@
          WHERE BOARD_STATUS = 'Y'
            AND BOARD_NO = #{bno}
     </select>
+
+
+
     <update id="updateNoticeBoard" >
         UPDATE BOARD
         SET TITLE = #{title},
@@ -118,6 +130,7 @@
             CHANGE_NAME = #{changeName}
         WHERE BOARD_NO = #{boardNo}
     </update>
+
     <insert id="insertResumeBoard" parameterType="ResumeBoard">
         INSERT INTO TB_RESUME_BOARD(
         RESUME_NO,

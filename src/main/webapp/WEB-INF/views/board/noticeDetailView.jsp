@@ -27,12 +27,9 @@
       <div class="left">공지사항</div>
       <div class="right">작성자: >${b.userName } | ${b.createDate }</div>
     </div>
-  </div>
-
-  <table id="contentArea" class="content-area">
-    <tr>
-      <th>첨부파일</th>
-      <td colspan="3">
+    <div>
+      <div class="left">첨부파일</div>
+      <div class="right">
         <c:choose>
           <c:when test="${not empty b.originName }">
             <a href="${b.changeName }" download="${b.originName }">${b.originName }</a>
@@ -41,8 +38,12 @@
             첨부파일이 없습니다.
           </c:otherwise>
         </c:choose>
-      </td>
-    </tr>
+      </div>
+    </div>
+  </div>
+
+  <table id="contentArea" class="content-area">
+
     <tr>
       <th>내용</th>
       <td colspan="3"></td>

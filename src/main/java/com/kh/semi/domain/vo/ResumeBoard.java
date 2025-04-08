@@ -19,4 +19,5 @@ public class ResumeBoard {
     private String originName;
     private Date createDate;
     private Date updateDate;
+    private String content;
 }

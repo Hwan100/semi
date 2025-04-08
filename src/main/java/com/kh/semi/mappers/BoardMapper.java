@@ -26,4 +26,6 @@ public interface BoardMapper {
     Board selectNoticeBoard(int bno);
 
     int updateNoticeBoard(Board board);
+
+    int insertResumeBoard(ResumeBoard board);
 }

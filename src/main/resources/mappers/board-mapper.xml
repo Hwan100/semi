@@ -118,4 +118,23 @@
             CHANGE_NAME = #{changeName}
         WHERE BOARD_NO = #{boardNo}
     </update>
+    <insert id="insertResumeBoard" parameterType="ResumeBoard">
+        INSERT INTO TB_RESUME_BOARD(
+        RESUME_NO,
+        USER_NO,
+        TYPE,
+        TITLE,
+        CHANGE_NAME,
+        ORIGIN_NAME,
+        TITLE)
+        VALUES(
+        SEQ_RESUME_NO.NEXTVAL,
+        #{userNo},
+        #{type},
+        #{title},
+        #{changeName},
+        #{originName},
+        #{content}
+        )
+    </insert>
 </mapper>

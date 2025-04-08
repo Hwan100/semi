@@ -50,7 +50,7 @@ public class BoardController {
         System.out.println(board);
         System.out.println(upfile);
 
-        int result = boardService.insertBoard(board);
+        int result = boardService.insertNoticeBoard(board);
 
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 작성 성공");
@@ -59,6 +59,22 @@ public class BoardController {
             model.addAttribute("errorMsg", "게시글 작성 실패");
             return "common/error";
         }
+    }
+
+    @GetMapping("detail.no")
+    public String selectBoardDetail(int bno, Model model) {
+        int result = boardService.increaseNoticeCount(bno);
+
+        if(result > 0){
+            Board b = boardService.selectNoticeBoard(bno);
+            model.addAttribute("b", b);
+
+            return "board/boardDetailView";
+        } else {
+            model.addAttribute("errorMsg", "게시글 조회 실패");
+            return "common/errorPage";
+        }
+
     }
 
 }

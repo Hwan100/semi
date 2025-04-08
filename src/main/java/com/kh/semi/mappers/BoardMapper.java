@@ -9,6 +9,10 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     int selectBoardCount();
+
     List<Board> selectNoticeBoardList(RowBounds rowBounds);
-    int insertBoard(Board board);
+
+    int insertNoticeBoard(Board board);
+
+    int increaseNoticeCount(int bno);
 }

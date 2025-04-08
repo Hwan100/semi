@@ -182,7 +182,7 @@
             <div style="flex: 0 0 100px;">${b.boardNo}</div>
             <div style="flex: 0 0 130px;">${b.branch}</div>
             <div class="board-title-cell">
-                <a href="detail.bo?bno=${b.boardNo}">${b.title}</a>
+                <a href="detail.no?bno=${b.boardNo}">${b.title}</a>
             </div>
             <div style="flex: 0 0 150px;">${b.userName}</div>
             <div style="flex: 0 0 100px;">${b.count}</div>

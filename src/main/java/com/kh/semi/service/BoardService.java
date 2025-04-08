@@ -12,6 +12,8 @@ public interface BoardService {
 
     List<Board> selectNoticeBoardList(PageInfo pi);
 
-    int insertBoard(Board board);
+    int insertNoticeBoard(Board board);
+
+    int increaseNoticeCount(int bno);
 
 }

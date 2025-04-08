@@ -61,4 +61,11 @@
         NULL
         )
     </insert>
+
+    <update id="increaseNoticeCount">
+        UPDATE BOARD
+        SET COUNT = COUNT + 1
+        WHERE BOARD_NO = #{bno}
+    </update>
+
 </mapper>

@@ -1,6 +1,6 @@
 package com.kh.semi.domain.vo;
 
-import lombok.*;
+import  lombok.*;
 
 import java.sql.Date;
 
@@ -19,4 +19,5 @@ public class Class {
     private String description;
     private int userNo;
     private String roomName;
+    private int progress;
 }

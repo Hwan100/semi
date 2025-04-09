@@ -7,6 +7,8 @@ import com.kh.semi.domain.vo.Class;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClassServiceImpl implements ClassService {
 
@@ -65,5 +67,11 @@ public class ClassServiceImpl implements ClassService {
     @Override
     public int deleteSchedule(int scheduleNo) {
         return classMapper.deleteSchedule(scheduleNo);
+    }
+
+    // 강의 전체 목록 조회
+    @Override
+    public List<Class> selectClassList() {
+        return classMapper.selectClassList();
     }
 }

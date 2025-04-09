@@ -33,8 +33,6 @@
     </div>
   </div>
 
-
-
   <!-- 본문 + 댓글 영역 -->
     <div class="content-area">
       <div class="board-content">

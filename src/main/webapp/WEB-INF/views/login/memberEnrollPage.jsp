@@ -174,116 +174,116 @@
     </style>
 </head>
 <body>
-        <div id="layout">
-            <div id="enrollCard">
-                <div id="logo"><img src="icons/logo.png"></div>
-                <div id="enroll">회원가입</div>
-                <div id="contents">
-                    <button type="button" id="idCheck" onclick="idCheck()">중복확인</button>
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">아이디</div>
-                            <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
-                        </div>
-                        <div class="input-wrap">
-                            <input name="userId" placeholder="아이디 입력(5~20자)" id="idInput" >
-                        </div>
-                    </div>
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">비밀번호</div>
-                            <div class="second-info" id="pwdInfo"></div>
-                        </div>
-                        <div class="input-wrap">
-                            <input name="userPwd" type="password" id="pwdInput" placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )" >
-                        </div>
-                    </div>
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">비밀번호 확인</div>
-                            <div class="second-info" id="pwdWarning"></div>
-                        </div>
-                        <div class="input-wrap">
-                            <input type="password" id="pwdCheck" placeholder="비밀번호 재입력" >
-                        </div>
-                    </div>
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">이름</div>
-                            <div class="second-info" id="nameWarning">이름을 확인해주세요.</div>
-                        </div>
-                        <div class="input-wrap">
-                            <input name="userName" id="nameInput" placeholder="이름을 입력해주세요." >
-                        </div>
-                    </div>
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">전화번호</div>
-                            <div class="second-info" id="phoneWarning"></div>
-                        </div>
-                        <div class="input-wrap">
-                            <input name="userPhone" id="phoneInput" placeholder="휴대폰 번호 입력( ‘-’ 제외 11자리 입력 )" >
-                        </div>
-                    </div>
-
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">생년월일</div>
-                            <div class="second-info" id="birthWarning">생일을 입력해주세요.</div>
-                        </div>
-                        <div class="birth-group">
-                            <select id="yearSelect" name="year">
-                                <option  disabled selected>연도</option>
-                            </select>
-                            <select  id="monthSelect" name="month">
-                                <option  disabled selected>월</option>
-                            </select>
-                            <select id="daySelect" name="day">
-                                <option disabled selected>일</option>
-                            </select>
-                        </div>
-                        <input type="hidden" name="userBirth" id="hiddenBirth">
-                    </div>
-
-                    <div class="line">
-                        <div class="top-line">
-                            <div class="first-info">이메일 주소</div>
-                            <div class="second-info" id="emailWarning">이메일을 확인해주세요.</div>
-                        </div>
-                        <div id="emailInputline">
-                            <input id="emailInput" type="text" placeholder="이메일 주소">
-                            <div class="at">@</div>
-                            <select id="emailDomainSelect">
-                                <option>naver.com</option>
-                                <option>gmail.com</option>
-                                <option>daum.net</option>
-                                <option value="custom">직접입력</option>
-                            </select>
-                            <input type="text" id="customDomain" placeholder="도메인 입력" style="display: none;">
-                        </div>
-                        <input type="hidden" name="userEmail" id="hiddenEmail">
-                    </div>
-                    <div class="line" style="height: 150px">
-                        <div class="top-line">
-                            <div class="first-info">주소</div>
-                        </div>
-                        <div class="input-wrap">
-                            <input name="userAddress" style="margin-bottom: 11px" placeholder="주소를 입력해주세요.">
-                            <input name="userAddressDetail" placeholder="상세 주소">
-                        </div>
-                    </div>
-                    <div class="btn-box">
-                        <button class="submit-btn" id="submitBtn">가입신청</button>
-                        <button class="cancel-btn">돌아가기</button>
-                    </div>
+<div id="layout">
+    <div id="enrollCard">
+        <div id="logo"><img src="icons/logo.png"></div>
+        <div id="enroll">회원가입</div>
+        <div id="contents">
+            <button type="button" id="idCheck" onclick="idCheck()">중복확인</button>
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">아이디</div>
+                    <div class="second-info" id="idWarning">사용할 수 없는 아이디입니다.</div>
+                </div>
+                <div class="input-wrap">
+                    <input name="userId" placeholder="아이디 입력(5~20자)" id="idInput" >
                 </div>
             </div>
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">비밀번호</div>
+                    <div class="second-info" id="pwdInfo"></div>
+                </div>
+                <div class="input-wrap">
+                    <input name="userPwd" type="password" id="pwdInput" placeholder="비밀번호 입력 ( 문자, 숫자, 특수문자 포함 8~20자 )" >
+                </div>
+            </div>
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">비밀번호 확인</div>
+                    <div class="second-info" id="pwdWarning"></div>
+                </div>
+                <div class="input-wrap">
+                    <input type="password" id="pwdCheck" placeholder="비밀번호 재입력" >
+                </div>
+            </div>
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">이름</div>
+                    <div class="second-info" id="nameWarning">이름을 확인해주세요.</div>
+                </div>
+                <div class="input-wrap">
+                    <input name="userName" id="nameInput" placeholder="이름을 입력해주세요." >
+                </div>
+            </div>
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">전화번호</div>
+                    <div class="second-info" id="phoneWarning"></div>
+                </div>
+                <div class="input-wrap">
+                    <input name="userPhone" maxlength="13" id="phoneInput" placeholder="휴대폰 번호 입력( ‘-’ 포함 13자리 입력 )" >
+                </div>
+            </div>
+
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">생년월일</div>
+                    <div class="second-info" id="birthWarning">생일을 입력해주세요.</div>
+                </div>
+                <div class="birth-group">
+                    <select id="yearSelect" name="year">
+                        <option  disabled selected>연도</option>
+                    </select>
+                    <select  id="monthSelect" name="month">
+                        <option  disabled selected>월</option>
+                    </select>
+                    <select id="daySelect" name="day">
+                        <option disabled selected>일</option>
+                    </select>
+                </div>
+                <input type="hidden" name="userBirth" id="hiddenBirth">
+            </div>
+
+            <div class="line">
+                <div class="top-line">
+                    <div class="first-info">이메일 주소</div>
+                    <div class="second-info" id="emailWarning">이메일을 확인해주세요.</div>
+                </div>
+                <div id="emailInputline">
+                    <input id="emailInput" type="text" placeholder="이메일 주소">
+                    <div class="at">@</div>
+                    <select id="emailDomainSelect">
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>daum.net</option>
+                        <option value="custom">직접입력</option>
+                    </select>
+                    <input type="text" id="customDomain" placeholder="도메인 입력" style="display: none;">
+                </div>
+                <input type="hidden" name="userEmail" id="hiddenEmail">
+            </div>
+            <div class="line" style="height: 150px">
+                <div class="top-line">
+                    <div class="first-info">주소</div>
+                </div>
+                <div class="input-wrap">
+                    <input name="userAddress" style="margin-bottom: 11px" placeholder="주소를 입력해주세요.">
+                    <input name="userAddressDetail" placeholder="상세 주소">
+                </div>
+            </div>
+            <div class="btn-box">
+                <button class="submit-btn" id="submitBtn">가입신청</button>
+                <button class="cancel-btn">돌아가기</button>
+            </div>
         </div>
+    </div>
+</div>
 
 <script>
     function idCheck() {
@@ -384,21 +384,24 @@
     })
 
 
-    document.getElementById("phoneInput").addEventListener('input', function (){
+    document.getElementById("phoneInput").addEventListener('input', function () {
         const phone = document.getElementById("phoneInput").value;
         const warning = document.getElementById("phoneWarning");
 
         warning.style.display = "none";
 
-        if(phone.length !== 11 || !/^010[0-9]{8}$/.test(phone)){
-            warning.style.display = "block"
-            warning.innerHTML = "전화번호를 확인해주세요.";
+        // 정규식: 010-1234-5678 형식만 허용
+        const phoneRegex = /^010-\d{4}-\d{4}$/;
+
+        if (!phoneRegex.test(phone)) {
+            warning.style.display = "block";
+            warning.innerHTML = "전화번호를 확인해주세요. (예: 010-1234-5678)";
             warning.style.color = "red";
             return false;
         } else {
             return true;
         }
-    })
+    });
 
     window.addEventListener('DOMContentLoaded', function () {
         const yearSelect = document.getElementById("yearSelect");
@@ -546,10 +549,10 @@
         }
 
         const phone = document.getElementById("phoneInput").value;
-        if (!/^010\d{8}$/.test(phone)) {
-            alert("전화번호를 확인해주세요.");
+        if (!/^010-\d{4}-\d{4}$/.test(phone)) {
+            alert("전화번호를 확인해주세요. 예: 010-1234-5678");
             return false;
-        }
+        }   
 
         const year = document.getElementById("yearSelect").value;
         const monthRaw = document.getElementById("monthSelect").value;
@@ -613,8 +616,6 @@
             }
         });
     });
-
-
 
 </script>
 </body>

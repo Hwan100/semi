@@ -1,9 +1,6 @@
 package com.kh.semi.service;
 
-import com.kh.semi.domain.vo.Board;
-import com.kh.semi.domain.vo.PageInfo;
-import com.kh.semi.domain.vo.Reply;
-import com.kh.semi.domain.vo.ResumeBoard;
+import com.kh.semi.domain.vo.*;
 import com.kh.semi.mappers.BoardMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
@@ -149,5 +146,21 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.deleteResumeBoard(b);
     }
 
+    @Override
+    public int selectFeedbackCount(int bno) {
+        return boardMapper.selectFeedbackCount(bno);
+    }
+
+    @Override
+    public List<Feedback> selectFeedbackList(PageInfo pi, int bno) {
+        int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+        RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+        return boardMapper.selectFeedbackList(rowBounds, bno);
+    }
+
+    @Override
+    public Feedback selectFeedback(int bno) {
+        return boardMapper.selectFeedback(bno);
+    }
 
 }

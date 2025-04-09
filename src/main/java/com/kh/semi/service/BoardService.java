@@ -1,9 +1,6 @@
 package com.kh.semi.service;
 
-import com.kh.semi.domain.vo.Board;
-import com.kh.semi.domain.vo.PageInfo;
-import com.kh.semi.domain.vo.Reply;
-import com.kh.semi.domain.vo.ResumeBoard;
+import com.kh.semi.domain.vo.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,5 +49,11 @@ public interface BoardService {
     int updateResumeBoard(ResumeBoard board);
 
     int deleteResumeBoard(int b);
+
+    int selectFeedbackCount(int bno);
+
+    List<Feedback> selectFeedbackList(PageInfo pi, int bno);
+
+    Feedback selectFeedback(int bno);
 
 }

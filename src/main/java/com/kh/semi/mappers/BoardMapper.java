@@ -1,8 +1,6 @@
 package com.kh.semi.mappers;
 
-import com.kh.semi.domain.vo.Board;
-import com.kh.semi.domain.vo.Reply;
-import com.kh.semi.domain.vo.ResumeBoard;
+import com.kh.semi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
@@ -56,4 +54,10 @@ public interface BoardMapper {
     int updateResumeBoard(ResumeBoard b);
 
     int deleteResumeBoard(int b);
+
+    int selectFeedbackCount(int bno);
+
+    List<Feedback> selectFeedbackList(RowBounds rowBounds , @Param("bno") int bno);
+
+    Feedback selectFeedback(int bno);
 }

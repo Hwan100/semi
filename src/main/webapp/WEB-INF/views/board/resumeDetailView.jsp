@@ -164,8 +164,8 @@
             font-weight: 500;
             font-size: 20px;
             font-weight: 900;
-            background-color: #9DD7F4;
-            border: 1px solid #e0e0e0;
+            background-color: white;
+            border: 3px solid #e0e0e0;
         }
 
         .bar{
@@ -173,7 +173,7 @@
             height: 50px;
             font-weight: 500;
             font-size: 16px;
-            border: 1px solid #e0e0e0;
+            border: 2px solid #e0e0e0;
         }
 
         .paging-bar{
@@ -187,6 +187,50 @@
         }
         img{
             cursor: pointer;
+        }
+
+        ul.pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.pagination li.page-item a.page-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #000000;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            color: #000000;
+            background-color: #fff;
+            text-decoration: none;
+        }
+
+        ul.pagination li.page-item.active a.page-link {
+            background-color: #33363F;
+            color: #ffffff;
+        : 1px solid #33363F;
+        }
+
+        ul.pagination li.page-item.disabled a.page-link {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        ul.pagination li.page-item a.page-link::before {
+            font-weight: bold;
+        }
+
+        ul.pagination li.page-item a.page-link:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
@@ -255,63 +299,63 @@
                 <table class="feedback-list">
                     <thead>
                         <tr>
-                            <th class="top-bar" style="width: 13.5%; border-top-left-radius: 12px;">글번호</th>
+                            <th class="top-bar" style="width: 13.5%; ">글번호</th>
                             <th class="top-bar" style="width: 46%">제목</th>
                             <th class="top-bar" style="width: 13.5%">작성일</th>
                             <th class="top-bar" style="width: 13.5%">구분</th>
-                            <th class="top-bar" style="width: 13.5%; border-top-right-radius: 12px;">작성자</th>
+                            <th class="top-bar" style="width: 13.5%;">작성자</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="bar">17</td>
-                            <td class="bar">삼성 자소서 피드백</td>
-                            <td class="bar">2025.04.01</td>
-                            <td class="bar">자소서</td>
-                            <td class="bar">최지투</td>
-                        </tr>
-                        <tr>
-                            <td class="bar">17</td>
-                            <td class="bar">삼성 자소서 피드백</td>
-                            <td class="bar">2025.04.01</td>
-                            <td class="bar">자소서</td>
-                            <td class="bar">최지투</td>
-                        </tr>
-                        <tr>
-                            <td class="bar">17</td>
-                            <td class="bar">삼성 자소서 피드백</td>
-                            <td class="bar">2025.04.01</td>
-                            <td class="bar">자소서</td>
-                            <td class="bar">최지투</td>
-                        </tr>
-                        <tr>
-                            <td class="bar">17</td>
-                            <td class="bar">삼성 자소서 피드백</td>
-                            <td class="bar">2025.04.01</td>
-                            <td class="bar">자소서</td>
-                            <td class="bar">최지투</td>
-                        </tr>
-                        <tr>
-                            <td class="bar">17</td>
-                            <td class="bar">삼성 자소서 피드백</td>
-                            <td class="bar">2025.04.01</td>
-                            <td class="bar">자소서</td>
-                            <td class="bar">최지투</td>
-                        </tr>
+
+                        <c:forEach var="b" items="${list}">
+                            <c:set var="typeText">
+                                <c:choose>
+                                    <c:when test="${r.type == 1}">자소서</c:when>
+                                    <c:when test="${r.type == 2}">이력서</c:when>
+                                    <c:otherwise>기타</c:otherwise>
+                                </c:choose>
+                            </c:set>
+                            <tr onclick="location.href='../feedback.bo?feedbackNo=${b.feedbackNo}&type=${typeText}'">
+                                <td class="bar">${b.feedbackNo}</td>
+                                <td class="bar">${b.title}</td>
+                                <td class="bar">${b.writeDate}</td>
+                                <td class="bar">${typeText}</td>
+                                <td class="bar">최지투</td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
-            <div class="paging-bar">
-                <img src="/icons/leftPageMove.png">
-                <img src="/icons/page1.png">
-                <img src="/icons/page2.png">
-                <img src="/icons/page3.png">
-                <img src="/icons/rightPageMove.png">
+            <div class="pagingArea">
+                <ul class="pagination">
+                    <c:choose>
+                        <c:when test="${ pi.currentPage eq 1 }">
+                            <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/leftPageMove.png"></a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="resumeDetail.bo?cpage=${pi.currentPage - 1}&bno=${r.resumeNo}"><img src="/icons/leftPageMove.png"></a></li>
+                        </c:otherwise>
+                    </c:choose>
+
+                    <c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
+                        <li class="page-item"><a class="page-link" href="resumeDetail.bo?cpage=${p}&bno=${r.resumeNo}">${p}</a></li>
+                    </c:forEach>
+
+                    <c:choose>
+                        <c:when test="${ pi.currentPage eq pi.maxPage }">
+                            <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/rightPageMove.png"></a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="resumeDetail.bo?cpage=${pi.currentPage + 1}&bno=${r.resumeNo}"><img src="/icons/rightPageMove.png"></a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
             </div>
         </div>
     </div>
 
 </div>
-
+<input type="hidden" name="type" value="${typeText}">
 </body>
 </html>

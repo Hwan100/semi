@@ -13,17 +13,23 @@
 <div class="container">
 
   <div class="title-area">
-    <div class="board-title">자소서 피드백</div>
+    <div class="board-title">${b.title}</div>
 
     <div class="button-area">
-      <button onclick="">수정</button>
+      <c:choose>
+        <c:when test="${u.userRole == 1}">
+        </c:when>
+        <c:otherwise>
+          <button onclick="">수정</button>
+        </c:otherwise>
+      </c:choose>
       <button onclick="history.back()">이전화면</button>
 <%--      <button onclick="location.href='myclassList.bo'">목록</button>--%>
     </div>
 
     <div class="info-bar">
-      <div class="left">자소서</div>
-      <div class="right">작성자: 작성자명 | 2025.03.20</div>
+      <div class="left">${type}</div>
+      <div class="right">작성자: 최지투 | ${b.writeDate}</div>
     </div>
   </div>
 
@@ -32,7 +38,7 @@
   <!-- 본문 + 댓글 영역 -->
     <div class="content-area">
       <div class="board-content">
-        무슨내용을 공지했을까요.
+        ${b.content}
       </div>
     </div>
   </div>

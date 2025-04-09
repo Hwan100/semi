@@ -1,15 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/views/common/header.jsp" %>
+
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>과정목록</title>
-
     <style>
         .board-container {
-            margin: 160px 40px 0 310px;
-            height: 700px;
+            margin: 160px 40px 40px 310px;
+            min-height: 300px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -19,69 +18,6 @@
         .board-title {
             font-size: 24px;
             font-weight: 700;
-        }
-
-        .board-header {
-            display: flex;
-            background: rgba(11, 155, 227, 0.4);
-            border: 1px solid #E7E7E7;
-            font-weight: 600;
-            color: #003252;
-            text-align: center;
-        }
-
-        .board-header div {
-            padding: 12px 0;
-            border-right: 1px solid #ccc;
-        }
-
-        .board-header div:last-child {
-            border-right: none;
-        }
-
-        .board-row {
-            display: flex;
-            border-bottom: 1px solid #E7E7E7;
-            font-size: 14px;
-            color: #003252;
-        }
-
-        .board-row div {
-            padding: 10px 0;
-            text-align: center;
-            border-right: 1px solid #ccc;
-        }
-
-        .board-row div:last-child {
-            border-right: none;
-        }
-
-        .board-title-cell {
-            flex: 2;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .board-title-cell a {
-            color: #003252;
-            text-decoration: none;
-        }
-
-        .board-pagination a {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid black;
-            border-radius: 4px;
-            color: black;
-            text-decoration: none;
-        }
-
-        .board-pagination a.active {
-            background: #0B9BE3;
-            color: white;
         }
 
         .title-area {
@@ -98,22 +34,54 @@
             gap: 10px;
         }
 
-        #class {
-            color: #74788D;
+        table.board-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.board-table th,
+        table.board-table td {
+            border: 1px solid #E7E7E7;
             font-size: 14px;
-            font-weight: 400;
-            height: 0px;
+            color: #003252;
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        table.board-table th {
+            background: rgba(11, 155, 227, 0.4);
+            font-weight: 600;
+        }
+
+        table.board-table td a {
+            color: #003252;
+            text-decoration: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .w-80 { width: 80px; }
+        .w-120 { width: 120px; }
+        .w-130 { width: 130px; }
+        .w-200 { width: 200px; }
+
+        .class-time-cell {
+            white-space: pre-line;
         }
     </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
 
 <div class="board-container">
-
     <div class="title-area">
         <div style="display: flex; align-items: center;">
-            <div class="board-title" style="margin-right: 15px;">과정목록</div>
+            <div class="board-title" style="margin-right: 15px;">📋 전체 강의 목록 (관리자)</div>
         </div>
 
         <div class="button-area">
@@ -123,42 +91,30 @@
         </div>
     </div>
 
-    <!-- 테이블 헤더 -->
-    <div class="board-header">
-        <div style="flex: 0 0 80px;">글번호</div>
-        <div style="flex: 0 0 120px;">지점</div>
-        <div style="flex: 2;">과정명</div>
-        <div style="flex: 0 0 130px;">강사</div>
-        <div style="flex: 0 0 120px;">수업시간</div>
-        <div style="flex: 0 0 180px;">기간</div>
-    </div>
-
-    <!-- 게시글 리스트 -->
-    <c:forEach var="b" items="${list}">
-        <div class="board-row">
-            <div style="flex: 0 0 80px;">${b.boardNo}</div>
-            <div style="flex: 0 0 120px;">${b.branch}</div>
-            <div class="board-title-cell">
-                <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
-            </div>
-            <div style="flex: 0 0 130px;">${b.boardWriter}</div>
-            <div style="flex: 0 0 120px;">${b.count}</div>
-            <div style="flex: 0 0 180px;">${b.createDate}</div>
-        </div>
-    </c:forEach>
-
-    <!-- 예시 게시글 -->
-    <div class="board-row">
-        <div style="flex: 0 0 80px;">999</div>
-        <div style="flex: 0 0 120px;">강남지점</div>
-        <div class="board-title-cell">
-            <a href="#">AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )</a>
-        </div>
-        <div style="flex: 0 0 130px;">트럼프</div>
-        <div style="flex: 0 0 120px;">09:00~18:00</div>
-        <div style="flex: 0 0 180px;">2025-03-27 ~ 2025-12-14</div>
-    </div>
-
+    <table class="board-table">
+        <thead>
+        <tr>
+            <th class="w-80 text-center">글번호</th>
+            <th class="w-120 text-center">지점</th>
+            <th class="text-center">과정명</th>
+            <th class="w-130 text-center">강사</th>
+            <th class="w-200 text-center">수업시간</th>
+            <th class="w-200 text-center">기간</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="c" items="${classList}">
+            <tr>
+                <td class="text-center">${c.classNo}</td>
+                <td class="text-center">${c.roomName}</td>
+                <td class="text-center"><a href="#">${c.courseName}</a></td>
+                <td class="text-center">${c.userName}</td>
+                <td class="text-center class-time-cell">${c.classTime}</td>
+                <td class="text-center">${c.startDate} ~ ${c.endDate}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
 
 </body>

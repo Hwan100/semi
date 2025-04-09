@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>Title</title>
+    <title>사용자 환경설정</title>
     <style>
         .wrap {
 
@@ -74,6 +74,11 @@
             margin-top: 85px;
 
         }
+
+        #fileName {
+            font-size: 16px;
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -84,12 +89,13 @@
         </div>
         <div class="logo-line">
             로고이미지
-            <img src="/icons/logo2.png" style="margin-left: 130px; margin-right: 10px">
+            <img src="/icons/logo2.png" style="margin-left: 130px; margin-right: 10px" id="logoInput">
             <div style="display: flex; flex-direction: column; font-size: 16px;">
                 png파일로 300x150 사이즈로 등록해주세요.
                 <div style="margin-top: 140px;">
-                    <button class="btn-blank-small" style="margin-right: 10px;">로고 등록</button>
+                    <button type="button" class="btn-blank-small" onclick="selectLogo()" style="margin-right: 10px;">로고 등록</button>
                     <button class="btn-blank-small">삭제</button>
+                    <span id="fileName">선택된 파일 없음</span>
                 </div>
             </div>
         </div>
@@ -102,12 +108,43 @@
             <input type="text" style="border: solid 1px #74788D">
         </div>
         <div class="guide-line">
-            ※ 업로드를 제한할 파일 확장자를 ,(쉼표)로 구분해서 등록해주세요.
+            <span>지각,조퇴</span> <input type="text" style="border: solid 1px #74788D">일
+            => 결석<input type="text" style="border: solid 1px #74788D">일
         </div>
         <div class="button-line">
             <button class="btn-blank" style="margin-right: 40px">저장</button>
             <button class="btn-blank">취소</button>
         </div>
+        <div style="display: none">
+            <input type="file" id="file" name="upfile" onchange="loadFileName(this)">
+        </div>
     </div>
+
+    <script>
+        function selectLogo(){
+            const fileInput = document.getElementById("file");
+            fileInput.click();
+        }
+
+        function loadFileName(inputFile) {
+            const fileNameSpan = document.getElementById("fileName");
+            const logoInput = document.getElementById("logoInput");
+
+            if (inputFile.files.length > 0) {
+                const file = inputFile.files[0];
+                fileNameSpan.textContent = file.name;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    logoInput.src = e.target.result; // 이미지 태그에 src 설정
+                };
+                reader.readAsDataURL(file); // 파일을 base64로 읽기
+            } else {
+                fileNameSpan.textContent = "선택된 파일 없음";
+                logoInput.src = ""; // 선택이 없으면 이미지 초기화
+            }
+        }
+
+    </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import com.kh.semi.domain.vo.Board;
 import com.kh.semi.domain.vo.PageInfo;
 import com.kh.semi.domain.vo.ResumeBoard;
 import com.kh.semi.domain.vo.User;
+import com.kh.semi.domain.vo.Feedback;
 import com.kh.semi.service.BoardService;
 import com.kh.semi.utils.Template;
 import jakarta.servlet.http.HttpSession;
@@ -45,7 +46,7 @@ public class BoardController {
     }
 
     @GetMapping("enrollForm.no")
-    public String enrollNoticeForm() {return "noticeEnrollForm";}
+    public String enrollNoticeForm() {return "board/noticeEnrollForm";}
 
     @PostMapping("insert.no")
     public String insertBoard(@ModelAttribute Board board, MultipartFile upfile, HttpSession session, Model model) {
@@ -184,10 +185,22 @@ public class BoardController {
     }
 
     @GetMapping("resumeDetail.bo")
-    public String resumeDetail(int bno,Model model) {
+    public String resumeDetail(@RequestParam(defaultValue = "1") int cpage,@RequestParam("bno") int bno,Model model) {
+
+
         ResumeBoard r = boardService.selectResumeBoard(bno);
 
+        int boardCount = boardService.selectFeedbackCount(bno);
+
+
+        PageInfo pi = new PageInfo(boardCount,cpage, 5, 5);
+
+        List<Feedback> list = boardService.selectFeedbackList(pi,bno);
+
+
         model.addAttribute("r", r);
+        model.addAttribute("pi", pi);
+        model.addAttribute("list", list);
 
         return "board/resumeDetailView";
     }
@@ -280,11 +293,11 @@ public class BoardController {
     }
 
     @GetMapping("delete.cl")
-    public String deleteMyClassBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
+    public String deleteMyClassBoard(@RequestParam(value = "bno", required = false) Integer bno, HttpSession session, Model model) {
         int result = boardService.deleteBoard(bno);
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 삭제 성공");
-            return "redirect:/notice.cl";
+            return "redirect:/myClass.bo";
         } else {
             model.addAttribute("errorMsg", "게시글 수정 실패");
             return "common/error";
@@ -347,6 +360,19 @@ public class BoardController {
 
         return "redirect:/resume.bo";
     }
+
+    @GetMapping("feedback.bo")
+    public String feedback(@RequestParam("feedbackNo") int bno, String type, Model model, HttpSession session) {
+        User u = (User)session.getAttribute("loginUser");
+
+        model.addAttribute("b", boardService.selectFeedback(bno));
+        model.addAttribute("type", type);
+        model.addAttribute("u", u);
+
+        return "board/resumefeedbackDetailView";
+    }
+
+
 
 }
 

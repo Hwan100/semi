@@ -75,7 +75,7 @@
 
   <!-- 폼 -->
   <form action="" method="GET" id="postForm">
-
+    <input type="hidden" name="bno" value="${b.boardNo}">
   </form>
 
 </div>

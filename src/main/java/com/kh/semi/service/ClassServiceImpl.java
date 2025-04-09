@@ -69,9 +69,20 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.deleteSchedule(scheduleNo);
     }
 
+    @Override
+    public ClassTime selectClassTime(ClassTime classTime) {
+        return classMapper.selectClassTime(classTime);
+    }
+
     // 강의 전체 목록 조회
     @Override
     public List<Class> selectClassList() {
         return classMapper.selectClassList();
     }
+
+    @Override
+    public List<Class> selectClassListWithJoin() {
+        return classMapper.selectClassListWithJoin();
+    }
+
 }

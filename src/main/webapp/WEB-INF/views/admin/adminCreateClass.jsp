@@ -255,6 +255,16 @@
           <input type="date" name="scheduleEndDate" class="date-input" placeholder="종료일" id="scheduleEndDate">
         </div>
       </div>
+      <div style="margin: 0 40px;">
+        <label>일정 종류</label>
+        <div style="margin-top: 10px">
+          <select id="schedule-type">
+            <option value="1">휴강</option>
+            <option value="2">강의 일정</option>
+            <option value="3">보강</option>
+          </select>
+        </div>
+      </div>
       <div style="margin-left: 40px; margin-top: 50px; margin-right: 40px;">
         <label for="schedule-description">강의 일정 설명</label>
         <input type="text" name="schedule-title" id="schedule-description" class="input-half">
@@ -297,6 +307,7 @@
       const end = document.getElementById("scheduleEndDate").value;
       const title = document.getElementById("schedule-title").value;
       const description = document.getElementById("schedule-description").value;
+      const type = document.getElementById("schedule-type").value;
       const scheduleBox = document.getElementById("schedule-input-box");
 
       const item = document.createElement("div");
@@ -313,6 +324,11 @@
       inputTitle.type = "hidden";
       inputTitle.name = "scheduleTitle[]";
       inputTitle.value = title;
+
+      const inputType = document.createElement("input");
+      inputTitle.type = "hidden";
+      inputTitle.name = "scheduleType[]";
+      inputTitle.value = type;
 
       const timeDiv = document.createElement("div");
       timeDiv.className = "time";
@@ -424,7 +440,6 @@
     }
 
     function getTeacherList(callback){
-      console.log("작동");
       $.ajax({
         url: "/api/user/allTeacherList",
         success: function (data) {
@@ -567,7 +582,7 @@
         const inputEndTime = document.createElement("input");
         inputEndTime.type = "hidden";
         inputEndTime.name = "classEndTime[]";
-        inputEndTime.value = start;
+        inputEndTime.value = end;
 
         const actionDiv = document.createElement("div");
         actionDiv.className = "actions";

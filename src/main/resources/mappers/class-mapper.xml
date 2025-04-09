@@ -26,6 +26,7 @@
         <result column="END_DATE" property="endDate" />
         <result column="DESCRIPTION" property="description" />
         <result column="CLASS_NO" property="classNo" />
+        <result column="TYPE" property="type" />
     </resultMap>
 
 <!--  강의 개설  -->
@@ -66,16 +67,32 @@
             START_DATE,
             END_DATE,
             DESCRIPTION,
-            CLASS_NO
+            CLASS_NO,
+            TYPE
         ) VALUES (
             SEQ_SCHEDULE_NO.NEXTVAL,
             #{title},
             #{startDate},
             #{endDate},
             #{description},
-            #{classNo}
+            #{classNo},
+            #{type}
         )
     </insert>
+
+<!-- 오늘 강의 있는지 정보 받아오기 -->
+    <select id="selectClassTime" parameterType="ClassTime" resultMap="classTimeResult">
+        SELECT
+            CLASS_DATE,
+            CLASS_START_TIME,
+            CLASS_END_TIME,
+            CLASS_NO
+        FROM TB_CLASS_TIME
+        WHERE CLASS_NO = #{classNo}
+        AND CLASS_DATE = #{classDate}
+    </select>
+<!-- 오늘의 강의 시간 -->
+
 
     <!-- 강의 목록 조회 -->
     <select id="selectClassList" resultMap="classResult">
@@ -91,6 +108,57 @@
         FROM TB_CLASS
         ORDER BY START_DATE DESC
     </select>
+
+
+    <select id="selectClassListWithJoin" resultType="com.kh.semi.domain.vo.Class">
+        SELECT
+        c.CLASS_NO AS classNo,
+        c.CLASS_NAME AS className,
+        c.START_DATE AS startDate,
+        c.END_DATE AS endDate,
+        c.COURSE_NAME AS courseName,
+        c.DESCRIPTION AS description,
+        c.USER_NO AS userNo,
+        c.ROOM_NAME AS roomName,
+
+        u.USER_NAME AS userName,
+
+        (
+        SELECT
+        LISTAGG(GROUPED.DATES || CHR(10) || GROUPED.CLASS_START_TIME || '~' || GROUPED.CLASS_END_TIME, CHR(10) || CHR(10))
+        WITHIN GROUP (ORDER BY GROUPED.ORDER_INDEX)
+        FROM (
+        SELECT
+        LISTAGG(CLASS_DATE, ', ') WITHIN GROUP (ORDER BY CLASS_ORDER) AS DATES,
+        CLASS_START_TIME,
+        CLASS_END_TIME,
+        MIN(CLASS_ORDER) AS ORDER_INDEX
+        FROM (
+        SELECT
+        CLASS_DATE,
+        CLASS_START_TIME,
+        CLASS_END_TIME,
+        CASE CLASS_DATE
+        WHEN '월' THEN 1
+        WHEN '화' THEN 2
+        WHEN '수' THEN 3
+        WHEN '목' THEN 4
+        WHEN '금' THEN 5
+        ELSE 6
+        END AS CLASS_ORDER
+        FROM TB_CLASS_TIME
+        WHERE CLASS_NO = c.CLASS_NO
+        )
+        GROUP BY CLASS_START_TIME, CLASS_END_TIME
+        ) GROUPED
+        )
+        AS classTime
+
+        FROM TB_CLASS c
+        JOIN TB_USER u ON c.USER_NO = u.USER_NO
+    </select>
+
+
 
 
 </mapper>

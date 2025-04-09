@@ -24,8 +24,12 @@ public interface ClassMapper {
     int updateSchedule(Schedule schedule);
     int deleteSchedule(int scheduleNo);
 
+//    강의 시간표
+    ClassTime selectClassTime(ClassTime classTime);
+
     // 강의 목록 조회
     List<Class> selectClassList();
+
+    List<Class> selectClassListWithJoin();
+
 }
-
-

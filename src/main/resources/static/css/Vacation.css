@@ -1,52 +1,39 @@
 body {
     margin: 0;
-    background-color: #E0F7FF;
     font-family: 'Inter', sans-serif;
+    background-color: #E0F7FF;
 }
 
-/* 컨테이너 전체 */
 .container {
-    /*min-width: 1000px;*/
-    margin: 160px 40px 0 310px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    background: #ffffff;
+    margin: 160px 40px 40px 310px;
+    background: white;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#title-name {
+/* 제목 + 버튼 영역 */
+.title-row {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-/* 버튼 공통 */
-.btn {
-    height: 40px;
-    padding: 0 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #0B9BE3;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn.light {
-    background-color: white;
-    color: #0B9BE3;
-    border: 2px solid #0B9BE3;
-}
-
-.notice-and-buttons {
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
 
+.title-row h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title-row h2 span {
+    font-size: 14px;
+    margin-left: 10px;
 }
 
 .notice {
     color: red;
     font-size: 14px;
+    margin-left: 10px;
 }
 
 .action-buttons {
@@ -54,110 +41,101 @@ body {
     gap: 10px;
 }
 
-/* 테이블 영역 */
-.table-section h2 {
+/* leave-table div 기반 테이블 */
+.leave-table {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.leave-header, .leave-row {
     display: flex;
     align-items: center;
-    font-size: 24px;
-}
-
-.table-section h2 span {
-    font-size: 16px;
-    margin-left: 10px;
-}
-
-.leave-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-.leave-table th,
-.leave-table td {
-    border: 1px solid #E7E7E7;
     text-align: center;
-    padding: 10px;
     font-size: 14px;
 }
 
-.leave-table thead th {
-    background-color: rgba(11, 155, 227, 0.4);
+.leave-header {
+    background: rgba(11, 155, 227, 0.4);
     color: #003252;
+    font-weight: bold;
+    display: flex;
 }
 
-.leave-table tbody tr {
-    background: #FFFFFF;
+.leave-header > div,
+.leave-row > div {
+    flex: 1;
+    padding: 12px 6px;
+    border-bottom: 1px solid #eee;
 }
 
-/* 하단 영역 */
+.leave-header > div {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.leave-row {
+    background-color: white;
+}
+
+.leave-row:hover {
+    background-color: #f5faff;
+}
+
+/* 하단 */
 .bottom-section {
     display: flex;
-    gap: 30px;
-    justify-content: start;
-    padding: 20px;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-/* 휴가 입력 폼 */
-.form-box{
+/* 신청 폼 */
+.form-box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
     background-color: white;
-    border-radius: 10px;
-    border: 0.1px solid #e5e5e5;
-    padding: 30px;
 }
-/* 휴가 입력 폼 전체 */
+
 .form-container {
     display: grid;
-    grid-template-columns: 80px 1fr; /* 첫 번째 열은 라벨, 두 번째 열은 입력 필드 */
-    gap: 10px;
-    max-width: 500px;
+    grid-template-columns: 100px 1fr;
+    row-gap: 10px;
+    column-gap: 15px;
+}
+
+.input-group,
+.date-container {
+    display: flex;
+    gap: 5px;
     align-items: center;
 }
 
-label {
-    font-weight: bold;
-    text-align: left;
-    padding-right: 10px;
-}
-
-.input-group, .date-container {
-    display: flex;
-    gap: 5px;
-}
-
-.input-class, .input-small, .input-date, input[type="text"] {
-    flex: 1;
-    padding: 5px;
+input[type="text"], .input-class, .input-small, .input-date {
+    padding: 6px 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn.light {
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
 }
 
 .note-box {
-    grid-column: span 2; /* 전체 열 차지 */
-    text-align: center;
-    padding: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #0B9BE3;
     border: 2px solid #0B9BE3;
     border-radius: 10px;
-    font-size: 12px;
-    color: #0B9BE3;
-    line-height: 1.4;
-    width: 100%;
+    padding: 10px;
 }
 
-/* 파일 업로드 박스 */
+/* 파일 업로드 테이블 */
 .file-box {
-    background-color: white;
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 20px;
+    flex: 1;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
 }
 
 .file-header {
@@ -172,15 +150,103 @@ label {
     border-collapse: collapse;
 }
 
-.file-table th,
-.file-table td {
-    border: 1px solid #E7E7E7;
-    text-align: center;
+.file-table th, .file-table td {
+    border: 1px solid #e5e5e5;
     padding: 10px;
     font-size: 14px;
+    text-align: center;
 }
 
-.file-table thead th {
+.file-table th {
     background-color: rgba(11, 155, 227, 0.4);
     color: #003252;
+}
+
+.btn {
+    width: 120px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+.btn {
+    width: 120px;
+    height: 40px !important;
+}
+
+#pagingArea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+ul.pagination {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li.page-item a.page-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000000;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul.pagination li.page-item.active a.page-link {
+    background-color: #33363F;
+    color: #ffffff;
+: 1px solid #33363F;
+}
+
+ul.pagination li.page-item.disabled a.page-link {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+ul.pagination li.page-item a.page-link::before {
+    font-weight: bold;
+}
+
+ul.pagination li.page-item a.page-link:hover {
+    background-color: #f0f0f0;
+}
+
+.page-item, .disabled, .page-link{
+    border: 0;
+}
+
+.leave-table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.leave-header {
+    display: flex;
+    background-color: #e5f1ff;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.leave-header > div {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    flex-shrink: 0;
 }

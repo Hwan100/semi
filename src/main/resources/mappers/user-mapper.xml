@@ -23,6 +23,7 @@
     </resultMap>
     <select id="loginUser" parameterType="User" resultMap="userResult">
         SELECT  U.USER_NO,
+                C.CLASS_NO,
                 C.CLASS_NAME,
                 USER_ID,
                 USER_PWD,

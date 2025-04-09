@@ -29,7 +29,4 @@ public class TestController {
 
     @GetMapping("createCourse.fo")
     public String createClass() {return "admin/adminCreateClass";}
-
-    @GetMapping("adminCourse.li")
-    public String adminCourse() {return "teacher/AdminCourseList";}
 }

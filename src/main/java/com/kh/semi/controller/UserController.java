@@ -1,6 +1,8 @@
 package com.kh.semi.controller;
 
+import com.kh.semi.domain.vo.Attendance;
 import com.kh.semi.domain.vo.User;
+import com.kh.semi.service.AttendanceService;
 import com.kh.semi.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +12,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 @Controller
 public class UserController {
 
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final AttendanceService attendanceService;
 
     @Autowired
-    public UserController(UserService userService ,BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserController(UserService userService , BCryptPasswordEncoder bCryptPasswordEncoder, AttendanceService attendanceService) {
         this.userService = userService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.attendanceService = attendanceService;
     }
 
     @PostMapping("login.us")
@@ -36,6 +43,10 @@ public class UserController {
                 mv.addObject("errorMsg", "비밀번호가 일치하지 않습니다.");
                 mv.setViewName("login/loginPage");
             } else {
+                LocalDate today = LocalDate.now();
+                String formattedToday = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                Attendance attendance = attendanceService.selectAttendance(loginUser.getUserNo(), formattedToday);
+                session.setAttribute("attendance", attendance);
                 session.setAttribute("loginUser", loginUser);
                 mv.setViewName("redirect:/");
             }

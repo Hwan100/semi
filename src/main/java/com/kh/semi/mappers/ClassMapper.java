@@ -26,6 +26,9 @@ public interface ClassMapper {
 
     // 강의 목록 조회
     List<Class> selectClassList();
+
+    List<Class> selectClassListWithJoin();
+
 }
 
 

@@ -16,4 +16,5 @@ public class Feedback {
     private Date writeDate;
     private int resumeNo;
     private int userNo;
+    private String title;
 }

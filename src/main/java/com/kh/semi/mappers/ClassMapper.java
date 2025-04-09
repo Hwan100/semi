@@ -4,7 +4,8 @@ import com.kh.semi.domain.vo.ClassTime;
 import com.kh.semi.domain.vo.Schedule;
 import org.apache.ibatis.annotations.Mapper;
 import com.kh.semi.domain.vo.Class;
-import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface ClassMapper {
@@ -25,4 +26,10 @@ public interface ClassMapper {
 
 //    강의 시간표
     ClassTime selectClassTime(ClassTime classTime);
+
+    // 강의 목록 조회
+    List<Class> selectClassList();
+
+    List<Class> selectClassListWithJoin();
+
 }

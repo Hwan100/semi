@@ -19,52 +19,63 @@
                 AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )
             </div>
         </div>
-
+        <c:if test="${loginUser.userRole eq '2' || loginUser.userRole eq '3'}">
         <div class="button-area">
-            <button class="btn-blank-small" onclick="">수정</button>
-            <button class="btn-blank-small" onclick="">작성</button>
+            <button class="btn-blank-small" onclick="location.href='enrollForm.cl'">작성</button>
         </div>
+        </c:if>
     </div>
 
-    <table class="board-table">
-        <thead>
-        <tr>
-            <th style="width: 100px;">글번호</th>
-            <th style="width: 130px;">지점</th>
-            <th>제목</th>
-            <th style="width: 150px;">작성자</th>
-            <th style="width: 100px;">조회수</th>
-            <th style="width: 100px;">작성일</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="b" items="${list}">
-            <tr>
-                <td>${b.boardNo}</td>
-                <td>${b.branch}</td>
-                <td class="title-cell">
-                    <a href="detail.bo?bno=${b.boardNo}">${b.boardTitle}</a>
-                </td>
-                <td>${b.boardWriter}</td>
-                <td>${b.count}</td>
-                <td>${b.createDate}</td>
-            </tr>
-        </c:forEach>
+    <div class="board-header">
+        <div style="flex: 0 0 100px;">글번호</div>
+        <div style="flex: 0 0 130px;">강의 번호</div>
+        <div style="flex: 1;">제목</div>
+        <div style="flex: 0 0 150px;">작성자</div>
+        <div style="flex: 0 0 100px;">조회수</div>
+        <div style="flex: 0 0 100px;">작성일</div>
+    </div>
+    <c:forEach var="b" items="${list}">
+        <div class="board-row">
+            <div style="flex: 0 0 100px;">${b.boardNo}</div>
+            <div style="flex: 0 0 130px;">${b.classNo}</div>
+            <div class="board-title-cell">
+                <a href="detail.cl?bno=${b.boardNo}">${b.title}</a>
+            </div>
+            <div style="flex: 0 0 150px;">${b.userName}</div>
+            <div style="flex: 0 0 100px;">${b.count}</div>
+            <div style="flex: 0 0 100px;">${b.createDate}</div>
+        </div>
+    </c:forEach>
 
-        <tr>
-            <td>999</td>
-            <td>강남지점</td>
-            <td class="title-cell">
-                <a href="detail.bo?bno=999">[예시] 시스템 점검 안내</a>
-            </td>
-            <td>관리자</td>
-            <td>123</td>
-            <td>2025-03-27</td>
-        </tr>
-        </tbody>
-    </table>
+
+    <div id="pagingArea">
+        <ul class="pagination">
+
+            <c:choose>
+                <c:when test="${ pi.currentPage eq 1 }">
+                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/leftPageMove.png"></a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="myClass.bo?cpage=${pi.currentPage - 1}"><img src="/icons/leftPageMove.png"></a></li>
+                </c:otherwise>
+            </c:choose>
+
+            <c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
+                <li class="page-item"><a class="page-link" href="myClass.bo?cpage=${p}">${p}</a></li>
+            </c:forEach>
+
+            <c:choose>
+                <c:when test="${ pi.currentPage eq pi.maxPage }">
+                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="myClass.bo?cpage=${pi.currentPage + 1}"><img src="/icons/rightPageMove.png"></a></li>
+                </c:otherwise>
+            </c:choose>
+
+        </ul>
+    </div>
 
 </div>
-
 </body>
 </html>

@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.semi.mappers.BoardMapper">
+
     <resultMap id="boardResult" type="Board">
         <result column="BOARD_NO" property="boardNo" />
         <result column="TITLE" property="title" />
@@ -18,6 +19,7 @@
         <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="BOARD_STATUS" property="boardStatus"/>
         <result column="USER_NAME" property="userName" />
+        <result column="ROOM_NAME" property="roomName" />
     </resultMap>
 
     <resultMap id="resumeBoardResult" type="ResumeBoard">
@@ -30,6 +32,24 @@
         <result column="CREATED_DATE" property="createDate" />
         <result column="UPDATE_DATE" property="updateDate" />
         <result column="CONTENT" property="content" />
+    </resultMap>
+
+    <resultMap id="replyResult" type="Reply">
+        <result column="REPLY_NO" property="replyNo" />
+        <result column="CONTENT" property="content" />
+        <result column="CREATE_DATE" property="date" />
+        <result column="USER_NO" property="userNo" />
+        <result column="BOARD_NO" property="boardNo" />
+        <result column="USER_NAME" property="userName" />
+    </resultMap>
+
+    <resultMap id="feedbackResult" type="Feedback">
+        <result column="FEEDBACK_NO" property="feedbackNo" />
+        <result column="CONTENT" property="content" />
+        <result column="WRITE_DATE" property="writeDate" />
+        <result column="RESUME_NO" property="resumeNo" />
+        <result column="USER_NO" property="userNo" />
+        <result column="TITLE" property="title" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
@@ -93,10 +113,13 @@
         SELECT TITLE,
             UPDATE_DATE,
             TYPE,
-            CREATED_DATE
+            CREATED_DATE,
+            RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
+        ORDER BY CREATED_DATE DESC
     </select>
+
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
         SET COUNT = COUNT + 1
@@ -105,19 +128,19 @@
     </update>
 
     <select id="selectNoticeBoard" resultMap="boardResult">
-        SELECT BOARD_NO,
-               TITLE,
-               BRANCH,
+        SELECT B.BOARD_NO,
+               B.TITLE,
+               B.BRANCH,
                U.USER_NAME,
-               CONTENT,
-               ORIGIN_NAME,
-               CHANGE_NAME,
-               COUNT,
-               TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
-          FROM TB_BOARD
-          JOIN TB_USER U USING (USER_NO)
+               B.CONTENT,
+               B.ORIGIN_NAME,
+               B.CHANGE_NAME,
+               B.COUNT,
+               TO_CHAR(B.CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+          FROM TB_BOARD B
+          JOIN TB_USER U ON B.USER_NO = U.USER_NO
          WHERE BOARD_STATUS = 'Y'
-           AND BOARD_NO = #{bno}
+           AND B.BOARD_NO = #{bno}
     </select>
 
     <update id="updateNoticeBoard" >
@@ -150,9 +173,186 @@
         )
     </insert>
 
-    <update id="deleteNoticeBoard">
+    <update id="deleteBoard">
         UPDATE TB_BOARD
         SET BOARD_STATUS = 'N'
         WHERE BOARD_NO = #{bno}
     </update>
+
+    <select id="selectMyClassBoardList" resultMap="boardResult">
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        B.CONTENT,
+        B.CREATE_DATE,
+        B.COUNT,
+        B.BRANCH,
+        B.TYPE,
+        B.CHANGE_NAME,
+        B.ORIGIN_NAME,
+        B.USER_NO,
+        B.CLASS_NO,
+        B.BOARD_STATUS,
+        U.USER_NAME
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        WHERE B.TYPE = 2
+        AND B.BOARD_STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
+    </select>
+
+
+    <select id="selectClassNoByRoomName" parameterType="String" resultType="_int">
+        SELECT CLASS_NO
+        FROM TB_CLASS
+        WHERE ROOM_NAME = #{roomName}
+    </select>
+
+    <insert id="insertMyClassBoard" parameterType="Board">
+        INSERT INTO TB_BOARD (
+        BOARD_NO,
+        TITLE,
+        CONTENT,
+        BRANCH,
+        TYPE,
+        ORIGIN_NAME,
+        CHANGE_NAME,
+        USER_NO,
+        CLASS_NO
+        ) VALUES (
+        SEQ_BOARD_NO.NEXTVAL,
+        #{title},
+        #{content},
+        #{branch},
+        2,
+        #{originName},
+        #{changeName},
+        #{userNo},
+        #{classNo}
+        )
+    </insert>
+
+
+    <select id="selectMyClassBoard" resultMap="boardResult">
+        SELECT
+        B.BOARD_NO,
+        B.TITLE,
+        C.ROOM_NAME,
+        U.USER_NAME,
+        B.CONTENT,
+        B.ORIGIN_NAME,
+        B.CHANGE_NAME,
+        B.COUNT,
+        TO_CHAR(B.CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+        FROM TB_BOARD B
+        JOIN TB_USER U ON B.USER_NO = U.USER_NO
+        JOIN TB_CLASS C ON B.CLASS_NO = C.CLASS_NO
+        WHERE B.BOARD_STATUS = 'Y'
+        AND B.BOARD_NO = #{bno}
+    </select>
+
+    <update id="updateMyClassBoard" >
+        UPDATE TB_BOARD
+        SET TITLE = #{title},
+        CONTENT = #{content},
+        CLASS_NO = #{classNo},
+        ORIGIN_NAME = #{originName},
+        CHANGE_NAME = #{changeName}
+        WHERE BOARD_NO = #{boardNo}
+    </update>
+
+
+    <select id="selectCurrentResumeBoardList" resultMap="resumeBoardResult">
+        SELECT TITLE, UPDATE_DATE , RESUME_NO
+        FROM TB_RESUME_BOARD
+        WHERE USER_NO = #{userNo}
+        ORDER BY UPDATE_DATE DESC
+        FETCH FIRST 5 ROWS ONLY
+    </select>
+
+    <select id="selectResumeBoard" resultMap="resumeBoardResult" parameterType="int">
+        SELECT TYPE,TITLE,UPDATE_DATE,CONTENT,CHANGE_NAME,ORIGIN_NAME,RESUME_NO
+        FROM TB_RESUME_BOARD
+        WHERE RESUME_NO = #{bno}
+    </select>
+
+    <insert id="insertReply">
+            INSERT INTO TB_REPLY (
+            REPLY_NO,
+            CONTENT,
+            CREATE_DATE,
+            USER_NO,
+            BOARD_NO
+            ) VALUES (
+            SEQ_REPLY_NO.NEXTVAL,
+            #{content},
+            SYSDATE,
+            #{userNo},
+            #{boardNo}
+            )
+    </insert>
+
+    <select id="selectMyClassReplyList" resultMap="replyResult">
+        SELECT R.REPLY_NO,
+        R.CONTENT,
+        R.CREATE_DATE,
+        U.USER_NAME,
+        R.USER_NO,
+        R.BOARD_NO
+        FROM TB_REPLY R
+        JOIN TB_USER U ON R.USER_NO = U.USER_NO
+        JOIN TB_BOARD B ON R.BOARD_NO = B.BOARD_NO
+        WHERE B.BOARD_NO = #{bno}
+        ORDER BY REPLY_NO DESC
+    </select>
+
+    <update id="updateResumeBoard">
+        UPDATE TB_RESUME_BOARD
+        SET
+        TITLE = #{title},
+        <if test="originName != null">
+            ORIGIN_NAME = #{originName},
+        </if>
+        <if test="changeName != null">
+            CHANGE_NAME = #{changeName},
+        </if>
+        TYPE = #{type},
+        CONTENT = #{content},
+        UPDATE_DATE = SYSDATE
+        WHERE RESUME_NO = #{resumeNo}
+    </update>
+
+    <delete id="deleteResumeBoard" parameterType="int">
+        DELETE FROM TB_RESUME_BOARD
+        WHERE RESUME_NO = #{resumeNo}
+    </delete>
+
+    <select id="selectFeedbackCount" parameterType="int">
+        SELECT COUNT(*)
+        FROM TB_FEEDBACK
+        WHERE RESUME_NO = #{bno}
+    </select>
+
+    <select id="selectFeedbackList" resultMap="feedbackResult" parameterType="int">
+        SELECT FEEDBACK_NO,
+                CONTENT,
+                WRITE_DATE,
+                RESUME_NO,
+                USER_NO,
+                TITLE
+        FROM TB_FEEDBACK
+        WHERE RESUME_NO = #{bno}
+        ORDER BY FEEDBACK_NO DESC
+    </select>
+
+    <select id="selectFeedback" resultMap="feedbackResult" parameterType="int">
+        SELECT FEEDBACK_NO,
+                CONTENT,
+                WRITE_DATE,
+                RESUME_NO,
+                USER_NO,
+                TITLE
+        FROM TB_FEEDBACK
+        WHERE FEEDBACK_NO = #{bno}
+    </select>
 </mapper>

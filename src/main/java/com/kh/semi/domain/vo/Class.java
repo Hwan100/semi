@@ -1,6 +1,6 @@
 package com.kh.semi.domain.vo;
 
-import lombok.*;
+import  lombok.*;
 
 import java.sql.Date;
 
@@ -19,4 +19,8 @@ public class Class {
     private String description;
     private int userNo;
     private String roomName;
+    private int progress;
+    private String userName;    // 강사 이름
+    private String classTime;   // 수업시간 (예: 월 09:00~18:00 / 수 09:00~18:00)
+
 }

@@ -25,4 +25,5 @@ public class Board {
     private int classNo;
     private String boardStatus;
     private String userName;
+    private String roomName;
 }

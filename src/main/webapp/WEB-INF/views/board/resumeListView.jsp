@@ -200,41 +200,80 @@
         img{
             cursor: pointer;
         }
+
+        #pagingArea {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        ul.pagination {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.pagination li.page-item a.page-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #000000;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            color: #000000;
+            background-color: #fff;
+            text-decoration: none;
+        }
+
+        ul.pagination li.page-item.active a.page-link {
+            background-color: #33363F;
+            color: #ffffff;
+        : 1px solid #33363F;
+        }
+
+        ul.pagination li.page-item.disabled a.page-link {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        ul.pagination li.page-item a.page-link::before {
+            font-weight: bold;
+        }
+
+        ul.pagination li.page-item a.page-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        .page-item, .disabled, .page-link{
+            border: 0;
+        }
     </style>
 </head>
 <body>
 
-
+<c:if test="${not empty msg}">
+    <script>
+        alert("${msg}");
+    </script>
+</c:if>
 <div class="body-wrapper">
     <div class="board-container">
         <div class="board-title">최근 수정한 문서</div>
         <div id="scrollbar">
         <div id="currentResumeList">
-            <div class="select">
-                <div class="resume-title">KH사직서</div>
-                <div class="lastModify">마지막 수정일</div>
-                <div class="lastModifyDate">2025.03.28</div>
-            </div>
-            <div class="select">
-                <div class="resume-title">유서</div>
-                <div class="lastModify">마지막 수정일</div>
-                <div class="lastModifyDate">2025.03.27</div>
-            </div>
-            <div class="select">
-                <div class="resume-title">일기장</div>
-                <div class="lastModify">마지막 수정일</div>
-                <div class="lastModifyDate">2025.03.24</div>
-            </div>
-            <div class="select">
-                <div class="resume-title">이력서</div>
-                <div class="lastModify">마지막 수정일</div>
-                <div class="lastModifyDate">2025.03.24</div>
-            </div>
-            <div class="select">
-                <div class="resume-title">자소서1</div>
-                <div class="lastModify">마지막 수정일</div>
-                <div class="lastModifyDate">2025.03.20</div>
-            </div>
+            <c:forEach var="c" items="${clist}">
+                <div class="select" onclick="location.href='../resumeDetail.bo?bno=${c.resumeNo}'">
+                    <div class="resume-title">${c.title}</div>
+                    <div class="lastModify">마지막 수정일</div>
+                    <div class="lastModifyDate">${c.updateDate}</div>
+                </div>
+            </c:forEach>
         </div>
         </div>
     </div>
@@ -246,88 +285,53 @@
                     <th class="top-title-bar" id="first-child" style="font-weight: 900" >제목</th>
                     <th class="top-other-bar" style="font-weight: 900">수정일</th>
                     <th class="top-other-bar" style="font-weight: 900">구분</th>
-                    <th class="top-other-bar" style="font-weight: 900">미리보기</th>
+                    <th class="top-other-bar" style="font-weight: 900">작성일</th>
                     <th class="top-other-bar" id="last-child" style="font-weight: 900">다운로드</th>
                 </tr>
             </thead>
             <tbody>
+            <c:forEach var="b" items="${list}">
                 <tr>
-                    <td class="title-bar" onclick="location.href='resumeDetail.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리&division=자소서&title3=삼성자소서'">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
+                    <td class="title-bar" onclick="location.href='../resumeDetail.bo?bno=${b.resumeNo}'">${b.title}</td>
+                    <td class="other-bar">${b.updateDate}</td>
+                    <td class="other-bar">
+                        <c:choose>
+                            <c:when test="${b.type == 1}">자소서</c:when>
+                            <c:when test="${b.type == 2}">이력서</c:when>
+                            <c:otherwise>기타</c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td class="preview">${b.createDate}</td>
                     <td class="download"><img src="/icons/Save.png">다운로드</td>
                 </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성 자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
-                <tr>
-                    <td class="title-bar">삼성자소서</td>
-                    <td class="other-bar">2025.03.28</td>
-                    <td class="other-bar">자소서</td>
-                    <td class="preview">작성일</td>
-                    <td class="download"><img src="/icons/Save.png">다운로드</td>
-                </tr>
+            </c:forEach>
             </tbody>
         </table>
-<%--        <div class="page-bar">--%>
-<%--            <img src="/icons/leftPageMove.png" style="margin-right: 15px">--%>
-<%--            <img src="/icons/Page1.png" style="margin-right: 15px">--%>
-<%--            <img src="/icons/rightPageMove.png">--%>
-<%--        </div>--%>
+        <div id="pagingArea">
+            <ul class="pagination">
+                <c:choose>
+                    <c:when test="${ pi.currentPage eq 1 }">
+                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/leftPageMove.png"></a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item"><a class="page-link" href="resume.bo?cpage=${pi.currentPage - 1}"><img src="/icons/leftPageMove.png"></a></li>
+                    </c:otherwise>
+                </c:choose>
+
+                <c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
+                    <li class="page-item"><a class="page-link" href="resume.bo?cpage=${p}">${p}</a></li>
+                </c:forEach>
+
+                <c:choose>
+                    <c:when test="${ pi.currentPage eq pi.maxPage }">
+                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/icons/rightPageMove.png"></a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item"><a class="page-link" href="resume.bo?cpage=${pi.currentPage + 1}"><img src="/icons/rightPageMove.png"></a></li>
+                    </c:otherwise>
+                </c:choose>
+            </ul>
+        </div>
     </div>
 
 </div>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.semi.mappers.LeaveMapper">
+    <resultMap id="leaveResult" type="Leave">
+        <result column="LEAVE_NO" property="leaveNo"/>
+        <result column="TYPE" property="type"/>
+        <result column="CATEGORY" property="category"/>
+        <result column="START_DATE" property="startDate"/>
+        <result column="END_DATE" property="endDate"/>
+        <result column="DAYS_DEDUCTED" property="daysDeducted"/>
+        <result column="REASON" property="reason"/>
+        <result column="STATUS" property="status"/>
+        <result column="CHANGE_NAME" property="changeName"/>
+        <result column="ORIGIN_NAME" property="originName"/>
+        <result column="REQUEST_DATE" property="requestDate"/>
+        <result column="APPROVE_DATE" property="approveDate"/>
+        <result column="REJECT_REASON" property="rejectReason"/>
+        <result column="USER_NO" property="userNo"/>
+        <result column="CLASS_NAME" property="className" />
+        <result column="ROOM_NAME" property="roomName" />
+    </resultMap>
+
+    <select id="selectRecentLeaveList" resultMap="leaveResult">
+        SELECT
+        LEAVE_NO,
+        START_DATE,
+        END_DATE,
+        REASON,
+        CHANGE_NAME,
+        STATUS,
+        REJECT_REASON
+        FROM TB_LEAVE
+        WHERE USER_NO = #{userNo}
+        ORDER BY START_DATE DESC
+        FETCH FIRST #{limit} ROWS ONLY
+    </select>
+
+    <insert id="insertLeave" parameterType="com.kh.semi.domain.vo.Leave">
+        INSERT INTO TB_LEAVE (
+        LEAVE_NO, TYPE, CATEGORY, START_DATE, END_DATE, DAYS_DEDUCTED,
+        REASON, CHANGE_NAME, ORIGIN_NAME, USER_NO
+        )
+        VALUES (
+        SEQ_LEAVE_NO.NEXTVAL,
+        #{type},
+        #{category},
+        #{startDate},
+        #{endDate},
+        #{daysDeducted},
+        #{reason},
+        #{changeName},
+        #{originName},
+        #{userNo}
+        )
+    </insert>
+
+    <select id="findClassNoByNames" resultType="int">
+        SELECT CLASS_NO
+        FROM TB_CLASS
+        WHERE CLASS_NAME = #{className}
+        AND ROOM_NAME = #{roomName}
+    </select>
+
+    <delete id="deleteLeave" parameterType="list">
+        DELETE FROM TB_LEAVE
+        WHERE LEAVE_NO IN
+        <foreach collection="leaveNos" item="no" open="(" separator="," close=")">
+            #{no}
+        </foreach>
+<!-- collection="leaveNos":	컨트롤러에서 받은 List<Integer> leaveNos를 반복 처리하겠다
+       item="no"	leaveNos의 각각의 요소를 no라고 부르겠다
+       open="("	반복문의 시작에 ( 추가 (IN 절 시작)
+       separator=","	각 요소 사이를 구분
+       close=")"	반복문의 끝에 ) 추가 (IN 절 닫음)
+       WHERE LEAVE_NO IN (1, 2, 3)이거를 풀어쓴것
+       -->
+    </delete>
+
+</mapper>

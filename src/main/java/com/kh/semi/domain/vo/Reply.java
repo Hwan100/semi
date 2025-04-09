@@ -16,4 +16,6 @@ public class Reply {
     private Date date;
     private int userNo;
     private int boardNo;
+
+    private String userName;
  }

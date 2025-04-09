@@ -17,4 +17,5 @@ public class Schedule {
     private Date endDate;
     private String description;
     private int classNo;
+    private String type;
 }

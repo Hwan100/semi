@@ -6,6 +6,8 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.kh.semi.domain.vo.Class;
@@ -13,6 +15,9 @@ import com.kh.semi.domain.vo.ClassTime;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -60,4 +65,101 @@ public class ClassController {
 
         return "teacher/courseList";
     }
+
+    // 강의 목록을 DB에서 가져와서 모델에 담기
+    @GetMapping("course.li")
+    public String course(Model model) {
+        List<Class> classList = classService.selectClassList();
+        LocalDate today = LocalDate.now();
+
+        // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
+        List<Class> filteredList = new ArrayList<>();
+
+        for (Class c : classList) {
+            int progress = 0;
+
+            if (c.getStartDate() != null && c.getEndDate() != null) {
+                LocalDate start = c.getStartDate().toLocalDate();
+                LocalDate end = c.getEndDate().toLocalDate();
+
+                if (!today.isBefore(start)) {
+                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
+                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
+                    progress = (int)((passedDays * 100) / totalDays);
+                }
+            }
+
+            c.setProgress(progress);
+
+            // 100% 미만인 강의만 담는다
+            if (progress < 100) {
+                filteredList.add(c);
+            }
+        }
+
+        model.addAttribute("classList", filteredList);  // JSP로 넘길 리스트는 filteredList
+        return "teacher/courseList";
+    }
+
+    @GetMapping("completedCourse.li")
+    public String completedCourses(Model model) {
+        List<Class> classList = classService.selectClassList();
+        LocalDate today = LocalDate.now();
+
+        List<Class> completedList = new ArrayList<>();
+
+        for (Class c : classList) {
+            int progress = 0;
+
+            if (c.getStartDate() != null && c.getEndDate() != null) {
+                LocalDate start = c.getStartDate().toLocalDate();
+                LocalDate end = c.getEndDate().toLocalDate();
+
+                if (!today.isBefore(start)) {
+                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
+                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
+                    progress = (int)((passedDays * 100) / totalDays);
+                }
+            }
+
+            c.setProgress(progress);
+
+            // 100%인 강의만 담기
+            if (progress == 100) {
+                completedList.add(c);
+            }
+        }
+
+        model.addAttribute("classList", completedList);
+        return "teacher/completedCourseList";
+    }
+
+    @GetMapping("adminCourse.li")
+    public String adminCourseList(Model model) {
+        List<Class> classList = classService.selectClassListWithJoin();
+
+
+        // 진행률 계산 추가
+        LocalDate today = LocalDate.now();
+        for (Class c : classList) {
+            int progress = 0;
+            if (c.getStartDate() != null && c.getEndDate() != null) {
+                LocalDate start = c.getStartDate().toLocalDate();
+                LocalDate end = c.getEndDate().toLocalDate();
+                if (!today.isBefore(start)) {
+                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
+                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
+                    progress = (int)((passedDays * 100) / totalDays);
+                }
+            }
+            c.setProgress(progress);
+        }
+
+        model.addAttribute("classList", classList);
+        return "teacher/AdminCourseList";
+    }
+
+
+
+
 }

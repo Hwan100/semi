@@ -43,6 +43,15 @@
         <result column="USER_NAME" property="userName" />
     </resultMap>
 
+    <resultMap id="feedbackResult" type="Feedback">
+        <result column="FEEDBACK_NO" property="feedbackNo" />
+        <result column="CONTENT" property="content" />
+        <result column="WRITE_DATE" property="writeDate" />
+        <result column="RESUME_NO" property="resumeNo" />
+        <result column="USER_NO" property="userNo" />
+        <result column="TITLE" property="title" />
+    </resultMap>
+
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_BOARD
@@ -104,12 +113,13 @@
         SELECT TITLE,
             UPDATE_DATE,
             TYPE,
-            CREATED_DATE
+            CREATED_DATE,
+            RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
-          AND BOARD_STATUS = 'Y'
         ORDER BY CREATED_DATE DESC
     </select>
+
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
         SET COUNT = COUNT + 1
@@ -253,15 +263,15 @@
 
 
     <select id="selectCurrentResumeBoardList" resultMap="resumeBoardResult">
-        SELECT TITLE, UPDATE_DATE
+        SELECT TITLE, UPDATE_DATE , RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
         ORDER BY UPDATE_DATE DESC
         FETCH FIRST 5 ROWS ONLY
     </select>
 
-    <select id="selectResumeBoard" resultMap="resumeBoardResult">
-        SELECT *
+    <select id="selectResumeBoard" resultMap="resumeBoardResult" parameterType="int">
+        SELECT TYPE,TITLE,UPDATE_DATE,CONTENT,CHANGE_NAME,ORIGIN_NAME,RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE RESUME_NO = #{bno}
     </select>
@@ -294,5 +304,55 @@
         JOIN TB_BOARD B ON R.BOARD_NO = B.BOARD_NO
         WHERE B.BOARD_NO = #{bno}
         ORDER BY REPLY_NO DESC
+    </select>
+
+    <update id="updateResumeBoard">
+        UPDATE TB_RESUME_BOARD
+        SET
+        TITLE = #{title},
+        <if test="originName != null">
+            ORIGIN_NAME = #{originName},
+        </if>
+        <if test="changeName != null">
+            CHANGE_NAME = #{changeName},
+        </if>
+        TYPE = #{type},
+        CONTENT = #{content},
+        UPDATE_DATE = SYSDATE
+        WHERE RESUME_NO = #{resumeNo}
+    </update>
+
+    <delete id="deleteResumeBoard" parameterType="int">
+        DELETE FROM TB_RESUME_BOARD
+        WHERE RESUME_NO = #{resumeNo}
+    </delete>
+
+    <select id="selectFeedbackCount" parameterType="int">
+        SELECT COUNT(*)
+        FROM TB_FEEDBACK
+        WHERE RESUME_NO = #{bno}
+    </select>
+
+    <select id="selectFeedbackList" resultMap="feedbackResult" parameterType="int">
+        SELECT FEEDBACK_NO,
+                CONTENT,
+                WRITE_DATE,
+                RESUME_NO,
+                USER_NO,
+                TITLE
+        FROM TB_FEEDBACK
+        WHERE RESUME_NO = #{bno}
+        ORDER BY FEEDBACK_NO DESC
+    </select>
+
+    <select id="selectFeedback" resultMap="feedbackResult" parameterType="int">
+        SELECT FEEDBACK_NO,
+                CONTENT,
+                WRITE_DATE,
+                RESUME_NO,
+                USER_NO,
+                TITLE
+        FROM TB_FEEDBACK
+        WHERE FEEDBACK_NO = #{bno}
     </select>
 </mapper>

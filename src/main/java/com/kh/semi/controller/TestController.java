@@ -9,14 +9,14 @@ public class TestController {
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}
 
-    @GetMapping("course.li")
-    public String course() {return "teacher/courseList";}
 
-    @GetMapping("completedCourse.li")
-    public String completedCourse() {return "teacher/completedCourseList";}
 
     @GetMapping("finish.bo")
     public String finish() {return "student/finishPage";}
+
+    @GetMapping("studentVacation.li")
+    public String studentVacation() {return "student/studentVacationView";}
+
 
     @GetMapping("studentPay.li")
     public String studentPay() {return "student/studentPay";}

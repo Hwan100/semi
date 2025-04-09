@@ -257,7 +257,11 @@
 </head>
 <body>
 
-
+<c:if test="${not empty msg}">
+    <script>
+        alert("${msg}");
+    </script>
+</c:if>
 <div class="body-wrapper">
     <div class="board-container">
         <div class="board-title">최근 수정한 문서</div>
@@ -326,7 +330,6 @@
                         <li class="page-item"><a class="page-link" href="resume.bo?cpage=${pi.currentPage + 1}"><img src="/icons/rightPageMove.png"></a></li>
                     </c:otherwise>
                 </c:choose>
-
             </ul>
         </div>
     </div>

@@ -5,6 +5,8 @@ import com.kh.semi.domain.vo.Schedule;
 import org.apache.ibatis.annotations.Mapper;
 import com.kh.semi.domain.vo.Class;
 
+import java.util.List;
+
 @Mapper
 public interface ClassMapper {
     int selectKey();
@@ -21,4 +23,12 @@ public interface ClassMapper {
     int insertSchedule(Schedule schedule);
     int updateSchedule(Schedule schedule);
     int deleteSchedule(int scheduleNo);
+
+    // 강의 목록 조회
+    List<Class> selectClassList();
+
+    List<Class> selectClassListWithJoin();
+
 }
+
+

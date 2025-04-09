@@ -116,20 +116,13 @@
                 <button class="btn">파일찾기</button>
                 <button class="btn-blank-small">삭제</button>
             </div>
-            <table class="file-table">
+            <table class="file-table" id="fileTable">
                 <thead>
                 <tr>
-                    <th>번호</th>
                     <th>파일 명</th>
-                    <th>파일크기(KB)</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>어쩔TV.txt</td>
-                    <td>40</td>
-                </tr>
+                <tbody id="fileTableBody">
                 </tbody>
             </table>
         </div>
@@ -178,6 +171,9 @@
             formEl.submit();
         }
     }
+
+
+
 
     document.getElementById('className').required = true;
     document.getElementById('roomName').required = true;

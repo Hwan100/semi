@@ -46,7 +46,7 @@ public class BoardController {
     }
 
     @GetMapping("enrollForm.no")
-    public String enrollNoticeForm() {return "noticeEnrollForm";}
+    public String enrollNoticeForm() {return "board/noticeEnrollForm";}
 
     @PostMapping("insert.no")
     public String insertBoard(@ModelAttribute Board board, MultipartFile upfile, HttpSession session, Model model) {

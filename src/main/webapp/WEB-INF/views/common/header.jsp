@@ -175,7 +175,6 @@
                 <div class="menu-title">강의 관리</div>
                 <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
             </div>
-            
 
             <div id="myclass-submenu" class="submenu-container">
                 <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">

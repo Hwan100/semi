@@ -552,7 +552,7 @@
         if (!/^010-\d{4}-\d{4}$/.test(phone)) {
             alert("전화번호를 확인해주세요. 예: 010-1234-5678");
             return false;
-        }   
+        }
 
         const year = document.getElementById("yearSelect").value;
         const monthRaw = document.getElementById("monthSelect").value;

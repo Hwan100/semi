@@ -2,6 +2,7 @@ package com.kh.semi.service;
 
 import com.kh.semi.domain.vo.Board;
 import com.kh.semi.domain.vo.PageInfo;
+import com.kh.semi.domain.vo.Reply;
 import com.kh.semi.domain.vo.ResumeBoard;
 import com.kh.semi.mappers.BoardMapper;
 import org.apache.ibatis.session.RowBounds;
@@ -67,8 +68,8 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public int deleteNoticeBoard(int bno) {
-        return boardMapper.deleteNoticeBoard(bno);
+    public int deleteBoard(int bno) {
+        return boardMapper.deleteBoard(bno);
     }
 
     @Override
@@ -120,6 +121,21 @@ public class BoardServiceImpl implements BoardService{
         }
         board.setClassNo(classNo);
         return boardMapper.updateMyClassBoard(board);
+    }
+
+    @Override
+    public int insertReply(Reply reply) {
+        return boardMapper.insertReply(reply);
+    }
+
+    @Override
+    public ArrayList<Reply> selectMyClassReplyList(int bno) {
+        return boardMapper.selectMyClassReplyList(bno);
+    }
+
+    @Override
+    public ArrayList<Board> getBoardTopN(String order, int limit) {
+        return boardMapper.getBoardTopN(order, limit);
     }
 
 

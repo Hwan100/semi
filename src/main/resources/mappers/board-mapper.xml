@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.semi.mappers.BoardMapper">
+
     <resultMap id="boardResult" type="Board">
         <result column="BOARD_NO" property="boardNo" />
         <result column="TITLE" property="title" />
@@ -31,6 +32,15 @@
         <result column="CREATED_DATE" property="createDate" />
         <result column="UPDATE_DATE" property="updateDate" />
         <result column="CONTENT" property="content" />
+    </resultMap>
+
+    <resultMap id="replyResult" type="Reply">
+        <result column="REPLY_NO" property="replyNo" />
+        <result column="CONTENT" property="content" />
+        <result column="CREATE_DATE" property="date" />
+        <result column="USER_NO" property="userNo" />
+        <result column="BOARD_NO" property="boardNo" />
+        <result column="USER_NAME" property="userName" />
     </resultMap>
 
     <select id="selectBoardCount" resultType="_int">
@@ -97,6 +107,7 @@
             CREATED_DATE
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
+          AND BOARD_STATUS = 'Y'
         ORDER BY CREATED_DATE DESC
     </select>
     <update id="increaseNoticeCount">
@@ -110,8 +121,6 @@
         SELECT B.BOARD_NO,
                B.TITLE,
                B.BRANCH,
-               B.CLASS_NO,
-               C.ROOM_NAME,
                U.USER_NAME,
                B.CONTENT,
                B.ORIGIN_NAME,
@@ -120,7 +129,6 @@
                TO_CHAR(B.CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
           FROM TB_BOARD B
           JOIN TB_USER U ON B.USER_NO = U.USER_NO
-          JOIN TB_CLASS C ON B.CLASS_NO = C.CLASS_NO
          WHERE BOARD_STATUS = 'Y'
            AND B.BOARD_NO = #{bno}
     </select>
@@ -155,7 +163,7 @@
         )
     </insert>
 
-    <update id="deleteNoticeBoard">
+    <update id="deleteBoard">
         UPDATE TB_BOARD
         SET BOARD_STATUS = 'N'
         WHERE BOARD_NO = #{bno}
@@ -256,5 +264,35 @@
         SELECT *
         FROM TB_RESUME_BOARD
         WHERE RESUME_NO = #{bno}
+    </select>
+
+    <insert id="insertReply">
+            INSERT INTO TB_REPLY (
+            REPLY_NO,
+            CONTENT,
+            CREATE_DATE,
+            USER_NO,
+            BOARD_NO
+            ) VALUES (
+            SEQ_REPLY_NO.NEXTVAL,
+            #{content},
+            SYSDATE,
+            #{userNo},
+            #{boardNo}
+            )
+    </insert>
+
+    <select id="selectMyClassReplyList" resultMap="replyResult">
+        SELECT R.REPLY_NO,
+        R.CONTENT,
+        R.CREATE_DATE,
+        U.USER_NAME,
+        R.USER_NO,
+        R.BOARD_NO
+        FROM TB_REPLY R
+        JOIN TB_USER U ON R.USER_NO = U.USER_NO
+        JOIN TB_BOARD B ON R.BOARD_NO = B.BOARD_NO
+        WHERE B.BOARD_NO = #{bno}
+        ORDER BY REPLY_NO DESC
     </select>
 </mapper>

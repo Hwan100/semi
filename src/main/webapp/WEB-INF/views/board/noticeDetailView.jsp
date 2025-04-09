@@ -26,7 +26,8 @@
 
     <div class="info-bar">
       <div class="left">공지사항</div>
-      <div class="right">작성자: ${b.userName } | ${b.createDate }</div>
+      <div class="right">작성자: ${b.userName } | ${b.createDate } | ${b.boardNo}</div>
+      <input type="hidden" name="bno" value="${b.boardNo}">
     </div>
     <div>
       <div class="left">첨부파일</div>
@@ -67,7 +68,7 @@
         }break;
         case "delete":{
           //formEl.action = "delete.bo";
-          $(formEl).attr("action", "delete.bo")
+          $(formEl).attr("action", "delete.no")
         }break;
       }
       $(formEl).submit();

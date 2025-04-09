@@ -1,6 +1,7 @@
 package com.kh.semi.mappers;
 
 import com.kh.semi.domain.vo.Board;
+import com.kh.semi.domain.vo.Reply;
 import com.kh.semi.domain.vo.ResumeBoard;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -30,7 +31,7 @@ public interface BoardMapper {
 
     int insertResumeBoard(ResumeBoard board);
 
-    int deleteNoticeBoard(int bno);
+    int deleteBoard(int bno);
 
     List<ResumeBoard> selectCurrentResumeBoardList(int userNo);
 
@@ -45,4 +46,10 @@ public interface BoardMapper {
     Board selectMyClassBoard(int bno);
 
     int  updateMyClassBoard(Board board);
+
+    int insertReply(Reply reply);
+
+    ArrayList<Reply> selectMyClassReplyList(int bno);
+
+    ArrayList<Board> getBoardTopN(String order, int limit);
 }

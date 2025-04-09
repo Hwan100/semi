@@ -124,7 +124,6 @@ public class BoardController {
         if(result > 0){
             Board b = boardService.selectNoticeBoard(bno);
             model.addAttribute("b", b);
-
             return "board/noticeDetailView";
         } else {
             model.addAttribute("errorMsg", "게시글 조회 실패");
@@ -167,8 +166,12 @@ public class BoardController {
     }
 
     @GetMapping("delete.no")
-    public String deleteBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
-        int result = boardService.deleteNoticeBoard(bno);
+    public String deleteBoard(@RequestParam(value = "bno", required = false) Integer bno, HttpSession session, Model model) {
+        if (bno == null) {
+            model.addAttribute("errorMsg", "잘못된 게시글 번호입니다.");
+            return "common/error";
+        }
+        int result = boardService.deleteBoard(bno);
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 삭제 성공");
             return "redirect:/notice.bo";
@@ -276,7 +279,7 @@ public class BoardController {
 
     @GetMapping("delete.cl")
     public String deleteMyClassBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
-        int result = boardService.deleteNoticeBoard(bno);
+        int result = boardService.deleteBoard(bno);
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 삭제 성공");
             return "redirect:/notice.cl";

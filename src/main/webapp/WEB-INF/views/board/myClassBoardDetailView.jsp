@@ -24,6 +24,7 @@
     <div class="info-bar">
       <div class="left">우리반 게시판</div>
       <div class="right">작성자: ${b.userName} | ${b.createDate}</div>
+      <input type="hidden" name="bno" value="${b.boardNo}">
     </div>
   </div>
 
@@ -74,7 +75,7 @@
 
   <!-- 폼 -->
   <form action="" method="GET" id="postForm">
-    <input type="hidden" name="bno" value="${b.boardNo}">
+
   </form>
 
 </div>
@@ -103,21 +104,42 @@
 
   function drawReplyList(data) {
     getReplyList({boardNo: data.refBno}, function (list) {
+      console.table(list);
+      console.log("받은 댓글 목록 ▶", list);  // 추가
       const rcount = document.querySelector("#rcount");
       const replyList = document.querySelector("#replyList");
       rcount.innerText = list.length;
       replyList.innerHTML = "";
 
       for (const reply of list) {
+        console.log("reply.userName: ", reply.userName);
+        console.log("reply.content: ", reply.content);
+        console.log("reply.date: ", reply.date);
+
         const div = document.createElement("div");
         div.className = "comment";
-        div.innerHTML = `
-                    <div class="comment-header">
-                        <span class="author">${reply.userName}</span>
-                        <span class="date">${reply.date}</span>
-                    </div>
-                    <div class="text">${reply.content}</div>
-                `;
+
+        const header = document.createElement("div");
+        header.className = "comment-header";
+
+        const authorSpan = document.createElement("span");
+        authorSpan.className = "author";
+        authorSpan.textContent = reply.userName;
+
+        const dateSpan = document.createElement("span");
+        dateSpan.className = "date";
+        dateSpan.textContent = reply.date;
+
+        header.appendChild(authorSpan);
+        header.appendChild(dateSpan);
+
+        const contentDiv = document.createElement("div");
+        contentDiv.className = "text";
+        contentDiv.textContent = reply.content;
+
+        div.appendChild(header);
+        div.appendChild(contentDiv);
+
         replyList.appendChild(div);
       }
     });
@@ -137,7 +159,12 @@
     $.ajax({
       url: "/api/board/reply",
       type: "post",
-      data: data,
+      contentType: "application/json",
+      data: JSON.stringify({
+        boardNo: data.refBno,
+        userNo: ${loginUser.userNo},
+        content: data.replyContent
+      }),
       success: function (res) {
         if (res === "success") callback(data);
         else alert("댓글 등록 실패");

@@ -147,10 +147,10 @@
 
             <div id="resume-submenu" class="submenu-container">
                 <div class="submenu-item" onclick="location.href='resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
-                    <div class="submenu-text">자소서 및 이력서 관리</div>
+                    <div class="submenu-text">자소서&이력서 관리</div>
                 </div>
                 <div class="submenu-item" onclick="location.href='resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성'">
-                    <div class="submenu-text">자소서 및 이력서</div>
+                    <div class="submenu-text">자소서&이력서 작성</div>
                 </div>
             </div>
 

@@ -76,4 +76,21 @@
             #{classNo}
         )
     </insert>
+
+    <!-- 강의 목록 조회 -->
+    <select id="selectClassList" resultMap="classResult">
+        SELECT
+        CLASS_NO,
+        CLASS_NAME,
+        START_DATE,
+        END_DATE,
+        COURSE_NAME,
+        DESCRIPTION,
+        USER_NO,
+        ROOM_NAME
+        FROM TB_CLASS
+        ORDER BY START_DATE DESC
+    </select>
+
+
 </mapper>

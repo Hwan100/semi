@@ -26,11 +26,12 @@
             <h2>휴가신청 목록 <span>총 ${list.size()}건</span></h2>
             <div class="action-buttons">
                 <button id="new-btn" class="btn-blank-small light">신규</button>
-                <button class="btn-blank-small light" onclick="postFormSubmit('delete')">삭제</button>
+                <button id="delete-btn" class="btn-blank-small light" onclick="postFormSubmit('delete')">삭제</button>
             </div>
         </div>
 
         <!-- ✅ div 기반 휴가 목록 테이블 -->
+        <form id="postForm" method="post" action="deleteLeave.bo">
         <div class="leave-table">
             <div class="leave-header">
                 <div style="width: 56px;">-</div>
@@ -75,6 +76,7 @@
             </c:forEach>
 
         </div>
+        </form>
     </section>
 
     <!-- ✅ 하단 영역 -->
@@ -152,6 +154,30 @@
             leaveForm.submit();
         }
     });
+
+    const deleteBtn = document.getElementById("delete-btn")
+
+    function toggleDeleteButton() {
+        const checked = document.querySelectorAll("input[name='selectVacation']:checked");
+        deleteBtn.disabled = checked.length === 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll("input[name='selectVacation']");
+        checkboxes.forEach(chk => {
+            chk.addEventListener("change", toggleDeleteButton);
+        });
+    });
+
+    function postFormSubmit(type) {
+        const formEl = document.querySelector("#postForm");
+        if (type === "delete") {
+
+            formEl.action = "deleteLeave.bo"; // 실제 삭제 요청 주소
+            formEl.method = "post";
+            formEl.submit();
+        }
+    }
 
     document.getElementById('className').required = true;
     document.getElementById('roomName').required = true;

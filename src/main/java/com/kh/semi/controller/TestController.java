@@ -14,12 +14,6 @@ public class TestController {
     @GetMapping("finish.bo")
     public String finish() {return "student/finishPage";}
 
-    @GetMapping("studentVacation.li")
-    public String studentVacation() {return "student/studentVacationView";}
-
-
-    @GetMapping("studentPay.li")
-    public String studentPay() {return "student/studentPay";}
 
     @GetMapping("adminPay.li")
     public String adminPay() {return "student/studentPay";}

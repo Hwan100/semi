@@ -70,6 +70,23 @@ public class LeaveController {
         }
     }
 
+    @PostMapping("deleteLeave.bo")
+    public String deleteLeave(@RequestParam("selectVacation") List<Integer> leaveNos, HttpSession session, Model model) {
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            model.addAttribute("errorMsg", "로그인 후 이용해주세요.");
+            return "common/error";
+        }
+
+        int result = leaveService.deleteLeave(leaveNos);
+        if(result > 0){
+            session.setAttribute("alertMsg", "휴가 신청 삭제 성공");
+        } else {
+            session.setAttribute("alertMsg", "휴가 신청 삭제 실패");
+        }
+        return "redirect:/studentVacation.li";
+    }
+
 
 
 }

@@ -12,4 +12,6 @@ public interface LeaveService {
 
     int findClassNoByNames(String className, String roomName);
 
+    int deleteLeave(List<Integer> leaveNos);
+
 }

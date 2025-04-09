@@ -29,4 +29,9 @@ public class LeaveServiceImpl implements LeaveService {
     public int findClassNoByNames(String className, String roomName) {
         return leaveMapper.findClassNoByNames(className, roomName);
     }
+
+    @Override
+    public int deleteLeave(List<Integer> leaveNos) {
+        return leaveMapper.deleteLeave(leaveNos);
+    }
 }

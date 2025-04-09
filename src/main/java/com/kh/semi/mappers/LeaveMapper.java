@@ -14,4 +14,6 @@ public interface LeaveMapper {
     int insertLeave(Leave leave);
 
     int findClassNoByNames(String className, String roomName);
+
+    int deleteLeave(@Param("leaveNos") List<Integer> leaveNos);
 }

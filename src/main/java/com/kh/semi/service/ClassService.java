@@ -24,6 +24,9 @@ public interface ClassService {
     int updateSchedule(Schedule schedule);
     int deleteSchedule(int scheduleNo);
 
+//    강의 시간 조회
+    ClassTime selectClassTime(ClassTime classTime);
+
     // 강의 목록 조회
     List<Class> selectClassList();
 

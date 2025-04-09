@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.semi.mappers.AttendanceMapper">
+    <resultMap id="attendanceResult" type="Attendance">
+        <result column="ATTENDANCE_NO" property="attendanceNo" />
+        <result column="CLASS_DATE" property="classDate" />
+        <result column="CHECK_IN_TIME" property="checkInTime" />
+        <result column="CHECK_OUT_TIME" property="checkOutTime" />
+        <result column="STATUS" property="status" />
+        <result column="USER_NO" property="userNo" />
+    </resultMap>
+    <insert id="insertAttendance">
+        INSERT INTO TB_ATTENDANCE (
+            ATTENDANCE_NO, CLASS_DATE, CHECK_IN_TIME,
+            CHECK_OUT_TIME, STATUS, USER_NO
+        ) VALUES (
+            SEQ_ATTENDANCE_NO.NEXTVAL, #{classDate}, #{checkInTime},
+            #{checkOutTime}, #{status}, #{userNo}
+        )
+    </insert>
+    <select id="selectAttendance" resultMap="attendanceResult">
+        SELECT ATTENDANCE_NO, CLASS_DATE, CHECK_IN_TIME, CHECK_OUT_TIME, STATUS, USER_NO
+        FROM TB_ATTENDANCE
+        WHERE USER_NO = #{userNo}
+        AND CLASS_DATE = #{classDate}
+    </select>
+    <update id="checkOutAttendance">
+        UPDATE TB_ATTENDANCE
+        SET
+            CHECK_OUT_TIME = #{checkOutTime},
+            STATUS = #{status}
+        WHERE USER_NO = #{userNo}
+        AND CLASS_DATE = #{classDate}
+    </update>
+</mapper>

@@ -293,11 +293,11 @@ public class BoardController {
     }
 
     @GetMapping("delete.cl")
-    public String deleteMyClassBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
+    public String deleteMyClassBoard(@RequestParam(value = "bno", required = false) Integer bno, HttpSession session, Model model) {
         int result = boardService.deleteBoard(bno);
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 삭제 성공");
-            return "redirect:/notice.cl";
+            return "redirect:/myClass.bo";
         } else {
             model.addAttribute("errorMsg", "게시글 수정 실패");
             return "common/error";

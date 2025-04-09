@@ -116,3 +116,7 @@ body {
 .completed *{
     background: #E7E7E7;
 }
+
+.course-card.completed {
+    background-color: #E7E7E7 !important;
+}

@@ -183,7 +183,7 @@
                 <div class="submenu-item" onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
                     <div class="submenu-text">종료된 과정</div>
                 </div>
-                <%--관리자용--%>
+            <%--관리자용--%>
                 <div class="submenu-item" onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
                     <div class="submenu-text">강의 개설</div>
                 </div>

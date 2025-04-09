@@ -26,8 +26,7 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
-    @GetMapping("myClass.bo")
-    public String myClassBoardListController() {return "board/myClassBoardListView";}
+
 
     @GetMapping("detail.bo")
     public String detailForm() {return "board/myClassBoardDetailView";}
@@ -46,7 +45,7 @@ public class BoardController {
     }
 
     @GetMapping("enrollForm.no")
-    public String enrollForm() {return "board/boardEnrollForm";}
+    public String enrollNoticeForm() {return "noticeEnrollForm";}
 
     @PostMapping("insert.no")
     public String insertBoard(@ModelAttribute Board board, MultipartFile upfile, HttpSession session, Model model) {
@@ -127,7 +126,6 @@ public class BoardController {
         if(result > 0){
             Board b = boardService.selectNoticeBoard(bno);
             model.addAttribute("b", b);
-
             return "board/noticeDetailView";
         } else {
             model.addAttribute("errorMsg", "게시글 조회 실패");
@@ -139,7 +137,7 @@ public class BoardController {
     public String updateBoard(@RequestParam(value = "bno") int boardNo, Model model) {
 
         model.addAttribute("b", boardService.selectNoticeBoard(boardNo));
-        return "board/boardUpdateForm";
+        return "noticeUpdateForm";
     }
 
     @PostMapping("update.no")
@@ -170,8 +168,12 @@ public class BoardController {
     }
 
     @GetMapping("delete.no")
-    public String deleteBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
-        int result = boardService.deleteNoticeBoard(bno);
+    public String deleteBoard(@RequestParam(value = "bno", required = false) Integer bno, HttpSession session, Model model) {
+        if (bno == null) {
+            model.addAttribute("errorMsg", "잘못된 게시글 번호입니다.");
+            return "common/error";
+        }
+        int result = boardService.deleteBoard(bno);
         if(result > 0){
             session.setAttribute("alertMsg", "게시글 삭제 성공");
             return "redirect:/notice.bo";
@@ -190,6 +192,104 @@ public class BoardController {
         return "board/resumeDetailView";
     }
 
+    @GetMapping("myClass.bo")
+    public String myClassBoardListController(@RequestParam(defaultValue = "1") int cpage, Model model) {
+        int boardCount = boardService.selectBoardCount();
+
+        PageInfo pi = new PageInfo(boardCount, cpage, 3, 10);
+        List<Board> list = boardService.selectMyClassBoardList(pi);
+
+        model.addAttribute("list", list);
+        model.addAttribute("pi", pi);
+        return "board/myClassBoardListView";
+    }
+
+    @GetMapping("enrollForm.cl")
+    public String enrollMyClassBoardForm() {return "board/myClassBoardEnrollForm";}
+
+    @PostMapping("insert.cl")
+    public String insertMyClassBoard(@ModelAttribute Board board, MultipartFile upfile, HttpSession session, Model model) {
+        System.out.println(board);
+        System.out.println(upfile);
+
+        // 업로드 파일이 있을 경우 처리
+        if (!upfile.getOriginalFilename().equals("")) {
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+            board.setChangeName("/resources/uploadfile/" + changeName);
+            board.setOriginName(upfile.getOriginalFilename());
+        }
+
+        int result = boardService.insertMyClassBoard(board);
+
+        if (result > 0) {
+            session.setAttribute("alertMsg", "게시글 작성 성공");
+            return "redirect:/myClass.bo";
+        } else {
+            model.addAttribute("errorMsg", "게시글 작성 실패");
+            return "common/error";
+        }
+    }
+
+    @GetMapping("detail.cl")
+    public String selectMyClassBoardDetail(int bno, Model model) {
+        int result = boardService.increaseNoticeCount(bno);
+
+        if(result > 0){
+            Board b = boardService.selectMyClassBoard(bno);
+            model.addAttribute("b", b);
+
+            return "board/myClassBoardDetailView";
+        } else {
+            model.addAttribute("errorMsg", "게시글 조회 실패");
+            return "common/error";
+        }
+    }
+
+    @GetMapping("updateForm.cl")
+    public String updateMyClassBoard(@RequestParam(value = "bno") int boardNo, Model model) {
+
+        model.addAttribute("b", boardService.selectNoticeBoard(boardNo));
+        return "board/myClassBoardUpdateForm";
+    }
+
+    @PostMapping("update.cl")
+    public String updateMyClassBoard(@ModelAttribute Board b, MultipartFile reupfile, HttpSession session, Model model) {
+        //새로운 첨부파일 있다면 저장 후 b객체에 파일명 수정
+        //b객체 전달받은 값으로 수정
+
+        //새로운 첨부 파일이 있는가?
+        if(!reupfile.getOriginalFilename().equals("")){
+            //기존첨파일 삭제
+            if(b.getChangeName() != null && !b.getChangeName().equals("")){
+                new File(session.getServletContext().getRealPath(b.getChangeName())).delete();
+            }
+
+            String changeName = Template.saveFile(reupfile, session, "/resources/uploadfile/");
+            b.setChangeName("/resources/uploadfile/" + changeName);
+            b.setOriginName(reupfile.getOriginalFilename());
+        }
+
+        int result = boardService.updateMyClassBoard(b);
+        if(result > 0){
+            session.setAttribute("alertMsg", "게시글 수정 성공");
+            return "redirect:/detail.cl?bno=" + b.getBoardNo();
+        } else {
+            model.addAttribute("errorMsg", "게시글 수정 실패");
+            return "common/error";
+        }
+    }
+
+    @GetMapping("delete.cl")
+    public String deleteMyClassBoard(@RequestParam(value = "bno") int bno, HttpSession session, Model model) {
+        int result = boardService.deleteBoard(bno);
+        if(result > 0){
+            session.setAttribute("alertMsg", "게시글 삭제 성공");
+            return "redirect:/notice.cl";
+        } else {
+            model.addAttribute("errorMsg", "게시글 수정 실패");
+            return "common/error";
+        }
+    }
     @GetMapping("resumeModify.bo")
     public String resumeModify(int bno, Model model) {
         ResumeBoard r = boardService.selectResumeBoard(bno);

@@ -31,41 +31,63 @@
     font-weight: 400;
     height: 0px;
 }
-
-table.board-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-table.board-table thead {
+.board-header {
+    display: flex;
     background: rgba(11, 155, 227, 0.4);
-    color: #003252;
-    font-weight: 600;
-    text-align: center;
-}
-
-table.board-table th,
-table.board-table td {
     border: 1px solid #E7E7E7;
-    padding: 12px;
-    font-size: 14px;
-}
-
-table.board-table td {
+    font-weight: 600;
     color: #003252;
     text-align: center;
 }
 
-.title-cell {
+.board-header div {
+    padding: 12px 0;
+}
+.board-row {
+    display: flex;
+    border-bottom: 1px solid #E7E7E7;
+    font-size: 14px;
+    color: #003252;
+}
+
+.board-row div {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.board-title-cell {
+    flex: 1;
+    padding: 10px;
     text-align: left;
 }
 
-.title-cell a {
+.board-title-cell a {
     color: #003252;
     text-decoration: none;
 }
 
+.board-pagination a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    text-decoration: none;
+}
+
+.board-pagination a.active {
+    background: #0B9BE3;
+    color: white;
+}
+
+
+.board-pagination a.active {
+    background: #0B9BE3;
+    color: white;
+}
 .board-pagination {
     margin-top: 30px;
     display: flex;
@@ -88,4 +110,71 @@ table.board-table td {
 .board-pagination a.active {
     background: #0B9BE3;
     color: white;
+}
+
+.title-area {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.button-area {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+#pagingArea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+ul.pagination {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li.page-item a.page-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000000;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul.pagination li.page-item.active a.page-link {
+    background-color: #33363F;
+    color: #ffffff;
+: 1px solid #33363F;
+}
+
+ul.pagination li.page-item.disabled a.page-link {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+ul.pagination li.page-item a.page-link::before {
+    font-weight: bold;
+}
+
+ul.pagination li.page-item a.page-link:hover {
+    background-color: #f0f0f0;
+}
+
+.page-item, .disabled, .page-link{
+    border: 0;
 }

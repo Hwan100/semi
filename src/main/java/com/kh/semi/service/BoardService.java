@@ -2,6 +2,7 @@ package com.kh.semi.service;
 
 import com.kh.semi.domain.vo.Board;
 import com.kh.semi.domain.vo.PageInfo;
+import com.kh.semi.domain.vo.Reply;
 import com.kh.semi.domain.vo.ResumeBoard;
 
 import java.util.ArrayList;
@@ -28,11 +29,25 @@ public interface BoardService {
 
     int insertResumeBoard(ResumeBoard board);
 
-    int deleteNoticeBoard(int bno);
+    int deleteBoard(int bno);
 
     List<ResumeBoard> selectCurrentResumeBoardList(int userNo);
 
     ResumeBoard selectResumeBoard(int bno);
+
+    List<Board> selectMyClassBoardList(PageInfo pi);
+
+    int insertMyClassBoard(Board board);
+
+    Board selectMyClassBoard(int bno);
+
+    int  updateMyClassBoard(Board board);
+
+    int insertReply(Reply reply);
+
+    ArrayList<Reply> selectMyClassReplyList(int bno);
+
+    ArrayList<Board> getBoardTopN(String order, int limit);
 
     int updateResumeBoard(ResumeBoard board);
 

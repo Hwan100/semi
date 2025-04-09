@@ -1,36 +1,30 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>과정 목록</title>
     <link rel="stylesheet" type="text/css" href="/css/courseList.css">
-    <style>
-        .course-card{
-
-        }
-    </style>
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
 
-        <div class="container completed">
-            <% for (int i = 0; i < 6; i++) { %>
-            <div class="course-card">
-                <div class="left-info">
-                    <div class="title-row">
-                        <div class="title">AWS 클라우드 기반 Devops 개발자 양성 과정 ( S 반 )</div>
-                        <div class="progress-percent">100%</div>
-                    </div>
-                    <progress class="custom-progress" max="100" value="100">75%</progress>
-                    <div class="date">2024.12.17 ~ 2025.07.18  |  09:00 ~ 18:00</div>
+<div class="container">
+    <c:forEach var="c" items="${classList}">
+        <div class="course-card completed">
+            <div class="left-info">
+                <div class="title-row">
+                    <div class="title">${c.className}</div>
+                    <div class="progress-percent">진행률: ${c.progress}%</div>
                 </div>
-                <div class="right-info" style="display: none">
-                    <button class="manage-btn">반 관리</button>
-                </div>
-
+                <progress class="custom-progress" value="${c.progress}" max="100"></progress>
+                <div class="date">${c.startDate} ~ ${c.endDate}</div>
             </div>
-            <% } %>
+            <div class="right-info" style="display: none">
+                <button class="manage-btn">반 관리</button>
+            </div>
         </div>
+    </c:forEach>
+</div>
 
 </body>
-
 </html>

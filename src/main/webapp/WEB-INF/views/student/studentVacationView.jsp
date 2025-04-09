@@ -14,6 +14,16 @@
             gap: 30px;
             justify-content: start;
         }
+        .file-table td {
+            padding: 10px;
+            height: 40px;
+            font-size: 14px;
+            color: #000;
+            border-top: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+
     </style>
 </head>
 <body>
@@ -110,12 +120,15 @@
             </div>
         </div>
 
-        <!-- 파일 첨부 테이블 -->
+        <!-- ✅ 파일 첨부 테이블 -->
         <div class="file-box">
+            <input type="file" name="upfile" id="upfile" style="display: none;" />
+
             <div class="file-header">
-                <button class="btn">파일찾기</button>
+                <button type="button" class="btn" onclick="document.getElementById('upfile').click();">파일찾기</button>
                 <button class="btn-blank-small">삭제</button>
             </div>
+
             <table class="file-table" id="fileTable">
                 <thead>
                 <tr>
@@ -126,6 +139,8 @@
                 </tbody>
             </table>
         </div>
+
+
     </section>
 </div>
 
@@ -138,15 +153,16 @@
 
     newBtn.addEventListener("click", function () {
         if (!formVisible) {
-            // 폼 열기
             formSection.style.display = "flex";
             newBtn.textContent = "신청";
             formVisible = true;
         } else {
-            // 폼 제출
-            leaveForm.submit();
+            if (validateLeaveForm()) {
+                leaveForm.submit();
+            }
         }
     });
+
 
     const deleteBtn = document.getElementById("delete-btn")
 
@@ -165,8 +181,12 @@
     function postFormSubmit(type) {
         const formEl = document.querySelector("#postForm");
         if (type === "delete") {
-
-            formEl.action = "deleteLeave.bo"; // 실제 삭제 요청 주소
+            const checked = document.querySelectorAll("input[name='selectVacation']:checked");
+            if (checked.length === 0) {
+                alert("삭제할 휴가를 선택하세요.");
+                return;
+            }
+            formEl.action = "deleteLeave.bo";
             formEl.method = "post";
             formEl.submit();
         }
@@ -174,12 +194,52 @@
 
 
 
+    function validateLeaveForm() {
+        const start = document.getElementById("startDate").value;
+        const end = document.getElementById("endDate").value;
+        const reason = document.getElementById("reason").value;
+        const className = document.getElementById("className").value;
+        const roomName = document.getElementById("roomName").value;
+
+        if (!start || !end || !reason || !className || !roomName) {
+            alert("필수 값을 모두 입력하세요.");
+            return false;
+        }
+        return true;
+    }
+
+
+    function validateDelete() {
+        const checked = document.querySelectorAll('input[name="selectVacation"]:checked');
+        if (checked.length === 0) {
+            alert("삭제할 휴가를 선택하세요.");
+            return false;
+        }
+        return true;
+    }
+
 
     document.getElementById('className').required = true;
     document.getElementById('roomName').required = true;
     document.getElementById('reason').required = true;
     document.getElementById('startDate').required = true;
     document.getElementById('endDate').required = true;
+
+
+    document.getElementById('upfile').addEventListener('change', function(event) {
+        const fileName = event.target.files[0]?.name;
+        const fileTableBody = document.getElementById('fileTableBody');
+
+        if (fileName) {
+            fileTableBody.innerHTML = `
+            <tr><td>${fileName}</td></tr>
+        `;
+        } else {
+            fileTableBody.innerHTML = '';
+        }
+    });
+
+
 </script>
 </body>
 </html>

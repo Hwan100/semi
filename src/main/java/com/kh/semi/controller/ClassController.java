@@ -134,6 +134,31 @@ public class ClassController {
         return "teacher/completedCourseList";
     }
 
+    @GetMapping("adminCourse.li")
+    public String adminCourseList(Model model) {
+        List<Class> classList = classService.selectClassListWithJoin();
+
+
+        // 진행률 계산 추가
+        LocalDate today = LocalDate.now();
+        for (Class c : classList) {
+            int progress = 0;
+            if (c.getStartDate() != null && c.getEndDate() != null) {
+                LocalDate start = c.getStartDate().toLocalDate();
+                LocalDate end = c.getEndDate().toLocalDate();
+                if (!today.isBefore(start)) {
+                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
+                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
+                    progress = (int)((passedDays * 100) / totalDays);
+                }
+            }
+            c.setProgress(progress);
+        }
+
+        model.addAttribute("classList", classList);
+        return "teacher/AdminCourseList";
+    }
+
 
 
 

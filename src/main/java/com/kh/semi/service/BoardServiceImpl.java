@@ -81,5 +81,16 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.selectResumeBoard(bno);
     }
 
+    @Override
+    public int updateResumeBoard(ResumeBoard b) {
+        System.out.println(b.getResumeNo());
+        return boardMapper.updateResumeBoard(b);
+    }
+
+    @Override
+    public int deleteResumeBoard(int b) {
+        return boardMapper.deleteResumeBoard(b);
+    }
+
 
 }

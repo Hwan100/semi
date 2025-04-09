@@ -34,9 +34,7 @@
       <div class="board-content">
         무슨내용을 공지했을까요.
       </div>
-
     </div>
-
   </div>
 
 </body>

@@ -34,4 +34,8 @@ public interface BoardService {
 
     ResumeBoard selectResumeBoard(int bno);
 
+    int updateResumeBoard(ResumeBoard board);
+
+    int deleteResumeBoard(int b);
+
 }

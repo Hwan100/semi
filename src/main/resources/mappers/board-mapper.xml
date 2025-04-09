@@ -93,11 +93,13 @@
         SELECT TITLE,
             UPDATE_DATE,
             TYPE,
-            CREATED_DATE
+            CREATED_DATE,
+            RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
         ORDER BY CREATED_DATE DESC
     </select>
+
     <update id="increaseNoticeCount">
         UPDATE TB_BOARD
         SET COUNT = COUNT + 1
@@ -158,16 +160,37 @@
     </update>
 
     <select id="selectCurrentResumeBoardList" resultMap="resumeBoardResult">
-        SELECT TITLE, UPDATE_DATE
+        SELECT TITLE, UPDATE_DATE , RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE USER_NO = #{userNo}
         ORDER BY UPDATE_DATE DESC
         FETCH FIRST 5 ROWS ONLY
     </select>
 
-    <select id="selectResumeBoard" resultMap="resumeBoardResult">
-        SELECT *
+    <select id="selectResumeBoard" resultMap="resumeBoardResult" parameterType="int">
+        SELECT TYPE,TITLE,UPDATE_DATE,CONTENT,CHANGE_NAME,ORIGIN_NAME,RESUME_NO
         FROM TB_RESUME_BOARD
         WHERE RESUME_NO = #{bno}
     </select>
+
+    <update id="updateResumeBoard">
+        UPDATE TB_RESUME_BOARD
+        SET
+        TITLE = #{title},
+        <if test="originName != null">
+            ORIGIN_NAME = #{originName},
+        </if>
+        <if test="changeName != null">
+            CHANGE_NAME = #{changeName},
+        </if>
+        TYPE = #{type},
+        CONTENT = #{content},
+        UPDATE_DATE = SYSDATE
+        WHERE RESUME_NO = #{resumeNo}
+    </update>
+
+    <delete id="deleteResumeBoard" parameterType="int">
+        DELETE FROM TB_RESUME_BOARD
+        WHERE RESUME_NO = #{resumeNo}
+    </delete>
 </mapper>

@@ -8,6 +8,7 @@ import com.kh.semi.service.BoardService;
 import com.kh.semi.utils.Template;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.util.List;
@@ -55,7 +57,7 @@ public class BoardController {
             String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
 
             board.setChangeName("/resources/uploadfile/" + changeName);
-            board.setOriginName(upfile.getOriginalFilename());
+            board.setOriginName(changeName);
         }
 
         int result = boardService.insertNoticeBoard(board);
@@ -110,10 +112,10 @@ public class BoardController {
         int result = boardService.insertResumeBoard(resumeBoard);
 
         if (result > 0) {
-            session.setAttribute("alertMsg", "게시글 작성 완료");
+            session.setAttribute("alertMsg", "게시글 저장 완료");
             return "redirect:/resume.bo";
         } else {
-            session.setAttribute("errorMsg", "게시글 작성 실패");
+            session.setAttribute("errorMsg", "게시글 저장 실패");
             return "redirect:/resumeForm.bo";
         }
     }
@@ -186,6 +188,64 @@ public class BoardController {
         model.addAttribute("r", r);
 
         return "board/resumeDetailView";
+    }
+
+    @GetMapping("resumeModify.bo")
+    public String resumeModify(int bno, Model model) {
+        ResumeBoard r = boardService.selectResumeBoard(bno);
+
+        model.addAttribute("r", r);
+
+        return "board/resumeModifyView";
+    }
+
+    @PostMapping("updateResume.bo")
+    public String updateResume(@ModelAttribute ResumeBoard resumeBoard, MultipartFile upfile, HttpSession session , Model model, RedirectAttributes redirectAttributes) {
+
+
+        if(!upfile.getOriginalFilename().equals("")){
+            // 기존첨파일 삭제
+            if(resumeBoard.getChangeName() != null && !resumeBoard.getChangeName().equals("")){
+                new File(session.getServletContext().getRealPath(resumeBoard.getChangeName())).delete();
+            } else {
+                // 새 파일 없으면 기존 값 유지하도록 세팅
+                ResumeBoard origin = boardService.selectResumeBoard(resumeBoard.getResumeNo());
+                resumeBoard.setChangeName(origin.getChangeName());
+                resumeBoard.setOriginName(origin.getOriginName());
+            }
+
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+            resumeBoard.setChangeName("/resources/uploadfile/" + changeName);
+            resumeBoard.setOriginName(upfile.getOriginalFilename());
+        }
+
+
+
+
+        int result = boardService.updateResumeBoard(resumeBoard);
+
+        if (result > 0) {
+            redirectAttributes.addFlashAttribute("msg", "수정이 완료되었습니다!");
+            return "redirect:/resume.bo";
+        } else {
+            redirectAttributes.addFlashAttribute("errorMsg", "게시글 수정 실패");
+            return "redirect:/resumeForm.bo";
+        }
+    }
+
+    @GetMapping("resumeDelete.bo")
+    public String resumeDelete(@RequestParam("resumeNo") int b,
+                               RedirectAttributes redirectAttributes) {
+
+        int result = boardService.deleteResumeBoard(b);
+
+        if (result > 0) {
+            redirectAttributes.addFlashAttribute("msg", "게시글 삭제 성공!");
+        } else {
+            redirectAttributes.addFlashAttribute("msg", "게시글 삭제 실패...");
+        }
+
+        return "redirect:/resume.bo";
     }
 
 }

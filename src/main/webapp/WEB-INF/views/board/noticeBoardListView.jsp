@@ -212,7 +212,6 @@
                     <li class="page-item"><a class="page-link" href="notice.bo?cpage=${pi.currentPage + 1}"><img src="/icons/rightPageMove.png"></a></li>
                 </c:otherwise>
             </c:choose>
-
         </ul>
     </div>
 

@@ -85,7 +85,7 @@
             margin-left: 50px;
             margin-right: 50px;
             margin-top: 35px;
-            font-size: 16px;
+            font-size: 20px;
             box-sizing: border-box;
         }
 
@@ -201,16 +201,16 @@
 
             <!-- 버튼 -->
             <div class="button-group">
-                <button class="btn-blank-small">이전화면</button>
-                <button class="btn-blank-small">삭제</button>
+                <button class="btn-blank-small" onclick="history.back()">이전화면</button>
+                <button class="btn-blank-small" onclick="location.href='../resumeDelete.bo?resumeNo=${r.resumeNo}'">삭제</button>
             </div>
 
             <!-- 하단 info-group -->
             <div class="info-group">
                 <div>
                     <c:choose>
-                        <c:when test="${b.type == 1}">자소서</c:when>
-                        <c:when test="${b.type == 2}">이력서</c:when>
+                        <c:when test="${r.type == 1}">자소서</c:when>
+                        <c:when test="${r.type == 2}">이력서</c:when>
                         <c:otherwise>기타</c:otherwise>
                     </c:choose>
                 </div>
@@ -224,19 +224,26 @@
                 <div class="file">
                     <c:choose>
                         <c:when test="${r.changeName == ''}">첨부 파일 0개</c:when>
-                        <c:otherwise>${r.originName}</c:otherwise>
+                        <c:otherwise>
+                            <a href="/resources/uploadfile/${r.originName}" download="${r.originName}">
+                                첨부 파일 1개
+                            </a>
+                        </c:otherwise>
                     </c:choose>
-
                 </div>
             </div>
             <div class="file-line" style="margin-top: 0px; background-color: white">
                 <span><img src="/icons/download.png"></span>
-                <div class="file">파일명</div>
+                <div class="file">
+                    <a href="/resources/uploadfile/${r.originName}" download="${r.originName}">
+                        ${r.originName}
+                    </a>
+                </div>
             </div>
             <div class="btn-line">
                 <div class="btn2">
-                    <button class="btn-blank-small">수정</button>
-                    <button class="btn-blank-small">취소</button>
+                    <button class="btn-blank-small" onclick="location.href='../resumeModify.bo?bno=${r.resumeNo}'">수정</button>
+                    <button class="btn-blank-small" >취소</button>
                 </div>
             </div>
         </div>

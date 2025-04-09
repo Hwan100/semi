@@ -35,4 +35,8 @@ public interface BoardMapper {
     List<ResumeBoard> selectCurrentResumeBoardList(int userNo);
 
     ResumeBoard selectResumeBoard(int bno);
+
+    int updateResumeBoard(ResumeBoard b);
+
+    int deleteResumeBoard(int b);
 }

@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/css/studentMain.css">
-    <link rel="stylesheet" href="/css/varibles.css">
+    <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/component.css">
 </head>
 <body>
@@ -277,15 +277,34 @@
             </div>
 
             <div class="checkin-times">
-                <div><span class="label">입실시간</span><span class="time">09 : 05 : 30</span></div>
-                <div><span class="label">퇴실시간</span><span class="time">17 : 57 : 50</span></div>
+                <div><span class="label">입실시간</span><span class="time">${attendance.checkInTime != null ? attendance.checkInTime : "-- : -- : --"}</span></div>
+                <div><span class="label">퇴실시간</span><span class="time">${attendance.checkOutTime != null ? attendance.checkOutTime : "-- : -- : --"}</span></div>
             </div>
 
             <div class="checkin-buttons">
-                <button class="btn enter active">입실</button>
+                <button class="btn enter active" onclick="checkIn()">입실</button>
                 <button class="btn out">외출 및 조퇴</button>
             </div>
-            <button class="btn full leave">퇴실</button>
+            <button class="btn full leave" onclick="checkOut()">퇴실</button>
+            <script>
+                function checkIn () {
+                    if(!${loginUser.classNo}) {
+                        alert("수강중인 강의가 없습니다.");
+                        return;
+                    }
+                    window.location.href='checkIn.st';
+                }
+
+                function checkOut() {
+
+                    if(!${attendance.attendanceNo}) {
+                        alert("입실해주세요.");
+                        return;
+                    }
+                    window.location.href='checkOut.st';
+                }
+
+            </script>
         </section>
         <%-- 자소서 및 이력서 --%>
         <section class="resume-section">

@@ -1,21 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="ko">
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>개인정보 수정</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/MyPage.css">
+    <title>TeacherMyPage</title>
 </head>
 <body>
-
 <jsp:include page="../common/header.jsp" />
 
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
 
-    <form action="StudentUpdate.me" method="post">
+    <form action="teacherUpdate.me" method="post">
 
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">
@@ -26,16 +22,16 @@
             <div class="top-grid">
                 <div class="form-group">
                     <label for="userRole">회원 구분</label>
-                    <input type="text" class="readOnly" id="userRoleDisplay" name="userRoleDisplay" value="학생" readonly>
-                    <input type="hidden" name="userRole" value="1">
+                    <input type="text" id="userRole" name="userRoleDisplay" class="userRoleDisplay" value="강사" readonly>
+                    <input type="hidden" name="userRole" value="2">
                 </div>
                 <div class="form-group">
                     <label for="userName">이름</label>
-                    <input type="text" class="readOnly" id="userName" name="userName" value="${loginUser.userName}" readonly>
+                    <input type="text" id="userName" name="userName" value="${loginUser.userName}">
                 </div>
                 <div class="form-group">
                     <label for="userNo">회원 번호</label>
-                    <input type="text" id="userNo" class="readOnly" name="userNo" value="${loginUser.userNo}" readonly>
+                    <input type="text" id="userNo" name="userNo" value="${loginUser.userNo}" readonly>
                     <input type="hidden" name="userId" value="${loginUser.userId}">
                 </div>
                 <div class="form-group">
@@ -65,13 +61,12 @@
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${className}" readonly>
+                <input type="text" id="className" name="userClassName" value="${loginUser.className}" readonly>
             </div>
         </div>
 
         <button type="submit" class="submit-btn">수정 완료</button>
     </form>
 </div>
-
 </body>
 </html>

@@ -40,4 +40,7 @@ public class UserServiceImpl implements UserService {
     public int selectUserNoById(String userId) {
         return userMapper.selectUserNoById(userId);
     }
+
+    @Override
+    public ArrayList<User> allUserList() { return userMapper.allUserList(); }
 }

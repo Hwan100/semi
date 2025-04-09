@@ -66,4 +66,9 @@ public class ClassServiceImpl implements ClassService {
     public int deleteSchedule(int scheduleNo) {
         return classMapper.deleteSchedule(scheduleNo);
     }
+
+    @Override
+    public ClassTime selectClassTime(ClassTime classTime) {
+        return classMapper.selectClassTime(classTime);
+    }
 }

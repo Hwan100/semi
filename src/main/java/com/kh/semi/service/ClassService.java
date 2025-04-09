@@ -20,4 +20,7 @@ public interface ClassService {
     int insertSchedule(Schedule schedule);
     int updateSchedule(Schedule schedule);
     int deleteSchedule(int scheduleNo);
+
+//    강의 시간 조회
+    ClassTime selectClassTime(ClassTime classTime);
 }

@@ -26,6 +26,7 @@
         <result column="END_DATE" property="endDate" />
         <result column="DESCRIPTION" property="description" />
         <result column="CLASS_NO" property="classNo" />
+        <result column="TYPE" property="type" />
     </resultMap>
 
 <!--  강의 개설  -->
@@ -66,14 +67,30 @@
             START_DATE,
             END_DATE,
             DESCRIPTION,
-            CLASS_NO
+            CLASS_NO,
+            TYPE
         ) VALUES (
             SEQ_SCHEDULE_NO.NEXTVAL,
             #{title},
             #{startDate},
             #{endDate},
             #{description},
-            #{classNo}
+            #{classNo},
+            #{type}
         )
     </insert>
+
+<!-- 오늘 강의 있는지 정보 받아오기 -->
+    <select id="selectClassTime" parameterType="ClassTime" resultMap="classTimeResult">
+        SELECT
+            CLASS_DATE,
+            CLASS_START_TIME,
+            CLASS_END_TIME,
+            CLASS_NO
+        FROM TB_CLASS_TIME
+        WHERE CLASS_NO = #{classNo}
+        AND CLASS_DATE = #{classDate}
+    </select>
+<!-- 오늘의 강의 시간 -->
+
 </mapper>

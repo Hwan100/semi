@@ -20,4 +20,7 @@ public class Class {
     private int userNo;
     private String roomName;
     private int progress;
+    private String userName;    // 강사 이름
+    private String classTime;   // 수업시간 (예: 월 09:00~18:00 / 수 09:00~18:00)
+
 }

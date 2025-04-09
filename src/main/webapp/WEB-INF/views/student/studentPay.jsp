@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <html>
 <head>
     <meta charset="UTF-8"/>
     <title>급여조회</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/studentPay.css"/>
 </head>
-<body>
 <jsp:include page="../common/header.jsp"/>
+<body onload="studentPay()">
+
 
     <div class="table-wrapper">
         <h2 class="title">급여 내역</h2>
-        <table class="pay-table">
+        <table class="pay-table" id="pay-table">
             <thead>
             <tr>
                 <th rowspan="2">No</th>
@@ -29,30 +31,23 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>2025.01.17</td>
-                <td>우리</td>
-                <td>1002-000-000000</td>
-                <td>20</td>
-                <td>17</td>
-                <td>85%</td>
-                <td>280,000원</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2025.01.17</td>
-                <td>우리</td>
-                <td>1002-000-000000</td>
-                <td>20</td>
-                <td>17</td>
-                <td>85%</td>
-                <td>280,000원</td>
-                <td>-</td>
-            </tr>
+
+            <c:forEach var="pay" items="${payList}" varStatus="status">
+                <tr>
+                    <td>${status.index + 1}</td>
+                    <td>${pay.payDate}</td>
+                    <td>${pay.bankName}</td>
+                    <td>${pay.accountNumber}</td>
+                    <td>${pay.requiredDays}</td>
+                    <td>${pay.actualDays}</td>
+                    <td><fmt:formatNumber value="${pay.actualDays / pay.requiredDays * 100}" type="number" maxFractionDigits="1"/>%</td>
+                    <td>${pay.amount}</td>
+                    <td>${pay.note}</td>
+                </tr>
+            </c:forEach>
+
             </tbody>
         </table>
     </div>
-
+</body>
 </html>

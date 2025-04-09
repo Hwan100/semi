@@ -17,8 +17,7 @@ public class TestController {
     @GetMapping("studentVacation.li")
     public String studentVacation() {return "student/studentVacationView";}
 
-    @GetMapping("studentPay.li")
-    public String studentPay() {return "student/studentPay";}
+
 
     @GetMapping("adminPay.li")
     public String adminPay() {return "student/studentPay";}

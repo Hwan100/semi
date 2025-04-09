@@ -170,42 +170,48 @@
             </div>
 
             <%--강사용--%>
-            <div class="menu-item" onclick="toggleSubmenu('myclass-submenu')">
-                <img src="/icons/calendar.png" alt="">
-                <div class="menu-title">강의 관리</div>
-                <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
-            </div>
 
-            <div id="myclass-submenu" class="submenu-container">
-                <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">
-                    <div class="submenu-text">진행중인 과정</div>
+            <c:if test="${loginUser.userRole > 1}">
+                <div class="menu-item" onclick="toggleSubmenu('myclass-submenu')">
+                    <img src="/icons/calendar.png" alt="">
+                    <div class="menu-title">강의 관리</div>
+                    <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
                 </div>
-                <div class="submenu-item" onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
-                    <div class="submenu-text">종료된 과정</div>
+
+                <div id="myclass-submenu" class="submenu-container">
+                    <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">
+                        <div class="submenu-text">진행중인 과정</div>
+                    </div>
+                    <div class="submenu-item" onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
+                        <div class="submenu-text">종료된 과정</div>
+                    </div>
+                        <%--관리자용--%>
+                    <c:if test="${loginUser.userRole > 2}">
+                        <div class="submenu-item" onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
+                            <div class="submenu-text">강의 개설</div>
+                        </div>
+                        <div class="submenu-item" onclick="location.href='adminCourse.li?title1=강의 관리&title2=강의 조회'">
+                            <div class="submenu-text">강의 조회</div>
+                        </div>
+                    </c:if>
                 </div>
-            <%--관리자용--%>
-                <div class="submenu-item" onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
-                    <div class="submenu-text">강의 개설</div>
+            </c:if>
+
+            <c:if test="${loginUser.userRole > 2}">
+                <div class="menu-item" id='home' onclick="toggleSubmenu('money-submenu')">
+                    <img src="/icons/fluent_money-calculator-24-regular.png" alt="대시보드 아이콘">
+                    <div class="menu-title"><a href="adminPay.li?title2=급여관리">급여관리</a></div>
                 </div>
-                <div class="submenu-item" onclick="location.href='adminCourse.li?title1=강의 관리&title2=강의 조회'">
-                    <div class="submenu-text">강의 조회</div>
+
+                <div id="money-submenu" class="submenu-container"></div>
+
+                <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
+                    <img src="/icons/setting_line.png" alt="대시보드 아이콘">
+                    <div class="menu-title"><a href="adminSiteSetting.fo?title2=환경설정">환경설정</a></div>
                 </div>
-            </div>
 
-            <div class="menu-item" id='home' onclick="toggleSubmenu('money-submenu')">
-                <img src="/icons/fluent_money-calculator-24-regular.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="adminPay.li?title2=급여관리">급여관리</a></div>
-            </div>
-
-            <div id="money-submenu" class="submenu-container"></div>
-
-            <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
-                <img src="/icons/setting_line.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="adminSiteSetting.fo?title2=환경설정">환경설정</a></div>
-            </div>
-
-            <div id="setting-submenu" class="submenu-container"></div>
-
+                <div id="setting-submenu" class="submenu-container"></div>
+            </c:if>
         </div>
     </div>
 </div>
@@ -214,7 +220,7 @@
     function toggleSubmenu(id) {
         document.querySelectorAll('.submenu-container').forEach(menu => {
             if (menu.id !== id) {
-                menu.classList.remove('open');
+                // menu.classList.remove('open');
             }
         });
 
@@ -229,7 +235,7 @@
         const title1 = urlParams.get('title1');
         const title2 = urlParams.get('title2');
 
-        console.log(title1 || title2);
+        // console.log(title1 || title2);
         if (title2) {
             document.getElementsByClassName('breadcrumb-text')[0].innerHTML = title1;
             document.getElementsByClassName('page-title')[0].innerHTML = title2;

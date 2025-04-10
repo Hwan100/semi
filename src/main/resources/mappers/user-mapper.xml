@@ -36,7 +36,8 @@
                 USER_BIRTH,
                 USER_JOIN_DATE,
                 USER_PROFILE_IMG,
-                DEPARTMENT_NO
+                DEPARTMENT_NO,
+                USER_STATUS
         FROM TB_USER U
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
        WHERE USER_ID = #{userId}
@@ -52,14 +53,28 @@
             USER_ADDRESS_DETAIL = #{userAddressDetail},
             USER_BIRTH = #{userBirth}
         WHERE USER_ID = #{userId}
-          AND USER_STATUS = 'Y'
     </update>
 
     <select id="selectUserByNo" parameterType="User" resultMap="userResult">
-        SELECT *
-        FROM TB_USER
-        WHERE USER_NO = #{userNo}
-        AND USER_STATUS = 'Y'
+        SELECT  U.USER_NO,
+                C.CLASS_NO,
+                C.CLASS_NAME,
+                USER_ID,
+                USER_PWD,
+                USER_NAME,
+                USER_ROLE,
+                USER_PHONE,
+                USER_EMAIL,
+                USER_ADDRESS,
+                USER_ADDRESS_DETAIL,
+                USER_BIRTH,
+                USER_JOIN_DATE,
+                USER_PROFILE_IMG,
+                DEPARTMENT_NO,
+                USER_STATUS
+        FROM TB_USER U
+        LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
+        WHERE U.USER_NO = #{userNo}
     </select>
 
     <select id="getClassNameByClassNo" parameterType="Class">
@@ -108,15 +123,24 @@
     <select id="allUserList" resultMap="userResult">
         SELECT
             U.USER_NO,
+            C.CLASS_NO,
             C.CLASS_NAME,
+            USER_ID,
+            USER_PWD,
             USER_NAME,
             USER_ROLE,
             USER_PHONE,
             USER_EMAIL,
+            USER_ADDRESS,
+            USER_ADDRESS_DETAIL,
+            USER_BIRTH,
+            USER_JOIN_DATE,
+            USER_PROFILE_IMG,
+            DEPARTMENT_NO,
             USER_STATUS
         FROM TB_USER U
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
-        ORDER BY U.USER_NO
+        ORDER BY DECODE(USER_STATUS, 'C', 1), U.USER_NO
     </select>
 
 </mapper>

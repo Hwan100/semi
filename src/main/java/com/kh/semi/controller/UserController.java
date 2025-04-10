@@ -10,8 +10,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.Console;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -76,7 +78,7 @@ public class UserController {
             mv.addObject("className", className);
 
             switch (loginUser.getUserRole()) {
-                case 1 -> mv.setViewName("myPage/studentMyPageView");
+                case 1 -> mv.setViewName("myPage/studentMyPage");
                 case 2 -> mv.setViewName("myPage/teacherMyPage");
                 case 3 -> mv.setViewName("myPage/adminMyPage");
                 default -> mv.setViewName("common/error"); // 예외 처리
@@ -110,6 +112,7 @@ public class UserController {
 
     @PostMapping("teacherUpdate.me")
     public ModelAndView updateTeacher(User u, ModelAndView mv, HttpSession session) {
+
         User loginTeacher = (User) session.getAttribute("loginUser");
         if (loginTeacher == null) {
             mv.setViewName("redirect:/");
@@ -133,6 +136,7 @@ public class UserController {
 
     @PostMapping("adminUpdate.me")
     public ModelAndView aminTeacher(User u, ModelAndView mv, HttpSession session) {
+        System.out.println(u);
         User loginAdmin = (User) session.getAttribute("loginUser");
         if (loginAdmin == null) {
             mv.setViewName("redirect:/");
@@ -189,9 +193,32 @@ public class UserController {
         mv.setViewName("admin/adminCheckUser");
         mv.addObject("userList", list);
 
-        System.out.println(list);
         return mv;
     }
 
+    @GetMapping("/myPage.up")
+    public ModelAndView handleRedirect(@RequestParam("userNo") int userNo, ModelAndView mv) {
+
+        User user = userService.selectUserByNo(userNo);
+
+        mv.addObject("user", user);
+        mv.setViewName("myPage/adminMyPageUpdate");
+        return mv;
+    }
+    @PostMapping("update.me")
+    public ModelAndView update(User u, ModelAndView mv) {
+        System.out.println(u);
+        int result = userService.updateUser(u);
+        System.out.println(result);
+        if (result > 0) {
+//            User updatedUser = userService.selectUserByNo(u.getUserNo());
+//            mv.addObject("user", updatedUser);
+            mv.setViewName("redirect:/adminUser.li");
+        } else {
+            mv.addObject("errorMsg", "회원 정보 수정에 실패했습니다.");
+            mv.setViewName("common/error");
+        }
+        return mv;
+    }
 }
 

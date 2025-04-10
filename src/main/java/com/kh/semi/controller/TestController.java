@@ -1,7 +1,11 @@
 package com.kh.semi.controller;
 
+import com.kh.semi.domain.vo.User;
+import com.kh.semi.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TestController {
@@ -29,4 +33,6 @@ public class TestController {
 
     @GetMapping("createCourse.fo")
     public String createClass() {return "admin/adminCreateClass";}
+
+
 }

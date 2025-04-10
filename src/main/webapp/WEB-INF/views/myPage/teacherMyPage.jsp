@@ -26,11 +26,7 @@
                     <div class="form-group">
                         <label for="userType">구분</label>
                         <input type="text" id="userType" name="userType" value="강사" readonly>
-<%--                        <select id="userType" name="userType">--%>
-<%--                            <option value="1" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>--%>
-<%--                            <option value="2" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>--%>
-<%--                            <option value="3" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>--%>
-<%--                        </select>--%>
+
                     </div>
                     <div class="form-group">
                         <label for="userStatus">상태</label>
@@ -42,14 +38,9 @@
                                 <input type="text" id="userStatus" name="userStatus" value="탈퇴" readonly>
                             </c:when>
                             <c:otherwise>
-                                <input type="text" style="color: red;" id="userStatus" name="userStatus" value="휴면" readonly>
+                                <input type="text" id="userStatus" name="userStatus" value="휴면" readonly>
                             </c:otherwise>
                         </c:choose>
-<%--                        <select id="userStatus" name="userStatus" readonly>--%>
-<%--                            <option value="Y" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>--%>
-<%--                            <option value="N" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>--%>
-<%--                            <option value="C" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>--%>
-<%--                        </select>--%>
 
                     </div>
                     <div class="form-group">

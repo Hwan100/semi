@@ -227,33 +227,17 @@
         const rows = document.querySelectorAll(".clickable-row");
 
         rows.forEach(row => {
-            row.addEventListener("click", function () {
+            row.addEventListener("click", function (event) {
+                //첫번째 열 제외
+                const target = event.target;
+                if (target.tagName === "INPUT" || target.cellIndex === 0) {
+                    return;
+                }
                 // 행의 데이터 속성에서 정보 가져오기
                 const userNo = this.dataset.userNo;
 
                 // 서버로 데이터 전송
-                fetch('/api/user/myPage', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        userNo: userNo
-                    }),
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.redirectUrl) {
-                            // 서버에서 받은 URL로 리디렉션
-                            window.location.href = data.redirectUrl;
-                        } else {
-                            alert("리디렉션 URL이 없습니다.");
-                        }
-                    })
-                    .catch(error => {
-                        console.error("오류 발생:", error);
-                        alert("데이터 전송에 실패했습니다.");
-                    });
+                location.href="myPage.up?userNo="+userNo;
             });
         });
     });

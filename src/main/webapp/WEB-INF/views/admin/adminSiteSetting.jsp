@@ -83,44 +83,44 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
+<form method="post" action="updateSetting.bo" enctype="multipart/form-data">
     <div class="wrap">
         <div class="header-line">
             학원 설정
         </div>
         <div class="logo-line">
             로고이미지
-            <img src="/icons/logo2.png" style="margin-left: 130px; margin-right: 10px" id="logoInput">
+            <img src="${siteSetting.changeName}" style="margin-left: 130px; margin-right: 10px" id="logoInput">
             <div style="display: flex; flex-direction: column; font-size: 16px;">
                 png파일로 300x150 사이즈로 등록해주세요.
                 <div style="margin-top: 140px;">
                     <button type="button" class="btn-blank-small" onclick="selectLogo()" style="margin-right: 10px;">로고 등록</button>
-                    <button class="btn-blank-small">삭제</button>
+
                     <span id="fileName">선택된 파일 없음</span>
                 </div>
             </div>
         </div>
         <div class="siteName-line">
             <span style="margin-right: 63px">학원 웹사이트 명</span>
-            <input type="text" style="border: solid 1px #74788D">
+            <input name="siteName" type="text" style="border: solid 1px #74788D" value="${s.siteName}">
         </div>
         <div class="fileLimit-line">
-            <span style="margin-right: 63px">업로드 불가 파일</span>
-            <input type="text" style="border: solid 1px #74788D">
-        </div>
-        <div class="guide-line">
-            <span>지각,조퇴</span> <input type="text" style="border: solid 1px #74788D">일
-            => 결석<input type="text" style="border: solid 1px #74788D">일
+            <span style="margin-right: 20px">지각,조퇴</span> <input value="${s.late}" name="late" type="number" min="0" max="5" style="width: 50px; border: solid 1px #74788D; margin-right: 10px; padding-left: 20px;">일
+            &nbsp;&nbsp;&nbsp;&nbsp;-> &nbsp;&nbsp;&nbsp;&nbsp;결석<input value="${s.absent}" name="absent" type="number" min="0" max="3" style="width: 50px; border: solid 1px #74788D; margin-left: 20px; padding-left: 20px;";>일
         </div>
         <div class="button-line">
             <button class="btn-blank" style="margin-right: 40px">저장</button>
-            <button class="btn-blank">취소</button>
+            <button type="button" class="btn-blank">취소</button>
         </div>
         <div style="display: none">
             <input type="file" id="file" name="upfile" onchange="loadFileName(this)">
         </div>
     </div>
+</form>
+
 
     <script>
+
         function selectLogo(){
             const fileInput = document.getElementById("file");
             fileInput.click();

@@ -18,8 +18,6 @@ public class TestController {
     @GetMapping("adminPay.li")
     public String adminPay() {return "student/studentPay";}
 
-    @GetMapping("adminSiteSetting.fo")
-    public String adminSiteSetting() {return "admin/adminSiteSetting";}
 
     @GetMapping("attendance.li")
     public String attendanceList() {return "teacher/teacherAttendancePage";}

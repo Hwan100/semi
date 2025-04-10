@@ -56,4 +56,8 @@ public interface BoardService {
 
     Feedback selectFeedback(int bno);
 
+    Setting selectSiteSetting();
+
+    int insertSetting(Setting setting);
+
 }

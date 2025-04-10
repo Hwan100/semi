@@ -52,6 +52,15 @@
         <result column="TITLE" property="title" />
     </resultMap>
 
+    <resultMap id="SettingResult" type="Setting">
+        <result column="SETTING_NO" property="settingNo" />
+        <result column="SITE_NAME" property="siteName" />
+        <result column="ORIGIN_NAME" property="originName" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="LATE" property="late" />
+        <result column="ABSENT" property="absent" />
+    </resultMap>
+
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM TB_BOARD
@@ -355,4 +364,33 @@
         FROM TB_FEEDBACK
         WHERE FEEDBACK_NO = #{bno}
     </select>
+
+    <select id="selectSiteSetting" resultMap="SettingResult" >
+        SELECT SETTING_NO,
+                SITE_NAME,
+                ORIGIN_NAME,
+                CHANGE_NAME,
+                LATE,
+                ABSENT
+        FROM TB_SETTING
+        ORDER BY SETTING_NO DESC
+        FETCH FIRST 1 ROWS ONLY
+    </select>
+    
+    <insert id="insertSetting" parameterType="Setting">
+        INSERT INTO TB_SETTING(
+            SETTING_NO,
+            SITE_NAME,
+            ORIGIN_NAME,
+            CHANGE_NAME,
+            LATE,
+            ABSENT)
+        VALUES(
+            SEQ_SETTING_NO.NEXTVAL,
+            #{siteName},
+            #{originName},
+            #{changeName},
+            #{late},
+            #{absent})
+    </insert>
 </mapper>

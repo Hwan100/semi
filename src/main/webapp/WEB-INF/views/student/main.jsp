@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <jsp:include page="../common/header.jsp"/>
 <head>
@@ -167,48 +169,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
+            <c:if test="${empty noticeList}">
+                <tr><td colspan="4">공지사항이 없습니다.</td></tr>
+            </c:if>
+
+            <c:forEach var="b" items="${noticeList}">
+
+                <tr>
+                    <td>${b.boardNo}</td>
+                    <td><a href="detail.no?bno=${b.boardNo}">${b.title}</a></td>
+                    <td>${b.userName}</td>
+                    <td><fmt:formatDate value="${b.createDate}" pattern="yyyy.MM.dd" /></td>
+                </tr>
+            </c:forEach>
+
             </tbody>
         </table>
     </section>
@@ -228,61 +202,29 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
+            <c:forEach var="b" items="${classBoardList}">
+                <tr>
+                    <td>${b.boardNo}</td>
+                    <td><a href="detail.cl?bno=${b.boardNo}">${b.title}</a></td>
+                    <td>${b.userName}</td>
+                    <td><fmt:formatDate value="${b.createDate}" pattern="yyyy.MM.dd" /></td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </section>
     <%-- 입실 퇴실 --%>
     <section class="checkin-section">
+        <input type="hidden" id="checkInTime" value="${attendance.checkInTime}" />
+        <input type="hidden" id="checkOutTime" value="${attendance.checkOutTime}" />
         <h2 class="checkin-title">출결 체크</h2>
         <p class="checkin-date" id="currentDate"></p>
         <%--            2025년 03월 21일 (금요일) 16:19:20--%>
-        <div class="checkin-time-total">06h 12m</div>
+        <div class="checkin-time-total" id="total-time">06h 12m</div>
 
         <div class="checkin-progress">
             <div class="bar">
-                <div class="fill" style="width: 65%;"></div>
+                <div id="progressBar" class="fill" style="width: 65%;"></div>
             </div>
         </div>
 
@@ -297,6 +239,66 @@
             </div>
             <button class="btn full leave" onclick="checkOut()">퇴실</button>
             <script>
+                // 현재 시간 계산
+                function updateCurrentTime() {
+                    const now = new Date();
+
+                    const year = now.getFullYear();
+                    const month = String(now.getMonth() + 1).padStart(2, '0');
+                    const date = String(now.getDate()).padStart(2, '0');
+
+                    const dayNames = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+                    const day = dayNames[now.getDay()];
+
+                    const hours = String(now.getHours()).padStart(2, '0');
+                    const minutes = String(now.getMinutes()).padStart(2, '0');
+                    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                    const formatted = year + '년 ' + month + '월 ' + date + '일 (' + day + ') ' + hours + ':' + minutes + ':' + seconds;
+
+                    document.getElementById('currentDate').textContent = "현재 시간: " + formatted;
+
+                    updateTimeDifference(); // 매번 계산
+                }
+                // 시간 차이 계산
+                function updateTimeDifference() {
+                    const checkInStr = document.getElementById('checkInTime').value?.trim();
+                    const checkOutStr = document.getElementById('checkOutTime').value?.trim();
+
+                    if (!checkInStr) {
+                        document.getElementById('total-time').textContent = '0h 0m';
+                        document.getElementById("progressBar").setAttribute("style", "width: 0%");
+                        return;
+                    }
+
+                    const today = new Date();
+                    const [inHour, inMin, inSec] = checkInStr.split(":").map(Number);
+                    const checkIn = new Date(today.getFullYear(), today.getMonth(), today.getDate(), inHour, inMin, inSec || 0);
+
+                    let endTime;
+
+                    if (checkOutStr && checkOutStr !== 'null') {
+                        const [outHour, outMin, outSec] = checkOutStr.split(":").map(Number);
+                        endTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), outHour, outMin, outSec || 0);
+                    } else {
+                        endTime = new Date(); // 현재 시간 사용
+                    }
+
+                    const diffMs = endTime - checkIn;
+
+                    if (diffMs > 0) {
+                        const diffMin = Math.floor(diffMs / 60000);
+                        const hours = Math.floor(diffMin / 60);
+                        const minutes = diffMin % 60;
+
+                        document.getElementById('total-time').textContent = hours + 'h ' + minutes + 'm';
+                    }
+                }
+
+                // 1초마다 현재시간 갱신
+                setInterval(updateCurrentTime, 1000);
+                updateCurrentTime(); // 첫 실행
+
                 function checkIn () {
                     if(!${loginUser.classNo}) {
                         alert("수강중인 강의가 없습니다.");
@@ -306,8 +308,8 @@
                 }
 
                 function checkOut() {
-
-                    if(!${attendance.attendanceNo}) {
+                    const checkInStr = document.getElementById('checkInTime').value?.trim();
+                    if(!checkInStr) {
                         alert("입실해주세요.");
                         return;
                     }

@@ -279,7 +279,7 @@
             </div>
             <div class="btn-box">
                 <button class="submit-btn" id="submitBtn">가입신청</button>
-                <button class="cancel-btn">돌아가기</button>
+                <button class="cancel-btn" onclick="location.href='/'">돌아가기</button>
             </div>
         </div>
     </div>

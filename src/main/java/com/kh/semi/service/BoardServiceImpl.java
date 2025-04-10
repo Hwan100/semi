@@ -163,4 +163,14 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.selectFeedback(bno);
     }
 
+    @Override
+    public Setting selectSiteSetting() {
+        return boardMapper.selectSiteSetting();
+    }
+
+    @Override
+    public int insertSetting(Setting setting) {
+        return boardMapper.insertSetting(setting);
+    }
+
 }

@@ -11,6 +11,8 @@ import lombok.*;
 public class Setting {
     private int settingNo;
     private String siteName;
-    private String logoPath;
-    private int lateAbsentRatio;
+    private String originName;
+    private String changeName;
+    private int late;
+    private int absent;
 }

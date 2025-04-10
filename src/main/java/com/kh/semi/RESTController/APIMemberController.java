@@ -11,12 +11,15 @@ package com.kh.semi.RESTController;
 
 import com.kh.semi.domain.vo.User;
 import com.kh.semi.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/user")
@@ -44,4 +47,12 @@ public class APIMemberController {
     public ArrayList<User> allTeacherList(){
         return UserService.allTeacherList();
     }
+
+    @PostMapping("/myPage")
+    public ModelAndView handleRedirect(ModelAndView mv, int userNo) {
+        mv.addObject("userNo", userNo);
+        mv.setViewName("myPage/adminMyPage");
+        return mv;
+    }
+
 }

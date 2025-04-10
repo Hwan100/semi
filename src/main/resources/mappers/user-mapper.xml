@@ -104,4 +104,19 @@
     <select id="selectUserNoById" resultType="int" parameterType="string">
         SELECT USER_NO FROM TB_USER WHERE USER_ID = #{userId}
     </select>
+
+    <select id="allUserList" resultMap="userResult">
+        SELECT
+            U.USER_NO,
+            C.CLASS_NAME,
+            USER_NAME,
+            USER_ROLE,
+            USER_PHONE,
+            USER_EMAIL,
+            USER_STATUS
+        FROM TB_USER U
+        LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
+        ORDER BY U.USER_NO
+    </select>
+
 </mapper>

@@ -42,7 +42,7 @@ public class BoardController {
     }
 
     @GetMapping("enrollForm.no")
-    public String enrollNoticeForm() {return "noticeEnrollForm";}
+    public String enrollNoticeForm() {return "board/noticeEnrollForm";}
 
     @PostMapping("insert.no")
     public String insertBoard(@ModelAttribute Board board, MultipartFile upfile, HttpSession session, Model model) {
@@ -377,6 +377,25 @@ public class BoardController {
 
         return "admin/adminSiteSetting";
     }
+    @GetMapping("/studentMain")
+    public String studentMain(Model model, HttpSession session) {
+        // 공지사항
+        int noticeCount = boardService.selectBoardCount();
+        PageInfo piNotice = new PageInfo(noticeCount, 1, 3, 5);
+        List<Board> noticeList = boardService.selectNoticeBoardList(piNotice);
+
+        // 우리반 게시판
+        int classBoardCount = boardService.selectBoardCount();
+        PageInfo piClass = new PageInfo(classBoardCount, 1, 3, 5);
+        List<Board> classBoardList = boardService.selectMyClassBoardList(piClass);
+
+        model.addAttribute("noticeList", noticeList);
+        model.addAttribute("classBoardList", classBoardList);
+        model.addAttribute("pi", piNotice);
+
+        return "student/main";
+    }
+
 
     @PostMapping("updateSetting.bo")
     public String updateSetting(@ModelAttribute Setting setting, MultipartFile upfile, HttpSession session) {

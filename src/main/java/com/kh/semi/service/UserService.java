@@ -21,4 +21,6 @@ public interface UserService {
     ArrayList<User> allTeacherList();
 
     int selectUserNoById(String userId);
+
+    ArrayList<User> allUserList();
 }

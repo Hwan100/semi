@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import java.util.ArrayList;
+
 @Controller
 public class UserController {
 
@@ -173,7 +175,23 @@ public class UserController {
         return mv;
     }
 
+    @GetMapping("adminUser.li")
+    public ModelAndView adminUser(ModelAndView mv, HttpSession session) {
+        User loginUser = (User) session.getAttribute("loginUser");
 
+        if (loginUser == null) {
+            mv.setViewName("redirect:/login");
+            return mv;
+        }
+
+        ArrayList<User> list = userService.allUserList();
+
+        mv.setViewName("admin/adminCheckUser");
+        mv.addObject("userList", list);
+
+        System.out.println(list);
+        return mv;
+    }
 
 }
 

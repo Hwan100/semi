@@ -373,6 +373,25 @@ public class BoardController {
     }
 
 
+    @GetMapping("/studentMain")
+    public String studentMain(Model model, HttpSession session) {
+        // 공지사항
+        int noticeCount = boardService.selectBoardCount();
+        PageInfo piNotice = new PageInfo(noticeCount, 1, 3, 5);
+        List<Board> noticeList = boardService.selectNoticeBoardList(piNotice);
+
+        // 우리반 게시판
+        int classBoardCount = boardService.selectBoardCount();
+        PageInfo piClass = new PageInfo(classBoardCount, 1, 3, 5);
+        List<Board> classBoardList = boardService.selectMyClassBoardList(piClass);
+
+        model.addAttribute("noticeList", noticeList);
+        model.addAttribute("classBoardList", classBoardList);
+        model.addAttribute("pi", piNotice);
+
+        return "student/main";
+    }
+
 
 }
 

@@ -17,7 +17,7 @@ public class HomeController {
             switch (((User) session.getAttribute("loginUser")).getUserRole()) {
                 case 2 -> mv.setViewName("teacher/main");
                 case 3 -> mv.setViewName("admin/main");
-                default -> mv.setViewName("student/main");
+                default -> mv.setViewName("redirect:/studentMain");
             }
         }
 

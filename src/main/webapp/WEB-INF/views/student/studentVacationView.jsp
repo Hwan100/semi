@@ -145,6 +145,21 @@
 </div>
 
 <script>
+
+    document.getElementById('upfile').addEventListener('change', function(event) {
+        const fileName = event.target.files[0]?.name;
+        console.log("선택된 파일:", fileName); // ✅ 추가
+
+        const fileTableBody = document.getElementById('fileTableBody');
+
+        if (fileName) {
+            fileTableBody.innerHTML = `<tr><td>${fileName}</td></tr>`;
+        } else {
+            fileTableBody.innerHTML = '';
+        }
+    });
+
+
     const newBtn = document.getElementById("new-btn");
     const formSection = document.getElementById("form-section");
     const leaveForm = document.getElementById("leaveForm");

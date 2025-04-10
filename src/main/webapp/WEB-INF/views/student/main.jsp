@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <jsp:include page="../common/header.jsp"/>
 <head>
@@ -167,48 +169,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
+            <c:if test="${empty noticeList}">
+                <tr><td colspan="4">공지사항이 없습니다.</td></tr>
+            </c:if>
+
+            <c:forEach var="b" items="${noticeList}">
+
+                <tr>
+                    <td>${b.boardNo}</td>
+                    <td><a href="detail.no?bno=${b.boardNo}">${b.title}</a></td>
+                    <td>${b.userName}</td>
+                    <td><fmt:formatDate value="${b.createDate}" pattern="yyyy.MM.dd" /></td>
+                </tr>
+            </c:forEach>
+
             </tbody>
         </table>
     </section>
@@ -228,48 +202,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>19</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.27</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>[식권공지] 맥주창고 식권 금액 인상 공지입니다.</td>
-                <td>행정팀</td>
-                <td>2024.03.25</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.23</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.20</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>[HRD공지사항] HRD-Net 단독회원 서비스 중지 및 원...</td>
-                <td>행정팀</td>
-                <td>2024.03.19</td>
-            </tr>
+            <c:forEach var="b" items="${classBoardList}">
+                <tr>
+                    <td>${b.boardNo}</td>
+                    <td><a href="detail.cl?bno=${b.boardNo}">${b.title}</a></td>
+                    <td>${b.userName}</td>
+                    <td><fmt:formatDate value="${b.createDate}" pattern="yyyy.MM.dd" /></td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </section>

@@ -25,7 +25,7 @@
                 <div class="form-group-row">
                     <div class="form-group">
                         <label for="userType">구분</label>
-                        <select id="userType" name="userType">
+                        <select id="userType" name="userRole">
                             <option value="1" ${user.userRole == '1' ? 'selected' : ''}>학생</option>
                             <option value="2" ${user.userRole == '2' ? 'selected' : ''}>강사</option>
                             <option value="3" ${user.userRole == '3' ? 'selected' : ''}>관리자</option>
@@ -53,7 +53,7 @@
                 <div class="top-grid">
                     <div class="form-group">
                         <label for="userName">이름</label>
-                        <input type="text" id="userName" name="userName" value="${user.userName}" readonly>
+                        <input type="text" id="userName" name="userName" value="${user.userName}">
                     </div>
                     <div class="form-group">
                         <label for="studentNo">학생 번호</label>
@@ -86,18 +86,11 @@
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${user.className}" readonly>
+                <input type="text" id="className" name="ClassName" value="${user.className}" >
             </div>
         </div>
 
-        <input type="hidden" value="${user.userNo}">
-        <input type="hidden" value="${user.classNo}">
-        <input type="hidden" value="${user.userPwd}">
-        <input type="hidden" value="${user.userRole}">
-        <input type="hidden" value="${user.userBirth}">
-        <input type="hidden" value="${user.userJoinDate}">
-        <input type="hidden" value="${user.departmentNo}">
-        <input type="hidden" value="${user.className}">
+
 
 
         <button type="submit" class="submit-btn">수정 완료</button>

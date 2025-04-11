@@ -101,7 +101,6 @@
         FROM TB_CLASS
         WHERE CLASS_NO = #{classNo}
     </select>
-
     <select id="idCheck" resultType="_int">
         SELECT COUNT(*)
         FROM TB_USER

@@ -82,6 +82,11 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
+    public List<Class> selectClassList2() {
+        return classMapper.selectClassList2();
+    }
+
+    @Override
     public List<Class> selectClassListWithJoin() {
         return classMapper.selectClassListWithJoin();
     }

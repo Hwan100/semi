@@ -4,16 +4,13 @@
 
 <html>
 <jsp:include page="../common/header.jsp"/>
-
-
+<jsp:include page="../common/subHeader.jsp"/>
 <head>
     <title>Teacher Attendance</title>
     <link rel="stylesheet" href="/css/TeacherStudentInfoListPage.css">
 </head>
 <body>
-<jsp:include page="../common/subHeader.jsp">
-    <jsp:param name="classNo" value="${classNo}" />
-</jsp:include>
+
 <div class="attendance-container">
 
     <div class="attendance-table-box">

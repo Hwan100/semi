@@ -13,23 +13,30 @@ public class TestController {
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}
 
+
+
     @GetMapping("finish.bo")
     public String finish() {return "student/finishPage";}
 
     @GetMapping("infoList.li")
-    public String infoList() {return "teacher/teacherStudentInfoListPage";}
-
-    @GetMapping("attendance.li")
-    public ModelAndView attendance(@RequestParam("classNo") int classNo, ModelAndView mv) {
+    public ModelAndView infoList(@RequestParam("classNo") int classNo, ModelAndView mv) {
         mv.addObject("classNo", classNo);
-        mv.setViewName("teacher/teacherAttendancePage");
+        mv.setViewName("teacher/teacherStudentInfoListPage");
         return mv;
     }
 
-    @GetMapping("vacation.li")
-    public ModelAndView vacation(@RequestParam("classNo") int classNo, ModelAndView mv) {
-        mv.addObject("classNo", classNo); // 🔥 JSP에 전달!
-        mv.setViewName("teacher/teacherVacationList");
+
+
+
+    @GetMapping("adminPay.li")
+    public String adminPay() {return "student/studentPay";}
+
+
+    @GetMapping("attendance.li")
+    public ModelAndView attendanceList(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        // classNo는 여기서 필요하면 mv에 담거나, 서비스 호출 시 사용할 수 있음
+        mv.addObject("classNo", classNo); // 뷰에서도 ${classNo}로 사용할 수 있게 전달
+        mv.setViewName("teacher/teacherAttendancePage"); // 기존 페이지 그대로 유지
         return mv;
     }
 

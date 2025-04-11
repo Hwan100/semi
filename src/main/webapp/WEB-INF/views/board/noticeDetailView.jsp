@@ -64,7 +64,7 @@
       const formEl = document.querySelector("#postForm");
       switch(type){
         case "edit" : {
-          $(formEl).attr("action", "updateForm.cl");
+          $(formEl).attr("action", "updateForm.no");
         }break;
         case "delete":{
           //formEl.action = "delete.bo";

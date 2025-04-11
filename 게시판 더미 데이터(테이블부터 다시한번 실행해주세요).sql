@@ -366,3 +366,29 @@ INSERT INTO TB_FEEDBACK (FEEDBACK_NO, TITLE, CONTENT, WRITE_DATE, RESUME_NO, USE
 INSERT INTO TB_FEEDBACK (FEEDBACK_NO, TITLE, CONTENT, WRITE_DATE, RESUME_NO, USER_NO) VALUES (41, '문법 관련 피드백', '조금 더 간결한 표현이 필요합니다.', TO_DATE('25/01/11', 'YY/MM/DD'), 19, 9);
 INSERT INTO TB_FEEDBACK (FEEDBACK_NO, TITLE, CONTENT, WRITE_DATE, RESUME_NO, USER_NO) VALUES (7, '개선점 제시', '피드백 감사합니다. 개선하겠습니다.', TO_DATE('25/03/21', 'YY/MM/DD'), 20, 1);
 COMMIT; 
+
+
+INSERT INTO TB_CERTIFICATE (
+    CERT_NO,
+    UNIT_NAME,
+    EVAL_DATE,
+    MAIN_SCORE,
+    FINAL_SCORE,
+    CERT_LEVEL,
+    RESULT,
+    CHANGE_NAME,
+    ORIGIN_NAME,
+    USER_NO
+) VALUES (
+    SEQ_CERT_NO.NEXTVAL,                         -- CERT_NO
+    '웹 프로그래밍',                             -- UNIT_NAME
+    '2025-04-01',                                -- EVAL_DATE
+    85,                                          -- MAIN_SCORE
+    92,                                          -- FINAL_SCORE
+    1,                                           -- CERT_LEVEL (1등급)
+    '통과',                                      -- RESULT
+    '/resources/uploadfile/kh_17442693331283361.sql', -- CHANGE_NAME
+    'final_테이블과_더미데이터.sql',              -- ORIGIN_NAME
+    62                                           -- USER_NO (user62 전용)
+);
+commit;

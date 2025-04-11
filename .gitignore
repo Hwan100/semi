@@ -322,3 +322,4 @@ thumb
 sketch
 
 .idea/webContexts.xml
+src/main/resources/application.properties

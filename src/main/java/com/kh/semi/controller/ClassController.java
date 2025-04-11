@@ -224,7 +224,8 @@ ClassController {
 
     @GetMapping("completedCourse.li")
     public String completedCourses(Model model ,HttpSession session) {
-        List<Class> classList = classService.selectClassList2();
+        User u = (User) session.getAttribute("loginUser");
+        List<Class> classList = classService.selectCompletedClassList(u);
         LocalDate today = LocalDate.now();
 
 
@@ -254,7 +255,7 @@ ClassController {
             }
         }
 
-        model.addAttribute("compleList", filteredList);  // JSP로 넘길 리스트는 filteredList
+        model.addAttribute("compleList", classList);  // JSP로 넘길 리스트는 filteredList
         return "teacher/completedCourseList";
     }
 

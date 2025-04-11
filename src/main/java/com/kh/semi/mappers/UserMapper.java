@@ -25,4 +25,5 @@ public interface UserMapper {
     int selectUserNoById(String userId);
 
     ArrayList<User> allUserList();
+    
 }

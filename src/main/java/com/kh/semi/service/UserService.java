@@ -3,6 +3,7 @@ package com.kh.semi.service;
 import com.kh.semi.domain.vo.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface UserService {
     //로그인
@@ -23,4 +24,5 @@ public interface UserService {
     int selectUserNoById(String userId);
 
     ArrayList<User> allUserList();
+
 }

@@ -1,9 +1,10 @@
 package com.kh.semi.mappers;
 
 import com.kh.semi.domain.vo.ClassTime;
-import com.kh.semi.domain.vo.Schedule;
-import org.apache.ibatis.annotations.Mapper;
 import com.kh.semi.domain.vo.Class;
+import com.kh.semi.domain.vo.Schedule;
+import com.kh.semi.domain.vo.User;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public interface ClassMapper {
     ClassTime selectClassTime(ClassTime classTime);
 
     // 강의 목록 조회
-    List<Class> selectClassList();
+    List<Class> selectClassList(User u);
 
     List<Class> selectClassListWithJoin();
 

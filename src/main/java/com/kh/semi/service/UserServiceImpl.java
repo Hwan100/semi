@@ -43,4 +43,5 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ArrayList<User> allUserList() { return userMapper.allUserList(); }
+
 }

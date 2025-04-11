@@ -91,7 +91,6 @@
         FROM TB_CLASS
         WHERE CLASS_NO = #{classNo}
     </select>
-
     <select id="idCheck" resultType="_int">
         SELECT COUNT(*)
         FROM TB_USER
@@ -175,4 +174,5 @@
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
         WHERE U.USER_ROLE = 1 AND C.CLASS_NO = #{classNo}
     </select>
+
 </mapper>

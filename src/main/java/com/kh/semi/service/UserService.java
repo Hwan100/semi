@@ -25,4 +25,5 @@ public interface UserService {
     ArrayList<User> allUserList();
 
     ArrayList<User> selectStudentsByClassNo(int classNo);
+
 }

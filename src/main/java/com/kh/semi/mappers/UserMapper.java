@@ -27,4 +27,5 @@ public interface UserMapper {
     ArrayList<User> allUserList();
 
     ArrayList<User> selectStudentsByClassNo(int classNo);
+
 }

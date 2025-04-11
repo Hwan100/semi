@@ -23,6 +23,9 @@
             </div>
             <div class="right-info">
                 <button onclick="location.href='studentListByClass.li?classNo=${c.classNo}'">관리</button>
+
+
+
             </div>
         </div>
     </c:forEach>

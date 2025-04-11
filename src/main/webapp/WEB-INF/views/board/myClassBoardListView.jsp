@@ -20,9 +20,9 @@
             </div>
         </div>
         <c:if test="${loginUser.userRole eq '2' || loginUser.userRole eq '3'}">
-        <div class="button-area">
-            <button class="btn-blank-small" onclick="location.href='enrollForm.cl'">작성</button>
-        </div>
+            <div class="button-area">
+                <button class="btn-blank-small" onclick="location.href='enrollForm.cl'">작성</button>
+            </div>
         </c:if>
     </div>
 

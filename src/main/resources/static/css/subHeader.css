@@ -1,0 +1,25 @@
+
+/* 탭 메뉴 */
+.menu-tabs {
+    display: flex;
+    gap: 20px;
+    margin-left: 310px;
+    margin-top: 140px;
+}
+
+.tab {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    color: #CFCFCF;
+}
+
+.tab.active {
+    color: #000000;
+    font-size: 22px;
+}
+
+.tab.inactive {
+    color: #CFCFCF;
+}

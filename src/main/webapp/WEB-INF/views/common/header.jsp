@@ -97,7 +97,6 @@
     <div class="sidebar">
         <a href="/">
             <img class="sidebar-logo" src="${siteSetting.changeName}" alt="로고" onerror="this.onerror=null; this.src='/icons/logo.png';">
-
         </a>
 
         <div class="menu-group">

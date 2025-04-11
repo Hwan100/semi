@@ -78,7 +78,7 @@ public class UserController {
             mv.addObject("className", className);
 
             switch (loginUser.getUserRole()) {
-                case 1 -> mv.setViewName("myPage/studentMyPage");
+                case 1 -> mv.setViewName("myPage/studentMyPageView");
                 case 2 -> mv.setViewName("myPage/teacherMyPage");
                 case 3 -> mv.setViewName("myPage/adminMyPage");
                 default -> mv.setViewName("common/error"); // 예외 처리
@@ -193,6 +193,7 @@ public class UserController {
         mv.setViewName("admin/adminCheckUser");
         mv.addObject("userList", list);
 
+        System.out.println(list);
         return mv;
     }
 

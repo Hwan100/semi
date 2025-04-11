@@ -1,53 +1,15 @@
 /* 전체 영역 */
 .attendance-container {
     width: 1920px;
-    height: 1080px;
+    height: 800px;
     position: relative;
     background: #E0F7FF;
     overflow: hidden;
 }
 
-/* 탭 메뉴 */
-.menu-tabs {
-    display: flex;
-    gap: 20px;
-    position: absolute;
-    top: 135px;
-    left: 310px;
-}
-
-.tab {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    cursor: pointer;
-    color: #CFCFCF;
-}
-
-.tab.active {
-    color: #000000;
-    font-size: 22px;
-}
-
-.tab.inactive {
-    color: #CFCFCF;
-}
-
-/* 테이블 영역 */
-.menu-tabs {
-    display: flex;
-    gap: 20px;
-    position: absolute;
-    top: 135px;
-    left: 315px;
-}
-
 .attendance-table-box {
     position: absolute;
-    top: 195px; /* ✅ 간격을 40px로 조정 */
-    left: 315px;
-    width: 1552px;
-    height: 800px;
+    margin: 30px 40px 0 310px;
     background: white;
     border: 1px solid #ccc;
     box-sizing: border-box;

@@ -60,4 +60,8 @@ public interface BoardMapper {
     List<Feedback> selectFeedbackList(RowBounds rowBounds , @Param("bno") int bno);
 
     Feedback selectFeedback(int bno);
+
+    Setting selectSiteSetting();
+
+    int insertSetting(Setting s);
 }

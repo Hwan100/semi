@@ -1,10 +1,6 @@
 package com.kh.semi.controller;
 
-import com.kh.semi.domain.vo.Board;
-import com.kh.semi.domain.vo.PageInfo;
-import com.kh.semi.domain.vo.ResumeBoard;
-import com.kh.semi.domain.vo.User;
-import com.kh.semi.domain.vo.Feedback;
+import com.kh.semi.domain.vo.*;
 import com.kh.semi.service.BoardService;
 import com.kh.semi.utils.Template;
 import jakarta.servlet.http.HttpSession;
@@ -372,7 +368,15 @@ public class BoardController {
         return "board/resumefeedbackDetailView";
     }
 
+    @GetMapping("adminSiteSetting.fo")
+    public String adminSiteSetting(Model model, HttpSession session) {
+        Setting setting = boardService.selectSiteSetting();
+        System.out.println(setting);
 
+        model.addAttribute("s", setting);
+
+        return "admin/adminSiteSetting";
+    }
     @GetMapping("/studentMain")
     public String studentMain(Model model, HttpSession session) {
         // 공지사항
@@ -393,5 +397,27 @@ public class BoardController {
     }
 
 
+    @PostMapping("updateSetting.bo")
+    public String updateSetting(@ModelAttribute Setting setting, MultipartFile upfile, HttpSession session) {
+        if(!upfile.getOriginalFilename().equals("")){
+            String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
+
+            setting.setChangeName("/resources/uploadfile/" + changeName);
+            setting.setOriginName(upfile.getOriginalFilename());
+        }
+
+        System.out.println(setting);
+        System.out.println(upfile);
+
+        int result = boardService.insertSetting(setting);
+
+        if (result > 0) {
+            session.setAttribute("alertMsg", "게시글 저장 완료");
+            return "redirect:/";
+        } else {
+            session.setAttribute("errorMsg", "게시글 저장 실패");
+            return "redirect:/";
+        }
+    }
 }
 

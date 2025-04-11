@@ -17,60 +17,60 @@
 
     <table class="Vacation-table">
         <thead>
-            <tr>
-                <td style="width: 3%">번호</td>
-                <td style="width: 8%">이름</td>
-                <td style="width: 12%">날짜</td>
-                <td style="width: 35%">사유</td>
-                <td style="width: 30%">첨부파일</td>
-                <td style="width: 20%">승인 여부</td>
-            </tr>
+        <tr>
+            <td style="width: 3%">번호</td>
+            <td style="width: 8%">이름</td>
+            <td style="width: 12%">날짜</td>
+            <td style="width: 35%">사유</td>
+            <td style="width: 30%">첨부파일</td>
+            <td style="width: 20%">승인 여부</td>
+        </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>1</td>
+            <td>정의철</td>
+            <td>2025.03.24</td>
+            <td>베르사유</td>
+            <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
+            <td class="btn-td">
+                <button class="btn-success">승인</button>
+                <button class="btn-fail" data-toggle="modal" data-target="#failModal">거부</button>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>정의철</td>
+            <td>2025.03.24</td>
+            <td>베르사유</td>
+            <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
+            <td class="btn-td">
+                <button class="btn-success-date">2025.03.24</button>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>정의철</td>
+            <td>2025.03.24</td>
+            <td>베르사유</td>
+            <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
+            <td class="btn-td">
+                <button class="btn-fail-date">2025.03.24</button>
+            </td>
+        </tr>
+        <c:forEach var="vacation" items="${vacationList}">
             <tr>
-                <td>1</td>
-                <td>정의철</td>
-                <td>2025.03.24</td>
-                <td>베르사유</td>
-                <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
+                <td>${Leave.leaveNo}</td>
+                <td>${Leave.userName}</td>
+                <td>${Leave.startDate} ~ ${Leave.endDate}</td>
+                <td>${rLeave.eason}</td>
+                <td>${Leave.filePath}</td>
                 <td class="btn-td">
                     <button class="btn-success">승인</button>
-                    <button class="btn-fail" data-toggle="modal" data-target="#failModal">거부</button>
+                    <button class="btn-fail" data-toggle="modal" data-target="#failModal" data-id="${leabeNo}">거부</button>
                 </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>정의철</td>
-                <td>2025.03.24</td>
-                <td>베르사유</td>
-                <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
-                <td class="btn-td">
-                    <button class="btn-success-date">2025.03.24</button>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>정의철</td>
-                <td>2025.03.24</td>
-                <td>베르사유</td>
-                <td>[첨부 파일] 제가 오늘 좀 쉬겠습니다.pdf</td>
-                <td class="btn-td">
-                    <button class="btn-fail-date">2025.03.24</button>
-                </td>
-            </tr>
-<c:forEach var="vacation" items="${vacationList}">
-    <tr>
-        <td>${Leave.leaveNo}</td>
-        <td>${Leave.userName}</td>
-        <td>${Leave.startDate} ~ ${Leave.endDate}</td>
-        <td>${rLeave.eason}</td>
-        <td>${Leave.filePath}</td>
-        <td class="btn-td">
-            <button class="btn-success">승인</button>
-            <button class="btn-fail" data-toggle="modal" data-target="#failModal" data-id="${leabeNo}">거부</button>
-        </td>
-    </tr>
-</c:forEach>
+        </c:forEach>
         </tbody>
     </table>
 </div>

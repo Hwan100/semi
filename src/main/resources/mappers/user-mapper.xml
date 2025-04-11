@@ -23,42 +23,42 @@
     </resultMap>
     <select id="loginUser" parameterType="User" resultMap="userResult">
         SELECT  U.USER_NO,
-                C.CLASS_NO,
-                C.CLASS_NAME,
-                USER_ID,
-                USER_PWD,
-                USER_NAME,
-                USER_ROLE,
-                USER_PHONE,
-                USER_EMAIL,
-                USER_ADDRESS,
-                USER_ADDRESS_DETAIL,
-                USER_BIRTH,
-                USER_JOIN_DATE,
-                USER_PROFILE_IMG,
-                DEPARTMENT_NO,
-                USER_STATUS
+        C.CLASS_NO,
+        C.CLASS_NAME,
+        USER_ID,
+        USER_PWD,
+        USER_NAME,
+        USER_ROLE,
+        USER_PHONE,
+        USER_EMAIL,
+        USER_ADDRESS,
+        USER_ADDRESS_DETAIL,
+        USER_BIRTH,
+        USER_JOIN_DATE,
+        USER_PROFILE_IMG,
+        DEPARTMENT_NO,
+        USER_STATUS
         FROM TB_USER U
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
-       WHERE USER_ID = #{userId}
-         AND USER_STATUS = 'Y'
+        WHERE USER_ID = #{userId}
+        AND USER_STATUS = 'Y'
     </select>
 
     <update id="updateUser" parameterType="User">
         UPDATE TB_USER u
         SET
-            u.USER_NAME = #{userName},
-            u.USER_PHONE = #{userPhone},
-            u.USER_EMAIL = #{userEmail},
-            u.USER_ADDRESS = #{userAddress},
-            u.USER_ADDRESS_DETAIL = #{userAddressDetail},
-            u.USER_ROLE = #{userRole},
-            u.USER_STATUS = #{userStatus},
-            u.CLASS_NO = (
-                SELECT c.CLASS_NO
-                FROM TB_CLASS c
-                WHERE c.CLASS_NAME = #{className}
-            )
+        u.USER_NAME = #{userName},
+        u.USER_PHONE = #{userPhone},
+        u.USER_EMAIL = #{userEmail},
+        u.USER_ADDRESS = #{userAddress},
+        u.USER_ADDRESS_DETAIL = #{userAddressDetail},
+        u.USER_ROLE = #{userRole},
+        u.USER_STATUS = #{userStatus},
+        u.CLASS_NO = (
+        SELECT c.CLASS_NO
+        FROM TB_CLASS c
+        WHERE c.CLASS_NAME = #{className}
+        )
         WHERE u.USER_ID = #{userId}
     </update>
 
@@ -66,31 +66,32 @@
 
     <select id="selectUserByNo" parameterType="User" resultMap="userResult">
         SELECT  U.USER_NO,
-                C.CLASS_NO,
-                C.CLASS_NAME,
-                USER_ID,
-                USER_PWD,
-                USER_NAME,
-                USER_ROLE,
-                USER_PHONE,
-                USER_EMAIL,
-                USER_ADDRESS,
-                USER_ADDRESS_DETAIL,
-                USER_BIRTH,
-                USER_JOIN_DATE,
-                USER_PROFILE_IMG,
-                DEPARTMENT_NO,
-                USER_STATUS
+        C.CLASS_NO,
+        C.CLASS_NAME,
+        USER_ID,
+        USER_PWD,
+        USER_NAME,
+        USER_ROLE,
+        USER_PHONE,
+        USER_EMAIL,
+        USER_ADDRESS,
+        USER_ADDRESS_DETAIL,
+        USER_BIRTH,
+        USER_JOIN_DATE,
+        USER_PROFILE_IMG,
+        DEPARTMENT_NO,
+        USER_STATUS
         FROM TB_USER U
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
         WHERE U.USER_NO = #{userNo}
     </select>
 
     <select id="getClassNameByClassNo" parameterType="Class">
-            SELECT CLASS_NAME
-            FROM TB_CLASS
-            WHERE CLASS_NO = #{classNo}
+        SELECT CLASS_NAME
+        FROM TB_CLASS
+        WHERE CLASS_NO = #{classNo}
     </select>
+
     <select id="idCheck" resultType="_int">
         SELECT COUNT(*)
         FROM TB_USER
@@ -98,25 +99,25 @@
     </select>
     <insert id="insertUser">
         INSERT INTO TB_USER(
-            USER_NO,
-            USER_ID,
-            USER_PWD,
-            USER_NAME,
-            USER_PHONE,
-            USER_EMAIL,
-            USER_ADDRESS,
-            USER_ADDRESS_DETAIL,
-            USER_BIRTH)
+        USER_NO,
+        USER_ID,
+        USER_PWD,
+        USER_NAME,
+        USER_PHONE,
+        USER_EMAIL,
+        USER_ADDRESS,
+        USER_ADDRESS_DETAIL,
+        USER_BIRTH)
         VALUES(
-            SEQ_USER_NO.NEXTVAL,
-            #{userId},
-            #{userPwd},
-            #{userName},
-            #{userPhone},
-            #{userEmail},
-            #{userAddress},
-            #{userAddressDetail},
-            #{userBirth}
+        SEQ_USER_NO.NEXTVAL,
+        #{userId},
+        #{userPwd},
+        #{userName},
+        #{userPhone},
+        #{userEmail},
+        #{userAddress},
+        #{userAddressDetail},
+        #{userBirth}
         )
     </insert>
     <select id="allTeacherList" resultMap="userResult">
@@ -131,22 +132,22 @@
 
     <select id="allUserList" resultMap="userResult">
         SELECT
-            U.USER_NO,
-            C.CLASS_NO,
-            C.CLASS_NAME,
-            USER_ID,
-            USER_PWD,
-            USER_NAME,
-            USER_ROLE,
-            USER_PHONE,
-            USER_EMAIL,
-            USER_ADDRESS,
-            USER_ADDRESS_DETAIL,
-            USER_BIRTH,
-            USER_JOIN_DATE,
-            USER_PROFILE_IMG,
-            DEPARTMENT_NO,
-            USER_STATUS
+        U.USER_NO,
+        C.CLASS_NO,
+        C.CLASS_NAME,
+        USER_ID,
+        USER_PWD,
+        USER_NAME,
+        USER_ROLE,
+        USER_PHONE,
+        USER_EMAIL,
+        USER_ADDRESS,
+        USER_ADDRESS_DETAIL,
+        USER_BIRTH,
+        USER_JOIN_DATE,
+        USER_PROFILE_IMG,
+        DEPARTMENT_NO,
+        USER_STATUS
         FROM TB_USER U
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
         ORDER BY DECODE(USER_STATUS, 'C', 1), U.USER_NO

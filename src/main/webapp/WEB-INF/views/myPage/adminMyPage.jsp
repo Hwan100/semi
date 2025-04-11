@@ -6,7 +6,7 @@
     <title>AdminMyPage</title>
 </head>
 <body>
-<jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/header.jsp"/>
 
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
@@ -23,21 +23,41 @@
 
                 <!-- 🔸 구분 / 상태 / 가입일 한 줄 -->
                 <div class="form-group-row">
+                    <%--                    <div class="form-group">--%>
+                    <%--                        <label for="userType">구분</label>--%>
+                    <%--                        <select id="userType" name="userType">--%>
+                    <%--                            <option value="1" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>--%>
+                    <%--                            <option value="2" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>--%>
+                    <%--                            <option value="3" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>--%>
+                    <%--                        </select>--%>
+                    <%--                    </div>--%>
+                    <%--                    <div class="form-group">--%>
+                    <%--                        <label for="userStatus">상태</label>--%>
+                    <%--                        <select id="userStatus" name="userStatus">--%>
+                    <%--                            <option value="Y" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>--%>
+                    <%--                            <option value="N" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>--%>
+                    <%--                            <option value="C" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>--%>
+                    <%--                        </select>--%>
+
+                    <%--                    </div>--%>
                     <div class="form-group">
                         <label for="userType">구분</label>
-                        <select id="userType" name="userType">
-                            <option value="1" ${loginUser.userRole == '1' ? 'selected' : ''}>학생</option>
-                            <option value="2" ${loginUser.userRole == '2' ? 'selected' : ''}>강사</option>
-                            <option value="3" ${loginUser.userRole == '3' ? 'selected' : ''}>관리자</option>
-                        </select>
+                        <input type="text" id="userType" name="userType" value="관리자" readonly>
+
                     </div>
                     <div class="form-group">
                         <label for="userStatus">상태</label>
-                        <select id="userStatus" name="userStatus">
-                            <option value="Y" ${loginUser.userStatus == 'Y' ? 'selected' : ''}>정상</option>
-                            <option value="N" ${loginUser.userStatus == 'N' ? 'selected' : ''}>탈퇴</option>
-                            <option value="C" ${loginUser.userStatus == 'C' ? 'selected' : ''}>휴면</option>
-                        </select>
+                        <c:choose>
+                            <c:when test="${not empty loginUser && loginUser.userStatus eq 'Y'}">
+                                <input type="text" id="userStatus" name="userStatus" value="정상" readonly>
+                            </c:when>
+                            <c:when test="${not empty loginUser && loginUser.userStatus == 'N'}">
+                                <input type="text" id="userStatus" name="userStatus" value="탈퇴" readonly>
+                            </c:when>
+                            <c:otherwise>
+                                <input type="text" id="userStatus" name="userStatus" value="휴면" readonly>
+                            </c:otherwise>
+                        </c:choose>
 
                     </div>
                     <div class="form-group">
@@ -78,7 +98,8 @@
             </div>
             <div class="form-group">
                 <label for="userAddressDetail">상세 주소 <span class="required">*</span></label>
-                <input type="text" id="userAddressDetail" name="userAddressDetail" value="${loginUser.userAddressDetail}">
+                <input type="text" id="userAddressDetail" name="userAddressDetail"
+                       value="${loginUser.userAddressDetail}">
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
@@ -89,7 +110,6 @@
         <button type="submit" class="submit-btn">수정 완료</button>
     </form>
 </div>
-
 
 
 <script>

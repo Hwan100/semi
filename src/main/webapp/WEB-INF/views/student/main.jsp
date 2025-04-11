@@ -155,8 +155,8 @@
     </section>
     <%-- 공지사항 --%>
     <section class="announcement-section">
-        <div class="announcement-box">
-            <p>공지사항</p>
+        <div class="announcement-box" onclick="location.href='notice.bo?title1=커뮤니티&title2=공지사항'">
+            <p>공지사항 </p>
             <button class="btn-blank-small">바로가기</button>
         </div>
         <table class="notice-table">
@@ -190,7 +190,7 @@
     <section class="board-section">
         <div class="announcement-box">
             <p>우리반 게시판</p>
-            <button class="btn-blank-small">바로가기</button>
+            <button class="btn-blank-small" onclick="location.href='myClass.bo?title1=커뮤니티&title2=우리반 게시판'">바로가기</button>
         </div>
         <table class="notice-table">
             <thead>

@@ -48,11 +48,4 @@ public class APIMemberController {
         return UserService.allTeacherList();
     }
 
-    @PostMapping("/myPage")
-    public ModelAndView handleRedirect(ModelAndView mv, int userNo) {
-        mv.addObject("userNo", userNo);
-        mv.setViewName("myPage/adminMyPage");
-        return mv;
-    }
-
 }

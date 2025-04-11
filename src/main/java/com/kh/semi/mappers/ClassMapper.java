@@ -33,4 +33,6 @@ public interface ClassMapper {
 
     List<Class> selectClassListWithJoin();
 
+    List<Class> selectCompletedClassList(User u);
+
 }

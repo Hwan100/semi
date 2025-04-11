@@ -86,4 +86,9 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.selectClassListWithJoin();
     }
 
+    @Override
+    public List<Class> selectCompletedClassList(User u) {
+        return classMapper.selectCompletedClassList(u);
+    }
+
 }

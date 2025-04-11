@@ -33,5 +33,7 @@ public interface ClassService {
 
     List<Class> selectClassListWithJoin();
 
+    List <Class> selectCompletedClassList(User u);
+
 }
 

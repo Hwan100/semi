@@ -9,7 +9,7 @@
 <jsp:include page="../common/header.jsp" />
 
 <div class="container">
-    <c:forEach var="c" items="${classList}">
+    <c:forEach var="c" items="${compleList}">
         <div class="course-card completed">
             <div class="left-info">
                 <div class="title-row">

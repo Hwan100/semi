@@ -226,10 +226,12 @@ public class UserController {
     public ModelAndView studentListByClass(@RequestParam("classNo") int classNo, ModelAndView mv) {
         ArrayList<User> studentList = userService.selectStudentsByClassNo(classNo);
         mv.addObject("studentList", studentList);
-        mv.addObject("classNo", classNo);
+        mv.addObject("classNo", classNo); // 🔥 JSP에 전달!
         mv.setViewName("teacher/teacherStudentInfoListPage");
         return mv;
     }
+
+
 
 
 

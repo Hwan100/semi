@@ -220,5 +220,17 @@ public class UserController {
         }
         return mv;
     }
+
+    @GetMapping("studentListByClass.li")
+    public ModelAndView studentListByClass(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        ArrayList<User> studentList = userService.selectStudentsByClassNo(classNo);
+        mv.addObject("studentList", studentList);
+        mv.addObject("classNo", classNo);
+        mv.setViewName("teacher/teacherStudentInfoListPage");
+        return mv;
+    }
+
+
+
 }
 

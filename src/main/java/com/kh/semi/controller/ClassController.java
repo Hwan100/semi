@@ -1,6 +1,8 @@
 package com.kh.semi.controller;
 
+import com.kh.semi.domain.vo.Class;
 import com.kh.semi.domain.vo.Schedule;
+import com.kh.semi.domain.vo.User;
 import com.kh.semi.service.ClassService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.kh.semi.domain.vo.Class;
 import com.kh.semi.domain.vo.ClassTime;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,7 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class ClassController {
+public class
+ClassController {
     private final ClassService classService;
 
     @Autowired
@@ -103,9 +105,12 @@ public class ClassController {
 
     // 강의 목록을 DB에서 가져와서 모델에 담기
     @GetMapping("course.li")
-    public String course(Model model) {
-        List<Class> classList = classService.selectClassList();
+    public String course(Model model,HttpSession session) {
+        User u = (User)session.getAttribute("loginUser");
+        List<Class> classList = classService.selectClassList(u);
         LocalDate today = LocalDate.now();
+
+
 
         // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
         List<Class> filteredList = new ArrayList<>();
@@ -132,40 +137,24 @@ public class ClassController {
             }
         }
 
+        System.out.println(classList);
         model.addAttribute("classList", filteredList);  // JSP로 넘길 리스트는 filteredList
         return "teacher/courseList";
     }
 
     @GetMapping("completedCourse.li")
-    public String completedCourses(Model model) {
-        List<Class> classList = classService.selectClassList();
+    public String completedCourses(Model model ,HttpSession session) {
+        User u = (User)session.getAttribute("loginUser");
+        List<Class> classList = classService.selectClassList(u);
         LocalDate today = LocalDate.now();
 
-        List<Class> completedList = new ArrayList<>();
+        List<Class> completedList = classService.selectCompletedClassList(u);
 
-        for (Class c : classList) {
-            int progress = 0;
+        System.out.println(classList);
+        System.out.println(completedList);
 
-            if (c.getStartDate() != null && c.getEndDate() != null) {
-                LocalDate start = c.getStartDate().toLocalDate();
-                LocalDate end = c.getEndDate().toLocalDate();
-
-                if (!today.isBefore(start)) {
-                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
-                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
-                    progress = (int)((passedDays * 100) / totalDays);
-                }
-            }
-
-            c.setProgress(progress);
-
-            // 100%인 강의만 담기
-            if (progress == 100) {
-                completedList.add(c);
-            }
-        }
-
-        model.addAttribute("classList", completedList);
+        model.addAttribute("classList", classList);
+        model.addAttribute("compleList", completedList);
         return "teacher/completedCourseList";
     }
 
@@ -189,6 +178,7 @@ public class ClassController {
             }
             c.setProgress(progress);
         }
+
 
         model.addAttribute("classList", classList);
         return "teacher/AdminCourseList";

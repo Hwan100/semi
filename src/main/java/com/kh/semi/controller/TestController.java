@@ -15,8 +15,7 @@ public class TestController {
 
 
 
-    @GetMapping("finish.bo")
-    public String finish() {return "student/finishPage";}
+
 
     @GetMapping("vacation.li")
     public ModelAndView vacation(@RequestParam("classNo") int classNo, ModelAndView mv) {

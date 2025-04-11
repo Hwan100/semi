@@ -21,6 +21,16 @@
         <result column="DEPARTMENT_NO" property="departmentNo"/>
         <result column="CLASS_NAME" property="className"/>
     </resultMap>
+    <resultMap id="classResult" type="Class">
+        <result column="CLASS_NO" property="classNo" />
+        <result column="CLASS_NAME" property="className" />
+        <result column="START_DATE" property="startDate" />
+        <result column="END_DATE" property="endDate" />
+        <result column="COURSE_NAME" property="courseName" />
+        <result column="DESCRIPTION" property="description" />
+        <result column="USER_NO" property="userNo" />
+        <result column="ROOM_NAME" property="roomName" />
+    </resultMap>
     <select id="loginUser" parameterType="User" resultMap="userResult">
         SELECT  U.USER_NO,
         C.CLASS_NO,

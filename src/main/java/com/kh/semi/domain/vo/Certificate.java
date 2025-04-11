@@ -16,6 +16,8 @@ public class Certificate {
     private int finalScore;
     private int certLevel;
     private String result;
-    private String filePath;
+    private String changeName;
+    private String originName;
+
     private int userNo;
 }

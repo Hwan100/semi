@@ -136,7 +136,6 @@ public class UserController {
 
     @PostMapping("adminUpdate.me")
     public ModelAndView aminTeacher(User u, ModelAndView mv, HttpSession session) {
-        System.out.println(u);
         User loginAdmin = (User) session.getAttribute("loginUser");
         if (loginAdmin == null) {
             mv.setViewName("redirect:/");
@@ -193,7 +192,6 @@ public class UserController {
         mv.setViewName("admin/adminCheckUser");
         mv.addObject("userList", list);
 
-        System.out.println(list);
         return mv;
     }
 
@@ -208,9 +206,9 @@ public class UserController {
     }
     @PostMapping("update.me")
     public ModelAndView update(User u, ModelAndView mv) {
-        System.out.println(u);
+
         int result = userService.updateUser(u);
-        System.out.println(result);
+
         if (result > 0) {
 //            User updatedUser = userService.selectUserByNo(u.getUserNo());
 //            mv.addObject("user", updatedUser);

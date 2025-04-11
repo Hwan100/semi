@@ -3,47 +3,9 @@ body {
     background: #E0F7FF;
     margin: 0;
 }
-.menu-tabs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    top: 145px;
-    left: 310px;
-    height: 20px;
-}
 
-.tab {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    height: 24px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.tab.active {
-    color: #000000;
-    font-size: 22px;
-    line-height: 27px;
-    height: 27px;
-}
-
-.tab.inactive {
-    color: #CFCFCF;
-}
-
-.Listcontainer {
-    margin-left: 310px;
-    margin-right: 40px;
-    margin-top: 185px;
+.ListContainer {
+    margin: 30px 40px 0 310px;
     padding: 20px;
     background: #fff;
     border-radius: 20px;

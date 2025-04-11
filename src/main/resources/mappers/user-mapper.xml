@@ -45,15 +45,24 @@
     </select>
 
     <update id="updateUser" parameterType="User">
-        UPDATE TB_USER
-        SET USER_NAME = #{userName},
-            USER_PHONE = #{userPhone},
-            USER_EMAIL = #{userEmail},
-            USER_ADDRESS = #{userAddress},
-            USER_ADDRESS_DETAIL = #{userAddressDetail},
-            USER_BIRTH = #{userBirth}
-        WHERE USER_ID = #{userId}
+        UPDATE TB_USER u
+        SET
+            u.USER_NAME = #{userName},
+            u.USER_PHONE = #{userPhone},
+            u.USER_EMAIL = #{userEmail},
+            u.USER_ADDRESS = #{userAddress},
+            u.USER_ADDRESS_DETAIL = #{userAddressDetail},
+            u.USER_ROLE = #{userRole},
+            u.USER_STATUS = #{userStatus},
+            u.CLASS_NO = (
+                SELECT c.CLASS_NO
+                FROM TB_CLASS c
+                WHERE c.CLASS_NAME = #{className}
+            )
+        WHERE u.USER_ID = #{userId}
     </update>
+
+
 
     <select id="selectUserByNo" parameterType="User" resultMap="userResult">
         SELECT  U.USER_NO,

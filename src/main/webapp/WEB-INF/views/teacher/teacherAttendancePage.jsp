@@ -1,23 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <jsp:include page="../common/header.jsp"/>
+<jsp:include page="../common/subHeader.jsp"/>
+
 <head>
     <title>Teacher Attendance</title>
     <link rel="stylesheet" href="/css/TeacherAttendancePage.css">
+
 </head>
 <body>
 
 <div class="attendance-container">
-
-    <div class="menu-tabs">
-        <div class="tab active">출결 조회</div>
-        <div class="tab inactive">학생 정보</div>
-        <div class="tab inactive">휴가 신청 내역</div>
-        <div class="tab inactive">일정 관리</div>
-        <div class="tab inactive">우리반 게시판</div>
-        <div class="tab inactive">자소서 및 이력서</div>
-    </div>
-
     <div class="attendance-table-box">
         <table class="attendance-table">
             <thead>

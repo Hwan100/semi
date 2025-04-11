@@ -11,17 +11,9 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/subHeader.jsp"/>
 
-<div class="menu-tabs">
-    <div class="tab inactive">출결 조회</div>
-    <div class="tab inactive">학생 정보</div>
-    <div class="tab active">휴가 신청 내역</div>
-    <div class="tab inactive">일정 관리</div>
-    <div class="tab inactive">우리반 게시판</div>
-    <div class="tab inactive">자소서 및 이력서</div>
-</div>
-
-<div class="Listcontainer">
+<div class="ListContainer">
 
     <table class="Vacation-table">
         <thead>

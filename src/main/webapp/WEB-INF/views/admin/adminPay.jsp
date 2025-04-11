@@ -1,36 +1,29 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <html>
+<jsp:include page="../common/header.jsp"/>
 <head>
     <title>급여 관리</title>
-    <link rel="stylesheet" type="text/css" href="/css/adminPay.css">
+    <link rel="stylesheet" type="text/css" href="/css/studentPay.css">
 </head>
+
+
 <body>
-<jsp:include page="../common/header.jsp"/>
+<div class="container">
+    <h2 class="title">급여 내역</h2>
+    <div class="table-wrapper">
 
-<div class="admin-pay-wrapper">
-    <div class="admin-pay-box">
-
-        <!-- 상단 헤더 (제목 + 버튼) -->
-        <div class="admin-pay-header">
-            <h2 class="admin-pay-title">급여 관리</h2>
-            <div class="admin-pay-buttons">
-                <button class="btn-confirm">확인</button>
-                <button class="btn-pay">지급</button>
-            </div>
-        </div>
-
-        <!-- 테이블 -->
-        <table class="pay-table">
+        <table class="pay-table" id="pay-table">
             <thead>
             <tr>
-                <th class="rounded-left" rowspan="2">No</th>
-                <th rowspan="2">이름</th>
+                <th rowspan="2">No.</th>
                 <th rowspan="2">지급일자</th>
                 <th rowspan="2">은행명</th>
                 <th rowspan="2">계좌번호</th>
                 <th colspan="3">출석사항</th>
                 <th rowspan="2">지급액</th>
-                <th class="rounded-right" rowspan="2">비고</th>
+                <th rowspan="2">비고</th>
             </tr>
             <tr>
                 <th>출석일</th>
@@ -39,23 +32,25 @@
             </tr>
             </thead>
             <tbody>
-            <% for (int i = 1; i <= 6; i++) { %>
-            <tr>
-                <td><%= i %></td>
-                <td>학생<%= i %></td>
-                <td>2025.01.17</td>
-                <td>우리</td>
-                <td>1002-000-000000</td>
-                <td>20</td>
-                <td>17</td>
-                <td>85%</td>
-                <td>280,000원</td>
-                <td>-</td>
-            </tr>
-            <% } %>
+
+            <c:forEach var="pay" items="${payList}" varStatus="status">
+                <tr>
+                    <td>${status.index + 1}</td>
+                    <td>${pay.payDate}</td>
+                    <td>${pay.bankName}</td>
+                    <td>${pay.accountNumber}</td>
+                    <td>${pay.requiredDays}</td>
+                    <td>${pay.actualDays}</td>
+                    <td><fmt:formatNumber value="${pay.actualDays / pay.requiredDays * 100}" type="number"
+                                          maxFractionDigits="1"/>%
+                    </td>
+                    <td>${pay.amount}</td>
+                    <td>${pay.note}</td>
+                </tr>
+            </c:forEach>
+
             </tbody>
         </table>
-
     </div>
 </div>
 </body>

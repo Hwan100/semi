@@ -57,13 +57,13 @@
             </tr>
             <tr>
                 <th><label for="content">내용</label></th>
-                <td><textarea id="content" name="content" required>${b.content}</textarea></td>
+                <td><textarea id="content" name="content" required style="border: 1px solid">${b.content}</textarea></td>
             </tr>
         </table>
 
         <div style="text-align: right; margin-top: 20px;">
             <button type="submit" class="btn-submit">수정</button>
-            <button type="reset" class="btn-secondary">취소</button>
+            <button onclick="location.href='notice.bo'" class="btn-secondary">취소</button>
         </div>
     </form>
 </div>

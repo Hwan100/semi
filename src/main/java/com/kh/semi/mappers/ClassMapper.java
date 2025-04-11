@@ -30,9 +30,12 @@ public interface ClassMapper {
 
     // 강의 목록 조회
     List<Class> selectClassList(User u);
+    List<Class> selectClassList2();
 
     List<Class> selectClassListWithJoin();
 
     List<Class> selectCompletedClassList(User u);
+
+    List<Class> selectProgressClassList(User u);
 
 }

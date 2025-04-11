@@ -19,7 +19,7 @@ public class PayController {
 
     //학생 장려금리스트 조회
     @GetMapping ("studentPay.li")
-    public ModelAndView getPay(User user, ModelAndView mv, HttpSession session) {
+    public ModelAndView getPay(ModelAndView mv, HttpSession session) {
 
         User loginUser = (User)session.getAttribute("loginUser");
         if (loginUser == null) {
@@ -32,6 +32,25 @@ public class PayController {
         ArrayList<Pay> list = payService.selectPayList(userNo);
 
         mv.setViewName("student/studentPay");
+        mv.addObject("payList", list);
+
+        return mv;
+    }
+
+    @GetMapping ("adminPay.li")
+    public ModelAndView getAdminPay(ModelAndView mv, HttpSession session) {
+
+        User loginUser = (User)session.getAttribute("loginUser");
+        int role = loginUser.getUserRole();
+        if (role != 3) {
+            return new ModelAndView("redirect:/");
+        }
+
+
+        ArrayList<Pay> list = payService.selectAdminPayList();
+        System.out.println(list);
+
+        mv.setViewName("admin/adminPay");
         mv.addObject("payList", list);
 
         return mv;

@@ -82,6 +82,11 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
+    public List<Class> selectClassList2() {
+        return classMapper.selectClassList2();
+    }
+
+    @Override
     public List<Class> selectClassListWithJoin() {
         return classMapper.selectClassListWithJoin();
     }
@@ -89,6 +94,11 @@ public class ClassServiceImpl implements ClassService {
     @Override
     public List<Class> selectCompletedClassList(User u) {
         return classMapper.selectCompletedClassList(u);
+    }
+
+    @Override
+    public List<Class> selectProgressClassList(User u) {
+        return classMapper.selectProgressClassList(u);
     }
 
 }

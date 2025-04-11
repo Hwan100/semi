@@ -35,5 +35,7 @@ public interface ClassService {
 
     List <Class> selectCompletedClassList(User u);
 
+    List<Class> selectProgressClassList(User u);
+
 }
 

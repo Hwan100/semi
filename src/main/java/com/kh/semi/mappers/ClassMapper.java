@@ -35,4 +35,6 @@ public interface ClassMapper {
 
     List<Class> selectCompletedClassList(User u);
 
+    List<Class> selectProgressClassList(User u);
+
 }

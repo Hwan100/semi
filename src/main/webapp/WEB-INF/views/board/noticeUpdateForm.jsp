@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <th><label for="content">내용</label></th>
-                <td><textarea id="content" name="content" required>${b.content}</textarea></td>
+                <td><textarea id="content" name="content" required style="border: 1px solid">${b.content}</textarea></td>
             </tr>
         </table>
 

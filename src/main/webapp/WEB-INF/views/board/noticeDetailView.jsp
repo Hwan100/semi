@@ -30,8 +30,8 @@
       <input type="hidden" name="bno" value="${b.boardNo}">
     </div>
     <div>
-      <div class="left">첨부파일</div>
-      <div class="right">
+
+      <div class="right" style="color: blue; padding-left: 30px">
         <c:choose>
           <c:when test="${not empty b.originName }">
             <a href="${b.changeName }" download="${b.originName }">${b.originName }</a>
@@ -64,7 +64,7 @@
       const formEl = document.querySelector("#postForm");
       switch(type){
         case "edit" : {
-          $(formEl).attr("action", "updateForm.cl");
+          $(formEl).attr("action", "updateForm.no");
         }break;
         case "delete":{
           //formEl.action = "delete.bo";

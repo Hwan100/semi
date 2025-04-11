@@ -525,6 +525,9 @@
         const id = document.getElementById("idInput").value;
         const idWarning = document.getElementById("idWarning");
 
+        const idCheck = document.getElementById("idCheck");
+        idCheck.click();
+
         if (id.length < 5 || id.length > 20 || idWarning.innerText !== "사용 가능한 아이디입니다.") {
             alert("아이디를 다시 확인해주세요.");
             return false;

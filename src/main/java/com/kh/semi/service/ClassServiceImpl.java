@@ -91,4 +91,9 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.selectCompletedClassList(u);
     }
 
+    @Override
+    public List<Class> selectProgressClassList(User u) {
+        return classMapper.selectProgressClassList(u);
+    }
+
 }

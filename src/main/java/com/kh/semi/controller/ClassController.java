@@ -107,13 +107,49 @@ ClassController {
     @GetMapping("course.li")
     public String course(Model model,HttpSession session) {
         User u = (User)session.getAttribute("loginUser");
+
+        List<Class> progressClassList = classService.selectProgressClassList(u);
+//        LocalDate today = LocalDate.now();
+//
+//
+//
+//        // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
+//        List<Class> filteredList = new ArrayList<>();
+//
+//        for (Class c : classList) {
+//            int progress = 0;
+//
+//            if (c.getStartDate() != null && c.getEndDate() != null) {
+//                LocalDate start = c.getStartDate().toLocalDate();
+//                LocalDate end = c.getEndDate().toLocalDate();
+//
+//                if (!today.isBefore(start)) {
+//                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
+//                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
+//                    progress = (int)((passedDays * 100) / totalDays);
+//                }
+//            }
+//
+//            c.setProgress(progress);
+//
+//            // 100% 미만인 강의만 담는다
+//            if (progress < 100) {
+//                filteredList.add(c);
+//            }
+//        }
+
+        System.out.println(progressClassList);
+        model.addAttribute("classList", progressClassList);  // JSP로 넘길 리스트는 filteredList
+        return "teacher/courseList";
+    }
+
+    @GetMapping("completedCourse.li")
+    public String completedCourses(Model model ,HttpSession session) {
+        User u = (User)session.getAttribute("loginUser");
         List<Class> classList = classService.selectClassList(u);
         LocalDate today = LocalDate.now();
 
-
-
-        // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
-        List<Class> filteredList = new ArrayList<>();
+        List<Class> completedList = classService.selectCompletedClassList(u);
 
         for (Class c : classList) {
             int progress = 0;
@@ -131,27 +167,13 @@ ClassController {
 
             c.setProgress(progress);
 
-            // 100% 미만인 강의만 담는다
-            if (progress < 100) {
-                filteredList.add(c);
+            // 100%인 강의만 담기
+            if (progress == 100) {
+                completedList.add(c);
             }
         }
 
         System.out.println(classList);
-        model.addAttribute("classList", filteredList);  // JSP로 넘길 리스트는 filteredList
-        return "teacher/courseList";
-    }
-
-    @GetMapping("completedCourse.li")
-    public String completedCourses(Model model ,HttpSession session) {
-        User u = (User)session.getAttribute("loginUser");
-        List<Class> classList = classService.selectClassList(u);
-        LocalDate today = LocalDate.now();
-
-        List<Class> completedList = classService.selectCompletedClassList(u);
-
-        System.out.println(classList);
-        System.out.println(completedList);
 
         model.addAttribute("classList", classList);
         model.addAttribute("compleList", completedList);

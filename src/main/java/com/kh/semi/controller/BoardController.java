@@ -202,14 +202,20 @@ public class BoardController {
     }
 
     @GetMapping("myClass.bo")
-    public String myClassBoardListController(@RequestParam(defaultValue = "1") int cpage, Model model) {
+    public String myClassBoardListController(@RequestParam(defaultValue = "1") Integer cpage, Model model,HttpSession session) {
         int boardCount = boardService.selectBoardCount();
 
+        User loginUser = (User)session.getAttribute("loginUser");
+
+        int classNo = loginUser.getClassNo();
+
+
         PageInfo pi = new PageInfo(boardCount, cpage, 3, 10);
-        List<Board> list = boardService.selectMyClassBoardList(pi);
+        List<Board> list = boardService.selectMyClassBoardList(pi, classNo);
 
         model.addAttribute("list", list);
         model.addAttribute("pi", pi);
+
         return "board/myClassBoardListView";
     }
 
@@ -388,10 +394,14 @@ public class BoardController {
         PageInfo piNotice = new PageInfo(noticeCount, 1, 3, 5);
         List<Board> noticeList = boardService.selectNoticeBoardList(piNotice);
 
+        User loginUser = (User)session.getAttribute("loginUser");
+
+        int classNo = loginUser.getClassNo();
+
         // 우리반 게시판
         int classBoardCount = boardService.selectBoardCount();
         PageInfo piClass = new PageInfo(classBoardCount, 1, 3, 5);
-        List<Board> classBoardList = boardService.selectMyClassBoardList(piClass);
+        List<Board> classBoardList = boardService.selectMyClassBoardList(piClass, classNo);
 
         model.addAttribute("noticeList", noticeList);
         model.addAttribute("classBoardList", classBoardList);

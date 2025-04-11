@@ -35,7 +35,7 @@ public interface BoardMapper {
 
     ResumeBoard selectResumeBoard(int bno);
 
-    List<Board> selectMyClassBoardList(RowBounds rowBounds);
+    List<Board> selectMyClassBoardList(RowBounds rowBounds, int classNo);
 
     Integer selectClassNoByRoomName(String roomName);
 

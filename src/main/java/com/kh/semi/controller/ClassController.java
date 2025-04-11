@@ -190,8 +190,6 @@ ClassController {
         List<Class> classList = classService.selectClassList(u);
         LocalDate today = LocalDate.now();
 
-
-
         // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
         List<Class> filteredList = new ArrayList<>();
 

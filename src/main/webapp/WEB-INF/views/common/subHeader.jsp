@@ -7,11 +7,13 @@
 </head>
 <body>
 <div class="menu-tabs">
-    <div class="tab" data-target="attendance.li" data-path="/attendance.li">출결 조회</div>
-    <div class="tab" data-target="infoList.li" data-path="/infoList.li">학생 정보</div>
-    <div class="tab" data-target="vacation.li" data-path="/vacation.li">휴가 신청 내역</div>
-    <div class="tab" data-target="myClass.bo" data-path="/myClass.bo">우리반 게시판</div>
+    <a class="tab" href="attendance.li?classNo=${classNo}" data-path="/attendance.li">출결 조회</a>
+    <a class="tab" href="infoList.li?classNo=${classNo}" data-path="/infoList.li">학생 정보</a>
+    <a class="tab" href="vacation.li?classNo=${classNo}" data-path="/vacation.li">휴가 신청 내역</a>
+    <a class="tab" href="myClass.bo?classNo=${classNo}" data-path="/myClass.bo">우리반 게시판</a>
 </div>
+
+
 
 <script>
     const classNo = '${classNo}'; // 서버에서 모델로 전달된 classNo를 그대로 사용

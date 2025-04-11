@@ -160,7 +160,20 @@
         JOIN TB_USER u ON c.USER_NO = u.USER_NO
     </select>
 
-
-
+    <select id="selectCompletedClassList" resultMap="classResult" parameterType="User">
+        SELECT
+            C.CLASS_NO,
+            C.CLASS_NAME,
+            C.START_DATE,
+            C.END_DATE,
+            C.COURSE_NAME,
+            C.DESCRIPTION,
+            C.USER_NO,
+            C.ROOM_NAME
+        FROM TB_CLASS C
+        JOIN TB_USER U ON C.USER_NO = U.USER_NO
+        WHERE C.USER_NO = #{userNo}
+        AND C.END_DATE &lt; SYSDATE
+    </select>
 
 </mapper>

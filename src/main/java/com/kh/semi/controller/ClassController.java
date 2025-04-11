@@ -228,32 +228,13 @@ ClassController {
         List<Class> classList = classService.selectClassList(u);
         LocalDate today = LocalDate.now();
 
-        List<Class> completedList = new ArrayList<>();
+        List<Class> completedList = classService.selectCompletedClassList(u);
 
-        for (Class c : classList) {
-            int progress = 0;
-
-            if (c.getStartDate() != null && c.getEndDate() != null) {
-                LocalDate start = c.getStartDate().toLocalDate();
-                LocalDate end = c.getEndDate().toLocalDate();
-
-                if (!today.isBefore(start)) {
-                    long totalDays = ChronoUnit.DAYS.between(start, end) + 1;
-                    long passedDays = Math.min(ChronoUnit.DAYS.between(start, today) + 1, totalDays);
-                    progress = (int)((passedDays * 100) / totalDays);
-                }
-            }
-
-            c.setProgress(progress);
-
-            // 100%인 강의만 담기
-            if (progress == 100) {
-                completedList.add(c);
-            }
-        }
+        System.out.println(classList);
+        System.out.println(completedList);
 
         model.addAttribute("classList", classList);
-        model.addAttribute("classList", completedList);
+        model.addAttribute("compleList", completedList);
         return "teacher/completedCourseList";
     }
 

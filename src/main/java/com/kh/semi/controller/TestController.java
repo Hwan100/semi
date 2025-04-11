@@ -17,11 +17,20 @@ public class TestController {
 
 
 
-    @GetMapping("infoList.li")
-    public String infoList() {return "teacher/teacherStudentInfoListPage";}
-
     @GetMapping("vacation.li")
-    public String vacation() {return "teacher/teacherVacationList";}
+    public ModelAndView vacation(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        mv.addObject("classNo", classNo);
+        mv.setViewName("teacher/teacherVacationList");
+        return mv;
+    }
+
+    @GetMapping("infoList.li")
+    public ModelAndView infoList(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        mv.addObject("classNo", classNo);
+        mv.setViewName("teacher/teacherStudentInfoListPage");
+        return mv;
+    }
+
 
 
 

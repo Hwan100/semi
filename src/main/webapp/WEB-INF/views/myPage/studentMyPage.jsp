@@ -6,12 +6,12 @@
     <title>AdminMyPage</title>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="../common/header.jsp" />
 
 <div class="background-box">
     <div class="form-title">개인정보 수정</div>
 
-    <form action="update.me" method="post">
+    <form action="adminUpdate.me" method="post">
 
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">
@@ -25,27 +25,27 @@
                 <div class="form-group-row">
                     <div class="form-group">
                         <label for="userType">구분</label>
-                        <select id="userType" name="userType">
-                            <option value="1" ${user.userRole == '1' ? 'selected' : ''}>학생</option>
-                            <option value="2" ${user.userRole == '2' ? 'selected' : ''}>강사</option>
-                            <option value="3" ${user.userRole == '3' ? 'selected' : ''}>관리자</option>
-                        </select>
+                        <input type="text" id="userType" name="userType" value="학생" readonly>
+
                     </div>
                     <div class="form-group">
                         <label for="userStatus">상태</label>
-                        <select id="userStatus" name="userStatus">
-                            <option value="Y" style="color: #4CAF50" ${user.userStatus == 'Y' ? 'selected' : ''}>정상
-                            </option>
-                            <option value="N" style="color: #F44336" ${user.userStatus == 'N' ? 'selected' : ''}>탈퇴
-                            </option>
-                            <option value="C" style="color: #ffa500" ${user.userStatus == 'C' ? 'selected' : ''}>대기
-                            </option>
-                        </select>
+                        <c:choose>
+                            <c:when test="${not empty loginUser && loginUser.userStatus == 'Y'}">
+                                <input type="text" id="userStatus" name="userStatus" value="정상" readonly>
+                            </c:when>
+                            <c:when test="${not empty loginUser && loginUser.userStatus == 'N'}">
+                                <input type="text" id="userStatus" name="userStatus" value="탈퇴" readonly>
+                            </c:when>
+                            <c:otherwise>
+                                <input type="text" id="userStatus" name="userStatus" value="휴면" readonly>
+                            </c:otherwise>
+                        </c:choose>
 
                     </div>
                     <div class="form-group">
                         <label for="enrollDate">가입일</label>
-                        <input type="text" id="enrollDate" name="enrollDate" value="${user.userJoinDate}" readonly>
+                        <input type="text" id="enrollDate" name="enrollDate" value="${loginUser.userJoinDate}" readonly>
                     </div>
                 </div>
 
@@ -53,12 +53,12 @@
                 <div class="top-grid">
                     <div class="form-group">
                         <label for="userName">이름</label>
-                        <input type="text" id="userName" name="userName" value="${user.userName}" readonly>
+                        <input type="text" id="userName" name="userName" value="${loginUser.userName}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="studentNo">학생 번호</label>
-                        <input type="text" id="studentNo" name="studentNo" value="${user.userNo}" readonly>
-                        <input type="hidden" name="userId" value="${user.userId}">
+                        <input type="text" id="studentNo" name="studentNo" value="${loginUser.userNo}" readonly>
+                        <input type="hidden" name="userId" value="${loginUser.userId}">
                     </div>
                 </div>
 
@@ -69,40 +69,30 @@
         <div class="bottom-info-wrapper">
             <div class="form-group">
                 <label for="userPhone">휴대폰 <span class="required">*</span></label>
-                <input type="text" id="userPhone" name="userPhone" value="${user.userPhone}">
+                <input type="text" id="userPhone" name="userPhone" value="${loginUser.userPhone}">
             </div>
             <div class="form-group">
                 <label for="userEmail">이메일 주소 <span class="required">*</span></label>
-                <input type="email" id="userEmail" name="userEmail" value="${user.userEmail}">
+                <input type="email" id="userEmail" name="userEmail" value="${loginUser.userEmail}">
             </div>
             <div class="form-group">
                 <label for="userAddress">주소 <span class="required">*</span></label>
-                <input type="text" id="userAddress" name="userAddress" value="${user.userAddress}">
+                <input type="text" id="userAddress" name="userAddress" value="${loginUser.userAddress}">
             </div>
             <div class="form-group">
                 <label for="userAddressDetail">상세 주소 <span class="required">*</span></label>
-                <input type="text" id="userAddressDetail" name="userAddressDetail"
-                       value="${user.userAddressDetail}">
+                <input type="text" id="userAddressDetail" name="userAddressDetail" value="${loginUser.userAddressDetail}">
             </div>
             <div class="form-group full">
                 <label for="className">강의명</label>
-                <input type="text" id="className" name="userClassName" value="${user.className}" readonly>
+                <input type="text" id="className" name="userClassName" value="${loginUser.className}" readonly>
             </div>
         </div>
-
-        <input type="hidden" value="${user.userNo}">
-        <input type="hidden" value="${user.classNo}">
-        <input type="hidden" value="${user.userPwd}">
-        <input type="hidden" value="${user.userRole}">
-        <input type="hidden" value="${user.userBirth}">
-        <input type="hidden" value="${user.userJoinDate}">
-        <input type="hidden" value="${user.departmentNo}">
-        <input type="hidden" value="${user.className}">
-
 
         <button type="submit" class="submit-btn">수정 완료</button>
     </form>
 </div>
+
 
 
 <script>
@@ -114,9 +104,9 @@
 
             // 초기화
             statusSelect.style.color =
-                value === 'Y' ? '#4CAF50' :
-                    value === 'N' ? '#F44336' :
-                        value === 'C' ? '#ffa500' : 'gray';
+                value === '정상' ? '#4CAF50' :
+                    value === '탈퇴' ? '#F44336' :
+                        value === '휴면' ? '#9E9E9E' : 'black';
         }
 
         // 최초 로드 + 변경 시 모두 적용

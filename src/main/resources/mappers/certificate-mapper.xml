@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.semi.mappers.CertificateMapper">
+    <resultMap id="certificateResult" type="Certificate">
+        <result column="CERT_NO" property="certNo" />
+        <result column="UNIT_NAME" property="unitName" />
+        <result column="EVAL_DATE" property="evalDate" />
+        <result column="MAIN_SCORE" property="mainScore" />
+        <result column="FINAL_SCORE" property="finalScore" />
+        <result column="CERT_LEVEL" property="certLevel" />
+        <result column="RESULT" property="result" />
+        <result column="CHANGE_NAME" property="changeName" />
+        <result column="ORIGIN_NAME" property="originName" />
+        <result column="USER_NO" property="userNo" />
+    </resultMap>
+
+    <select id="selectCertificateList" resultMap="certificateResult">
+        SELECT
+        CERT_NO,
+        UNIT_NAME,
+        EVAL_DATE,
+        MAIN_SCORE,
+        FINAL_SCORE,
+        CERT_LEVEL,
+        RESULT,
+        CHANGE_NAME,
+        ORIGIN_NAME
+        FROM TB_CERTIFICATE
+        WHERE USER_NO = #{userNo}
+        ORDER BY EVAL_DATE DESC
+    </select>
+
+
+</mapper>

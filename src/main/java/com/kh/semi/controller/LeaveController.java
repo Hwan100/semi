@@ -32,7 +32,6 @@ public class LeaveController {
         int userNo = loginUser.getUserNo();
 
         List<Leave> list = leaveService.selectRecentLeaveList(userNo, 5);
-        System.out.println("불러온 휴가 개수 ▶ " + list.size());
         model.addAttribute("list", list);
         return "student/studentVacationView";
     }

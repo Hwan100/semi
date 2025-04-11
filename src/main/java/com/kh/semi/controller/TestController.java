@@ -15,8 +15,7 @@ public class TestController {
 
 
 
-    @GetMapping("finish.bo")
-    public String finish() {return "student/finishPage";}
+
 
     @GetMapping("infoList.li")
     public String infoList() {return "teacher/teacherStudentInfoListPage";}

@@ -96,7 +96,7 @@
 <div class="sidebar-container">
     <div class="sidebar">
         <a href="/">
-            <img class="sidebar-logo" src="${siteSetting.changeName}" alt="로고">
+            <img class="sidebar-logo" src="${siteSetting.changeName}" alt="로고" onerror="this.src='/icons/logo.png'">
         </a>
 
         <div class="menu-group">

@@ -230,23 +230,74 @@ ul.pagination li.page-item a.page-link:hover {
 .page-item, .disabled, .page-link{
     border: 0;
 }
-
 .leave-table {
-    width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.leave-header,
+.leave-row {
+    display: flex;
+    align-items: center;
 }
 
 .leave-header {
-    display: flex;
-    background-color: #e5f1ff;
-    font-weight: bold;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+    background: #e6f0ff;
+    font-weight: 600;
+    color: #333;
+    height: 44px;
+    border-bottom: 1px solid #ccc; /* header 하단 선은 1줄만 */
 }
 
-.leave-header > div {
-    padding: 5px 10px;
-    box-sizing: border-box;
-    text-align: center;
-    flex-shrink: 0;
+.leave-row {
+    height: 48px;
+    border-bottom: 1px solid #eee; /* 중간 줄: 연하게 */
 }
+
+.leave-header div,
+.leave-row div {
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: hidden;
+}
+
+/* 열 너비 동일하게 유지 */
+.leave-header div:nth-child(1),
+.leave-row div:nth-child(1),
+.leave-header div:nth-child(2),
+.leave-row div:nth-child(2) {
+    width: 56px;
+    justify-content: center;
+}
+.leave-header div:nth-child(3),
+.leave-row div:nth-child(3) {
+    width: 200px;
+}
+.leave-header div:nth-child(4),
+.leave-row div:nth-child(4) {
+    width: 160px;
+}
+.leave-header div:nth-child(5),
+.leave-row div:nth-child(5) {
+    flex: 1;
+    max-width: 280px;
+}
+.leave-header div:nth-child(6),
+.leave-row div:nth-child(6) {
+    width: 100px;
+    justify-content: center;
+}
+.leave-header div:nth-child(7),
+.leave-row div:nth-child(7) {
+    width: 200px;
+}
+

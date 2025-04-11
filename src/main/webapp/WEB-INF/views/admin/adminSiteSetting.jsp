@@ -119,32 +119,32 @@
 </form>
 
 
-    <script>
+<script>
 
-        function selectLogo(){
-            const fileInput = document.getElementById("file");
-            fileInput.click();
+    function selectLogo(){
+        const fileInput = document.getElementById("file");
+        fileInput.click();
+    }
+
+    function loadFileName(inputFile) {
+        const fileNameSpan = document.getElementById("fileName");
+        const logoInput = document.getElementById("logoInput");
+
+        if (inputFile.files.length > 0) {
+            const file = inputFile.files[0];
+            fileNameSpan.textContent = file.name;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                logoInput.src = e.target.result; // 이미지 태그에 src 설정
+            };
+            reader.readAsDataURL(file); // 파일을 base64로 읽기
+        } else {
+            fileNameSpan.textContent = "선택된 파일 없음";
+            logoInput.src = ""; // 선택이 없으면 이미지 초기화
         }
+    }
 
-        function loadFileName(inputFile) {
-            const fileNameSpan = document.getElementById("fileName");
-            const logoInput = document.getElementById("logoInput");
-
-            if (inputFile.files.length > 0) {
-                const file = inputFile.files[0];
-                fileNameSpan.textContent = file.name;
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    logoInput.src = e.target.result; // 이미지 태그에 src 설정
-                };
-                reader.readAsDataURL(file); // 파일을 base64로 읽기
-            } else {
-                fileNameSpan.textContent = "선택된 파일 없음";
-                logoInput.src = ""; // 선택이 없으면 이미지 초기화
-            }
-        }
-
-    </script>
+</script>
 </body>
 </html>

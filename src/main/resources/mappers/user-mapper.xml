@@ -45,14 +45,6 @@
     </select>
 
     <update id="updateUser" parameterType="User">
-        UPDATE TB_USER
-        SET USER_NAME = #{userName},
-        USER_PHONE = #{userPhone},
-        USER_EMAIL = #{userEmail},
-        USER_ADDRESS = #{userAddress},
-        USER_ADDRESS_DETAIL = #{userAddressDetail},
-        USER_BIRTH = #{userBirth}
-        WHERE USER_ID = #{userId}
         UPDATE TB_USER u
         SET
         u.USER_NAME = #{userName},

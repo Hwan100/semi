@@ -21,8 +21,8 @@ public class TestController {
     @GetMapping("infoList.li")
     public String infoList() {return "teacher/teacherStudentInfoListPage";}
 
-    @GetMapping("vacation.li")
-    public String vacation() {return "teacher/teacherVacationList";}
+
+
 
 
 
@@ -31,7 +31,23 @@ public class TestController {
 
 
     @GetMapping("attendance.li")
-    public String attendanceList() {return "teacher/teacherAttendancePage";}
+    public ModelAndView attendance(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        mv.addObject("classNo", classNo);
+        mv.setViewName("teacher/teacherAttendancePage");
+        return mv;
+    }
+
+
+    @GetMapping("vacation.li")
+    public ModelAndView vacation(@RequestParam("classNo") int classNo, ModelAndView mv) {
+        mv.addObject("classNo", classNo); // 🔥 JSP에 전달!
+        mv.setViewName("teacher/teacherVacationList");
+        return mv;
+    }
+
+
+
+
 
     @GetMapping("enrollForm.me")
     public String enrollForm() {return "login/memberEnrollPage";}

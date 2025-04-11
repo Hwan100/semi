@@ -153,4 +153,27 @@
         ORDER BY DECODE(USER_STATUS, 'C', 1), U.USER_NO
     </select>
 
+    <select id="selectStudentsByClassNo" parameterType="int" resultMap="userResult">
+        SELECT
+        U.USER_NO,
+        C.CLASS_NO,
+        C.CLASS_NAME,
+        USER_ID,
+        USER_PWD,
+        USER_NAME,
+        USER_ROLE,
+        USER_PHONE,
+        USER_EMAIL,
+        USER_ADDRESS,
+        USER_ADDRESS_DETAIL,
+        USER_BIRTH,
+        USER_JOIN_DATE,
+        USER_PROFILE_IMG,
+        DEPARTMENT_NO,
+        USER_STATUS
+        FROM TB_USER U
+        LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
+        WHERE U.USER_ROLE = 1 AND C.CLASS_NO = #{classNo}
+    </select>
+
 </mapper>

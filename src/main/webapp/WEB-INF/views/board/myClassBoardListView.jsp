@@ -9,8 +9,12 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
+<c:if test="${loginUser.userRole eq '2' || loginUser.userRole eq '3'}">
+    <jsp:include page="../common/subHeader.jsp"/>
+</c:if>
 
-<div class="board-container">
+<div class="board-container ${loginUser.userRole eq '2' || loginUser.userRole eq '3' ? 'with-sub-header' : ''}">
+
 
     <div class="title-area">
         <div style="display: flex; align-items: center;">
@@ -23,6 +27,10 @@
             <div class="button-area">
                 <button class="btn-blank-small" onclick="location.href='enrollForm.cl'">작성</button>
             </div>
+
+        <div class="button-area">
+            <button class="btn-blank-small" onclick="location.href='enrollForm.cl'">작성</button>
+        </div>
         </c:if>
     </div>
 

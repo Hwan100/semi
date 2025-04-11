@@ -1,6 +1,6 @@
 /* 전체 영역 */
 .attendance-container {
-    margin: 140px 40px 0 310px;
+    margin: 0 40px 0 310px;
     background: #E0F7FF;
     overflow: hidden;
 }
@@ -17,35 +17,7 @@
 ::-webkit-scrollbar-track {
     background: #f1f1f1; /* 스크롤바 트랙(배경) 색상 */
 }
-/* 탭 메뉴 */
-.menu-tabs {
-    display: flex;
-    gap: 20px;
-}
 
-.tab {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    cursor: pointer;
-    color: #CFCFCF;
-}
-
-.tab.active {
-    color: #000000;
-    font-size: 22px;
-}
-
-.tab.inactive {
-    color: #CFCFCF;
-}
-
-/* 테이블 영역 */
-.menu-tabs {
-    display: flex;
-    gap: 20px;
-
-}
 
 .attendance-table-box {
     margin-top: 30px;

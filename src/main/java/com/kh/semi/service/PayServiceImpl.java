@@ -18,4 +18,9 @@ public class PayServiceImpl implements PayService {
     public ArrayList<Pay> selectPayList(int userNo) {
         return payMapper.selectPayList(userNo);
     }
+
+    @Override
+    public ArrayList<Pay> selectAdminPayList() {
+        return payMapper.selectAdminPayList();
+    }
 }

@@ -100,137 +100,153 @@
         </a>
 
         <div class="menu-group">
-            <div class="menu-item" id='home' onclick="toggleSubmenu('dashboard-submenu')">
-                <img src="/icons/home.png" alt="대시보드 아이콘">
-                <div class="menu-title"><a href="/">대시보드</a></div>
-            </div>
-            <div id="dashboard-submenu" class="submenu-container"></div>
-
-            <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
-                <img src="/icons/user_box.png" alt="마이페이지 아이콘">
-                <div class="menu-title">마이페이지</div>
-                <img src="/icons/expand_left.png" style="width: 24px; height: 24px;" alt="">
-            </div>
-
-            <div id="mypage-submenu" class="submenu-container">
-                <div class="submenu-item active" onclick="location.href='myPage.me?title1=마이페이지&title2=개인정보 수정';">
-                    <div class="submenu-text"><a href="myPage.me">개인정보 수정</a></div>
+            <c:if test="${loginUser.userRole > 0}">
+                <div class="menu-item" id='home' onclick="toggleSubmenu('dashboard-submenu')">
+                    <img src="/icons/home.png" alt="대시보드 아이콘">
+                    <div class="menu-title"><a href="/">대시보드</a></div>
                 </div>
-                <div class="submenu-item" onclick="location.href='finish.bo?title1=마이페이지&title2=수료증 발급'">
-                    <div class="submenu-text">수료증 발급</div>
-                </div>
-            </div>
-
-            <c:if test="${loginUser.userRole == 1}">
-                <div class="menu-item" onclick="toggleSubmenu('attendance-submenu')">
-                    <img src="/icons/calendar.png" alt="출석관리 아이콘">
-                    <div class="menu-title">출석 관리</div>
-                    <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
-                </div>
-
-                <div id="attendance-submenu" class="submenu-container">
-                    <div class="submenu-item" onclick="location.href='attendance.st?title1=출석 관리&title2=출석률 조회'">
-                        <div class="submenu-text">출석률 조회</div>
-                    </div>
-                    <div class="submenu-item" onclick="location.href='studentVacation.li?title1=출석 관리&title2=휴가 관리'">
-                        <div class="submenu-text">휴가 관리</div>
-                    </div>
-                    <div class="submenu-item" onclick="location.href='studentPay.li?title1=출석 관리&title2=급여 조회'">
-                        <div class="submenu-text">급여 조회</div>
-                    </div>
-                </div>
-            </c:if>
-            <div class="menu-item" onclick="toggleSubmenu('resume-submenu')">
-                <img src="/icons/file.png" alt="자소서 아이콘">
-                <div class="menu-title">자소서 및 이력서</div>
-                <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
-            </div>
-
-            <div id="resume-submenu" class="submenu-container">
-                <div class="submenu-item" onclick="location.href='resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
-                    <div class="submenu-text">자소서&이력서 관리</div>
-                </div>
-                <div class="submenu-item" onclick="location.href='resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성'">
-                    <div class="submenu-text">자소서&이력서 작성</div>
-                </div>
-            </div>
-
-            <c:if test="${loginUser.userRole == 1}">
-                <div class="menu-item" onclick="toggleSubmenu('community-submenu')">
-                    <img src="/icons/group.png" alt="커뮤니티 아이콘">
-                    <div class="menu-title">커뮤니티</div>
-                    <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
-                </div>
-
-                <div id="community-submenu" class="submenu-container">
-                    <div class="submenu-item" onclick="location.href='notice.bo?title1=커뮤니티&title2=공지사항'">
-                        <div class="submenu-text">공지사항</div>
-                    </div>
-                    <div class="submenu-item" onclick="location.href='myClass.bo?title1=커뮤니티&title2=우리반 게시판'">
-                        <div class="submenu-text">우리반 게시판</div>
-                    </div>
-                </div>
-            </c:if>
-
-            <c:if test="${loginUser.userRole == 2}">
-                <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
-                    <img src="/icons/group.png" alt="커뮤니티 아이콘">
-                    <div class="menu-title"><a href="notice.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
-                </div>
-                <div id="setting-submenu" class="submenu-container"></div>
-            </c:if>
-
-            <c:if test="${loginUser.userRole > 1}">
-                <div class="menu-item" onclick="toggleSubmenu('myclass-submenu')">
-                    <img src="/icons/calendar.png" alt="">
-                    <div class="menu-title">강의 관리</div>
-                    <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
-                </div>
-
-                <div id="myclass-submenu" class="submenu-container">
-                    <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">
-                        <div class="submenu-text">진행중인 과정</div>
-                    </div>
-                    <div class="submenu-item" onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
-                        <div class="submenu-text">종료된 과정</div>
+                <div id="dashboard-submenu" class="submenu-container"></div>
+                <c:if test="${loginUser.userRole == 1}">
+                    <div class="menu-item" onclick="toggleSubmenu('mypage-submenu')">
+                        <img src="/icons/user_box.png" alt="마이페이지 아이콘">
+                        <div class="menu-title">마이페이지</div>
+                        <img src="/icons/expand_left.png" style="width: 24px; height: 24px;" alt="">
                     </div>
 
-                    <c:if test="${loginUser.userRole == 3}">
-                        <div class="submenu-item" onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
-                            <div class="submenu-text">강의 개설</div>
+                    <div id="mypage-submenu" class="submenu-container">
+                        <div class="submenu-item active"
+                             onclick="location.href='myPage.me?title1=마이페이지&title2=개인정보 수정';">
+                            <div class="submenu-text"><a href="myPage.me">개인정보 수정</a></div>
                         </div>
-                        <div class="submenu-item" onclick="location.href='adminCourse.li?title1=강의 관리&title2=강의 조회'">
-                            <div class="submenu-text">전체 강의 조회</div>
+                        <div class="submenu-item" onclick="location.href='finish.bo?title1=마이페이지&title2=수료증 발급'">
+                            <div class="submenu-text">수료증 발급</div>
                         </div>
-                    </c:if>
-                </div>
-            </c:if>
+                    </div>
+                </c:if>
+                <c:if test="${loginUser.userRole > 1}">
+                    <div class="menu-item" onclick="location.href='myPage.me?title1=마이페이지&title2=개인정보 수정';">
+                        <img src="/icons/user_box.png" alt="마이페이지 아이콘">
+                        <div class="menu-title">마이페이지</div>
+                    </div>
 
-            <c:if test="${loginUser.userRole == 3}">
-                <div class="menu-item" id='home' onclick="toggleSubmenu('money-submenu')">
-                    <img src="/icons/fluent_money-calculator-24-regular.png" alt="대시보드 아이콘">
-                    <div class="menu-title">관리자메뉴</div>
+                    <div id="mypage-submenu" class="submenu-container"></div>
+                </c:if>
+                <c:if test="${loginUser.userRole == 1}">
+                    <div class="menu-item" onclick="toggleSubmenu('attendance-submenu')">
+                        <img src="/icons/calendar.png" alt="출석관리 아이콘">
+                        <div class="menu-title">출석 관리</div>
+                        <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
+                    </div>
+
+                    <div id="attendance-submenu" class="submenu-container">
+                        <div class="submenu-item" onclick="location.href='attendance.st?title1=출석 관리&title2=출석률 조회'">
+                            <div class="submenu-text">출석률 조회</div>
+                        </div>
+                        <div class="submenu-item"
+                             onclick="location.href='studentVacation.li?title1=출석 관리&title2=휴가 관리'">
+                            <div class="submenu-text">휴가 관리</div>
+                        </div>
+                        <div class="submenu-item" onclick="location.href='studentPay.li?title1=출석 관리&title2=급여 조회'">
+                            <div class="submenu-text">급여 조회</div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="menu-item" onclick="toggleSubmenu('resume-submenu')">
+                    <img src="/icons/file.png" alt="자소서 아이콘">
+                    <div class="menu-title">자소서 및 이력서</div>
                     <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
                 </div>
 
-                <div id="money-submenu" class="submenu-container">
-                    <div class="submenu-item" onclick="location.href='adminUser.li?title1=관리자메뉴&title2=사용자 조회'">
-                        <div class="submenu-text">사용자 조회</div>
+                <div id="resume-submenu" class="submenu-container">
+                    <div class="submenu-item" onclick="location.href='resume.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 관리'">
+                        <div class="submenu-text">자소서&이력서 관리</div>
                     </div>
-                    <div class="submenu-item" onclick="location.href='notice.bo?title1=관리자메뉴&title2=공지사항'">
-                        <div class="submenu-text">공지사항</div>
-                    </div>
-                    <div class="submenu-item" onclick="location.href='adminPay.li?title1=관리자메뉴&title2=급여관리'">
-                        <div class="submenu-text">급여관리</div>
+                    <div class="submenu-item"
+                         onclick="location.href='resumeForm.bo?title1=자소서 및 이력서&title2=자소서 및 이력서 작성'">
+                        <div class="submenu-text">자소서&이력서 작성</div>
                     </div>
                 </div>
 
-                <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
-                    <img src="/icons/setting_line.png" alt="대시보드 아이콘">
-                    <div class="menu-title"><a href="adminSiteSetting.fo?title2=환경설정">환경설정</a></div>
-                </div>
+                <c:if test="${loginUser.userRole == 1}">
+                    <div class="menu-item" onclick="toggleSubmenu('community-submenu')">
+                        <img src="/icons/group.png" alt="커뮤니티 아이콘">
+                        <div class="menu-title">커뮤니티</div>
+                        <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
+                    </div>
 
-                <div id="setting-submenu" class="submenu-container"></div>
+                    <div id="community-submenu" class="submenu-container">
+                        <div class="submenu-item" onclick="location.href='notice.bo?title1=커뮤니티&title2=공지사항'">
+                            <div class="submenu-text">공지사항</div>
+                        </div>
+                        <div class="submenu-item" onclick="location.href='myClass.bo?title1=커뮤니티&title2=우리반 게시판'">
+                            <div class="submenu-text">우리반 게시판</div>
+                        </div>
+                    </div>
+                </c:if>
+
+                <c:if test="${loginUser.userRole == 2}">
+                    <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
+                        <img src="/icons/group.png" alt="커뮤니티 아이콘">
+                        <div class="menu-title"><a href="notice.bo?title1=커뮤니티&title2=공지사항">공지사항</a></div>
+                    </div>
+                    <div id="setting-submenu" class="submenu-container"></div>
+                </c:if>
+
+                <c:if test="${loginUser.userRole > 1}">
+                    <div class="menu-item" onclick="toggleSubmenu('myclass-submenu')">
+                        <img src="/icons/calendar.png" alt="">
+                        <div class="menu-title">강의 관리</div>
+                        <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
+                    </div>
+
+                    <div id="myclass-submenu" class="submenu-container">
+                        <div class="submenu-item" onclick="location.href='course.li?title1=강의 관리&title2=진행중인 과정'">
+                            <div class="submenu-text">진행중인 과정</div>
+                        </div>
+                        <div class="submenu-item"
+                             onclick="location.href='completedCourse.li?title1=강의 관리&title2=종료된 과정'">
+                            <div class="submenu-text">종료된 과정</div>
+                        </div>
+
+                        <c:if test="${loginUser.userRole == 3}">
+                            <div class="submenu-item"
+                                 onclick="location.href='createCourse.fo?title1=강의 관리&title2=강의 개설'">
+                                <div class="submenu-text">강의 개설</div>
+                            </div>
+                            <div class="submenu-item"
+                                 onclick="location.href='adminCourse.li?title1=강의 관리&title2=강의 조회'">
+                                <div class="submenu-text">전체 강의 조회</div>
+                            </div>
+                        </c:if>
+                    </div>
+                </c:if>
+
+                <c:if test="${loginUser.userRole == 3}">
+                    <div class="menu-item" id='home' onclick="toggleSubmenu('money-submenu')">
+                        <img src="/icons/fluent_money-calculator-24-regular.png" alt="대시보드 아이콘">
+                        <div class="menu-title">관리자메뉴</div>
+                        <img src="/icons/expand_left.png" style="width: 24px; height: 24px;">
+                    </div>
+
+                    <div id="money-submenu" class="submenu-container">
+                        <div class="submenu-item" onclick="location.href='adminUser.li?title1=관리자메뉴&title2=사용자 조회'">
+                            <div class="submenu-text">사용자 조회</div>
+                        </div>
+                        <div class="submenu-item" onclick="location.href='notice.bo?title1=관리자메뉴&title2=공지사항'">
+                            <div class="submenu-text">공지사항</div>
+                        </div>
+                        <div class="submenu-item" onclick="location.href='adminPay.li?title1=관리자메뉴&title2=급여관리'">
+                            <div class="submenu-text">급여관리</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" id='home' onclick="toggleSubmenu('setting-submenu')">
+                        <img src="/icons/setting_line.png" alt="대시보드 아이콘">
+                        <div class="menu-title"><a href="adminSiteSetting.fo?title2=환경설정">환경설정</a></div>
+                    </div>
+
+                    <div id="setting-submenu" class="submenu-container"></div>
+                </c:if>
             </c:if>
         </div>
     </div>

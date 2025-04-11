@@ -111,6 +111,19 @@
         ORDER BY START_DATE DESC
     </select>
 
+    <select id="selectClassList2" resultMap="classResult">
+        SELECT
+        CLASS_NO,
+        CLASS_NAME,
+        START_DATE,
+        END_DATE,
+        COURSE_NAME,
+        DESCRIPTION,
+        USER_NO,
+        ROOM_NAME
+        FROM TB_CLASS
+        ORDER BY START_DATE DESC
+    </select>
 
     <select id="selectClassListWithJoin" resultType="com.kh.semi.domain.vo.Class">
         SELECT

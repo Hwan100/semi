@@ -1,0 +1,17 @@
+diff a/src/main/java/com/kh/semi/controller/ClassController.java b/src/main/java/com/kh/semi/controller/ClassController.java	(rejected hunks)
+@@ -185,10 +185,13 @@
+ 
+     // 강의 목록을 DB에서 가져와서 모델에 담기
+     @GetMapping("course.li")
+-    public String course(Model model) {
+-        List<Class> classList = classService.selectClassList();
++    public String course(Model model,HttpSession session) {
++        User u = (User)session.getAttribute("loginUser");
++        List<Class> classList = classService.selectClassList(u);
+         LocalDate today = LocalDate.now();
+ 
++
++
+         // 진행률 계산 + 100% 이하만 필터링할 리스트 생성
+         List<Class> filteredList = new ArrayList<>();
+ 

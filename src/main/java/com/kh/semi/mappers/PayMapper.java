@@ -9,4 +9,5 @@ import java.util.ArrayList;
 public interface PayMapper {
     //학생 PayList 조회
     ArrayList<Pay> selectPayList(int userNo);
+    ArrayList<Pay> selectAdminPayList();
 }

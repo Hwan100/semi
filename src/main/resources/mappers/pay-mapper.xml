@@ -29,4 +29,18 @@
           FROM TB_PAY
          WHERE USER_NO = #{userNo}
     </select>
+
+    <select id="selectAdminPayList" resultMap="payResult">
+        SELECT PAY_NO,
+        PAY_DATE,
+        BANK_NAME,
+        ACCOUNT_NUMBER,
+        REQUIRED_DAYS,
+        ACTUAL_DAYS,
+        ATTENDANCE_RATE,
+        AMOUNT,
+        NOTE
+        FROM TB_PAY
+        ORDER BY PAY_DATE DESC
+    </select>
 </mapper>

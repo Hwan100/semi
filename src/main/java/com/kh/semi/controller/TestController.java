@@ -18,6 +18,13 @@ public class TestController {
     @GetMapping("finish.bo")
     public String finish() {return "student/finishPage";}
 
+    @GetMapping("infoList.li")
+    public String infoList() {return "teacher/teacherStudentInfoListPage";}
+
+    @GetMapping("vacation.li")
+    public String vacation() {return "teacher/teacherVacationList";}
+
+
 
     @GetMapping("adminPay.li")
     public String adminPay() {return "student/studentPay";}

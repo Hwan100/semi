@@ -178,3 +178,7 @@ ul.pagination li.page-item a.page-link:hover {
 .page-item, .disabled, .page-link{
     border: 0;
 }
+
+.board-container.with-sub-header {
+    margin: 30px 40px 0 310px;
+}

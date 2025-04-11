@@ -22,7 +22,10 @@
                 <div class="date">${c.startDate} ~ ${c.endDate}</div>
             </div>
             <div class="right-info">
-                <button class="manage-btn" onclick="location.href='attendance.li'">관리</button>
+                <button onclick="location.href='studentListByClass.li?classNo=${c.classNo}'">관리</button>
+
+
+
             </div>
         </div>
     </c:forEach>

@@ -23,4 +23,7 @@ public interface UserService {
     int selectUserNoById(String userId);
 
     ArrayList<User> allUserList();
+
+    ArrayList<User> selectStudentsByClassNo(int classNo);
+
 }

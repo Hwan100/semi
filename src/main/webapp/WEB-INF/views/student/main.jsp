@@ -20,16 +20,18 @@
 <div class="content-container">
     <%-- 인사 --%>
     <section class="intro-section">
-        <div class="content-box">
-            <h2>안녕하세요. KH학생님</h2>
-            <p>AWS 클라우드 기반 Devops 개발자 양성 과정</p>
-            <p>[강남 S] 2024. 12. 16 ~ 2025. 07. 18 ｜ 09:00 ~ 18:00 <br>
-                최지원 강사님 | 오환석 취업담임</p>
-            <div class="intro-btn-box">
-                <button class="btn-small" onclick="location.href='myPage.me'">정보 수정</button>
-                <button class="btn-blank-small">수강정보</button>
+        <c:if test="${loginUser.userRole == 1}">
+            <div class="content-box">
+                <h2>안녕하세요. ${loginUser.userName}학생님</h2>
+                <p>AWS 클라우드 기반 Devops 개발자 양성 과정</p>
+                <p>[강남 S] 2024. 12. 16 ~ 2025. 07. 18 ｜ 09:00 ~ 18:00 <br>
+                    최지원 강사님 | 오환석 취업담임</p>
+                <div class="intro-btn-box">
+                    <button class="btn-small" onclick="location.href='myPage.me'">정보 수정</button>
+                    <button class="btn-blank-small">수강정보</button>
+                </div>
             </div>
-        </div>
+        </c:if>
     </section>
     <%-- 출석 요약 --%>
     <section class="attendance-section">

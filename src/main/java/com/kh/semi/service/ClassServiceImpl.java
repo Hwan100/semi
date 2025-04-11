@@ -1,9 +1,10 @@
 package com.kh.semi.service;
 
 import com.kh.semi.domain.vo.ClassTime;
-import com.kh.semi.domain.vo.Schedule;
-import com.kh.semi.mappers.ClassMapper;
 import com.kh.semi.domain.vo.Class;
+import com.kh.semi.domain.vo.Schedule;
+import com.kh.semi.domain.vo.User;
+import com.kh.semi.mappers.ClassMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -76,8 +77,8 @@ public class ClassServiceImpl implements ClassService {
 
     // 강의 전체 목록 조회
     @Override
-    public List<Class> selectClassList() {
-        return classMapper.selectClassList();
+    public List<Class> selectClassList(User u) {
+        return classMapper.selectClassList(u);
     }
 
     @Override

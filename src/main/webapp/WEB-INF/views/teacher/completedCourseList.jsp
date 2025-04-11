@@ -14,9 +14,9 @@
             <div class="left-info">
                 <div class="title-row">
                     <div class="title">${c.className}</div>
-                    <div class="progress-percent">진행률: ${c.progress}%</div>
+                    <div class="progress-percent">진행률: 100%</div>
                 </div>
-                <progress class="custom-progress" value="${c.progress}" max="100"></progress>
+                <progress class="custom-progress" value="100" max="100"></progress>
                 <div class="date">${c.startDate} ~ ${c.endDate}</div>
             </div>
             <div class="right-info" style="display: none">

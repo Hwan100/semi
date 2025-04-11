@@ -44,4 +44,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public ArrayList<User> allUserList() { return userMapper.allUserList(); }
 
+    @Override
+    public ArrayList<User> selectStudentsByClassNo(int classNo) {
+        return userMapper.selectStudentsByClassNo(classNo);
+    }
+
 }

@@ -368,6 +368,8 @@ public class BoardController {
         return "board/resumefeedbackDetailView";
     }
 
+
+
     @GetMapping("adminSiteSetting.fo")
     public String adminSiteSetting(Model model, HttpSession session) {
         Setting setting = boardService.selectSiteSetting();
@@ -377,6 +379,8 @@ public class BoardController {
 
         return "admin/adminSiteSetting";
     }
+
+
     @GetMapping("/studentMain")
     public String studentMain(Model model, HttpSession session) {
         // 공지사항

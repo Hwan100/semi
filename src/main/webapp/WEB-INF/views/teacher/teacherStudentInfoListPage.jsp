@@ -1,13 +1,19 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
 <html>
 <jsp:include page="../common/header.jsp"/>
-<jsp:include page="../common/subHeader.jsp"/>
+
+
 <head>
     <title>Teacher Attendance</title>
     <link rel="stylesheet" href="/css/TeacherStudentInfoListPage.css">
 </head>
 <body>
-
+<jsp:include page="../common/subHeader.jsp">
+    <jsp:param name="classNo" value="${classNo}" />
+</jsp:include>
 <div class="attendance-container">
 
     <div class="attendance-table-box">
@@ -24,124 +30,17 @@
             </tr>
             </thead>
             <tbody class="scrollable-tbody">
-            <tr>
-                <td>1</td>
-                <td>김승기</td>
-                <td>010-5555-4444</td>
-                <td>khabcd@gmail.com</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>백승환</td>
-                <td>010-4518-6891</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>이상준</td>
-                <td>010-3425-6789</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>정민구</td>
-                <td>010-7583-2910</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr><tr>
-                <td>5</td>
-                <td>최정욱</td>
-                <td>010-1111-3333</td>
-                <td>khabcd@gmail.co</td>
-                <td>1999-10-02</td>
-                <td>청와대</td>
-                <td>2024-12-17</td>
-            </tr>
-            <%-- 추가 row는 여기에 계속 작성 --%>
+            <c:forEach var="student" items="${studentList}" varStatus="status">
+                <tr onclick="location.href='studentDetailView.li?userNo=${student.userNo}'" style="cursor:pointer;">
+                    <td>${status.index + 1}</td>
+                    <td>${student.userName}</td>
+                    <td>${student.userPhone}</td>
+                    <td>${student.userEmail}</td>
+                    <td>${student.userBirth}</td>
+                    <td>${student.userAddress}</td>
+                    <td>${student.userJoinDate}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

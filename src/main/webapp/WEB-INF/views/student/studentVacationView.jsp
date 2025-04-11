@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,8 +23,6 @@
             border-top: 1px solid #ddd;
             vertical-align: middle;
         }
-
-
     </style>
 </head>
 <body>
@@ -42,65 +41,60 @@
 
         <!-- ✅ div 기반 휴가 목록 테이블 -->
         <form id="postForm" method="post" action="deleteLeave.bo">
-        <div class="leave-table">
-            <div class="leave-header">
-                <div style="width: 56px;">-</div>
-                <div style="width: 56px;">번호</div>
-                <div style="width: 150px;">휴가일자</div>
-                <div>사유</div>
-                <div>첨부파일명</div>
-                <div style="width: 150px;">승인여부</div>
-                <div style="width: 200px;">반려사유</div>
-            </div>
-
-            <c:forEach var="l" items="${list}">
-                <div class="leave-row">
-                    <div><input type="checkbox" class="select_colum" name="selectVacation" value="${l.leaveNo}"></div>
-                    <div>${l.leaveNo}</div>
-                    <div>${l.startDate} ~ ${l.endDate}</div>
-                    <div>${l.reason}</div>
-                    <div>
-                        <c:choose>
-                            <c:when test="${empty l.changeName}">
-                                &nbsp;
-                                -
-                            </c:when>
-                            <c:otherwise>
-                                ${l.changeName}
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
-                    <div>${l.status}</div>
-                    <div>
-                        <c:choose>
-                            <c:when test="${empty l.rejectReason}">
-                                &nbsp;
-                                -
-                            </c:when>
-                            <c:otherwise>
-                                ${l.rejectReason}
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
+            <div class="leave-table">
+                <div class="leave-header">
+                    <div style="width: 56px;">-</div>
+                    <div style="width: 56px;">번호</div>
+                    <div style="width: 150px;">휴가일자</div>
+                    <div>사유</div>
+                    <div>첨부파일명</div>
+                    <div style="width: 150px;">승인여부</div>
+                    <div style="width: 200px;">반려사유</div>
                 </div>
-            </c:forEach>
 
-        </div>
+                <c:forEach var="l" items="${list}">
+                    <div class="leave-row">
+                        <div><input type="checkbox" class="select_colum" name="selectVacation" value="${l.leaveNo}"></div>
+                        <div>${l.leaveNo}</div>
+                        <div>${l.startDate} ~ ${l.endDate}</div>
+                        <div>${l.reason}</div>
+                        <div>
+                            <c:choose>
+                                <c:when test="${empty l.changeName}">-</c:when>
+                                <c:otherwise>
+                                    <a href="${pageContext.request.contextPath}/resources/uploadfile/${l.changeName}"
+                                       download="${l.originName}"
+                                       style="color: #007bff; text-decoration: underline;">
+                                        <c:out value="${fn:substringAfter(l.changeName, '/uploadfile/')}" />
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                        <div>${l.status}</div>
+                        <div>
+                            <c:choose>
+                                <c:when test="${empty l.rejectReason}">-</c:when>
+                                <c:otherwise>${l.rejectReason}</c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
         </form>
     </section>
 
-    <!-- ✅ 하단 영역 -->
+    <!-- ✅ 하단 입력 영역 -->
     <section class="bottom-section" id="form-section">
         <!-- 신청 입력 폼 -->
         <div class="form-box">
-            <form class="form-container" id="leaveForm" method="post" action="submitLeave.do">
+            <form class="form-container" id="leaveForm" method="post" action="submitLeave.do" enctype="multipart/form-data">
                 <label>강의 / 반</label>
                 <div class="input-group">
                     <input type="text" id="className" name="className" class="input-class" placeholder="과정명" required> /
                     <input type="text" id="roomName" name="roomName" class="input-small" placeholder="반명" required>
                 </div>
                 <label>유형</label>
-                <select name="type" required>
+                <select name="type" required style="border: 1px solid #ccc; border-radius: 6px">
                     <option value="1">휴가</option>
                     <option value="2">병가</option>
                 </select>
@@ -111,6 +105,9 @@
                     <input type="text" id="startDate" name="startDate" class="input-date" placeholder="YYYY-MM-DD" required> ~
                     <input type="text" id="endDate" name="endDate" class="input-date" placeholder="YYYY-MM-DD" required>
                 </div>
+
+                <!-- 파일 업로드 -->
+                <input type="file" name="upfile" id="upfile" style="display: none;" />
             </form>
 
             <!-- 유의사항 -->
@@ -120,78 +117,50 @@
             </div>
         </div>
 
-        <!-- ✅ 파일 첨부 테이블 -->
+        <!-- 파일 첨부 테이블 -->
         <div class="file-box">
-            <input type="file" name="upfile" id="upfile" style="display: none;" />
-
             <div class="file-header">
-                <button type="button" class="btn" onclick="document.getElementById('upfile').click();">파일찾기</button>
-                <button class="btn-blank-small">삭제</button>
+                <input type="file" id="fileInput" style="display: none" />
+                <button type="button" onclick="chooseFile('#fileInput')">파일찾기</button>
+                <button type="button" onclick="removeFile()">삭제</button>
             </div>
 
             <table class="file-table" id="fileTable">
                 <thead>
-                <tr>
-                    <th>파일 명</th>
-                </tr>
+                <tr><th>파일 명</th></tr>
                 </thead>
-                <tbody id="fileTableBody">
-                </tbody>
+                <tbody id="fileTableBody"></tbody>
             </table>
         </div>
-
-
     </section>
 </div>
 
 <script>
+    let selectedFile = null;
 
-    document.getElementById('upfile').addEventListener('change', function(event) {
-        const fileName = event.target.files[0]?.name;
-        console.log("선택된 파일:", fileName); // ✅ 추가
+    function chooseFile(selector) {
+        const fileInput = document.querySelector(selector);
+        fileInput.value = '';
+        fileInput.click();
+    }
 
-        const fileTableBody = document.getElementById('fileTableBody');
+    document.getElementById("fileInput").addEventListener("change", function (event) {
+        selectedFile = event.target.files[0];
+        console.log(event.target.files[0])
 
-        if (fileName) {
-            fileTableBody.innerHTML = `<tr><td>${fileName}</td></tr>`;
+        const fileTableBody = document.getElementById("fileTableBody");
+
+        if (selectedFile) {
+            fileTableBody.innerHTML = "<tr><td>" +selectedFile.name + "</td></tr>";
         } else {
             fileTableBody.innerHTML = '';
         }
     });
-
-
-    const newBtn = document.getElementById("new-btn");
-    const formSection = document.getElementById("form-section");
-    const leaveForm = document.getElementById("leaveForm");
-
-    let formVisible = false;
-
-    newBtn.addEventListener("click", function () {
-        if (!formVisible) {
-            formSection.style.display = "flex";
-            newBtn.textContent = "신청";
-            formVisible = true;
-        } else {
-            if (validateLeaveForm()) {
-                leaveForm.submit();
-            }
-        }
-    });
-
-
-    const deleteBtn = document.getElementById("delete-btn")
-
-    function toggleDeleteButton() {
-        const checked = document.querySelectorAll("input[name='selectVacation']:checked");
-        deleteBtn.disabled = checked.length === 0;
+    function removeFile() {
+        selectedFile = null;
+        document.getElementById("fileInput").value = "";
+        document.getElementById("fileTableBody").innerHTML = '';
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const checkboxes = document.querySelectorAll("input[name='selectVacation']");
-        checkboxes.forEach(chk => {
-            chk.addEventListener("change", toggleDeleteButton);
-        });
-    });
 
     function postFormSubmit(type) {
         const formEl = document.querySelector("#postForm");
@@ -207,54 +176,47 @@
         }
     }
 
+    const newBtn = document.getElementById("new-btn");
+    const formSection = document.getElementById("form-section");
+    const leaveForm = document.getElementById("leaveForm");
+    let formVisible = false;
 
-
-    function validateLeaveForm() {
-        const start = document.getElementById("startDate").value;
-        const end = document.getElementById("endDate").value;
-        const reason = document.getElementById("reason").value;
-        const className = document.getElementById("className").value;
-        const roomName = document.getElementById("roomName").value;
-
-        if (!start || !end || !reason || !className || !roomName) {
-            alert("필수 값을 모두 입력하세요.");
-            return false;
-        }
-        return true;
-    }
-
-
-    function validateDelete() {
-        const checked = document.querySelectorAll('input[name="selectVacation"]:checked');
-        if (checked.length === 0) {
-            alert("삭제할 휴가를 선택하세요.");
-            return false;
-        }
-        return true;
-    }
-
-
-    document.getElementById('className').required = true;
-    document.getElementById('roomName').required = true;
-    document.getElementById('reason').required = true;
-    document.getElementById('startDate').required = true;
-    document.getElementById('endDate').required = true;
-
-
-    document.getElementById('upfile').addEventListener('change', function(event) {
-        const fileName = event.target.files[0]?.name;
-        const fileTableBody = document.getElementById('fileTableBody');
-
-        if (fileName) {
-            fileTableBody.innerHTML = `
-            <tr><td>${fileName}</td></tr>
-        `;
+    newBtn.addEventListener("click", function () {
+        if (!formVisible) {
+            formSection.style.display = "flex";
+            newBtn.textContent = "신청";
+            formVisible = true;
         } else {
-            fileTableBody.innerHTML = '';
+            const formData = new FormData(leaveForm);
+            if (selectedFile) {
+                formData.append("file", selectedFile);
+            }
+
+            fetch("submitLeave.do", {
+                method: "POST",
+                body: formData
+            })
+                .then(res => res.text())
+                .then(result => {
+                    alert("신청이 완료되었습니다.");
+                    location.reload();
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("신청 실패");
+                });
         }
     });
 
-
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll("input[name='selectVacation']");
+        checkboxes.forEach(chk => {
+            chk.addEventListener("change", function () {
+                const checked = document.querySelectorAll("input[name='selectVacation']:checked");
+                document.getElementById("delete-btn").disabled = checked.length === 0;
+            });
+        });
+    });
 </script>
 </body>
 </html>

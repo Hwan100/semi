@@ -39,24 +39,21 @@ public class LeaveController {
 
 
     @PostMapping("/submitLeave.do")
-    public String submitLeave(@RequestParam String className, @RequestParam String roomName, @RequestParam String type,
-                              @ModelAttribute Leave leave,
-                              @RequestParam(required = false) MultipartFile upfile,
-                              HttpSession session, Model model) {
+    public String submitLeave(@RequestParam String className, @RequestParam String roomName, @RequestParam String type, @ModelAttribute Leave leave, @RequestParam(required = false) MultipartFile upfile, HttpSession session, Model model) {
         User loginUser = (User) session.getAttribute("loginUser");
         if (loginUser == null) {
             model.addAttribute("errorMsg", "로그인 후 이용 가능합니다.");
-            return "common/error";
+            return "common/error"; // 또는 로그인 페이지로 redirect
         }
-
+        session.setAttribute("loginUser", loginUser);
         leave.setUserNo(loginUser.getUserNo());
 
+        // "휴가" or "병가" → 숫자로 매핑
         if ("병가".equals(type)) {
             leave.setType(2);
         } else {
-            leave.setType(1);
+            leave.setType(1); // 기본값: 휴가
         }
-
         if (upfile != null && !upfile.getOriginalFilename().equals("")) {
             String changeName = Template.saveFile(upfile, session, "/resources/uploadfile/");
             leave.setChangeName("/resources/uploadfile/" + changeName);
@@ -67,7 +64,7 @@ public class LeaveController {
 
         if (result > 0) {
             session.setAttribute("alertMsg", "휴가 신청 완료!");
-            return "redirect:/studentVacation.li"; // ✅ 리스트 새로고침을 위한 핵심 수정
+            return "redirect:/studentVacation.li";// ✅ 리스트 새로고침을 위한 핵심 수정
         } else {
             model.addAttribute("errorMsg", "휴가 신청 실패");
             return "common/error";

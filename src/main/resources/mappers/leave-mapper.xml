@@ -69,13 +69,13 @@
         <foreach collection="leaveNos" item="no" open="(" separator="," close=")">
             #{no}
         </foreach>
-<!-- collection="leaveNos":	컨트롤러에서 받은 List<Integer> leaveNos를 반복 처리하겠다
-       item="no"	leaveNos의 각각의 요소를 no라고 부르겠다
-       open="("	반복문의 시작에 ( 추가 (IN 절 시작)
-       separator=","	각 요소 사이를 구분
-       close=")"	반복문의 끝에 ) 추가 (IN 절 닫음)
-       WHERE LEAVE_NO IN (1, 2, 3)이거를 풀어쓴것
-       -->
+        <!-- collection="leaveNos":	컨트롤러에서 받은 List<Integer> leaveNos를 반복 처리하겠다
+               item="no"	leaveNos의 각각의 요소를 no라고 부르겠다
+               open="("	반복문의 시작에 ( 추가 (IN 절 시작)
+               separator=","	각 요소 사이를 구분
+               close=")"	반복문의 끝에 ) 추가 (IN 절 닫음)
+               WHERE LEAVE_NO IN (1, 2, 3)이거를 풀어쓴것
+               -->
     </delete>
 
 </mapper>

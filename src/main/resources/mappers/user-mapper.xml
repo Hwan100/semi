@@ -175,5 +175,8 @@
         LEFT JOIN TB_CLASS C ON U.CLASS_NO = C.CLASS_NO
         WHERE U.USER_ROLE = 1 AND C.CLASS_NO = #{classNo}
     </select>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75119d9 (되돌림)
 </mapper>

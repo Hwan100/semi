@@ -25,5 +25,8 @@ public interface UserService {
     ArrayList<User> allUserList();
 
     ArrayList<User> selectStudentsByClassNo(int classNo);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75119d9 (되돌림)
 }

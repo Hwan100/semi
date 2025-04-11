@@ -23,9 +23,12 @@
             </div>
             <div class="right-info">
                 <button onclick="location.href='studentListByClass.li?classNo=${c.classNo}'">관리</button>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 75119d9 (되돌림)
             </div>
         </div>
     </c:forEach>

@@ -226,6 +226,7 @@ public class UserController {
     public ModelAndView studentListByClass(@RequestParam("classNo") int classNo, ModelAndView mv) {
         ArrayList<User> studentList = userService.selectStudentsByClassNo(classNo);
         mv.addObject("studentList", studentList);
+<<<<<<< HEAD
         mv.addObject("classNo", classNo); // 🔥 JSP에 전달!
         mv.setViewName("teacher/teacherStudentInfoListPage");
         return mv;
@@ -235,5 +236,11 @@ public class UserController {
 
 
 
+=======
+        mv.addObject("classNo", classNo);
+        mv.setViewName("teacher/teacherStudentInfoListPage");
+        return mv;
+    }
+>>>>>>> 75119d9 (되돌림)
 }
 

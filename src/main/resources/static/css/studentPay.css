@@ -5,16 +5,37 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* 스크롤바 색상 */
+    border-radius: 5px; /* 둥근 모서리 */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 스크롤바 트랙(배경) 색상 */
+}
+
 .title{
     margin-bottom: 20px;
 }
-.table-wrapper {
+
+.container{
     background-color: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
     overflow-x: auto;
     margin: 160px 40px 0 310px;
+}
+
+.table-wrapper {
+    overflow: auto;
+    height: 60%;
 }
 
 .pay-table {

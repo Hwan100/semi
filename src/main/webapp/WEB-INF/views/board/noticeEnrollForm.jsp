@@ -53,7 +53,7 @@
 
         <div style="text-align: right; margin-top: 20px;">
             <button type="submit" class="btn-submit">등록</button>
-            <button type="reset" class="btn-secondary">취소</button>
+            <button onclick="location.href='notice.bo'" class="btn-secondary">취소</button>
         </div>
     </form>
 </div>

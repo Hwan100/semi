@@ -13,22 +13,11 @@ public class TestController {
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}
 
-
-
     @GetMapping("finish.bo")
     public String finish() {return "student/finishPage";}
 
     @GetMapping("infoList.li")
     public String infoList() {return "teacher/teacherStudentInfoListPage";}
-
-
-
-
-
-
-    @GetMapping("adminPay.li")
-    public String adminPay() {return "student/studentPay";}
-
 
     @GetMapping("attendance.li")
     public ModelAndView attendance(@RequestParam("classNo") int classNo, ModelAndView mv) {
@@ -37,17 +26,12 @@ public class TestController {
         return mv;
     }
 
-
     @GetMapping("vacation.li")
     public ModelAndView vacation(@RequestParam("classNo") int classNo, ModelAndView mv) {
         mv.addObject("classNo", classNo); // 🔥 JSP에 전달!
         mv.setViewName("teacher/teacherVacationList");
         return mv;
     }
-
-
-
-
 
     @GetMapping("enrollForm.me")
     public String enrollForm() {return "login/memberEnrollPage";}

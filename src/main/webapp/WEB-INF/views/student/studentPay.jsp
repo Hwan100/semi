@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/studentPay.css"/>
 </head>
 <jsp:include page="../common/header.jsp"/>
-<body onload="studentPay()">
-
-
+<body>
+<div class="container">
+    <h2 class="title">급여 내역</h2>
     <div class="table-wrapper">
-        <h2 class="title">급여 내역</h2>
+
         <table class="pay-table" id="pay-table">
             <thead>
             <tr>
@@ -40,7 +40,9 @@
                     <td>${pay.accountNumber}</td>
                     <td>${pay.requiredDays}</td>
                     <td>${pay.actualDays}</td>
-                    <td><fmt:formatNumber value="${pay.actualDays / pay.requiredDays * 100}" type="number" maxFractionDigits="1"/>%</td>
+                    <td><fmt:formatNumber value="${pay.actualDays / pay.requiredDays * 100}" type="number"
+                                          maxFractionDigits="1"/>%
+                    </td>
                     <td>${pay.amount}</td>
                     <td>${pay.note}</td>
                 </tr>
@@ -49,5 +51,6 @@
             </tbody>
         </table>
     </div>
+</div>
 </body>
 </html>

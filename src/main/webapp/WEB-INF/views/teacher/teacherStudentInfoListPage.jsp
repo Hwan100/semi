@@ -28,7 +28,7 @@
             </thead>
             <tbody class="scrollable-tbody">
             <c:forEach var="student" items="${studentList}" varStatus="status">
-                <tr onclick="location.href='studentDetailView.li?userNo=${student.userNo}'" style="cursor:pointer;">
+                <tr onclick="location.href='studentDetail.li?userNo=${student.userNo}'" style="cursor:pointer;">
                     <td>${status.index + 1}</td>
                     <td>${student.userName}</td>
                     <td>${student.userPhone}</td>

@@ -16,7 +16,6 @@ public class TestController {
     @GetMapping("infoList.li")
     public String infoList() {return "teacher/teacherStudentInfoListPage";}
 
-
     @GetMapping("enrollForm.me")
     public String enrollForm() {return "login/memberEnrollPage";}
 

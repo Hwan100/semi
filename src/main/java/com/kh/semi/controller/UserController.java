@@ -251,5 +251,16 @@ public class UserController {
     }
 
 
+    @GetMapping("studentDetail.li")
+    public ModelAndView studentDetail(@RequestParam("userNo") int userNo, ModelAndView mv) {
+        User user = userService.selectUserByNo(userNo); // DB 조회
+        mv.addObject("user", user); // jsp에서 ${user.xxx}로 접근 가능
+        mv.setViewName("teacher/teacherStudentDetailView"); // 이동할 JSP 경로
+        return mv;
+    }
+
+
+
+
 }
 

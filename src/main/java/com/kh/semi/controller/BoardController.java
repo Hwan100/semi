@@ -215,6 +215,7 @@ public class BoardController {
 
         model.addAttribute("list", list);
         model.addAttribute("pi", pi);
+        model.addAttribute("classNo", classNo);
 
         return "board/myClassBoardListView";
     }

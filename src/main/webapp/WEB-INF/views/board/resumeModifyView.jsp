@@ -129,8 +129,7 @@
         }
 
         #savebtn {
-            margin-left: auto;
-            margin-top: 20px;
+            margin: 20px auto 0 auto;
             display: block;
         }
     </style>

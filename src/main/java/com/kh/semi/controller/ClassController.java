@@ -167,7 +167,7 @@ ClassController {
         }
 
         // ✅ 5. 완료 후 강의 목록 페이지로 이동
-        return "teacher/courseList";
+        return "teacher/adminCourse.li";
     }
 
     private String getKoreanDay(DayOfWeek dayOfWeek) {

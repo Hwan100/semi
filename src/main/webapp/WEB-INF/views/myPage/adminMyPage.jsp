@@ -16,6 +16,7 @@
         <!-- 🔵 상단: 프로필 + 기본 정보 -->
         <div class="top-info-wrapper">
             <div class="profile-box">
+                <img src="/icon/">
                 <div class="edit-icon">✎</div>
             </div>
 

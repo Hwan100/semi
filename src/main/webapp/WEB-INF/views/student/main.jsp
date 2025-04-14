@@ -22,7 +22,7 @@
     <section class="intro-section">
         <c:if test="${loginUser.userRole == 1}">
             <div class="content-box">
-                <h2>안녕하세요. ${loginUser.userName}학생님</h2>
+                <h2>안녕하세요. ${loginUser.userName} 님</h2>
                 <p>AWS 클라우드 기반 Devops 개발자 양성 과정</p>
                 <p>[강남 S] 2024. 12. 16 ~ 2025. 07. 18 ｜ 09:00 ~ 18:00 <br>
                     최지원 강사님 | 오환석 취업담임</p>

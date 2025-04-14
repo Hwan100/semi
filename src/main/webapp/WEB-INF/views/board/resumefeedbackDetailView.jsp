@@ -16,13 +16,7 @@
     <div class="board-title">${b.title}</div>
 
     <div class="button-area">
-      <c:choose>
-        <c:when test="${u.userRole == 1}">
-        </c:when>
-        <c:otherwise>
-          <button onclick="">수정</button>
-        </c:otherwise>
-      </c:choose>
+
       <button onclick="history.back()">이전화면</button>
 <%--      <button onclick="location.href='myclassList.bo'">목록</button>--%>
     </div>

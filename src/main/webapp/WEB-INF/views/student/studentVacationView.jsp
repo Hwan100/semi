@@ -146,35 +146,29 @@
 
     document.getElementById("fileInput").addEventListener("change", function (event) {
         selectedFile = event.target.files[0];
-        console.log(event.target.files[0])
 
         const fileTableBody = document.getElementById("fileTableBody");
+        const upfile = document.getElementById("upfile");
 
         if (selectedFile) {
-            fileTableBody.innerHTML = "<tr><td>" +selectedFile.name + "</td></tr>";
+            // 📌 선택된 파일을 실제 form input으로 복사
+            upfile.files = event.target.files;
+
+            // 📌 파일명 표시
+            fileTableBody.innerHTML = "<tr><td>" + selectedFile.name + "</td></tr>";
         } else {
             fileTableBody.innerHTML = '';
+            upfile.value = '';
         }
     });
+
     function removeFile() {
         selectedFile = null;
-        document.getElementById("fileInput").value = "";
+        document.getElementById("fileInput").value = '';
+        document.getElementById("upfile").value = '';
         document.getElementById("fileTableBody").innerHTML = '';
     }
 
-    function postFormSubmit(type) {
-        const formEl = document.querySelector("#postForm");
-        if (type === "delete") {
-            const checked = document.querySelectorAll("input[name='selectVacation']:checked");
-            if (checked.length === 0) {
-                alert("삭제할 휴가를 선택하세요.");
-                return;
-            }
-            formEl.action = "deleteLeave.bo";
-            formEl.method = "post";
-            formEl.submit();
-        }
-    }
 
     const newBtn = document.getElementById("new-btn");
     const formSection = document.getElementById("form-section");

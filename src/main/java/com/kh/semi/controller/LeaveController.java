@@ -63,7 +63,7 @@ public class LeaveController {
 
         if (result > 0) {
             session.setAttribute("alertMsg", "휴가 신청 완료!");
-            return "redirect:/studentVacation.li";// ✅ 리스트 새로고침을 위한 핵심 수정
+            return "redirect:/studentVacation.li";
         } else {
             model.addAttribute("errorMsg", "휴가 신청 실패");
             return "common/error";

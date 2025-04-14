@@ -13,14 +13,14 @@
 <div class="container">
     <div class="left">
         <div class="summary-boxes">
-            <div class="box"><div class="box-title">출석</div><div class="box-value" id="present">0일</div></div>
-            <div class="box"><div class="box-title">결석</div><div class="box-value" id="absent">0일</div></div>
-            <div class="box"><div class="box-title">지각</div><div class="box-value" id="late">0회</div></div>
-            <div class="box"><div class="box-title">조퇴</div><div class="box-value" id="earlyLeave">0회</div></div>
+            <div class="box"><div class="box-title">출석</div><div class="box-value" id="present">12일</div></div>
+            <div class="box"><div class="box-title">결석</div><div class="box-value" id="absent">12일</div></div>
+            <div class="box"><div class="box-title">지각</div><div class="box-value" id="late">12회</div></div>
+            <div class="box"><div class="box-title">조퇴</div><div class="box-value" id="earlyLeave">12회</div></div>
         </div>
         <div class="graph-box">
             <div><strong>이번 단위기간 내 출석률</strong></div>
-            <div style="text-align: right; font-weight: bold;" id="rateText">0/0 (0.0%)</div>
+            <div style="text-align: right; font-weight: bold;" id="rateText">18/20 (40.0%)</div>
             <div class="bar-container">
                 <div class="bar-fill" style="width: 0%;"></div>
                 <div class="bar-marker"></div>
@@ -29,11 +29,18 @@
         </div>
         <div class="graph-box">
             <div><strong>단위기간 내 출석 기록</strong></div>
-            <table>
+            <table style="border-collapse: separate; border-spacing: 0 10px;">
                 <thead>
                 <tr><th>날짜</th><th>입실시간</th><th>퇴실시간</th><th>상태</th></tr>
                 </thead>
                 <tbody id="attendance-body">
+                <tr><td>2025-04-11</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-10</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-09</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-08</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-07</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-04</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
+                <tr><td>2025-04-03</td><td>09:00</td><td>17:50</td><td style="color: green">출석</td></tr>
                 </tbody>
             </table>
         </div>

@@ -8,7 +8,7 @@
 <body>
 <div class="menu-tabs">
     <a class="tab" href="attendance.li?classNo=${classNo}" data-path="/attendance.li">출결 조회</a>
-    <a class="tab" href="studentListByClass.li?classNo=${classNo}" data-path="/infoList.li">학생 정보</a>
+    <a class="tab" href="studentListByClass.li?classNo=${classNo}" data-path="/studentListByClass.li">학생 정보</a>
     <a class="tab" href="vacation.li?classNo=${classNo}" data-path="/vacation.li">휴가 신청 내역</a>
     <a class="tab" href="myClass.bo?classNo=${classNo}" data-path="/myClass.bo">우리반 게시판</a>
 </div>
@@ -37,7 +37,7 @@
 
         document.querySelectorAll('.tab').forEach(tab => {
             const tabPath = tab.getAttribute('data-path');
-            if (tabPath === currentPath) {
+            if (currentPath.includes(tabPath)) {
                 tab.classList.add('active');
                 tab.classList.remove('inactive');
             } else {

@@ -63,7 +63,7 @@
                 <td>${Leave.leaveNo}</td>
                 <td>${Leave.userName}</td>
                 <td>${Leave.startDate} ~ ${Leave.endDate}</td>
-                <td>${rLeave.eason}</td>
+                <td>${Leave.eason}</td>
                 <td>${Leave.filePath}</td>
                 <td class="btn-td">
                     <button class="btn-success">승인</button>
@@ -95,11 +95,13 @@
 <script>
     let selectedLeaveId = null;
 
+    // 거부 버튼 클릭 시
     $(".btn-fail").on("click", function(){
         selectedLeaveId = $(this).data("id");
         $(".fail-reason").val("");
     });
 
+    // 거절 사유 저장 처리
     $(".submit-btn").on("click", function () {
         const reason = $(".fail-reason").val().trim();
 
@@ -109,11 +111,11 @@
         }
 
         $.ajax({
-            url: "${pageContext.request.contextPath}/vacation/reject",  // 실제 경로로 수정!
+            url: "${pageContext.request.contextPath}/vacation/reject",
             method: "POST",
             data: {
                 leaveId: selectedLeaveId,
-                rejectReason: reason  // 변수명도 고쳐야 해
+                rejectReason: reason
             },
             success: function () {
                 alert("거절 처리 완료");
@@ -125,6 +127,30 @@
         });
     });
 
+    // ✅ 승인 버튼 클릭 시 현재 날짜로 변경 + 거부 버튼 숨기기
+    $(".btn-success").on("click", function () {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // 1월은 0부터 시작!
+        const day = String(today.getDate()).padStart(2, '0');
+        const formattedDate = `${year}.${month}.${day}`; // 예: 2025.04.14
+
+        // 디버깅용 콘솔
+        console.log("formattedDate:", formattedDate);
+
+        // 현재 클릭된 버튼 변경
+        const $btn = $(this);
+        $btn
+            .removeClass("btn-success")
+            .addClass("btn-success-date")
+            .text(formattedDate);  // ✅ 이 부분이 핵심!
+
+        // 같은 td 내 거부 버튼 숨기기
+        $btn.siblings(".btn-fail").hide();
+    });
 </script>
+
+
+
 </body>
 </html>

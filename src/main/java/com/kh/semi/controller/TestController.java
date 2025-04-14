@@ -13,6 +13,8 @@ public class TestController {
     @GetMapping("attendance.st")
     public String attendanceManage() {return "student/studentAttendancePageView";}
 
+    @GetMapping("infoList.li")
+    public String infoList() {return "teacher/teacherStudentInfoListPage";}
 
     @GetMapping("enrollForm.me")
     public String enrollForm() {return "login/memberEnrollPage";}

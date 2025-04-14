@@ -206,7 +206,8 @@
         FROM TB_BOARD B
         JOIN TB_USER U ON B.USER_NO = U.USER_NO
         WHERE B.TYPE = 2
-        AND B.BOARD_STATUS = 'Y'
+          AND B.CLASS_NO = #{classNo}
+          AND B.BOARD_STATUS = 'Y'
         ORDER BY B.BOARD_NO DESC
     </select>
 

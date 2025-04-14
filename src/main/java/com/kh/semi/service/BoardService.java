@@ -32,7 +32,7 @@ public interface BoardService {
 
     ResumeBoard selectResumeBoard(int bno);
 
-    List<Board> selectMyClassBoardList(PageInfo pi);
+    List<Board> selectMyClassBoardList(PageInfo pi, int classNo);
 
     int insertMyClassBoard(Board board);
 

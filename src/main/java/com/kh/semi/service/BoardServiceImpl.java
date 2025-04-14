@@ -80,10 +80,10 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public List<Board> selectMyClassBoardList(PageInfo pi) {
+    public List<Board> selectMyClassBoardList(PageInfo pi, int classNo) {
         int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
         RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
-        return boardMapper.selectMyClassBoardList(rowBounds);
+        return boardMapper.selectMyClassBoardList(rowBounds, classNo);
     }
 
     @Override

@@ -48,16 +48,16 @@
             </div>
 
             <div class="checkin-times">
-                <div><span class="label">입실시간</span><span class="time">09 : 05 : 30</span></div>
-                <div><span class="label">퇴실시간</span><span class="time">17 : 57 : 50</span></div>
+                <div><span class="label">출근시간</span><span class="time">09 : 05 : 30</span></div>
+                <div><span class="label">퇴근시간</span><span class="time">17 : 57 : 50</span></div>
             </div>
         </div>
         <div class="btn-box">
             <div class="checkin-buttons">
-                <button class="btn enter active">입실</button>
+                <button class="btn enter active">출근</button>
                 <button class="btn out">외출 및 조퇴</button>
             </div>
-            <button class="btn full leave">퇴실</button>
+            <button class="btn full leave">퇴근</button>
         </div>
     </section>
     <%-- 결재 대기 목록(휴가, 병가 등등) --%>

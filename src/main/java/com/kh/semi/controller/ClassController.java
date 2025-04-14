@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.kh.semi.domain.vo.ClassTime;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
 import java.time.DayOfWeek;
@@ -32,7 +33,8 @@ ClassController {
     }
 
     @PostMapping("insert.fo")
-    public String insert(
+    public ModelAndView insert(
+            ModelAndView mv,
             @ModelAttribute Class c, // 강의 클래스
             HttpSession session,
             HttpServletRequest request,
@@ -69,7 +71,7 @@ ClassController {
             if (timeMap.containsKey(koreanDay)) {
                 String[] times = timeMap.get(koreanDay);
                 System.out.println(date.toString() + " (" + koreanDay + ") → " + times[0] + " ~ " + times[1]);
-                ClassTime classTime = new ClassTime(koreanDay, c.getClassNo(), times[0], times[1]);
+                ClassTime classTime = new ClassTime(date.toString(), c.getClassNo(), times[0], times[1]);
                 int daysResult = classService.insertClassTime(classTime);
 
                 request.setAttribute("registerDays", registeredDays);
@@ -87,8 +89,9 @@ ClassController {
                 //        예외처리 필요.
             }
         }
+        mv.setViewName("redirect:/adminCourse.li");
 //      강의 조회 페이지로 이동. 강의 등록 성공 메세지와 함께 이동
-        return "teacher/adminCourse.li";
+        return mv;
     }
 
     private String getKoreanDay(DayOfWeek dayOfWeek) {

@@ -56,7 +56,7 @@ Jsp와 Spring Boot를 활용한 간단한 학원 출결관리 ERP 시스템입�
 | 이름 | 포지션 | Contact |
 | --- | --- | --- |
 | 정민구 | Team Leader | jmg9152@gmail.com |
-| 정형일 | Issue Manager | a1@gmail.com |
+| 정형일 | Issue Manager | aadsf1789@gmail.com |
 | 백승환 | Configuration Manager | tmdghks605@gmail.com |
 | 정의철 | Schedule Manager | euicheol99@gmail.com |
 | 이상준 | DataBase Manager | eru359628@gmail.com |

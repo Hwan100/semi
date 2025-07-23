@@ -1,9 +1,9 @@
 # MyERP
-Jsp와 Spring Boot를 활용한 간단한 사내 출결관리 ERP 시스템입니다.
+Jsp와 Spring Boot를 활용한 간단한 학원 출결관리 ERP 시스템입니다.
 
 ## 프로젝트 개요
 - 개발 기간: 2025-03-18 ~ 2025-04-14
-  - [백엔드 README](./출결관리ERP시스템.pdf)
+  - [최종 보고서 PDF](./출결관리ERP시스템.pdf)
 
 ## 기술 스택
 
@@ -42,21 +42,21 @@ Jsp와 Spring Boot를 활용한 간단한 사내 출결관리 ERP 시스템입�
 
 
 ## 주요 기능
-- 회원가입 및 로그인 (JWT 기반)
-- 할일관리
-- 일정관리
+- 회원가입 및 로그인 (Session 기반)
+- 출결관리 및 휴가신청
+- 강의 CRUD
+- 학생 이력서/자소서 CRUD
 
 ## 부가 기능
-- 소셜 로그인 (카카오)
-- 반응형 웹UI
-- 전역 style 정의하여 라이트/다크 모드 구현
+- 관리자페이지
+- 반별 게시판
 
 ## 팀원 소개
 
 | 이름 | 포지션 | Contact |
 | --- | --- | --- |
-| 최지원 | AI | a1@gmail.com |
-| 최지투 | BE | a1@gmail.com |
-| 최지삼 | FE | a1@gmail.com |
-| 최지사 | FE | a1@gmail.com |
-| 최지오 | FE | a1@gmail.com |
+| 정민구 | Team Leader | jmg9152@gmail.com |
+| 정형일 | Issue Manager | a1@gmail.com |
+| 백승환 | Configuration Manager | tmdghks605@gmail.com |
+| 정의철 | Schedule Manager | euicheol99@gmail.com |
+| 이상준 | DataBase Manager | eru359628@gmail.com |
